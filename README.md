@@ -1,8 +1,8 @@
-Master Financial Management SPA Application
+#Master Financial Management SPA Application
 
 =========
 
-Prerequisites
+##Prerequisites
 
 This assumes that you have [npm](https://npmjs.org/) and [yeoman](http://yeoman.io/) installed.
 
