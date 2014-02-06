@@ -1,10 +1,10 @@
-#Master Financial Management SPA Application
+#MFM SPA Application
 
 =========
 
 ##Prerequisites
 
-This assumes that you have [npm](https://npmjs.org/) and [yeoman](http://yeoman.io/) installed.
+This assumes that you have [node.js](http://nodejs.org),[npm](https://npmjs.org/) and [yeoman](http://yeoman.io/) installed.
 
 
 ## Getting Started
