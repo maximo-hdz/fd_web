@@ -1,0 +1,112 @@
+{
+  "accounts": [
+    {
+      "_account_id": 70001,
+      "account_type": "SAVINGS",
+      "name": "Cuenta de ahorro",
+      "alias": "Linea de credito 1",
+      "currency": "MXN",
+      "balance": {
+        "current": 25000,
+        "created_at": 1391554203019
+      },
+      "image": {
+        "large": "http://abanking.s3.amazon.com/9872348.jpg",
+        "retina": "http://abanking.s3.amazon.com/9872348.jpg",
+        "thumbnail": "http://abanking.s3.amazon.com/9872348.jpg",
+        "icon": "http://abanking.s3.amazon.com/9872348.jpg"
+      },
+      "last_digits": "348"
+    },
+    {
+      "_account_id": 70005,
+      "alias": "Linea de credito 2",
+      "name": "Círculo azul",
+      "account_type": "CREDIT_CARD",
+      "currency": "MXN",
+      "cut_day": 25,
+      "cut_date": 1391990400000,
+      "expire_at": 1395964800000,
+      "credit_limit": 20000,
+      "balance": {
+        "current": 19002.67,
+        "min_payment": 531.29,
+        "total_payment": 5540.23,
+        "created_at": 1392681600000
+      },
+      "image": {
+        "large": "http://abanking.s3.amazon.com/1234_large.jpg",
+        "retina": "http://abanking.s3.amazon.com/1234_retina.jpg",
+        "thumbnail": "http://abanking.s3.amazon.com/1234_thumbnail.jpg",
+        "icon": "http://abanking.s3.amazon.com/1234_icon.jpg"
+      },
+      "last_digits": "222"
+    },
+    {
+      "_account_id": 70004,
+      "alias": "Linea de credito 3",
+      "name": "Tarjeta de negocios",
+      "account_type": "CREDIT_CARD",
+      "currency": "MXN",
+      "cut_day": 15,
+      "cut_date": 1391299200000,
+      "expire_at": 1398038400000,
+      "credit_limit": 10000,
+      "balance": {
+        "current": 30500.9,
+        "min_payment": 5231.09,
+        "total_payment": 15500.9,
+        "created_at": 1392076800000
+      },
+      "image": {
+        "large": "http://abanking.s3.amazon.com/1234_large.jpg",
+        "retina": "http://abanking.s3.amazon.com/1234_retina.jpg",
+        "thumbnail": "http://abanking.s3.amazon.com/1234_thumbnail.jpg",
+        "icon": "http://abanking.s3.amazon.com/1234_icon.jpg"
+      },
+      "last_digits": "111"
+    },
+    {
+      "_account_id": 70003,
+      "account_type": "DEBIT_CARD",
+      "name": "Tarjeta de débito",
+      "alias": "Linea de credito 4",
+      "currency": "MXN",
+      "balance": {
+        "current": 55000,
+        "created_at": 1391554203020
+      },
+      "image": {
+        "large": "http://abanking.s3.amazon.com/1234_large.jpg",
+        "retina": "http://abanking.s3.amazon.com/1234_retina.jpg",
+        "thumbnail": "http://abanking.s3.amazon.com/1234_thumbnail.jpg",
+        "icon": "http://abanking.s3.amazon.com/1234_icon.jpg"
+      },
+      "last_digits": "306"
+    },
+    {
+      "_account_id": 70006,
+      "alias": "Linea de credito 5",
+      "name": "Tarjeta deportiva",
+      "account_type": "CREDIT_CARD",
+      "currency": "MXN",
+      "cut_day": 13,
+      "cut_date": 1390953600000,
+      "expire_at": 1394841600000,
+      "credit_limit": 30000,
+      "balance": {
+        "current": 5340.34,
+        "min_payment": 231.09,
+        "total_payment": 4500.45,
+        "created_at": 1391126400000
+      },
+      "image": {
+        "large": "http://abanking.s3.amazon.com/1234_large.jpg",
+        "retina": "http://abanking.s3.amazon.com/1234_retina.jpg",
+        "thumbnail": "http://abanking.s3.amazon.com/1234_thumbnail.jpg",
+        "icon": "http://abanking.s3.amazon.com/1234_icon.jpg"
+      },
+      "last_digits": "333"
+    }
+  ]
+}

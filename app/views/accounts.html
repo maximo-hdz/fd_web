@@ -1,0 +1,176 @@
+<div class="account_back">
+
+  <div class="home_header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <a class="bank-logo" href="#">LOGO</a>
+        </div>
+        <div class="col-md-6">
+          <h4>Bienvenido <span>{{client}}<span></h4>
+        </div>
+        <div class="col-md-3">
+          <button class="btn pull-right btn-logout"  ng-click="logout()">Salir</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container">
+          <span class="pull-right">Lunes 30 de Abril de 2012 15:10 HRS</span>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container content"> 
+
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <li class=""><a href="javascript: void(0)"><i class="icon-chevron-right"></i>Saldos</a></li>
+          <li class=""><a href="javascript: void(0)"><i class="icon-chevron-right"></i>Conex&iacute;on MFM</a></li>
+          <li class=""><a href="javascript: void(0)"><i class="icon-chevron-right"></i>Autorizar</a></li>
+          <li class=""><a href="javascript: void(0)"><i class="icon-chevron-right"></i>Transferencias</a></li>
+          <li class=""><a href="javascript: void(0)"><i class="icon-chevron-right"></i>Administraci&oacute;n</a></li>
+        </ul>
+      </div>
+
+
+      <!--  Accounts  Section -->
+      <div class="col-md-9">
+        <div>
+          <h4>Cuentas Biom&eacute;tricas </h4>
+          <div class="row">
+            <div class="col-md-3">
+              ALIAS
+            </div>
+            <div class="col-md-3">
+              No. Cuenta
+            </div>
+            <div class="col-md-3">
+              SALDO
+            </div>
+            <div class="col-md-3">
+              DIVISAS
+            </div>
+          </div>
+          <div ng-repeat="biometricAccount in biometricAccounts.accounts">
+            <div class="account">
+              <div class="row">
+                <a href="javascript:void(0);">   
+                  <div class="col-md-3">
+                    {{biometricAccount.alias}}
+                  </div>
+                  <div class="col-md-3">
+                    {{biometricAccount._account_id}}
+                  </div>
+                  <div class="col-md-3">
+                    {{biometricAccount.balance.current | currency}}
+                  </div>
+                  <div class="col-md-3">
+                    {{biometricAccount.currency}}
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4>L&iacute;neas de Cr&eacute;dito </h4>
+          <div class="row">
+            <div class="col-md-3">
+              ALIAS
+            </div>
+            <div class="col-md-3">
+              No. Cuenta
+            </div>
+            <div class="col-md-3">
+              SALDO
+            </div>
+            <div class="col-md-3">
+              DIVISAS
+            </div>
+          </div>
+          <div ng-repeat="creditaccount in creditAccounts.accounts">
+            <div class="account">
+              <div class="row">
+                <a href="javascript:void(0);">   
+                  <div class="col-md-3">
+                    {{creditaccount.alias}}
+                  </div>
+                  <div class="col-md-3">
+                    {{creditaccount._account_id}}
+                  </div>
+                  <div class="col-md-3">
+                    {{creditaccount.balance.current | currency}}
+                  </div>
+                  <div class="col-md-3">
+                    {{creditaccount.currency}}
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div>
+          <h4>Inversiones</h4>
+          <div class="row">
+            <div class="col-md-3">
+              ALIAS
+            </div>
+            <div class="col-md-3">
+              No. Cuenta
+            </div>
+            <div class="col-md-3">
+              SALDO
+            </div>
+            <div class="col-md-3">
+              DIVISAS
+            </div>
+          </div>
+          <div ng-repeat="investmentAccount in investmentAccounts.accounts">
+            <div class="account">
+              <div class="row">
+                <a href="javascript:void(0);">   
+                  <div class="col-md-3">
+                    {{investmentAccount.alias}}
+                  </div>
+                  <div class="col-md-3">
+                    {{investmentAccount._account_id}}
+                  </div>
+                  <div class="col-md-3">
+                    {{investmentAccount.balance.current | currency}}
+                  </div>
+                  <div class="col-md-3">
+                    {{investmentAccount.currency}}
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="home_footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <a href="javascript:void(0);"> &copy; Master Financial Management</a>
+          <a href="javascript:void(0);">Copyright 2014</a> 
+          <a href="javascript:void(0);">Ayuda</a> 
+          <a href="javascript:void(0);">Tour</a> 
+        </div>
+        <div class="col-md-4">
+          <span class="pull-right">
+            Términos, Condiciones de Uso y Privacidad
+          </span>
+        </div>
+      </div>
+    </div>
+  <div>
+</div>

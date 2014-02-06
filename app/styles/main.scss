@@ -1,0 +1,78 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+body, html, #mainDiv {
+    height: 100%;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    background-color: #f2f3f3;
+}
+/**************Login **************/
+.login_back {
+
+   .form-signin {
+        max-width: auto;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+    }
+    .form-signin .form-signin-heading,
+    .form-signin .checkbox {
+    }
+
+    .form-signin input[type="text"],
+    .form-signin input[type="password"] {
+    }
+
+    .btn-login{
+        width:auto;
+    }
+
+    .login_header {
+        height: 50px;
+        p {
+        }
+
+        a, a:hover {
+        }
+    }
+
+    .login_footer {
+        position: fixed;
+        bottom: 0;
+        font-family: Arial, sans-serif;
+
+        a, a:hover {
+        
+        }
+    }
+
+}
+
+/**************Accounts **************/
+
+ 
+.home_header {
+    color: #000;
+
+    p {
+    }
+
+    a, a:hover {
+    }
+}
+
+.home_footer {
+    position: fixed;
+    bottom: 0;
+    font-family: Arial, sans-serif;
+
+    a, a:hover {
+    }
+
+}
+
+.btn-logout {
+
+}
