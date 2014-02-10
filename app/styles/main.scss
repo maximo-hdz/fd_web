@@ -1,58 +1,133 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+/*$icon-font-path: "/bower_components/sass-bootstrap/fonts/";*/
+/*@import 'sass-bootstrap/lib/bootstrap';*/
 
-@import 'sass-bootstrap/lib/bootstrap';
+/* VARIABLES */
+$logo_bg: "../images/logo.png";
+
+
+/* MIXINS */
+@mixin border_radius($radius: 10px) {
+    border-radius: $radius !important;
+    -webkit-border-radius: $radius !important;
+    -moz-border-radius: $radius !important;
+}
+
+@mixin gradient_top_bottom($color_top: #ffffff, $color_bottom: #000000) {
+    background: $color_top;
+    background: -moz-linear-gradient(top, $color_top 0%, $color_bottom 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color_top), color-stop(100%,$color_bottom));
+    background: -webkit-linear-gradient(top, $color_top 0%,$color_bottom 100%);
+    background: -o-linear-gradient(top, $color_top 0%,$color_bottom 100%);
+    background: -ms-linear-gradient(top, $color_top 0%,$color_bottom 100%);
+    background: linear-gradient(to bottom, $color_top 0%,$color_bottom 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color_top', endColorstr='$color_bottom',GradientType=0 );
+}
+@mixin box_shadow($shadow: #000000){
+    -moz-box-shadow: 0 0 5px $shadow;
+    -webkit-box-shadow: 0 0 5px $shadow;
+    box-shadow: 0 0 5px $shadow;
+}
 
 body, html, #mainDiv {
     height: 100%;
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-    background-color: #f2f3f3;
+}
+body{
+    background: #000000 url(../images/bg.png) center center no-repeat;    
+    background-size: cover;
+    background-attachment:fixed;
+    #mainDiv{
+        background: none;
+    }
+    
 }
 /**************Login **************/
 .login_back {
-
+    padding-top: 90px;
    .form-signin {
         max-width: auto;
-        padding: 19px 29px 29px;
+        padding: 20px;
         margin: 0 auto 20px;
-        background-color: #fff;
-        border: 1px solid #e5e5e5;
-    }
-    .form-signin .form-signin-heading,
-    .form-signin .checkbox {
-    }
+        background: #000000;
 
-    .form-signin input[type="text"],
-    .form-signin input[type="password"] {
-    }
+        @include border_radius(10px);
 
-    .btn-login{
-        width:auto;
-    }
-
-    .login_header {
-        height: 50px;
-        p {
+        .logo{
+            background: url($logo_bg) no-repeat;
+            background-size: 240px;
+            width: 240px;
+            height: 102px;
+            margin: 5px auto 25px auto;
         }
-
+        input{
+            background: #000000;
+            border:1px solid #464646;
+            margin: 8px 0;
+            padding: 3px 5px 3px 30px;
+            color: #b1b1b1;
+        }
+        input.input_user{
+            background: url(../images/ico_user.png) 5px 6px no-repeat;
+        }
+        input.input_pass{
+            background: url(../images/ico_pass.png) 5px 6px no-repeat;
+        }
         a, a:hover {
+            color: #757474;
+            font-size: 12px;
+            font-weight: normal;
+            text-decoration: underline;
+        }
+        .btn{
+            color: #FFFFFF;
+            border: none;
+            clear: both;
+            width: 100%;
+            display: block;
+            font-size: 14px;
+            padding: 10px 0;
+            margin: 20px 0;
+            @include gradient_top_bottom( #303030, #0c0d0d);
+        }
+        .btn:hover{
+            @include gradient_top_bottom( #0c0d0d, #303030);    
         }
     }
-
+    .bienvenida{
+        color: #e5e5e5;
+        padding: 145px 0 80px 0;
+        p{
+            margin: 0;
+            line-height: 100%;
+        }
+        .p_big{
+            font-size: 65px;    
+        }
+        .p_small{
+            font-size: 50px;    
+        }
+        
+    }
     .login_footer {
+        background: #000000;
         position: fixed;
         bottom: 0;
-        font-family: Arial, sans-serif;
+        left: 0;
+        right: 0;
+        color: #a3a3a3;
+        font-weight: bold;
+        padding: 5px;
 
         a, a:hover {
-        
+            color: #a3a3a3;
+            font-size: 12px;
+            font-weight: normal;
         }
     }
 
 }
 
 /**************Accounts **************/
-
- 
 .home_header {
     color: #000;
 
@@ -62,7 +137,6 @@ body, html, #mainDiv {
     a, a:hover {
     }
 }
-
 .home_footer {
     position: fixed;
     bottom: 0;
@@ -70,9 +144,19 @@ body, html, #mainDiv {
 
     a, a:hover {
     }
-
 }
 
-.btn-logout {
-
+/************** RESPONSIVE **************/
+@media screen and (max-width: 990px) {
+    .login_back {
+        .bienvenida{
+            padding-top: 40px;
+            .p_big{
+                font-size: 45px;    
+            }
+            .p_small{
+                font-size: 33px;    
+            }
+        }
+    }
 }
