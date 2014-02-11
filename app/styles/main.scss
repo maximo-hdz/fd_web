@@ -4,7 +4,6 @@
 /* VARIABLES */
 $logo_bg: "../images/logo.png";
 
-
 /* MIXINS */
 @mixin border_radius($radius: 10px) {
     border-radius: $radius !important;
@@ -13,24 +12,31 @@ $logo_bg: "../images/logo.png";
 }
 
 @mixin gradient_top_bottom($color_top: #ffffff, $color_bottom: #000000) {
-    background: $color_top;
-    background: -moz-linear-gradient(top, $color_top 0%, $color_bottom 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color_top), color-stop(100%,$color_bottom));
-    background: -webkit-linear-gradient(top, $color_top 0%,$color_bottom 100%);
-    background: -o-linear-gradient(top, $color_top 0%,$color_bottom 100%);
-    background: -ms-linear-gradient(top, $color_top 0%,$color_bottom 100%);
-    background: linear-gradient(to bottom, $color_top 0%,$color_bottom 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color_top', endColorstr='$color_bottom',GradientType=0 );
+    background: $color_top !important;
+    background: -moz-linear-gradient(top, $color_top 0%, $color_bottom 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color_top), color-stop(100%,$color_bottom)) !important;
+    background: -webkit-linear-gradient(top, $color_top 0%,$color_bottom 100%) !important;
+    background: -o-linear-gradient(top, $color_top 0%,$color_bottom 100%) !important;
+    background: -ms-linear-gradient(top, $color_top 0%,$color_bottom 100%) !important;
+    background: linear-gradient(to bottom, $color_top 0%,$color_bottom 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color_top', endColorstr='$color_bottom',GradientType=0 ) !important;
 }
 @mixin box_shadow($shadow: #000000){
     -moz-box-shadow: 0 0 5px $shadow;
     -webkit-box-shadow: 0 0 5px $shadow;
     box-shadow: 0 0 5px $shadow;
 }
+@mixin anim_transicion( $segundos: 0.3s ){
+    transition: all $segundos ease;
+    -ms-transition: all $segundos ease;
+    -webkit-transition: all $segundos ease;
+    -o-transition: all $segundos ease;
+    -moz-transition: all $segundos ease;
+}
 
 body, html, #mainDiv {
     height: 100%;
-    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-family: "Helvetica Neue", "HelveticaNeue", "Helvetica", Arial, sans-serif;
 }
 body{
     background: #000000 url(../images/bg.png) center center no-repeat;    
@@ -41,7 +47,7 @@ body{
     }
     
 }
-/**************Login **************/
+/************** LOGIN **************/
 .login_back {
     padding-top: 90px;
    .form-signin {
@@ -124,30 +130,265 @@ body{
             font-weight: normal;
         }
     }
-
 }
 
-/**************Accounts **************/
-.home_header {
-    color: #000;
-
-    p {
+/************** INNER HTMLS **************/
+.header {
+    background: #000000;
+    color: #FFFFFF;
+    padding: 5px 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    .logo{
+        background: url($logo_bg) no-repeat;
+        background-size: 120px;
+        width: 120px;
+        height: 50px;
+        display: block;
+        margin: 0 auto;
+    }
+    .user{
+        text-align: center;
+        font-size: 18px;
+        padding-top: 10px;
     }
 
-    a, a:hover {
+    button.btn-logout{
+        background: #FFFFFF;
+        padding: 5px 10px;
+        font-size: 12px;
+        margin: 8px 5px 0 5px;
+        i{
+            display: block;
+            float: left;
+            position: relative;
+            top: -2px;
+            margin-right: 5px;
+            background: url(../images/ico_salir.png) no-repeat;
+            width: 15px;
+            height: 17px;
+        }
     }
 }
-.home_footer {
+.subheader{
+    background: #212121;
+    padding: 5px 0;
+    overflow: hidden;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    span{
+        text-transform: uppercase;
+        font-size: 11px;
+        color: #a3a3a3;
+    }
+    span.fecha{
+        background: url(../images/ico_fecha.png) no-repeat;
+        padding: 2px 0 0 20px;
+        height: 16px;
+        display: inline-block;
+    }
+    span.hora{
+        background: url(../images/ico_hora.png) no-repeat;
+        padding: 2px 0 0 20px;
+        height: 16px;
+        display: inline-block;
+        margin-left: 20px;
+    }
+}
+.menu_lateral{
+    margin-bottom: 20px;
+    li{
+        background: #252525;
+        margin-bottom: 5px;
+        @include border_radius( 3px );
+        a, a:hover, a:active{
+            background:none;
+            display: block;
+            clear: both;
+            color: #a3a3a3;
+
+            i{
+                background-repeat: no-repeat;
+                background-position: right top;
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+                display: block;
+                float: left;
+                position: relative;
+                top: 3px;
+            }
+            i.ico-saldos{
+                background-image: url(../images/menu_saldos.png); 
+            }
+            i.ico-conexion{
+                background-image: url(../images/menu_conexion.png); 
+            }
+            i.ico-autorizar{
+                background-image: url(../images/menu_autorizar.png); 
+            }
+            i.ico-transferencias{
+                background-image: url(../images/menu_transferencias.png); 
+            }
+            i.ico-administracion{
+                background-image: url(../images/menu_administracion.png); 
+            }
+        }
+    }
+    li.active,
+    li:hover{
+        @include gradient_top_bottom( #b6b7b8, #f4f5f5);
+        a, a:hover, a:active{
+            background: url(../images/menu_h.png) right center no-repeat;
+            background-size: 23px;
+            color: #000000;
+            i.ico-saldos{
+                background-image: url(../images/menu_saldos_h.png); 
+            }
+            i.ico-conexion{
+                background-image: url(../images/menu_conexion_h.png); 
+            }
+            i.ico-autorizar{
+                background-image: url(../images/menu_autorizar_h.png); 
+            }
+            i.ico-transferencias{
+                background-image: url(../images/menu_transferencias_h.png); 
+            }
+            i.ico-administracion{
+                background-image: url(../images/menu_administracion_h.png); 
+            }
+        }
+    }
+}
+.banners{
+    margin: 60px 0 0 0 ;
+    text-align: center;
+    img{
+        margin-bottom: 15px;
+    }
+}
+.content{
+    padding: 110px 0 30px 0;
+}
+.titulo{
+    font-size: 18px;
+    color: #a3a3a3;
+}
+.content_table{
+    background: #ffffff;
+    padding: 8px 0;
+    overflow: hidden;
+    margin: 0 0 15px 0;
+    @include border_radius( 5px );
+    h4{
+        display: block;
+        width: auto;
+        margin: 0 10px;
+        cursor: pointer;
+    } 
+    h4.abierto{
+        background: url(../images/ico_minus.png) right center no-repeat;
+    } 
+    h4.cerrado{
+        background: url(../images/ico_plus.png) right center no-repeat;
+    } 
+    .table-responsive{
+        margin-top: 20px;
+        border:none!important;
+        .table{
+            margin: 0; 
+            thead{
+                tr{
+                    td{
+                        border: none;
+                        background: #3d3d3d;
+                        color: #FFFFFF;
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        border: none;
+                        color: #2e2e2e;
+                        font-size: 12px;
+                        a, a:hover, a:active{
+                            color: #2e2e2e;
+                            text-decoration: none;
+                        }
+                    }
+
+                }
+                tr:nth-child(odd){
+                    background: #d1d3d4;
+                }
+                tr:nth-child(even){
+                    background: #FFFFFF;
+                }
+            }
+        }
+    }
+}
+.notificaciones{
+    padding: 0 5px;
+    margin-bottom: 10px;
+    .head{
+        background: #3d3d3d;
+        color: #a3a3a3;
+        padding: 5px 10px;
+        p{
+            margin: 0;
+        }
+    }
+    ul{
+        list-style: none;
+        background: #000000;
+        padding: 0;
+        li{
+            text-align: left;
+            border-bottom: 1px solid #5e5e5e;
+            padding: 3px 10px;
+            a{
+                font-size: 12px;
+                color: #6da1d4;
+                text-decoration: underline;
+            }
+        }
+        li:last-child{
+            border-bottom: none;
+        }
+    }
+}
+.footer {
+    background: #000000;
     position: fixed;
     bottom: 0;
-    font-family: Arial, sans-serif;
+    left: 0;
+    right: 0;
+    color: #a3a3a3;
+    font-size: 12px;
+    padding: 5px;
 
     a, a:hover {
+        color: #a3a3a3;
+        font-size: 12px;
+        font-weight: normal;
+        margin-left: 20px;
     }
 }
 
 /************** RESPONSIVE **************/
-@media screen and (max-width: 990px) {
+
+@media screen and (max-width: 992px) {
     .login_back {
         .bienvenida{
             padding-top: 40px;
@@ -158,5 +399,74 @@ body{
                 font-size: 33px;    
             }
         }
+    }
+    .content{
+        padding: 110px 0 50px 0;
+    }
+}
+@media screen and (max-width: 575px) {
+    .header{
+        .user{
+            clear: both;
+            display: block;
+            font-size: 14px;
+        }
+    }
+    .header,
+    .subheader,
+    .footer{
+        position: static;
+    }
+    .content{
+        padding: 20px 0 20px 0;
+    }
+    .login_back {
+        .login_footer {
+            position: static;
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    .login_back {
+        padding-top: 20px;
+        .form-signin {
+
+            .logo{
+                background-size: 160px;
+                width: 160px;
+                height: 70px;
+            }
+        }
+        .bienvenida{
+            padding-top: 20px;
+            .p_big{
+                font-size: 25px;    
+            }
+            .p_small{
+                font-size: 18px;    
+            }
+        }
+    }
+    .header{
+        .user{
+            font-size: 12px;
+            b{
+                display: block;
+                clear: both;
+            }
+        }
+    }
+    .subheader{
+        span{
+            font-size: 9px;
+        }
+        span.hora{
+            margin-left: 10px;
+        }
+    }
+    .content_table{
+        h4{
+            font-size: 14px;
+        } 
     }
 }
