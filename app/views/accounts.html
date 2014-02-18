@@ -8,9 +8,9 @@
                 
                 <button class="btn pull-right btn-logout"  ng-click="logout()"><i></i>Salir</button>
                 
-                <div class="col-md-6 user">
+                <!-- <div class="col-md-6 user">
                     <p>Bienvenido <b>{{client}}</b></p>
-                </div>
+                </div> -->
             </div>
             
         </div>
@@ -42,7 +42,7 @@
             <div class="col-md-9">
                 <div class="content_table">
                     <h4 class="abierto" onClick="show_hide_table('.tabla_biometric',this)">Cuentas Biom&eacute;tricas</h4>
-                    <div class="table-responsive tabla_biometric">
+                    <div class="table-responsive abierta tabla_biometric">
                         <table class="table">
                             <tbody>
                                 <tr ng-repeat="biometricAccount in biometricAccounts.accounts">
@@ -64,8 +64,8 @@
                     </div>
                 </div>
                 <div class="content_table">
-                    <h4 class="abierto" onClick="show_hide_table('.tabla_credito',this)">L&iacute;neas de Cr&eacute;dito</h4>
-                    <div class="table-responsive tabla_credito">
+                    <h4 class="abierto" onClick="show_hide_table('.tabla_credito',this)">L&iacute;nea de Cr&eacute;dito</h4>
+                    <div class="table-responsive abierta tabla_credito">
                         <table class="table">
                             <tbody>
                                 <tr ng-repeat="creditaccount in creditAccounts.accounts">
@@ -88,7 +88,7 @@
                 </div>
                 <div class="content_table">
                     <h4 class="abierto" onClick="show_hide_table('.tabla_inversiones',this)">Inversiones</h4>
-                    <div class="table-responsive tabla_inversiones">
+                    <div class="table-responsive abierta tabla_inversiones">
                         <table class="table">
                             <tbody>
                                 <tr ng-repeat="investmentAccount in investmentAccounts.accounts">
@@ -112,7 +112,7 @@
                 <p class="titulo">Notificaicones</p>
                 <div class="row-fluid">
                     <div class="col-md-4 notificaciones">
-                        <div class="head"><p>Pr&oacute;ximos vencimientos</p></div>
+                        <div class="head"><p>Pr&oacute;ximos Vencimientos</p></div>
                         <ul>
                             <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
                             <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
@@ -120,7 +120,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4 notificaciones">
-                        <div class="head"><p>Autorizaciones pendientes</p></div>
+                        <div class="head"><p>Autorizaciones Pendientes</p></div>
                         <ul>
                             <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
                             <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
@@ -128,7 +128,7 @@
                         </ul>
                     </div>
                     <div class="col-md-4 notificaciones">
-                        <div class="head"><p>Movimientos pendientes</p></div>
+                        <div class="head"><p>Movimientos Pendientes</p></div>
                         <ul>
                             <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
                             <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
@@ -147,8 +147,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    &copy; Master Financial Management
-                    <a href="javascript:void(0);">Copyright 2014</a> 
+                    &copy; Copyright 2014 Master Financial Management
                     <a href="javascript:void(0);">Ayuda</a> 
                     <a href="javascript:void(0);">Tour</a> 
                 </div>
