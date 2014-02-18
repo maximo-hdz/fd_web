@@ -18,6 +18,29 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
+      war: {
+        target: {
+          options: {
+            war_dist_folder: 'dist',
+            war_verbose: true,
+            war_name: 'mfm',
+            webxml_welcome: 'index.html',
+            webxml_display_name: 'MFM',
+            webxml_mime_mapping: [
+                { extension: 'js', mime_type: 'text/javascript' } ,
+                { extension: 'css', mime_type: 'text/css' } ,
+                { extension: 'html', mime_type: 'text/html' } ,
+                { extension: 'png', mime_type: 'image/png' } 
+              ]
+          },
+          files: [
+            {
+              expand: true,
+              src: ['dist/**']
+            }
+          ]
+        }
+      },
     // Project settings
     yeoman: {
       // configurable paths
@@ -213,10 +236,10 @@ livereload: {
       dist: {
         files: {
           src: [
-        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-      '<%= yeoman.dist %>/styles/{,*/}*.css',
-    '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-    '<%= yeoman.dist %>/styles/fonts/*'
+        '<%= yeoman.dist %>/static/scripts/{,*/}*.js',
+      '<%= yeoman.dist %>/static/styles/{,*/}*.css',
+    '<%= yeoman.dist %>/static/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+    '<%= yeoman.dist %>/static/styles/fonts/*'
     ]
   }
 }
@@ -235,7 +258,7 @@ livereload: {
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
     html: ['<%= yeoman.dist %>/{,*/}*.html'],
-  css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+  css: ['<%= yeoman.dist %>/static/styles/{,*/}*.css'],
   options: {
     assetsDirs: ['<%= yeoman.dist %>']
   }
@@ -381,7 +404,7 @@ htmlmin: {
     }
   });
 
-
+grunt.loadNpmTasks('grunt-war');
 grunt.registerTask('serve', function (target) {
   if (target === 'dist') {
     return grunt.task.run(['build', 'connect:dist:keepalive']);

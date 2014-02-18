@@ -4,7 +4,7 @@ angular.module('SpaApp')
 .controller('AccountsCtrl', function ($scope,$http,$location) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
-	<!-- Get Biometric Accounts-->
+	 // Get Biometric Accounts
 	$http({
 		url: 'http://mfm.jit.su/api/accounts/1',
 		method: 'GET'
@@ -20,7 +20,7 @@ angular.module('SpaApp')
 
 	});
 
-	<!-- Get Credit Accounts-->
+	// Get Credit Accounts
 	$http({
 		url: 'http://mfm.jit.su/api/accounts/2',
 		method: 'GET'
@@ -36,7 +36,7 @@ angular.module('SpaApp')
 
 	});
 
-	<!-- Get Investment Accounts-->
+	 // Get Investment Accounts
 
 	$http({
 		url: 'http://mfm.jit.su/api/accounts/3',
