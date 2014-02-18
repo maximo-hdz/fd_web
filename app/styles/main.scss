@@ -153,7 +153,7 @@ body{
     }
     .user{
         text-align: center;
-        font-size: 18px;
+        font-size: 16px;
         padding-top: 10px;
     }
 
@@ -368,6 +368,71 @@ body{
         }
     }
 }
+.conexion_btn,
+.conexion_btn:hover,
+.conexion_btn:active{
+    width: auto;
+    height: 120px;
+    display: block;
+    clear: both;
+    background: #FFFFFF;
+    @include border_radius(5px);
+    margin-bottom: 20px;
+    text-align: center;
+    color: #575757;
+    text-decoration: none;
+    span{
+        width: 50%;
+        margin: 0 auto;
+        display: block;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    span.text{
+        padding-top: 50px;
+    }
+    span.text2{
+        padding-top: 30px;
+    }
+    .input_tel{
+        width: 120px;
+        margin: 5px auto;
+        background: #444444;
+        border: none;
+        color: #FFFFFF;
+    }
+    i{
+        display: block;
+        position: absolute;
+        margin-top: -8px;
+    }
+    i.llama-PC{
+        background: url(../images/ico_pc.png) no-repeat;
+        background-size: 57px;
+        width: 57px;
+        height: 47px;
+    }
+    i.llama-oficina{
+        background: url(../images/ico_telofi.png) no-repeat;
+        background-size: 54px;
+        width: 54px;
+        height: 43px;
+    }
+    i.llama-movil{
+        background: url(../images/ico_movil.png) no-repeat;
+        background-size: 28px;
+        width: 28px;
+        height: 52px;
+        margin-top: -15px;
+    }
+    i.llama-tel{
+        background: url(../images/ico_tel.png) no-repeat;
+        background-size: 28px;
+        width: 28px;
+        height: 48px;
+        margin-top: 5px;
+    }
+}
 .footer {
     background: #000000;
     position: fixed;
@@ -387,7 +452,17 @@ body{
 }
 
 /************** RESPONSIVE **************/
-
+@media screen and (max-width: 1200px) {
+    .header{
+        .user{
+            padding-top: 5px;
+            b{
+                display: block;
+                clear: both;
+            }
+        }
+    }
+}
 @media screen and (max-width: 992px) {
     .login_back {
         .bienvenida{
@@ -400,8 +475,26 @@ body{
             }
         }
     }
+    .header{
+        .user{
+            padding-top: 5px;
+            b{
+                display: block;
+                clear: none;
+            }
+        }
+    }
     .content{
         padding: 110px 0 50px 0;
+    }
+}
+@media screen and (max-width: 650px) {
+    .conexion_btn,
+    .conexion_btn:hover,
+    .conexion_btn:active{
+        span{
+            width: 80%;
+        }
     }
 }
 @media screen and (max-width: 575px) {
@@ -423,6 +516,28 @@ body{
     .login_back {
         .login_footer {
             position: static;
+        }
+    }
+}
+@media screen and (max-width: 455px) {
+    .header{
+        .user{
+            font-size: 12px;
+            b{
+                display: block;
+                clear: both;
+            }
+        }
+    }
+    .conexion_btn,
+    .conexion_btn:hover,
+    .conexion_btn:active{
+        span{
+            width: 90%;
+        }
+        span.text,
+        span.text2{
+            font-size: 12px;
         }
     }
 }
@@ -450,10 +565,6 @@ body{
     .header{
         .user{
             font-size: 12px;
-            b{
-                display: block;
-                clear: both;
-            }
         }
     }
     .subheader{
@@ -468,5 +579,17 @@ body{
         h4{
             font-size: 14px;
         } 
+    }
+    .conexion_btn,
+    .conexion_btn:hover,
+    .conexion_btn:active{
+        span.text,
+        span.text2{
+            text-align: right;
+        }
+        .input_tel{
+            float: right;
+            margin-right: 10px;
+        }
     }
 }
