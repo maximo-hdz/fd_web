@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('SpaApp')
+angular.module('spaApp')
 .controller('LoginCtrl', function ($scope,$http,$location) {
 	/**
 	 * the login function connect the Rest-API: if the response status is OK, redirect to route "homePage",
@@ -20,7 +20,7 @@ angular.module('SpaApp')
 			//userInformationService.setUserSessionId(headers('X-AUTH-TOKEN'));
 			//get the user information from the response content
 			console.log(data);
-			$location.path( '/home' );
+			$location.path( '/accounts' );
 		}).
 	 	error(function(data, status) {
 			//put an error message in the scope

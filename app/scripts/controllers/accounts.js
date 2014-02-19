@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('SpaApp')
+angular.module('spaApp')
 .controller('AccountsCtrl', function ($scope,$http,$location) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
