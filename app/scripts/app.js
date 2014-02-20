@@ -20,7 +20,7 @@ angular.module('spaApp', [
     abstract: true,
     url: '/',
     templateUrl: 'views/dashboard.html',
-    controller: 'HomeCtrl'
+    controller: 'Dashboard'
   })
   .state('dashboard.accounts', {
     url: 'accounts',
@@ -31,5 +31,16 @@ angular.module('spaApp', [
     url: 'connection',
     templateUrl: 'views/connection.html',
     controller: 'ConnectionCtrl'
+  })
+  .state('dashboard.authorize', {
+    url: 'authorize'
+  })
+  .state('dashboard.transfer', {
+    url: 'transfer',
+  })
+  .state('dashboard.administration', {
+    url: 'administration',
   });
+  $locationProvider.html5Mode(true);
+
 });
