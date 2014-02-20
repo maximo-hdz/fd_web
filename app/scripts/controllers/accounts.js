@@ -1,5 +1,9 @@
 'use strict';
 
+
+/**
+ * The accounts controller. Gets accounts passing auth parameters
+ */
 angular.module('spaApp')
 .controller('AccountsCtrl', function ($scope,$http,$location) {
 	$scope.client = 'Ricardo Montemayor Morales';
@@ -11,8 +15,6 @@ angular.module('spaApp')
 	 }).
 	 success(function(data, status, headers) {
 	 	$scope.biometricAccounts = data;
-	 	console.log(JSON.stringify($scope.accounts));
-
 	 }).
 	 error(function(data, status) {
 			//put an error message in the scope
@@ -27,8 +29,6 @@ angular.module('spaApp')
 	}).
 	success(function(data, status, headers) {
 		$scope.creditAccounts = data;
-		console.log(JSON.stringify($scope.accounts));
-
 	}).
 	error(function(data, status) {
 			//put an error message in the scope
@@ -44,8 +44,6 @@ angular.module('spaApp')
 	 }).
 	 success(function(data, status, headers) {
 	 	$scope.investmentAccounts = data;
-	 	console.log(JSON.stringify($scope.accounts));
-
 	 }).
 	 error(function(data, status) {
 			//put an error message in the scope
@@ -57,7 +55,7 @@ angular.module('spaApp')
 	 }
 
 	 //behavior stack accounts group
-	 function show_hide_table( elemento, titulo ){
+	 $scope.show_hide_table=function(elemento, titulo ){
 	 	if( $(elemento).css('display') == 'block' ){
 	 		$(elemento).hide();
 	 		$(titulo).removeClass('abierto').addClass('cerrado');
@@ -65,5 +63,5 @@ angular.module('spaApp')
 	 		$(elemento).show();
 	 		$(titulo).removeClass('cerrado').addClass('abierto');
 	 	}
-	 }
+	 };
 });

@@ -27,11 +27,11 @@
         <div class="row-fluid">
             <div class="col-md-3">
                 <ul class="menu_lateral nav nav-list bs-docs-sidenav affix-top">
-                    <li class="active"><a href="javascript:void(0)" ng-click="balance()" ><i class="ico-saldos"></i>Saldos</a></li>
-                    <li><a href="javascript:void(0)" ng-click="connection()" ><i class="ico-conexion"></i>Conex&iacute;on MFM</a></li>
-                    <li><a href="javascript:void(0)" ng-click="authorize()" ><i class="ico-autorizar"></i>Autorizar</a></li>
-                    <li><a href="javascript:void(0)" ng-click="transfer()" ><i class="ico-transferencias"></i>Transferencias</a></li>
-                    <li><a href="javascript:void(0)" ng-click="administration()" ><i class="ico-administracion"></i>Administraci&oacute;n</a></li>
+                    <li ng-class="getClass('/accounts')"> <a ng-href="accounts"   ><i class="ico-saldos"></i>Saldos</a></li>
+                    <li ng-class="getClass('/connection')"> <a  ng-href="connection" ><i class="ico-conexion"></i>Conex&iacute;on MFM</a></li>
+                    <li ng-class="getClass('/authorize')"><a ng-href="authorize" ><i class="ico-autorizar"></i>Autorizar</a></li>
+                    <li ng-class="getClass('/transfer')"><a ng-href="transfer"><i class="ico-transferencias"></i>Transferencias</a></li>
+                    <li ng-class="getClass('/administration')"> <a ng-href="administration"><i class="ico-administracion"></i>Administraci&oacute;n</a></li>
                 </ul>
 
                 <div class="banners visible-md visible-lg">
