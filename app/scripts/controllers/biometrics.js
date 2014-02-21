@@ -16,12 +16,12 @@ angular.module('spaApp')
     $scope.gridOptions = { 	data: 'myData',
 						    multiSelect: false,
 						    selectedItems: $scope.mySelections,
-    						columnDefs: [{field:'_account_id', displayName:'Num de cuenta'}, 
-			        					{field:'account_type', displayName:'Tipo de cuenta'},
-			        					{field:'name', displayName:'Nombre'},
-			        					{field:'alias', displayName:'Alias'},
-			        					{field:'currency', displayName:'Moneda'},
-			        					{field:'last_digits', displayName:'Últimos dígitos'}],
+    						columnDefs: [{field:'_account_id', displayName:'Fecha'}, 
+			        					{field:'account_type', displayName:'Operación'},
+			        					{field:'name', displayName:'Descripcion'},
+			        					{field:'alias', displayName:'Cargo'},
+			        					{field:'currency', displayName:'Abono'},
+			        					{field:'last_digits', displayName:'Saldo'}],
 			        		afterSelectionChange: function(data) {
 								$location.path( $scope.mySelections[0]._account_id+'/detail' );
 							}	
