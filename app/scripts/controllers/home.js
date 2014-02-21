@@ -36,11 +36,20 @@ angular.module('spaApp')
 
 	}
 
-		/** Administration  **/
+	/** Administration  **/
 	$scope.logout=function(){
 		$location.path( '/login' );
 
 	}
 
+	/** Biometrics  **/
+	$scope.biometrics=function(account_id){
+		$location.path( account_id + '/biometrics');
+	}
+
+	/** Biometrics  **/
+	$scope.detail=function(account_id){
+		$location.path( account_id + '/detail');
+	}	
 
 });

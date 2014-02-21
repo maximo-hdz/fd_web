@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('AccountsCtrl', function ($scope,$http,$location) {
+.controller('AccountsCtrl', function ($scope,$http,$location,ctsBiometricas) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
 	 // Get Biometric Accounts
@@ -11,14 +11,13 @@ angular.module('spaApp')
 	 }).
 	 success(function(data, status, headers) {
 	 	$scope.biometricAccounts = data;
-	 	console.log(JSON.stringify($scope.accounts));
-
+	 	ctsBiometricas.accounts = data;
 	 }).
 	 error(function(data, status) {
 			//put an error message in the scope
 			$scope.errorMessage = 'operation failed';
 
-		});
+	});
 
 	// Get Credit Accounts
 	$http({
@@ -27,8 +26,7 @@ angular.module('spaApp')
 	}).
 	success(function(data, status, headers) {
 		$scope.creditAccounts = data;
-		console.log(JSON.stringify($scope.accounts));
-
+		//console.log(JSON.stringify($scope.creditAccounts));
 	}).
 	error(function(data, status) {
 			//put an error message in the scope
@@ -44,8 +42,7 @@ angular.module('spaApp')
 	 }).
 	 success(function(data, status, headers) {
 	 	$scope.investmentAccounts = data;
-	 	console.log(JSON.stringify($scope.accounts));
-
+	 	//console.log(JSON.stringify($scope.investmentAccounts));
 	 }).
 	 error(function(data, status) {
 			//put an error message in the scope
