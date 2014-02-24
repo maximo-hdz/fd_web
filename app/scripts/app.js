@@ -29,9 +29,9 @@ angular.module('spaApp', [
     controller: 'AccountsCtrl'
   })
 
-
+//view for investment bank(menu initial)
   .state('dashboard.inversiones',{
-    url: 'alex',
+    url: 'invertion',
     templateUrl: 'views/inversiones.html' ,
     controller: 'inversiones'
   })

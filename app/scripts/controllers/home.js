@@ -43,9 +43,9 @@ angular.module('spaApp')
 	}
 
 
-/*Controller for module invertions 'TODO: alex' */
+/*Controller for module invertions   */
 	$scope.inversiones=function(){
-		$location.path('/alex' );  
+		$location.path('/invertion' );  
 
 	}
 
