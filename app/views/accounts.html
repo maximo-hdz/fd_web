@@ -5,7 +5,8 @@
         <div class="table-responsive tabla_biometric">
             <table class="table">
                 <tbody>
-                    <tr ng-repeat="biometricAccount in biometricAccounts.accounts">
+
+                    <tr ng-repeat="biometricAccount in biometricAccounts.accounts" ng-click="biometrics(biometricAccount._account_id)">
                         <td><a href="javascript:void(0);">{{biometricAccount.alias}}</a></td>
                         <td><a href="javascript:void(0);">{{biometricAccount._account_id}}</a></td>
                         <td><a href="javascript:void(0);">{{biometricAccount.balance.current | currency}}</a></td>

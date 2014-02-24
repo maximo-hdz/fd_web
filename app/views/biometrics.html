@@ -1,0 +1,22 @@
+<style type="text/css">
+.gridStyle {
+	height: 400px;
+}
+</style>
+	
+<div class="col-md-9 row-fluid">
+    <div class="content_table">
+        <h3>
+        	Detalle Cuenta Biom&eacute;trica
+        	<select ng-init="seleccion=seleccionTMP"
+                    ng-click="biometrics(seleccion._account_id)"
+		        	ng-model="seleccion"
+		        	ng-options="c as c.name for c in biometricAccounts.accounts">
+        	</select>
+  		</h3>
+        <div>
+            <h4>Saldo $100,000.00 MXN</h4><br>
+        </div>
+		<div class="gridStyle table-responsive tabla_biometric" ng-grid="gridOptions"></div>
+	</div>
+</div>

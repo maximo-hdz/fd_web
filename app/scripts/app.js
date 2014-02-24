@@ -4,7 +4,8 @@ angular.module('spaApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'ngGrid'
   ])
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
@@ -40,7 +41,17 @@ angular.module('spaApp', [
   })
   .state('dashboard.administration', {
     url: 'administration',
+  })
+  .state('dashboard.biometrics', {
+    url: ':account_id/biometrics',
+    templateUrl: 'views/biometrics.html',
+    controller: 'BiometricsCtrl'
+  })
+  .state('dashboard.detail', {
+    url: ':account_id/detail',
+    templateUrl: 'views/detail.html'
   });
-  $locationProvider.html5Mode(true);
-
+})
+.factory('ctsBiometricas', function() {
+  return {}
 });

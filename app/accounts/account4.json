@@ -1,0 +1,36 @@
+{
+  "accounts": [
+    {
+      "_account_id": 60001,
+      "account_type": "SAVINGS",
+      "name": "Cuenta de ahorro",
+      "alias": "Cuenta Biometrica 1",
+      "currency": "MXN",
+      "last_digits": "348"
+    },
+    {
+      "_account_id": 60005,
+      "alias": "Cuenta Biometrica 2",
+      "name": "Círculo azul",
+      "account_type": "CREDIT_CARD",
+      "currency": "MXN",
+      "last_digits": "222"
+    },
+    {
+      "_account_id": 60004,
+      "alias": "Cuenta Biometrica 3",
+      "name": "Tarjeta de negocios",
+      "account_type": "CREDIT_CARD",
+      "currency": "MXN",
+      "last_digits": "111"
+    },
+    {
+      "_account_id": 60003,
+      "account_type": "DEBIT_CARD",
+      "name": "Cuenta Biometrica 4",
+      "alias": "Cuenta Biometrica 4",
+      "currency": "MXN",
+      "last_digits": "306"
+    }
+  ]
+}

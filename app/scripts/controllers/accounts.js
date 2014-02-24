@@ -5,7 +5,7 @@
  * The accounts controller. Gets accounts passing auth parameters
  */
 angular.module('spaApp')
-.controller('AccountsCtrl', function ($scope,$http,$location) {
+.controller('AccountsCtrl', function ($scope,$http,$location,ctsBiometricas) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
 	 // Get Biometric Accounts
@@ -15,12 +15,13 @@ angular.module('spaApp')
 	 }).
 	 success(function(data, status, headers) {
 	 	$scope.biometricAccounts = data;
+	 	ctsBiometricas.accounts = data;
 	 }).
 	 error(function(data, status) {
 			//put an error message in the scope
 			$scope.errorMessage = 'operation failed';
 
-		});
+	});
 
 	// Get Credit Accounts
 	$http({
