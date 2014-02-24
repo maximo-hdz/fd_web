@@ -29,8 +29,8 @@
             <table class="table">
                 <tbody>
                     <tr ng-repeat="creditaccount in creditAccounts.accounts">
-                        <td><a href="javascript:void(0);">{{creditaccount.alias}}</a></td>
-                        <td><a href="javascript:void(0);">{{creditaccount._account_id}}</a></td>
+                        <td >{{creditaccount.alias}}</a></td>
+                        <td><a href="javascript:void(0);">{{creditaccount._account_id}}</td>
                         <td><a href="javascript:void(0);">{{creditaccount.balance.current | currency}}</a></td>
                         <td><a href="javascript:void(0);">{{creditaccount.currency}}</a></td>
                     </tr>
@@ -52,9 +52,9 @@
             <table class="table">
                 <tbody>
                     <tr ng-repeat="investmentAccount in investmentAccounts.accounts">
-                        <td><a href="javascript:void(0);">{{investmentAccount.alias}}</a></td>
+                        <td><a ng-href="#alex">{{investmentAccount.alias}}</a></td>
                         <td><a href="javascript:void(0);">{{investmentAccount._account_id}}</a></td>
-                        <td><a href="javascript:void(0);">{{investmentAccount.balance.current | currency}}</a></td>
+                        <td><a href="javascript:void(0);">{{investmentAccount.balance.current | currency}}2563</a></td>
                         <td><a href="javascript:void(0);">{{investmentAccount.currency}}</a></td>
                     </tr>
                 </tbody>

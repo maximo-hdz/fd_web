@@ -4,7 +4,8 @@ angular.module('spaApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'ngGrid'
   ])
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
@@ -27,6 +28,16 @@ angular.module('spaApp', [
     templateUrl: 'views/accounts.html',
     controller: 'AccountsCtrl'
   })
+
+
+  .state('dashboard.inversiones',{
+    url: 'alex',
+    templateUrl: 'views/inversiones.html' ,
+    controller: 'inversiones'
+  })
+  
+
+
   .state('dashboard.connection', {
     url: 'connection',
     templateUrl: 'views/connection.html',
