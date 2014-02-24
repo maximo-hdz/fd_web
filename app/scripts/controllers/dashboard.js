@@ -27,12 +27,12 @@ angular.module('spaApp')
 
 	/** Biometrics  **/
 	$scope.biometrics=function(account_id){
-		$location.path( account_id + '/biometrics');
+		$location.path( account_id + '#/biometrics');
 	}
 
 	/** Biometrics Detail  **/
 	$scope.detail=function(account_id){
-		$location.path( account_id + '/detail');
+		$location.path( account_id + '#/detail');
 	}	
 
 });
