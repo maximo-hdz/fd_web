@@ -45,7 +45,7 @@ angular.module('spaApp')
 
 /*Controller for module invertions   */
 	$scope.inversiones=function(){
-		$location.path('/invertion' );  
+		$location.path('/investment' );  
 
 	}
 
