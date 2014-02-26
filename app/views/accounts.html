@@ -1,62 +1,63 @@
 
 <div class="col-md-9">
     <div class="content_table">
-        <h4 class="abierto" ng-click="show_hide_table('.tabla_biometric',this)">Cuentas Biom&eacute;tricas</h4>
+        <h4 class="abierto titulo_biometric" ng-click="show_hide_table('.tabla_biometric','.titulo_biometric')">Cuentas Biom&eacute;tricas</h4>
         <div class="table-responsive tabla_biometric">
             <table class="table">
                 <tbody>
-
                     <tr ng-repeat="biometricAccount in biometricAccounts.accounts" ng-click="biometrics(biometricAccount._account_id)">
-                        <td><a href="javascript:void(0);">{{biometricAccount.alias}}</a></td>
-                        <td><a href="javascript:void(0);">{{biometricAccount._account_id}}</a></td>
-                        <td><a href="javascript:void(0);">{{biometricAccount.balance.current | currency}}</a></td>
-                        <td><a href="javascript:void(0);">{{biometricAccount.currency}}</a></td>
+                        <td>{{biometricAccount.alias}}</td>
+                        <td>{{biometricAccount._account_id}}</td>
+                        <td>{{biometricAccount.balance.current | currency}}</td>
+                        <td>{{biometricAccount.currency}}</td>
                     </tr>
                 </tbody>
                 <thead>
                     <tr>
-                        <td>ALIAS</td>
-                        <td>No. CUENTA</td>
-                        <td>SALDO</td>
-                        <td>DIVISAS</td>
+                        <td>Allias</td>
+                        <td>No. Cuenta</td>
+                        <td>Saldo</td>
+                        <td>Divisas</td>
                     </tr>
                 </thead>
             </table>
         </div>
     </div>
     <div class="content_table">
-        <h4 class="abierto" ng-click="show_hide_table('.tabla_credito',this)">L&iacute;neas de Cr&eacute;dito</h4>
+        <h4 class="abierto titulo_lineasCred" ng-click="show_hide_table('.tabla_credito','.titulo_lineasCred')">L&iacute;neas de Cr&eacute;dito</h4>
         <div class="table-responsive tabla_credito">
             <table class="table">
                 <tbody>
                     <tr ng-repeat="creditaccount in creditAccounts.accounts">
-                        <td><a href="javascript:void(0);">{{creditaccount.alias}}</a></td>
-                        <td><a href="javascript:void(0);">{{creditaccount._account_id}}</a></td>
-                        <td><a href="javascript:void(0);">{{creditaccount.balance.current | currency}}</a></td>
-                        <td><a href="javascript:void(0);">{{creditaccount.currency}}</a></td>
+                        <td>{{creditaccount.alias}}</td>
+                        <td>{{creditaccount._account_id}}</td>
+                        <td>{{creditaccount.balance.current | currency}}</td>
+                        <td>{{creditaccount.currency}}</td>
+                        <td></td>
                     </tr>
                 </tbody>
                 <thead>
                     <tr>
-                        <td>ALIAS</td>
-                        <td>No. CUENTA</td>
-                        <td>SALDO</td>
-                        <td>DIVISAS</td>
+                        <td>No. Cuenta</td>
+                        <td>Monto Autorizado</td>
+                        <td>Divisa</td>
+                        <td>Monto Dispuesto</td>
+                        <td>Monto Disponible</td>
                     </tr>
                 </thead>
             </table>
         </div>
     </div>
     <div class="content_table">
-        <h4 class="abierto" ng-click="show_hide_table('.tabla_inversiones',this)">Inversiones</h4>
+        <h4 class="abierto titulo_inversiones" ng-click="show_hide_table('.tabla_inversiones','.titulo_inversiones')">Inversiones</h4>
         <div class="table-responsive tabla_inversiones">
             <table class="table">
                 <tbody>
                     <tr ng-repeat="investmentAccount in investmentAccounts.accounts">
-                        <td><a href="javascript:void(0);">{{investmentAccount.alias}}</a></td>
-                        <td><a href="javascript:void(0);">{{investmentAccount._account_id}}</a></td>
-                        <td><a href="javascript:void(0);">{{investmentAccount.balance.current | currency}}</a></td>
-                        <td><a href="javascript:void(0);">{{investmentAccount.currency}}</a></td>
+                        <td>{{investmentAccount.alias}}</td>
+                        <td>{{investmentAccount._account_id}}</td>
+                        <td>{{investmentAccount.balance.current | currency}}</td>
+                        <td>{{investmentAccount.currency}}</td>
                     </tr>
                 </tbody>
                 <thead>
@@ -70,10 +71,11 @@
             </table>
         </div>
     </div>
-    <p class="titulo">Notificaicones</p>
+    
     <div class="row-fluid">
         <div class="col-md-4 notificaciones">
-            <div class="head"><p>Pr&oacute;ximos vencimientos</p></div>
+            <p class="titulo">Notificaciones</p>
+            <div class="head"><p>Pr&oacute;ximos Vencimientos</p></div>
             <ul>
                 <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
                 <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
@@ -81,7 +83,8 @@
             </ul>
         </div>
         <div class="col-md-4 notificaciones">
-            <div class="head"><p>Autorizaciones pendientes</p></div>
+            <p class="titulo"> </p>
+            <div class="head"><p>Autorizaciones Pendientes</p></div>
             <ul>
                 <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
                 <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
@@ -89,7 +92,8 @@
             </ul>
         </div>
         <div class="col-md-4 notificaciones">
-            <div class="head"><p>Movimientos pendientes</p></div>
+            <p class="titulo"> </p>
+            <div class="head"><p>Movimientos Pendientes</p></div>
             <ul>
                 <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>
                 <li><a href="javascript:void(0);">Telmex 18/01/2013 $248.00</a></li>

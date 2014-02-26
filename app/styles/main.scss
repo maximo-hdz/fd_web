@@ -45,7 +45,31 @@ body{
     #mainDiv{
         background: none;
     }
-    
+}
+
+
+/************** COMPONENTES ANGULAR **************/
+.gridStyle {
+    overflow: hidden;
+    margin-bottom: 10px;
+    .ngVerticalBar{
+        display: none;
+    }
+    .ngHeaderScroller{
+        background: #3d3d3d;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .ngRow{
+        font-size: 12px;
+    }
+    .ngRow.even{
+        background: #d1d3d4;
+    }
+    .ngRow.odd{
+        background: #FFFFFF;
+    }
 }
 /************** LOGIN **************/
 .login_back {
@@ -123,10 +147,11 @@ body{
         color: #a3a3a3;
         font-weight: bold;
         padding: 5px;
+        font-size: 11px;
 
         a, a:hover {
             color: #a3a3a3;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: normal;
         }
     }
@@ -159,15 +184,15 @@ body{
 
     button.btn-logout{
         background: #FFFFFF;
-        padding: 5px 10px;
+        padding: 5px 15px;
         font-size: 12px;
-        margin: 8px 5px 0 5px;
+        margin: 8px 15px 0 5px;
         i{
             display: block;
             float: left;
             position: relative;
             top: -2px;
-            margin-right: 5px;
+            margin-right: 10px;
             background: url(../images/ico_salir.png) no-repeat;
             width: 15px;
             height: 17px;
@@ -267,20 +292,52 @@ body{
         }
     }
 }
-.banners{
-    margin: 60px 0 0 0 ;
+.btn_ayuda_linea,
+.btn_ayuda_linea:hover,
+.btn_ayuda_linea:active{
+    display: block;
+    width: auto;
+    background: #FFFFFF;
+    padding: 5px 10px 10px 10px;
     text-align: center;
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 20px;
+    @include border_radius( 5px );
+    i.ayuda{
+        display: inline-block;
+        position: relative;
+        top: 5px;
+        background: url(../images/ico_ayuda.png) no-repeat;
+        background-size: 18px;
+        width: 18px;
+        height: 18px;
+        margin: 0 10px 0 0;
+    }
+    i.arrow{
+        display: inline-block;
+        position: relative;
+        background: url(../images/arrow_top.png) no-repeat;
+        background-size: 8px;
+        width: 8px;
+        height: 7px;
+        margin: 0 0 0 10px;
+    }
+}
+
+.banners{
+    margin: 60px 0 0 0;
+    text-align: center;
+    overflow: hidden;
     img{
-        margin-bottom: 15px;
+        padding: 0;
+        margin: 0 0 15px 0;
     }
 }
 .content{
     padding: 110px 0 30px 0;
 }
-.titulo{
-    font-size: 18px;
-    color: #a3a3a3;
-}
+
 .content_table{
     background: #ffffff;
     padding: 8px 0;
@@ -317,6 +374,7 @@ body{
             }
             tbody{
                 tr{
+                    cursor: pointer;
                     td{
                         border: none;
                         color: #2e2e2e;
@@ -339,8 +397,18 @@ body{
     }
 }
 .notificaciones{
+    @include border_radius(5px);
     padding: 0 5px;
     margin-bottom: 10px;
+    .titulo{
+        background: #252525;
+        display: block;
+        height: 35px;
+        font-size: 18px;
+        color: #a3a3a3;
+        margin: 0;
+        padding: 5px 8px;
+    }
     .head{
         background: #3d3d3d;
         color: #a3a3a3;
@@ -350,13 +418,13 @@ body{
         }
     }
     ul{
+        background: #252525;
         list-style: none;
-        background: #000000;
         padding: 0;
         li{
             text-align: left;
             border-bottom: 1px solid #5e5e5e;
-            padding: 3px 10px;
+            padding: 5px 10px;
             a{
                 font-size: 12px;
                 color: #6da1d4;
@@ -386,7 +454,7 @@ body{
         margin: 0 auto;
         display: block;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 20px;
     }
     span.text{
         padding-top: 50px;
@@ -395,7 +463,7 @@ body{
         padding-top: 30px;
     }
     .input_tel{
-        width: 120px;
+        width: 190px;
         margin: 5px auto;
         background: #444444;
         border: none;
@@ -408,29 +476,29 @@ body{
     }
     i.llama-PC{
         background: url(../images/ico_pc.png) no-repeat;
-        background-size: 57px;
-        width: 57px;
-        height: 47px;
+        background-size: 50px;
+        width: 50px;
+        height: 41px;
     }
     i.llama-oficina{
         background: url(../images/ico_telofi.png) no-repeat;
-        background-size: 54px;
-        width: 54px;
-        height: 43px;
+        background-size: 50px;
+        width: 50px;
+        height: 40px;
     }
     i.llama-movil{
         background: url(../images/ico_movil.png) no-repeat;
-        background-size: 28px;
-        width: 28px;
-        height: 52px;
-        margin-top: -15px;
+        background-size: 20px;
+        width: 20px;
+        height: 37px;
+        margin-top: -5px;
     }
     i.llama-tel{
         background: url(../images/ico_tel.png) no-repeat;
-        background-size: 28px;
-        width: 28px;
-        height: 48px;
-        margin-top: 5px;
+        background-size: 20px;
+        width: 20px;
+        height: 34px;
+        margin-top: 15px;
     }
 }
 .footer {
@@ -440,16 +508,21 @@ body{
     left: 0;
     right: 0;
     color: #a3a3a3;
-    font-size: 12px;
+    font-size: 11px;
     padding: 5px;
 
     a, a:hover {
         color: #a3a3a3;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: normal;
         margin-left: 20px;
     }
+    span.text-right{
+        display: block;
+    }
 }
+
+
 
 /************** RESPONSIVE **************/
 @media screen and (max-width: 1200px) {
@@ -486,6 +559,11 @@ body{
     }
     .content{
         padding: 110px 0 50px 0;
+    }
+    .footer{
+        span.text-right{
+            text-align: left;
+        }
     }
 }
 @media screen and (max-width: 650px) {
@@ -566,6 +644,11 @@ body{
         .user{
             font-size: 12px;
         }
+        .logo{
+            background-size: 100px;
+            width: 100px;
+            height: 43px;
+        }
     }
     .subheader{
         span{
@@ -588,6 +671,7 @@ body{
             text-align: right;
         }
         .input_tel{
+            width: 150px;
             float: right;
             margin-right: 10px;
         }
