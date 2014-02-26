@@ -28,6 +28,13 @@ angular.module('spaApp', [
     templateUrl: 'views/accounts.html',
     controller: 'AccountsCtrl'
   })
+
+//view for investment bank(menu initial)
+  .state('dashboard.investment',{
+    url: ':account_id/investment',
+    templateUrl: 'views/investment.html' ,
+    controller: 'InvestmentCtrl'
+  })
   .state('dashboard.connection', {
     url: 'connection',
     templateUrl: 'views/connection.html',

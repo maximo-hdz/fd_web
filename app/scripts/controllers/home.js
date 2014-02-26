@@ -42,4 +42,15 @@ angular.module('spaApp')
 
 	}
 
+<<<<<<< HEAD
+=======
+
+/*Controller for module invertions   */
+	$scope.inversiones=function(){
+		$location.path('#investment' );  
+
+	}
+
+
+>>>>>>> 4836a52019037c7ec651ab3c06b9e6264ca08a33
 });

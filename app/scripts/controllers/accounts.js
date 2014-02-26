@@ -65,4 +65,12 @@ angular.module('spaApp')
 	 		$(titulo).removeClass('cerrado').addClass('abierto');
 	 	}
 	 };
+	 
+	 /*Controller for module invertions   */
+	$scope.inversiones=function(){
+		$location.path('#investment' );  
+
+	}
+
+
 });

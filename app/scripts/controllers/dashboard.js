@@ -35,4 +35,8 @@ angular.module('spaApp')
 		$location.path( account_id + '#/detail');
 	}	
 
+	/*Controller for module invertions   */
+	$scope.investment=function(account_id){
+		$location.path(account_id + '#/investment' );  
+	}
 });
