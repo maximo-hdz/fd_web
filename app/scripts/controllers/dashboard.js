@@ -39,4 +39,8 @@ angular.module('spaApp')
 	$scope.investment=function(account_id){
 		$location.path(account_id + '#/investment' );  
 	}
+
+	$scope.detailCredit=function(account_id){
+		$location.path(account_id+ '#detailCredit');
+	}
 });
