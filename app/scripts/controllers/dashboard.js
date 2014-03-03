@@ -39,4 +39,34 @@ angular.module('spaApp')
 	$scope.investment=function(account_id){
 		$location.path(account_id + '#/investment' );  
 	}
+
+	/* Credit Account */
+	$scope.credit=function(account_id){
+		$location.path( account_id + '/credit/transactions');
+	}
+
+	/* Credit Transaction */
+	$scope.creditTransaction=function(account_id){
+		$location.path( account_id + '/credit/transactions');
+		$( "#transaction" ).addClass( "active" );
+ 		$( "#valueDate" ).removeClass( "active" );
+		$( "#dueDate" ).removeClass( "active" );		
+	}	
+
+	/* Credit Due Date */
+	$scope.dueDate=function(account_id){
+		$location.path( account_id + '/credit/dueDate');
+		$( "#dueDate" ).addClass( "active" );
+		$( "#valueDate" ).removeClass( "active" );
+		$( "#transaction" ).removeClass( "active" );
+	}	
+
+	/* Credit value Date */
+	$scope.valueDate=function(account_id){
+		$location.path( account_id + '/credit/valueDate');
+		$( "#valueDate" ).addClass( "active" );
+		$( "#dueDate" ).removeClass( "active" );
+		$( "#transaction" ).removeClass( "active" );
+	}	
+
 });
