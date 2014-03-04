@@ -41,6 +41,6 @@ angular.module('spaApp')
 	}
 
 	$scope.detailCredit=function(account_id){
-		$location.path(account_id+ '#detailCredit');
+		$location.path(account_id+ '#/detailCredit');
 	}
 });

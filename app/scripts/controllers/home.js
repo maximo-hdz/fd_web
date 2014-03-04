@@ -50,10 +50,4 @@ angular.module('spaApp')
 
 	}
 
-	
-
-	$scope.detailCredit=function(){
-		$location.path('#detailCredit');
-	}
-
 });
