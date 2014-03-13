@@ -57,6 +57,26 @@ angular.module('spaApp', [
   .state('dashboard.detail', {
     url: ':account_id/detail',
     templateUrl: 'views/detail.html'
+  })
+  .state('dashboard.credit', {
+    url: ':account_id/credit',
+    templateUrl: 'views/credit.html',
+    controller: 'CreditCtrl'
+  })
+  .state('dashboard.credit.transactions', {
+    url: '/transactions',
+    templateUrl: 'views/creditTransactions.html',
+    controller: 'transactionsCtrl'
+  })
+  .state('dashboard.credit.dueDate', {
+    url: '/dueDate',
+    templateUrl: 'views/creditDueDate.html',
+    controller: 'dueDateCtrl'
+  })
+  .state('dashboard.credit.valueDate', {
+    url: '/valueDate',
+    templateUrl: 'views/creditValueDate.html',
+    controller: 'valueDateCtrl'
   });
 })
 .factory('ctsBiometricas', function() {

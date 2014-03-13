@@ -1,0 +1,36 @@
+<div class="col-md-9 row-fluid">
+	<div class="content_table"><h1>Detalle "Línea de Crédito"</h1></div>
+ 	<div class="content_table">
+		<table style="width:100%">
+				<tr>
+					<td><strong>Divisa</strong></td>
+					<td><input type="text" readonly="true" value="{{credit.currency}}"/></td>
+					<td><strong>Disposiciones Abiertas</strong></td>
+					<td><input type="text" readonly="true" value="{{credit.open_credits}}"/></td>
+				</tr>
+				<tr>
+					<td><strong>Monto Autorizado</strong></td>
+					<td><input type="text" readonly="true" value="{{credit.approved_amount}}"/></td>
+					<td><strong>Fecha de expiración</strong></td>
+					<td><input type="text" readonly="true" value="{{credit.due_date}}"/></td>
+				</tr>
+				<tr>
+					<td><strong>Monto Dispuesto</strong></td>
+					<td><input type="text" readonly="true" value="{{credit.dispossed_amount}}"/></td>
+					<td><strong>Disposiciones Atrasadas</strong></td>
+					<td><input type="text" readonly="true" value="{{credit.overdue_credits}}"/></td>
+				</tr>
+				<tr>
+					<td><strong>Monto Disponible</strong></td>
+					<td><input type="text" readonly="true" value="{{credit.undispossed_amount}}"/></td>
+					<td colspan="2"></td>
+				</tr>
+		</table>
+	</div>
+		<ul class="nav nav-tabs">
+			<li id="transaction" class="active"><a href="#" ng-click="creditTransaction(account_id)" ng-href="#/{{account_id}}/credit/transactions">Movimientos</a></li>
+			<li id="dueDate"><a href="#" ng-click="dueDate(account_id)" ng-href="#/{{account_id}}/credit/dueDate">Por Fecha de Vencimiento</a></li>
+			<li id="valueDate"><a href="#" ng-click="valueDate(account_id)" ng-href="#/{{account_id}}/credit/valueDate">Por Fecha Valor</a></li>
+		</ul>
+		<div ui-view></div>
+</div>

@@ -28,7 +28,7 @@
         <div class="table-responsive tabla_credito">
             <table class="table">
                 <tbody>
-                    <tr ng-repeat="creditaccount in creditAccounts.accounts">
+                    <tr ng-repeat="creditaccount in creditAccounts.accounts" ng-click="creditTransaction(creditaccount._account_id)">
                         <td>{{creditaccount.alias}}</td>
                         <td>{{creditaccount._account_id}}</td>
                         <td>{{creditaccount.balance.current | currency}}</td>
