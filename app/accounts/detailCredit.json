@@ -1,0 +1,25 @@
+{
+  "detail": [
+{
+      "name": "Alex",
+      "monto": "$ 10000USD",
+      "acount": "BBA**** 789"      
+    },
+    {
+      "name": "Rosario",
+      "monto": "$ 352000USD",
+      "acount": "HSBC**** 788"      
+    },
+     {
+      "name": "Cristal",
+      "monto": "$ 782000USD",
+      "acount": "BANORTE**** 788"      
+    },
+     {
+      "name": "Adan",
+      "monto": "$ 45000USD",
+      "acount": "IXE**** 788"      
+    }
+     
+  ]
+}

@@ -35,6 +35,19 @@ angular.module('spaApp', [
     templateUrl: 'views/investment.html' ,
     controller: 'InvestmentCtrl'
   })
+  //view for detail credit liquidated  
+  .state('dashboard.detailCredit',{
+    url: ':acount_id/detailCredit',
+    templateUrl: 'views/detailLineCredit.html',
+    controller: 'detailCreditCtrl'
+  })
+  //view for detail credit pacted
+  .state('dashboard.detailCreditPacted',{
+    url: ':account_id/detailCreditPacted',
+    templateUrl: 'views/detailOperationPactada.html',
+    controller: 'detailCreditPactedCtrl'
+  })
+
   .state('dashboard.connection', {
     url: 'connection',
     templateUrl: 'views/connection.html',

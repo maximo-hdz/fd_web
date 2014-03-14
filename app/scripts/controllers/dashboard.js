@@ -37,9 +37,10 @@ angular.module('spaApp')
 
 	/*Controller for module invertions   */
 	$scope.investment=function(account_id){
-		$location.path(account_id + '#/investment' );  
+		$location.path(account_id + '#/investment');  
 	}
 
+<<<<<<< HEAD
 	/* Credit Account */
 	$scope.credit=function(account_id){
 		$location.path( account_id + '/credit/transactions');
@@ -69,4 +70,13 @@ angular.module('spaApp')
 		$( "#transaction" ).removeClass( "active" );
 	}	
 
+	/* Mapping for view detail credit operation liquidated */
+	$scope.detailCredit=function(account_id){
+		$location.path(account_id+ '#/detailCredit');
+	}
+
+	/* Mapping for view detail operation pacted */
+	$scope.detailCreditPacted=function(account_id){
+		$location.path(account_id+ '#/detailCreditPacted');
+	}
 });

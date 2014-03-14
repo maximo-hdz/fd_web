@@ -1,0 +1,54 @@
+<div class="col-md-9">
+
+
+
+  <div class="col-md-6">
+            Operacion#{{operacion}}
+  </div>
+  
+  <div class="col-md-6">
+        Liquidada
+  </div>
+
+
+
+
+  <div class="row"> 
+      <div class="col-md-6">
+        <div class="col-md-6"> No operacion  </div> <div class="col-md-6"> <input disabled="disabled" ng-model="noOperacion"  type="text"/></div>
+        <div class="col-md-6"> Monto a enviar </div> <div class="col-md-6"><input type="text"  ng-model="montoEnviar"   disabled="disabled"  size="20"/></div>
+        <div class="col-md-6">  Monto a cobrar   </div> <div class="col-md-6"><input type="text"  ng-model="montoEnviar"  disabled="disabled"   size="20"/></div>
+         <div class="col-md-6"> Fecha de operación  </div> <div class="col-md-6"><input type="text"  ng-model="date"   disabled="disabled"   size="20"/></div> 
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-6">Fecha valor  </div> <div class="col-md-6"><input type="text" ng-model="date"   disabled="disabled"  size="20"/></div>
+        <div class="col-md-6">Fecha Vencimiento  </div> <div class="col-md-6"><input type="text" ng-model="date"   disabled="disabled"    size="20"/></div>
+        <div class="col-md-6">Plazo  </div> <div class="col-md-6"> <input type="text" ng-model="noOperacion"  disabled="disabled"   size="20"/></div>
+        <div class="col-md-6">T.C. Pactado  </div> <div class="col-md-6"> <input type="text" ng-model="tc"    disabled="disabled"    size="20"/></div>
+        <div class="col-md-6">Producto      </div> <div class="col-md-6"> <input type="text"    ng-model="producto" disabled="disabled" size="20"/></div>
+      </div>
+      
+  </div>
+
+  <p>
+    <div>
+        <div class="gridStyle" ng-grid="gridOptions"></div>
+    </div>
+  </p>
+
+ <div class="row"> 
+    <div class="col-md-6">
+       <button ng-click="changeFoo()"  class="titulo">Descargar</button>
+       <button ng-click="changeFoo()" class="conexion_btn:active">Imprimir</button>
+    </div>
+    <div class="col-md-6">Enviar a: 
+      <select ng-model="mails" ng-options="m.name for m in mail">
+        <option value="">-- choose a mail --</option>
+      </select>
+    <button ng-click="changeFoo()" class="conexion_btn:active">Enviar</button>
+   </div>
+   
+ </div>
+
+</div><!--Main div-->
+

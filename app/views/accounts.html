@@ -25,10 +25,13 @@
     </div>
     <div class="content_table">
         <h4 class="abierto titulo_lineasCred" ng-click="show_hide_table('.tabla_credito','.titulo_lineasCred')">L&iacute;neas de Cr&eacute;dito</h4>
+
+
         <div class="table-responsive tabla_credito">
             <table class="table">
                 <tbody>
-                    <tr ng-repeat="creditaccount in creditAccounts.accounts" ng-click="creditTransaction(creditaccount._account_id)">
+
+                    <tr ng-repeat="creditaccount in creditAccounts.accounts" ng-click="detailCreditPacted(detailCreditAccount._account_id)">
                         <td>{{creditaccount.alias}}</td>
                         <td>{{creditaccount._account_id}}</td>
                         <td>{{creditaccount.balance.current | currency}}</td>
