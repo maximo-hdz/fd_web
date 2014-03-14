@@ -10,7 +10,7 @@ angular.module('spaApp')
 	 $scope.login=function(){
 	 	//$http.defaults.useXDomain = true;
 	 	$http({
-	 		url: 'http://mfm.jit.su/api/login',
+			url: 'http://projects.anzen.com.mx:3000/api/login',
 	 		method: 'POST',
 	 		data: JSON.stringify({'username':$scope.username, 'password':$scope.password,'access_media': 'SPA'}),
 	 		headers: {'Content-Type': 'application/json','X-BANK-TOKEN': '1'}

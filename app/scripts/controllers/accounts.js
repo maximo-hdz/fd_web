@@ -10,7 +10,7 @@ angular.module('spaApp')
 
 	 // Get Biometric Accounts
 	 $http({
-	 	url: 'http://mfm.jit.su/api/accounts/1',
+		url: 'http://projects.anzen.com.mx:3000/api/accounts/1',
 	 	method: 'GET'
 	 }).
 	 success(function(data, status, headers) {
@@ -25,7 +25,7 @@ angular.module('spaApp')
 
 	// Get Credit Accounts
 	$http({
-		url: 'http://mfm.jit.su/api/accounts/2',
+		url: 'http://projects.anzen.com.mx:3000/api/accounts/2',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {
@@ -40,7 +40,7 @@ angular.module('spaApp')
 	 // Get Investment Accounts
 
 	 $http({
-	 	url: 'http://mfm.jit.su/api/accounts/3',
+		url: 'http://projects.anzen.com.mx:3000/api/accounts/3',
 	 	method: 'GET'
 	 }).
 	 success(function(data, status, headers) {
