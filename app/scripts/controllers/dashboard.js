@@ -40,7 +40,6 @@ angular.module('spaApp')
 		$location.path(account_id + '#/investment');  
 	}
 
-<<<<<<< HEAD
 	/* Credit Account */
 	$scope.credit=function(account_id){
 		$location.path( account_id + '/credit/transactions');

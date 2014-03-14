@@ -18,7 +18,7 @@ angular.module('spaApp')
 
 	$http({
 		//Enviar con $stateParams.account_id
-		url: 'http://mfm.jit.su/api/accounts/1',
+		url: 'http://projects.anzen.com.mx:3000/api/accounts/1',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {
