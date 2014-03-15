@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('dueDateCtrl', function ($scope,$http,$log,$location,$stateParams) {
+.controller('dueDateCtrl', function ($scope,$http,$location,$rootScope,$log,$stateParams) {
 	
 	$scope.mySelections = [];
 	$scope.gridOptions = { 
@@ -17,15 +17,16 @@ angular.module('spaApp')
 	};	
 
 	$http({
-		//Enviar con $stateParams.account_id
-		url: 'http://mfm.jit.su/api/accounts/1',
+		url: $rootScope.restAPIBaseUrl + 'accounts/1',
 		method: 'GET'
 	}).
-	success(function(data, status, headers) {
+	success(function(data, status) {
 		$scope.myData = data.accounts;
 	}).
 	error(function(data, status) {
 		$log.error('Error: '+data, status);
-		$location.path( '/login' );
+		$scope.errorMessage = 'operation failed';
 	});
+
+
 });

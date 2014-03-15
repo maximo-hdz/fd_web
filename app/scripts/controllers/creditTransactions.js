@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('transactionsCtrl', function ($scope,$http,$log,$location,$stateParams) {
+.controller('transactionsCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
 
 	$scope.mySelections = [];
 	$scope.gridOptions = { 
@@ -22,7 +22,7 @@ angular.module('spaApp')
 
 	$http({
 		//Enviar con $stateParams.account_id
-		url: 'http://mfm.jit.su/api/accounts/1',
+		url: $rootScope.restAPIBaseUrl + 'accounts/1',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {

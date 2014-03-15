@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('BiometricsCtrl', function ($scope,$http,$location,$sce,$stateParams,ctsBiometricas) {
+.controller('BiometricsCtrl', function($scope,$http,$location,ctsBiometricas,$rootScope,$log,$stateParams) {
 
 	$scope.biometricAccounts = ctsBiometricas.accounts;
 	$scope.seleccionTMP = {};
@@ -30,7 +30,7 @@ angular.module('spaApp')
 	};
 
 	$http({
-		url: 'http://projects.anzen.com.mx:3000/api/accounts/1',
+		url: $rootScope.restAPIBaseUrl + 'accounts/1',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {

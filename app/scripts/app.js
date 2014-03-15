@@ -1,13 +1,14 @@
 'use strict';
 
-angular.module('spaApp', [
+var app = angular.module('spaApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.router',
   'ngGrid'
-  ])
-.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+]);
+
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
   $urlRouterProvider.otherwise("/login");
 
@@ -91,7 +92,12 @@ angular.module('spaApp', [
     templateUrl: 'views/creditValueDate.html',
     controller: 'valueDateCtrl'
   });
-})
-.factory('ctsBiometricas', function() {
+});
+
+app.factory('ctsBiometricas', function() {
   return {}
+});
+
+app.run(function($rootScope){
+  $rootScope.restAPIBaseUrl = 'http://projects.anzen.com.mx:3000/api/';
 });
