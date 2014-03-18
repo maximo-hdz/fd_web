@@ -1,29 +1,19 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('InvestmentDetailCtrl',
+.controller('AuthorizeCtrl',
 	function($scope,$http,$location,$rootScope,$log) {
-
-		$scope.InvestmentDetail = {
-			"name":"Juan Pérez",
-			"initialAmount":"$5,000,000.00",
-			"currency":"MXN",
-			"bank":"BANAMEX",
-			"targetAccount":"1231357",
-			"initialDate":"DD/MM/YYYY",
-			"finalDate":"DD/MM/YYYY"
-		};
 
 		$scope.gridOptions = {
 			data: 'myData',
 			multiSelect: false,
 			selectedItems: $scope.mySelections,
-			columnDefs: [
-				{field:'_account_id', displayName:'Fecha'}, 
-				{field:'account_type', displayName:'Interés mensual'},
-				{field:'name', displayName:'Retención 0.60%'},
-				{field:'alias', displayName:'Interés neto'},
-				{field:'currency', displayName:'Retiro de intereses'}],
+			columnDefs: [ 
+				{field:'_account_id', displayName:'No. de Operación'}, 
+				{field:'account_type', displayName:'Fecha de Operación'},
+				{field:'name', displayName:'Importe'},
+				{field:'alias', displayName:'Divisa'},
+				{field:'currency', displayName:'Estatus'}],
 			afterSelectionChange: function(data) {
 					$location.path( $scope.mySelections[0]._account_id+'/detail' );
 				}	

@@ -29,7 +29,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/accounts.html',
     controller: 'AccountsCtrl'
   })
-
   //view for investment bank(menu initial)
   .state('dashboard.investment',{
     url: ':account_id/investment',
@@ -62,7 +61,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     controller: 'ConnectionCtrl'
   })
   .state('dashboard.authorize', {
-    url: 'authorize'
+    url: 'authorize',
+    templateUrl: 'views/MFMPortal_15_2.html',
+    controller: 'AuthorizeCtrl'
   })
   .state('dashboard.transfer', {
     url: 'transfer',
