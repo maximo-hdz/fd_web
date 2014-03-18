@@ -29,6 +29,10 @@ angular.module('spaApp')
 			}	
 	};
 
+	$scope.amount=100000;
+	$scope.from="06/03/2014";
+	$scope.to="20/03/2014";
+
 	$http({
 		url: 'http://projects.anzen.com.mx:3000/api/accounts/1',
 		method: 'GET'

@@ -1,14 +1,25 @@
 <div class="col-md-9 row-fluid">
     <div class="content_table">
-        <h4>
-        	Detalle Cuenta Biom&eacute;trica
+        <p><span class="text">
+        Detalle
         	<select ng-init="seleccion=seleccionTMP"
                 ng-click="biometrics(seleccion._account_id)"
 	        	ng-model="seleccion"
 	        	ng-options="c as c.name for c in biometricAccounts.accounts">
         	</select>
-  		</h4>
-        <h4>Saldo $100,000.00 MXN</h4>
+</span>
+        </p>
+       <p> <span class="text">Saldo<span> {{amount | currency:"MXN $ "}}</span></span></p>
+
+      Movimientos del  <input type="text"  value={{from}}  disabled="disabled" size="20"/>   al  <input type="text"  value={{to}} disabled="disabled" size="20"/>
+
+        <button  class="conexion_btn:active" value="Historial">Historial </button>
+
+
+         <div class="col-md-2 pull-right">
+            <button type="button" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-download-alt">Descargar</span></button>
+        </div>
+
 		<div class="table-responsive">
             <div class="gridStyle" ng-grid="gridOptions"></div>
         </div>
