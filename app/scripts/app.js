@@ -30,11 +30,18 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     controller: 'AccountsCtrl'
   })
 
-//view for investment bank(menu initial)
+  //view for investment bank(menu initial)
   .state('dashboard.investment',{
     url: ':account_id/investment',
-    templateUrl: 'views/investment.html' ,
+    templateUrl: 'views/investment.html',
     controller: 'InvestmentCtrl'
+  })
+
+  //view for investment bank(menu initial)
+  .state('dashboard.detailInvestment',{
+    url: ':account_id/detailInvestment',
+    templateUrl: 'views/MFMPortal_11_1.html',
+    controller: 'InvestmentDetailCtrl'
   })
   //view for detail credit liquidated  
   .state('dashboard.detailCredit',{

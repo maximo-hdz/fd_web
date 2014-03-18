@@ -1,0 +1,48 @@
+<div class="content_table">
+	<h1>Detalle de Movimiento Inversion</h1>
+	<table width="100%">
+		<tr>
+			<td>Nombre</td>
+			<td>Capital Inicial</td>
+			<td>Divisa</td>
+		</tr>
+		<tr>
+			<td>{{InvestmentDetail.name}}</td>
+			<td>{{InvestmentDetail.initialAmount}}</td>
+			<td>{{InvestmentDetail.currency}}</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Banco Destino</td>
+			<td>Cuenta Destino</td>
+		</tr>
+		<tr>
+			<td>Pago de Interés a:</td>
+			<td>{{InvestmentDetail.bank}}</td>
+			<td>{{InvestmentDetail.targetAccount}}</td>
+		</tr>
+		<tr>
+			<td>{{InvestmentDetail.initialDate}} - {{InvestmentDetail.finalDate}}</td>
+			<td>Tasa 12.6%</td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+
+<div class="content_table">
+	<h2>Rendimiento del Pagaré Privado al 30 de Septiembre del 2013</h2>
+	<div class="table-responsive">
+        <div class="gridStyle" ng-grid="gridOptions"></div>
+    </div>
+	<button type="button" class="btn btn-default btn-sm">
+		<span class="glyphicon glyphicon-download-alt"> Descargar</span>
+	</button>
+	<button type="button" class="btn btn-default btn-sm">
+		<span class="glyphicon glyphicon-print"> Imprimir</span>
+	</button>	
+	Enviar a:
+	<input type="text">
+	<button type="button" class="btn btn-default btn-sm">
+		<span class="glyphicon glyphicon-arrow-right"> Enviar</span>
+	</button>	 
+</div>		
