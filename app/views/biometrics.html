@@ -1,7 +1,7 @@
 <div class="col-md-9 row-fluid">
     <div class="content_table">
         <h4>
-        	Detalle Cuenta Biom&eacute;trica
+        Detalle
         	<select ng-init="seleccion=seleccionTMP"
                 ng-click="biometrics(seleccion._account_id)"
 	        	ng-model="seleccion"
@@ -9,6 +9,15 @@
         	</select>
   		</h4>
         <h4>Saldo $100,000.00 MXN</h4>
+
+        Movimientos del  <input type="text"  value="06/03/2014"  disabled="disabled" size="20"/>   al  <input type="text"  value="20/03/2014"  disabled="disabled" size="20"/>
+
+        <button  class="conexion_btn:active" value="Historial">Historial </button>
+
+
+         <div class="col-md-2 pull-right">
+            <button type="button" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-download-alt">Descargar</span></button>
+        </div>
 		<div class="table-responsive">
             <div class="gridStyle" ng-grid="gridOptions"></div>
         </div>
