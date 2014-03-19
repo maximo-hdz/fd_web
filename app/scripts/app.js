@@ -65,6 +65,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/MFMPortal_15_2.html',
     controller: 'AuthorizeCtrl'
   })
+  .state('dashboard.authorizeMod', {
+    url: 'authorizeMod',
+    templateUrl: 'views/MFMPortal_15_1.html',
+    controller: 'AuthorizeModCtrl'
+  })
   .state('dashboard.transfer', {
     url: 'transfer',
   })
