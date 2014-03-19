@@ -1,8 +1,8 @@
-<div class="login_back">
+<div class="login_back" data-ng-init="load_login()">
 	<div class="container">
 		<div class="row-fluid">	
-			<form class="form-signin col-md-3" ng-controller="LoginCtrl"  ng-submit="login()">
-				<div class="logo"></div>
+			<form class="form-signin col-md-3" ng-controller="LoginCtrl" ng-submit="login()">
+				<div class="logo"><div class="mfm"></div></div>
 				<input type="text" class="form-control input_user" placeholder="Usuario"  ng-model="username">
 				<input type="password" class="form-control input_pass" placeholder="Contrase&ntilde;a" ng-model="password">
 				<a href="javascript:void(0);">Olvid&eacute; mi contrase&ntilde;a</a>

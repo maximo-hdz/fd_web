@@ -78,4 +78,15 @@ angular.module('spaApp')
 	$scope.detailCreditPacted=function(account_id){
 		$location.path(account_id+ '#/detailCreditPacted');
 	}
+
+	//behavior stack help
+	$scope.show_hide_help=function(elemento, link){
+		if( $(elemento).css('display') == 'block' ){
+	 		$(elemento).slideToggle('fast');
+	 		$(link).removeClass('abierto').addClass('cerrado');
+	 	}else{
+	 		$(elemento).slideToggle('fast');
+	 		$(link).removeClass('cerrado').addClass('abierto');
+	 	}
+	};
 });

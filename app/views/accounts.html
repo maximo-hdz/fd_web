@@ -1,6 +1,6 @@
 
-<div class="col-md-9">
-    <div class="content_table">
+<div class="col-md-9 page_accounts" data-ng-init="load_accounts()">
+    <div class="content_table abierto">
         <h4 class="abierto titulo_biometric" ng-click="show_hide_table('.tabla_biometric','.titulo_biometric')">Cuentas Biom&eacute;tricas</h4>
         <div class="table-responsive tabla_biometric">
             <table class="table">
@@ -23,10 +23,8 @@
             </table>
         </div>
     </div>
-    <div class="content_table">
+    <div class="content_table abierto">
         <h4 class="abierto titulo_lineasCred" ng-click="show_hide_table('.tabla_credito','.titulo_lineasCred')">L&iacute;neas de Cr&eacute;dito</h4>
-
-
         <div class="table-responsive tabla_credito">
             <table class="table">
                 <tbody>
@@ -51,7 +49,7 @@
             </table>
         </div>
     </div>
-    <div class="content_table">
+    <div class="content_table abierto">
         <h4 class="abierto titulo_inversiones" ng-click="show_hide_table('.tabla_inversiones','.titulo_inversiones')">Inversiones</h4>
         <div class="table-responsive tabla_inversiones">
             <table class="table">
