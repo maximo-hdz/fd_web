@@ -25,7 +25,7 @@ angular.module('spaApp').controller('detailCreditPactedCtrl',
 
    $scope.producto="*******";
    $scope.noOperacion="#####";
-   $scope.montoEnviar="000,000.00";
+   $scope.montoEnviar="99,0000.00";
    $scope.date="DD/MM/YYYY";
    $scope.tc="00.00";
    $scope.operacion=45698;
