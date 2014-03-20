@@ -180,11 +180,11 @@ body{
         @include border_radius(10px);
 
         .logo{
-            background-color: #a3a3a3;
-            background-image: url(), radial-gradient(80px 600px at center, #FFFFFF 0%, rgba(117,116,116,0) 50%, rgba(117,116,116,0));
-            background-size: 600%;
+            background-color: #FFFFFF;
+            background-image: url(), radial-gradient(50px 600px at center, #a3a3a3 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0));
+            background-size: 1000%;
             background-position: 0 60%, 0 100%;
-            @include anim_key_infinite(move,3s);
+            @include anim_key_infinite(move,7s);
             width: 240px;
             height: 102px;
             margin: 0 auto;
@@ -238,14 +238,10 @@ body{
             @include gradient_top_bottom( #303030, #0c0d0d);
             @include anim_transicion_ease(0.5s);
         }
-        .btn:hover{
+        .btn:hover,
+        .btn:active{
             @include gradient_top_bottom( #0c0d0d, #303030); 
             color: #FFFFFF;
-        }
-        .btn:active{
-            position: relative;
-            top: 3px;
-            left: 3px;
         }
     }
     .bienvenida{
@@ -299,11 +295,11 @@ body{
     right: 0;
     z-index: 9999;
     .logo{
-        background-color: #a3a3a3;
-        background-image: url(), radial-gradient(50px 600px at center, #FFFFFF 0%, rgba(117,116,116,0) 50%, rgba(117,116,116,0));
-        background-size: 600%;
+        background-color: #FFFFFF;
+        background-image: url(), radial-gradient(50px 600px at center, #a3a3a3 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0));
+        background-size: 1000%;
         background-position: 0 60%, 0 100%;
-        @include anim_key_infinite(move,3s);
+        @include anim_key_infinite(move,7s);
         width: 120px;
         height: 50px;
         margin: 0 auto;
@@ -355,14 +351,10 @@ body{
     right: 0;
     z-index: 9999;
     span{
-        @include anim_transicion_ease(0.4s);
         text-transform: uppercase;
         font-size: 11px;
         color: #a3a3a3;
         cursor: default;
-    }
-    span:hover{
-        color: #FFFFFF;
     }
     span.fecha{
         background: url(../images/ico_fecha.png) no-repeat;
@@ -379,9 +371,9 @@ body{
     }
 }
 .menu_lateral{
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
     li{
-        @include anim_transicion_ease(0.4s);
+        @include anim_transicion_ease(0.5s);
         overflow: hidden;
         background: #252525;
         margin-bottom: 5px;
@@ -394,7 +386,6 @@ body{
             color: #a3a3a3;
 
             i{
-                @include anim_transicion_ease(0.4s);
                 background-repeat: no-repeat;
                 background-position: right top;
                 width: 25px;
@@ -434,27 +425,22 @@ body{
             }
         }
     }
-    li.active,
     li:hover{
         background: #f4f5f5;
-        /*@include gradient_top_bottom( #b6b7b8, #f4f5f5);*/
         a, a:hover, a:active{
-            
             color: #000000;
-            i.ico-saldos{
-                background-image: url(../images/menu_saldos_h.png); 
+            i{
+                background-position: left top;
             }
-            i.ico-conexion{
-                background-image: url(../images/menu_conexion_h.png); 
-            }
-            i.ico-autorizar{
-                background-image: url(../images/menu_autorizar_h.png); 
-            }
-            i.ico-transferencias{
-                background-image: url(../images/menu_transferencias_h.png); 
-            }
-            i.ico-administracion{
-                background-image: url(../images/menu_administracion_h.png); 
+        }
+    }
+    li:active,
+    li.active{
+        background: #f4f5f5;
+        a, a:hover, a:active{
+            color: #000000;
+            i{
+                background-position: left top;
             }
             span.arrow{
                 margin-right: -3px;
@@ -462,81 +448,11 @@ body{
         }
     }
 }
-.ayuda_linea{
-    background: #FFFFFF;
-    @include border_radius( 5px );
-    overflow: hidden;
-    margin-bottom: 20px;
-    
-    .btn_ayuda_linea,
-    .btn_ayuda_linea:hover,
-    .btn_ayuda_linea:active{
-        display: block;
-        width: auto;
-        
-        padding: 5px 10px 10px 10px;
-        text-align: center;
-        text-decoration: none;
-        color: #000000;
-        
-        i.ayuda{
-            display: inline-block;
-            position: relative;
-            top: 5px;
-            background: url(../images/ico_ayuda.png) no-repeat;
-            background-size: 18px;
-            width: 18px;
-            height: 18px;
-            margin: 0 10px 0 0;
-        }
-        i.arrow{
-            @include anim_transicion_ease(0.4s);
-            display: inline-block;
-            position: relative;
-            background: url(../images/arrow_top.png) no-repeat;
-            background-size: 8px;
-            width: 8px;
-            height: 7px;
-            margin: 0 0 0 10px;
-        }
-    }
-    .btn_ayuda_linea.cerrado{
-        i.arrow{
-            transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            -moz-transform: rotate(0deg);
-            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);   
-        }
-    }
-    .btn_ayuda_linea.abierto{
-        i.arrow{
-            transform: rotate(180deg);
-            -webkit-transform: rotate(180deg);
-            -moz-transform: rotate(180deg);
-            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);    
-        }
-    }
-    .chat{
-        background: #FFFFFF;
-        width: auto;
-        height: 200px;
-        margin: 10px;
-        display: none;
-    }
-}
-
-
-.banners{
-    margin: 60px 0 0 0;
-    text-align: center;
-    overflow: hidden;
-    img{
-        padding: 0;
-        margin: 0 0 15px 0;
-    }
-}
 .content{
     padding: 110px 0 30px 0;
+    .area_menu{
+        min-height: 650px;
+    }
 }
 
 .content_table.desactivo{
@@ -557,12 +473,26 @@ body{
         width: auto;
         margin: 0 10px;
         cursor: pointer;
+        overflow: hidden;
+        i{
+            display: block;
+            float: right;
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            background: url(../images/ico_open_close.png) no-repeat;   
+        }
     } 
     h4.abierto{
-        background: url(../images/ico_minus.png) right center no-repeat;
+        i{
+            background-position: left center;
+        }
+        
     } 
     h4.cerrado{
-        background: url(../images/ico_plus.png) right center no-repeat;
+        i{
+            background-position: right center;
+        }
     } 
     .table-responsive{
         margin-top: 20px;
@@ -730,6 +660,90 @@ body{
     color: #575757;
     text-decoration: none;
 }
+.banners-ayuda{
+    margin-top: -401px;
+    position: absolute;
+    z-index: 99;
+    padding: 0 15px 40px 15px;
+    overflow: hidden;
+    width: 100%;
+    .ayuda_linea{
+        width: auto;
+        background: #FFFFFF;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 30px;
+        @include border_radius( 5px );
+
+        .btn_ayuda_linea,
+        .btn_ayuda_linea:hover,
+        .btn_ayuda_linea:active{
+            display: block;
+            width: auto;
+            
+            padding: 5px 10px 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #000000;
+            
+            i.ayuda{
+                display: inline-block;
+                position: relative;
+                top: 5px;
+                background: url(../images/ico_ayuda.png) no-repeat;
+                background-size: 18px;
+                width: 18px;
+                height: 18px;
+                margin: 0 10px 0 0;
+            }
+            i.arrow{
+                @include anim_transicion_ease(0.4s);
+                display: inline-block;
+                position: relative;
+                background: url(../images/arrow_top.png) no-repeat;
+                background-size: 8px;
+                width: 8px;
+                height: 7px;
+                margin: 0 0 0 10px;
+            }
+        }
+        .btn_ayuda_linea.cerrado{
+            i.arrow{
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);   
+            }
+        }
+        .btn_ayuda_linea.abierto{
+            i.arrow{
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);    
+            }
+        }
+        .chat{
+            background: #FFFFFF;
+            width: auto;
+            height: 240px;
+            margin: 10px;
+            display: none;
+        }
+    }
+    .banners{
+        margin: 0 15px 20px -15px;
+        text-align: center;
+        overflow: hidden;
+        img{
+            width: auto;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+    }
+}
 .footer {
     background: #000000;
     position: fixed;
@@ -739,6 +753,7 @@ body{
     color: #a3a3a3;
     font-size: 11px;
     padding: 5px;
+    z-index: 999;
 
     a, a:hover {
         @include anim_transicion_ease(0.5s);
@@ -771,7 +786,7 @@ body{
         }
     }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
     .login_back {
         .bienvenida{
             padding-top: 40px;
@@ -793,7 +808,19 @@ body{
         }
     }
     .content{
-        padding: 110px 0 50px 0;
+        padding: 110px 0 400px 0;
+        .area_menu{
+            min-height: 0px;
+        }
+    }
+    .banners-ayuda{
+        width: auto;
+        left: 20px;
+        right: 0;
+        margin-top: -400px;
+        .ayuda_linea{
+            right: 25px;
+        }
     }
     .footer{
         span.text-right{
@@ -824,7 +851,10 @@ body{
         position: static;
     }
     .content{
-        padding: 20px 0 20px 0;
+        padding: 20px 0 400px 0;
+    }
+    .banners-ayuda{
+        /*padding-bottom: 20px;*/
     }
     .login_back {
         .login_footer {

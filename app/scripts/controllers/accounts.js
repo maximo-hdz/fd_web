@@ -58,10 +58,10 @@ angular.module('spaApp')
 	//behavior stack accounts group
 	$scope.show_hide_table=function(elemento, titulo ){
 		if( $(elemento).css('display') == 'block' ){
-			$(elemento).slideToggle('fast');
+			$(elemento).slideToggle('slow');
 			$(titulo).removeClass('abierto').addClass('cerrado');
 		}else{
-			$(elemento).slideToggle('fast');
+			$(elemento).slideToggle('slow');
 			$(titulo).removeClass('cerrado').addClass('abierto');
 		}
 	};
