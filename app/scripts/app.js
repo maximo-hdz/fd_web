@@ -54,7 +54,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/detailOperationPactada.html',
     controller: 'detailCreditPactedCtrl'
   })
-
   .state('dashboard.connection', {
     url: 'connection',
     templateUrl: 'views/connection.html',
@@ -72,6 +71,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.transfer', {
     url: 'transfer',
+    templateUrl: 'views/MFMPortal_22_4.html',
+    controller: 'MFMPortal_22_4'
   })
   .state('dashboard.administration', {
     url: 'administration',

@@ -7,7 +7,7 @@ angular.module('spaApp')
 
 	$http({
 		//send with $stateParams.account_id
-		url: $rootScope.restAPIBaseUrl + 'accounts/credit.json',
+		url: $rootScope.restAPIBaseUrl + 'accounts/1',
 		method: 'GET'
 	}).
 	success(function(data) {

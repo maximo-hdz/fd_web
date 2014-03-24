@@ -49,5 +49,4 @@ angular.module('spaApp')
 		$log.error('Error: '+data, status);
 		$scope.errorMessage = 'operation failed';
 	});
-
 });
