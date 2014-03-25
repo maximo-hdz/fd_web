@@ -38,6 +38,3 @@ angular.module('spaApp')
       {name:'Cristiano'}    
     ];
 });
-
-
-

@@ -61,21 +61,23 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.authorize', {
     url: 'authorize',
-    templateUrl: 'views/MFMPortal_15_2.html',
+    templateUrl: 'views/authorizePendingOperations.html',
     controller: 'AuthorizeCtrl'
   })
   .state('dashboard.authorizeMod', {
     url: 'authorizeMod',
-    templateUrl: 'views/MFMPortal_15_1.html',
+    templateUrl: 'views/authorizePendingModifications.html',
     controller: 'AuthorizeModCtrl'
   })
   .state('dashboard.transfer', {
     url: 'transfer',
-    templateUrl: 'views/MFMPortal_22_4.html',
-    controller: 'MFMPortal_22_4'
+    templateUrl: 'views/transferAddCount.html',
+    controller: 'transferAddCount'
   })
   .state('dashboard.administration', {
     url: 'administration',
+    templateUrl: 'views/setUpNotifications.html',
+    controller: "setUpNotifications"
   })
   .state('dashboard.biometrics', {
     url: ':account_id/biometrics',

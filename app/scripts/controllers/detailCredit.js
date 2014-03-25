@@ -36,5 +36,4 @@ angular.module('spaApp')
       {name:'amigo@gmail.com'},
       {name:'cliente@banco.com.mx'}    
     ];
-
 });

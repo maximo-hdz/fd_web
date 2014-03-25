@@ -18,7 +18,7 @@ angular.module('spaApp')
 			afterSelectionChange: function(data) {
 				$location.path( $scope.mySelections[0]._account_id+'/detail' );
 			}
-	};	
+	};
 
 	$http({
 		//Enviar con $stateParams.account_id
@@ -32,5 +32,4 @@ angular.module('spaApp')
 		$log.error('Error: '+data, status);
 		$location.path( '/login' );
 	});
-	
 });

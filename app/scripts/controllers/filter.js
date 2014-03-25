@@ -3,5 +3,4 @@ app.controller("detailCreditCtrl", [ "$scope", "$filter", "db" function ($scope,
     return function(dateString) {
       return moment(dateString).fromNow()
     };
-
 }]);
