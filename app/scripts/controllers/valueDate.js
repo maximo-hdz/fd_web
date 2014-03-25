@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('valueDateCtrl', function ($scope,$http,$log,$location,$stateParams) {
+.controller('valueDateCtrl', function ($scope,$http,$location,$rootScope,$log,$stateParams) {
 	
 	$scope.gridOptions = { 
 			data: 'myData',
@@ -17,8 +17,7 @@ angular.module('spaApp')
 	};	
 
 	$http({
-		//Enviar con $stateParams.account_id
-		url: 'http://projects.anzen.com.mx:3000/api/accounts/1',
+		url: $rootScope.restAPIBaseUrl + 'accounts/1',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {

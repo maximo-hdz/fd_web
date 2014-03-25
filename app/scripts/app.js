@@ -1,13 +1,14 @@
 'use strict';
 
-angular.module('spaApp', [
+var app = angular.module('spaApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.router',
   'ngGrid'
-  ])
-.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+]);
+
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
   $urlRouterProvider.otherwise("/login");
 
@@ -28,12 +29,18 @@ angular.module('spaApp', [
     templateUrl: 'views/accounts.html',
     controller: 'AccountsCtrl'
   })
-
-//view for investment bank(menu initial)
+  //view for investment bank(menu initial)
   .state('dashboard.investment',{
     url: ':account_id/investment',
-    templateUrl: 'views/investment.html' ,
+    templateUrl: 'views/investment.html',
     controller: 'InvestmentCtrl'
+  })
+
+  //view for investment bank(menu initial)
+  .state('dashboard.detailInvestment',{
+    url: ':account_id/detailInvestment',
+    templateUrl: 'views/MFMPortal_11_1.html',
+    controller: 'InvestmentDetailCtrl'
   })
   //view for detail credit liquidated  
   .state('dashboard.detailCredit',{
@@ -47,20 +54,30 @@ angular.module('spaApp', [
     templateUrl: 'views/detailOperationPactada.html',
     controller: 'detailCreditPactedCtrl'
   })
-
   .state('dashboard.connection', {
     url: 'connection',
     templateUrl: 'views/connection.html',
     controller: 'ConnectionCtrl'
   })
   .state('dashboard.authorize', {
-    url: 'authorize'
+    url: 'authorize',
+    templateUrl: 'views/authorizePendingOperations.html',
+    controller: 'AuthorizeCtrl'
+  })
+  .state('dashboard.authorizeMod', {
+    url: 'authorizeMod',
+    templateUrl: 'views/authorizePendingModifications.html',
+    controller: 'AuthorizeModCtrl'
   })
   .state('dashboard.transfer', {
     url: 'transfer',
+    templateUrl: 'views/transferAddCount.html',
+    controller: 'transferAddCount'
   })
   .state('dashboard.administration', {
     url: 'administration',
+    templateUrl: 'views/setUpNotifications.html',
+    controller: "setUpNotifications"
   })
   .state('dashboard.biometrics', {
     url: ':account_id/biometrics',
@@ -91,7 +108,12 @@ angular.module('spaApp', [
     templateUrl: 'views/creditValueDate.html',
     controller: 'valueDateCtrl'
   });
-})
-.factory('ctsBiometricas', function() {
+});
+
+app.factory('ctsBiometricas', function() {
   return {}
+});
+
+app.run(function($rootScope){
+  $rootScope.restAPIBaseUrl = 'http://projects.anzen.com.mx:3000/api/';
 });
