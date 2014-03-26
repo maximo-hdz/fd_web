@@ -8,6 +8,7 @@ angular.module('spaApp')
 			data: 'myData',
 			multiSelect: false,
 			selectedItems: $scope.mySelections,
+			showSelectionCheckbox: true,
 			columnDefs: [
 				{field:'_account_id', displayName:'No. de Operación'}, 
 				{field:'account_type', displayName:'Fecha de Operación'},

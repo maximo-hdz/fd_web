@@ -39,7 +39,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for investment bank(menu initial)
   .state('dashboard.detailInvestment',{
     url: ':account_id/detailInvestment',
-    templateUrl: 'views/MFMPortal_11_1.html',
+    templateUrl: 'views/transactionDetailInvestment.html',
     controller: 'InvestmentDetailCtrl'
   })
   //view for detail credit liquidated  
@@ -73,6 +73,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     url: 'transfer',
     templateUrl: 'views/transferAddCount.html',
     controller: 'transferAddCount'
+  })
+  .state('dashboard.authorizeChanges', {
+    url: 'authorizeChanges',
+    templateUrl: 'views/authorizeAdminChange.html',
+    controller: "authorizeChanges"
   })
   .state('dashboard.administration', {
     url: 'administration',
