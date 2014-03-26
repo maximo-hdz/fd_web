@@ -1,43 +1,51 @@
 'use strict';
 
-/* Controllers */
-
-/* This controller is work flow of detail credit, obtain a .json to see on the view detailLineCredit.html */
-
-angular.module('spaApp').controller('detailCreditPactedCtrl',
-  function($scope, $http,$log){
-   
-     console.log("detailCreditPactedCtrl");
-      
-      $scope.gridOptions ={data: 'myData',
-      columnDefs: [{field:'name',displayName:'Nombre del beneficiario'},
-      {field:'monto',displayName:'Monto'},
-      {field:'acount',displayName:'Cuenta'}]
-    };
-
-  $http.get('accounts/detailCredit.json').success(function(data){
-        $scope.myData=data.detail;
-    })
-    .error(function(data, status) {
-    console.log('Error: '+data, status);
-    $location.path( '/login' );
-    });
-
-   $scope.producto="*******";
-   $scope.noOperacion="#####";
-   $scope.montoEnviar="99,0000.00";
-   $scope.date="DD/MM/YYYY";
-   $scope.tc="00.00";
-   $scope.operacion=45698;
-   $scope.autorizaMas="+ 123859";
+angular.module('spaApp')
+.controller('detailCreditPactedCtrl', function ($scope,$http,$location,$sce,$stateParams,ctsCreditPacted) {
 
 
-    $scope.authorized = [
-      {name:'Rafa MArquez'},
+	$scope.mySelections = [];
+	
+
+	$scope.gridOptions = {
+		data: 'myData',
+		multiSelect: false,
+		selectedItems: $scope.mySelections,
+		columnDefs: [
+			{field:'_account_id', displayName:'Fecha'}, 
+			{field:'account_type', displayName:'Operación'},
+			{field:'name', displayName:'Descripcion'},
+			{field:'alias', displayName:'Cargo'},
+			{field:'currency', displayName:'Abono'},
+			{field:'last_digits', displayName:'Saldo'}],
+		
+		afterSelectionChange: function(data) {
+				$location.path( $scope.mySelections[0].acount+'/detailCreditPactedOp' );
+			}	
+		
+
+	};
+
+	$scope.amount=100000;
+	$scope.from="06/03/2014";
+	$scope.to="20/03/2014";
+
+	$http({
+		url: 'accounts/detailCredit.json',
+		method: 'GET'
+	}).
+	success(function(data, status, headers) {
+		$scope.myData = data.detail;
+	}).
+	error(function(data, status) {
+		$log.error('Error: '+data, status);
+		$location.path( '/login' );
+	});
+
+	    $scope.authorized = [
+      {name:'Rafa Marquez'},
       {name:'Memo Ochoa'},
-      {name:'Cristiano'}    
+      {name:'Cristiano(Hala)'}    
     ];
+
 });
-
-
-

@@ -67,9 +67,9 @@ angular.module('spaApp', [
     templateUrl: 'views/biometrics.html',
     controller: 'BiometricsCtrl'
   })
-  .state('dashboard.detail', {
-    url: ':account_id/detail',
-    templateUrl: 'views/detail.html'
+  .state('dashboard.detailMovement', {
+    url: ':account_id/detailMovement',
+    templateUrl: 'views/detailMovement.html'
   })
   .state('dashboard.credit', {
     url: ':account_id/credit',
@@ -90,8 +90,14 @@ angular.module('spaApp', [
     url: '/valueDate',
     templateUrl: 'views/creditValueDate.html',
     controller: 'valueDateCtrl'
-  });
-})
-.factory('ctsBiometricas', function() {
+  })
+  .state('dashboard.detailCreditPactedOp', {
+    url: ':account_id/detailCreditPactedOp',
+   templateUrl : 'views/detailLineCredit.html',
+  })
+}).factory('ctsCreditPacted', function(){
+  return {}
+
+}).factory('ctsBiometricas', function() {
   return {}
 });

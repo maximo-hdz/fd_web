@@ -31,8 +31,8 @@ angular.module('spaApp')
 	}
 
 	/** Biometrics Detail  **/
-	$scope.detail=function(account_id){
-		$location.path( account_id + '#/detail');
+	$scope.detailMovement=function(account_id){
+		$location.path( account_id + '#/detailMovement');
 	}	
 
 	/*Controller for module invertions   */
@@ -88,5 +88,9 @@ angular.module('spaApp')
 	 		$(elemento).slideToggle('fast');
 	 		$(link).removeClass('cerrado').addClass('abierto');
 	 	}
-	};
+	}
+
+	$scope.detailCreditPactedOp=function(account_id){
+		$location.path( account_id + '#/detailCreditPactedOp');
+	}
 });
