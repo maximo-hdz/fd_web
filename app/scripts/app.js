@@ -44,7 +44,7 @@ angular.module('spaApp', [
   //view for detail credit pacted
   .state('dashboard.detailCreditPacted',{
     url: ':account_id/detailCreditPacted',
-    templateUrl: 'views/detailOperationPactada.html',
+    templateUrl: 'views/detailLineCredit.html',
     controller: 'detailCreditPactedCtrl'
   })
 
