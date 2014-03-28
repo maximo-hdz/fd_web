@@ -81,8 +81,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.administration', {
     url: 'administration',
-    templateUrl: 'views/setUpNotifications.html',
-    controller: "setUpNotifications"
+/*    templateUrl: 'views/setUpNotifications.html',
+    controller: "setUpNotifications"*/
+    templateUrl: 'views/user_administration.html',
+    controller: 'user_administration'
   })
   .state('dashboard.biometrics', {
     url: ':account_id/biometrics',
@@ -112,10 +114,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     url: '/valueDate',
     templateUrl: 'views/creditValueDate.html',
     controller: 'valueDateCtrl'
-  });
-});
+  })
 
-app.factory('ctsBiometricas', function() {
+}).factory('ctsBiometricas', function() {
   return {}
 });
 
