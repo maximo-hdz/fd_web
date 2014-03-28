@@ -2,7 +2,7 @@
 
 
 angular.module('spaApp')
-.controller('LoginCtrl', function ($scope,$http,$location) {
+.controller('LoginCtrl', function ($scope,$http,$location,$rootScope,$log,$stateParams) {
 	/**
 	 * the login function connect the Rest-API: if the response status is OK, redirect to route "homePage",
 	 * else put an error message in the scope
@@ -10,7 +10,7 @@ angular.module('spaApp')
 	 $scope.login=function(){
 	 	//$http.defaults.useXDomain = true;
 	 	$http({
-			url: 'http://projects.anzen.com.mx:3000/api/login',
+			url: $rootScope.restAPIBaseUrl + 'login',
 	 		method: 'POST',
 	 		data: JSON.stringify({'username':$scope.username, 'password':$scope.password,'access_media': 'SPA'}),
 	 		headers: {'Content-Type': 'application/json','X-BANK-TOKEN': '1'}
@@ -22,10 +22,10 @@ angular.module('spaApp')
 			console.log(data);
 			$location.path( '/accounts' );
 		}).
-	 	error(function(data, status) {
+			error(function(data, status) {
 			//put an error message in the scope
 			$scope.errorMessage = 'login failed';
 			$scope.status = status;
 		});
-	 };
-  });
+	};
+});

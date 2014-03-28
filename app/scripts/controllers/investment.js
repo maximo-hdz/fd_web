@@ -1,24 +1,35 @@
 'use strict';
 
-/* Controllers */
-
-/* This controller is  work flow of inventions, obtain a .json to see on the view invertion.html */
-
+/**
+ * This controller is  work flow of inventions, obtain a .json to see on the view invertion.html
+ */
 angular.module('spaApp')
-.controller('InvestmentCtrl', ['$scope', '$http','$log',
-  function($scope, $http,$log) {
-     
-    $http.get('accounts/invertions.json').success(function(data) {  
-  
-      $scope.invertions = data;
-    });
+.controller('InvestmentCtrl',
+	function($scope,$http,$location,$rootScope,$log) {
 
-    $http.get('accounts/investment.json').success(function(data) {    
-    	
-      $scope.mxn = data;    
-    });
+		$http({
+			url: $rootScope.restAPIBaseUrl + 'accounts/invertions.json',
+			method: 'GET'
+		}).
+		success(function(data, status, headers) {
+			$scope.invertions = data;
+		}).
+		error(function(data, status) {
+			//put an error message in the scope
+			$log.error('Error: '+data, status);
+			$scope.errorMessage = 'operation failed';
+		});
 
-   
-  }]);
-
-
+		$http({
+			url: $rootScope.restAPIBaseUrl + 'accounts/investment.json',
+			method: 'GET'
+		}).
+		success(function(data, status, headers) {
+			$scope.mxn = data;
+		}).
+		error(function(data, status) {
+			$log.error('Error: '+data, status);
+			$scope.errorMessage = 'operation failed';
+		});
+	}
+);

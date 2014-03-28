@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 pull-left">
-                    <a class="logo" href="javascript:void(0);"></a>
+                    <a class="logo" href="javascript:void(0);"><span class="mfm"></span></a>
                 </div>
                 
                 <button class="btn pull-right btn-logout"  ng-click="logout()"><i></i>Salir</button>
@@ -25,35 +25,41 @@
     </div>
     <div class="container content"> 
         <div class="row-fluid">
-            <div class="col-md-3">
+            <div class="col-md-3 area_menu">
                 <ul class="menu_lateral nav nav-list bs-docs-sidenav affix-top">
-                    <li ng-class="getClass('/accounts')"> <a ng-href="#accounts"><i class="ico-saldos"></i>Saldos</a></li>
-                    <li ng-class="getClass('/connection')"> <a ng-href="#connection"><i class="ico-conexion"></i>Conex&iacute;on MFM</a></li>
-                    <li ng-class="getClass('/authorize')"><a ng-href="#authorize"><i class="ico-autorizar"></i>Autorizar</a></li>
-                    <li ng-class="getClass('/transfer')"><a ng-href="#transfer"><i class="ico-transferencias"></i>Transferencias</a></li>
-                    <li ng-class="getClass('/administration')"><a ng-href="#administration"><i class="ico-administracion"></i>Administraci&oacute;n</a></li>
+                    <li ng-class="getClass('/accounts')"> <a ng-href="#accounts"><i class="ico-saldos"></i>Saldos<span class="arrow"></span></a></li>
+                    <li ng-class="getClass('/connection')"> <a ng-href="#connection"><i class="ico-conexion"></i>Conexi&oacute;n MFM<span class="arrow"></span></a></li>
+                    <li ng-class="getClass('/authorize')"><a ng-href="#authorize"><i class="ico-autorizar"></i>Autorizar<span class="arrow"></span></a></li>
+                    <li ng-class="getClass('/transfer')"><a ng-href="#transfer"><i class="ico-transferencias"></i>Transferencias<span class="arrow"></span></a></li>
+                    <li ng-class="getClass('/administration')"><a ng-href="#administration"><i class="ico-administracion"></i>Administraci&oacute;n<span class="arrow"></span></a></li>
                 </ul>
-
-                <div class="banners visible-md visible-lg">
-                    <img class="col-md-12" src="images/banner_01.png" />
-                    <img class="col-md-12" src="images/banner_02.png" />
-                </div>
-
-                <a class="btn_ayuda_linea" href="javascript:void(0)">
-                    <i class="ayuda"></i>
-                    Ayuda en l&iacute;nea
-                    <i class="arrow"></i>
-                </a>
             </div>
-            
-            <div ui-view></div>
-        </div>
-        <div class="banners visible-xs visible-sm">
-            <img class="col-md-12" src="images/banner_01.png" />
-            <img class="col-md-12" src="images/banner_02.png" />
+            <div ui-view autoscroll="false"></div>
         </div>
     </div>
 </div>
+
+<div class="container container_banners_ayuda">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="banners-ayuda">
+                <div class="banners">
+                    <img src="images/banner_01.png" /><br>
+                    <img src="images/banner_02.png" />
+                </div>
+                <div class="ayuda_linea">
+                    <div class="chat"></div>
+                    <a class="btn_ayuda_linea" href="javascript:void(0)" ng-click="show_hide_help('.chat','.btn_ayuda_linea')">
+                        <i class="ayuda"></i>
+                        Ayuda en l&iacute;nea
+                        <i class="arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="footer">
     <div class="container">
         <div class="row">
@@ -64,10 +70,9 @@
             </div>
             <div class="col-md-4">
                 <span class="text-right">
-                    Términos, Condiciones de Uso y Privacidad
+                    <a href="javascript:void(0)" class="margin0">T&eacute;rminos, Condiciones de Uso y Privacidad</a>
                 </span>
             </div>
         </div>
     </div>
-</div>
 </div>

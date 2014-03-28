@@ -4,7 +4,7 @@
 Navigation-bar  controller  for dashboard
 **/
 angular.module('spaApp')
-.controller('Dashboard', function ($scope,$location) {
+.controller('Dashboard', function($scope,$location) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
 	/**
@@ -18,11 +18,23 @@ angular.module('spaApp')
 		}
 	}
 
+	 //behavior stack accounts group
+	 //TODO Do not use jQuery
+	$scope.show_hide_table=function(elemento, titulo ){
+		if( $(elemento).css('display') == 'block' ){
+			$(elemento).hide();
+			$(titulo).removeClass('abierto').addClass('cerrado');
+		}else{
+			$(elemento).show();
+			$(titulo).removeClass('cerrado').addClass('abierto');
+		}
+	};
+
 	/**
 	Logout operation
 	**/
 	$scope.logout = function(){
-		$location.path( 'login' );
+		$location.path( '/login' );
 	}
 
 	/** Biometrics  **/
@@ -46,6 +58,7 @@ angular.module('spaApp')
 	}
 
 	/* Credit Transaction */
+	//TODO Do not use JQuery
 	$scope.creditTransaction=function(account_id){
 		$location.path( account_id + '/credit/transactions');
 		$( "#transaction" ).addClass( "active" );
@@ -78,4 +91,15 @@ angular.module('spaApp')
 	$scope.detailCreditPacted=function(account_id){
 		$location.path(account_id+ '#/detailCreditPacted');
 	}
+
+	//behavior stack help
+	$scope.show_hide_help=function(elemento, link){
+		if( $(elemento).css('display') == 'block' ){
+	 		$(elemento).slideToggle('fast');
+	 		$(link).removeClass('abierto').addClass('cerrado');
+	 	}else{
+	 		$(elemento).slideToggle('fast');
+	 		$(link).removeClass('cerrado').addClass('abierto');
+	 	}
+	};
 });

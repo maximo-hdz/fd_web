@@ -1,26 +1,27 @@
 'use strict';
 
-/* Controllers */
-
 /* This controller is work flow of detail credit, obtain a .json to see on the view detailLineCredit.html */
-
-angular.module('spaApp').controller('detailCreditPactedCtrl',
-  function($scope, $http,$log){
-   
-     console.log("detailCreditPactedCtrl");
+angular.module('spaApp')
+.controller('detailCreditPactedCtrl',
+  function($scope,$http,$location,$rootScope,$log,$stateParams){
       
-      $scope.gridOptions ={data: 'myData',
+    $scope.gridOptions ={data: 'myData',
       columnDefs: [{field:'name',displayName:'Nombre del beneficiario'},
       {field:'monto',displayName:'Monto'},
       {field:'acount',displayName:'Cuenta'}]
     };
 
-  $http.get('accounts/detailCredit.json').success(function(data){
+    $http({
+      url: $rootScope.restAPIBaseUrl + 'accounts/detailCredit.json',
+      method: 'GET'
+    }).
+    success(function(data, status) {
         $scope.myData=data.detail;
-    })
-    .error(function(data, status) {
-    console.log('Error: '+data, status);
-    $location.path( '/login' );
+    }).
+    error(function(data, status) {
+      //put an error message in the scope
+      $log.error('Error: '+data, status);
+      $scope.errorMessage = 'operation failed';
     });
 
    $scope.producto="*******";
@@ -29,15 +30,10 @@ angular.module('spaApp').controller('detailCreditPactedCtrl',
    $scope.date="DD/MM/YYYY";
    $scope.tc="00.00";
    $scope.operacion=45698;
-   $scope.autorizaMas="+ 123859";
-
-
-    $scope.authorized = [
+   $scope.autorizaMas="+ 123859"; 
+   $scope.authorized = [
       {name:'Rafa MArquez'},
       {name:'Memo Ochoa'},
       {name:'Cristiano'}    
     ];
 });
-
-
-
