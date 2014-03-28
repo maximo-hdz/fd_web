@@ -51,7 +51,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for detail credit pacted
   .state('dashboard.detailCreditPacted',{
     url: ':account_id/detailCreditPacted',
-    templateUrl: 'views/detailLineCredit.html',
+    templateUrl: 'views/detailOperationPactada.html',
     controller: 'detailCreditPactedCtrl'
   })
   .state('dashboard.connection', {
