@@ -61,6 +61,8 @@ angular.module('spaApp', [
   })
   .state('dashboard.administration', {
     url: 'administration',
+    templateUrl: 'views/user_administration.html',
+    controller: 'user_administration'
   })
   .state('dashboard.biometrics', {
     url: ':account_id/biometrics',
@@ -90,7 +92,7 @@ angular.module('spaApp', [
     url: '/valueDate',
     templateUrl: 'views/creditValueDate.html',
     controller: 'valueDateCtrl'
-  });
+  })
 })
 .factory('ctsBiometricas', function() {
   return {}
