@@ -96,10 +96,10 @@ angular.module('spaApp')
 	$scope.show_hide_help=function(elemento, link){
 		if( $(elemento).css('display') == 'block' ){
 	 		$(elemento).slideToggle('fast');
-	 		$(link).removeClass('abierto').addClass('cerrado');
+	 		$(link).removeClass('abierto').addClass('cerrado').slideToggle('fast');
 	 	}else{
 	 		$(elemento).slideToggle('fast');
-	 		$(link).removeClass('cerrado').addClass('abierto');
+	 		$(link).removeClass('cerrado').addClass('abierto').slideToggle('fast');
 	 	}
 	};
 });
