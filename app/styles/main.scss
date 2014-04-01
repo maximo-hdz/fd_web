@@ -125,7 +125,9 @@ $logo_bg: "../images/logo.png";
         background-position: 0 60%, 0 50%;  
     }
 }
-
+*{
+    behavior: url(PIE.htc); 
+}
 body, html, #mainDiv {
     height: 100%;
     font-family: "Helvetica Neue", "HelveticaNeue", "Helvetica", Arial, sans-serif;
