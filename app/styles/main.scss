@@ -19,7 +19,7 @@ $logo_bg: "../images/logo.png";
     background: -o-linear-gradient(top, $color_top 0%,$color_bottom 100%) !important;
     background: -ms-linear-gradient(top, $color_top 0%,$color_bottom 100%) !important;
     background: linear-gradient(to bottom, $color_top 0%,$color_bottom 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color_top', endColorstr='$color_bottom',GradientType=0 ) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color_top, endColorstr=$color_bottom,GradientType=0 ) !important;
 }
 @mixin box_shadow($shadow: #000000){
     -moz-box-shadow: 0 0 5px $shadow;
@@ -203,7 +203,7 @@ body{
             margin: 0 auto;
             .mfm{
                 background: url($logo_bg) center center no-repeat;
-                background-size: 240px;
+                background-size: 240px!important;
                 width: 240px;
                 height: 102px;
                 margin: 0 auto;
