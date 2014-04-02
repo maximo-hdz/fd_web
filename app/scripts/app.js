@@ -93,7 +93,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.detail', {
     url: ':account_id/detail',
-    templateUrl: 'views/detail.html'
+    templateUrl: 'views/detailLineCredit.html',
+    controller: 'detailCreditCtrl'
   })
   .state('dashboard.credit', {
     url: ':account_id/credit',
