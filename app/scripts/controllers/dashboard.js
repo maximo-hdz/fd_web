@@ -60,8 +60,8 @@ angular.module('spaApp')
 	}
 
 	/** Biometrics Detail  **/
-	$scope.detail=function(account_id){
-		$location.path( account_id + '#/detail');
+	$scope.detailMovement=function(account_id){
+		$location.path( account_id + '#/detailMovement');
 	}	
 
 	/*Controller for module invertions   */
@@ -107,6 +107,10 @@ angular.module('spaApp')
 	/* Mapping for view detail operation pacted */
 	$scope.detailCreditPacted=function(account_id){
 		$location.path(account_id+ '#/detailCreditPacted');
+	}
+
+	$scope.detailCreditPactedOp=function(account_id){
+		$location.path( account_id + '#/detailCreditPactedOp');
 	}
 
 	//behavior stack help
