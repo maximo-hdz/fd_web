@@ -3,7 +3,7 @@
 angular.module('spaApp')
 .controller('BiometricsCtrl', function($scope,$http,$location,ctsBiometricas,$rootScope,$log,$stateParams) {
 
-	$scope.biometricAccounts = ctsBiometricas.accounts;
+	/*$scope.biometricAccounts = ctsBiometricas.accounts;
 	$scope.seleccionTMP = {};
 	$scope.mySelections = [];
 	for(var x in $scope.biometricAccounts.accounts){
@@ -11,7 +11,7 @@ angular.module('spaApp')
 			$scope.seleccionTMP = $scope.biometricAccounts.accounts[x];
 			break;
 		}
-	}
+	}*/
 
 	$scope.gridOptions = {
 		data: 'myData',
