@@ -16,13 +16,13 @@ angular.module('spaApp')
 			var page_show = '.page_'+path.substr(1, path.length);
 			console.log( page_show );
 			$(page_show).css({
-				// 'visibility': 'hidden',
+				'opacity': '0',
 				'position': 'relative',
 				'left': '100px'
 			});
 			setTimeout(function(){
 				$(page_show).animate({
-					// 'visibility': 'visible',
+					'opacity': '1',
 					'left': '0'
 				},300,function(){
 					$(page_show).css('position','static');
