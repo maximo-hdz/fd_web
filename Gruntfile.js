@@ -343,6 +343,7 @@ htmlmin: {
           src: [
           '*.{ico,png,txt}',
           '.htaccess',
+          'PIE.htc' ,
           '*.html',
         'views/{,*/}*.html',
         'bower_components/**/*',
