@@ -2,7 +2,7 @@
 
 angular.module('spaApp')
 .controller('CreditCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
-	
+	$rootScope.titulo = 'Saldos - Línea de Crédito - Cuenta ####';
 	$scope.account_id = $stateParams.account_id;
 
 	$http({

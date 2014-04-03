@@ -12,7 +12,7 @@ angular.module('spaApp')
 			break;
 		}
 	}*/
-
+	$rootScope.titulo = 'Saldos - Cuentas Biométricas - Cuenta ####';
 	$scope.gridOptions = {
 		data: 'myData',
 		multiSelect: false,
