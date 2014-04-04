@@ -348,7 +348,8 @@ htmlmin: {
         'views/{,*/}*.html',
         'bower_components/**/*',
       'images/{,*/}*.{webp}',
-      'fonts/*'
+      'fonts/*',
+      'audio/*'
       ]
     }, {
       expand: true,
