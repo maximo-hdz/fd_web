@@ -10,11 +10,11 @@ angular.module('spaApp')
 	// Get Biometric Accounts
 	$http({
 		url: $rootScope.restAPIBaseUrl + 'accounts/1',
-	 	method: 'GET'
+		method: 'GET'
 	}).
 	success(function(data, status, headers) {
-	 	$scope.biometricAccounts = data;
-	 	ctsBiometricas.accounts = data;
+		$scope.biometricAccounts = data;
+		ctsBiometricas.accounts = data;
 	}).
 	error(function(data, status) {
 		//put an error message in the scope
@@ -39,7 +39,7 @@ angular.module('spaApp')
 	// Get Investment Accounts
 	$http({
 		url: $rootScope.restAPIBaseUrl + 'accounts/3',
-	 	method: 'GET'
+		method: 'GET'
 	}).
 	success(function(data, status, headers) {
 		$scope.investmentAccounts = data;
@@ -88,16 +88,17 @@ angular.module('spaApp')
 				'opacity': '1'
 			},300);
 		},500);
-	    setTimeout(function(){
-	    	$('.table-responsive').each(function(){
-		    	$(this).slideToggle('slow');
-		    });	
-	    },500);
+
+		$( $('.table-responsive').get().reverse() ).each(function( index ){
+			var $this = $(this);
+			setTimeout(function(){
+				$this.slideToggle('slow');
+			}, ((index + 1) * 500) );	
+		});	
 	};
 
 	/*Controller for module invertions   */
 	$scope.inversiones=function(){
 		$location.path('#investment' );  
-
 	}
 });

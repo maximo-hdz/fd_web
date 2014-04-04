@@ -155,7 +155,7 @@ b,strong{
     
 // }
 body{
-    background-color: #3a3a3a;
+    background-color: #000000;
     background-image: url(), radial-gradient(200px 1000px at center, #FFFFFF 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0));
     background-size: 125%, 50% 100%;
     // background-size: 200%;
@@ -231,10 +231,10 @@ body{
 
         .logo{
             background-color: #000000;
-            background-image: url(), radial-gradient(10px 600px at center, #FFFFFF 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0));
+            background-image: url(), radial-gradient(15px 600px at center, #999999 0%, rgba(153,153,153,0) 50%, rgba(153,153,153,0));
             background-size: 500%;
             background-position: 0 60%, 0 100%;
-            @include anim_key_infinite(move,10s);
+            @include anim_key_infinite(move,9s);
             width: 240px;
             height: 102px;
             margin: 0 auto;
