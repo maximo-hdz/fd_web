@@ -230,11 +230,11 @@ body{
         @include border_radius(10px);
 
         .logo{
-            background-color: #000000;
-            background-image: url(), radial-gradient(15px 600px at center, #999999 0%, rgba(153,153,153,0) 50%, rgba(153,153,153,0));
-            background-size: 500%;
+            background-color: #FFFFFF;
+            background-image: url(), radial-gradient(20px 240px at center, #cccccc 0%, rgba(204,204,204,0) 50%, rgba(204,204,204,0));
+            background-size: 600%;
             background-position: 0 60%, 0 100%;
-            @include anim_key_infinite(move,9s);
+            @include anim_key_infinite(move,8s);
             width: 240px;
             height: 102px;
             margin: 0 auto;
@@ -347,11 +347,11 @@ body{
     right: 0;
     z-index: 9999;
     .logo{
-        background-color: #000000;
-        background-image: url(), radial-gradient(40px 600px at center, #FFFFFF 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0));
+        background-color: #FFFFFF;
+        background-image: url(), radial-gradient(20px 600px at center, #cccccc 0%, rgba(204,204,204,0) 50%, rgba(204,204,204,0));
         background-size: 1000%;
         background-position: 0 60%, 0 100%;
-        @include anim_key_infinite(move,7s);
+        @include anim_key_infinite(move,8s);
         width: 120px;
         height: 50px;
         margin: 0 auto;
