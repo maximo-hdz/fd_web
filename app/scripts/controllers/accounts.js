@@ -66,10 +66,33 @@ angular.module('spaApp')
 	};
 
 	$scope.load_accounts = function () {
-		// $('.page_accounts').hide();
-	 //    setTimeout(function(){
-	 //    	$('.page_accounts').fadeIn('slow');	
-	 //    },600);
+		// $('.page_accounts').css({
+		// 	'opacity': '0',
+		// 	'position': 'relative',
+		// 	'left': '100px'
+		// });
+		// setTimeout(function(){
+		// 	$('.page_accounts').animate({
+		// 		'opacity': '1',
+		// 		'left': '0'
+		// 	},300,function(){
+		// 		$('.page_accounts').css('position','static');
+		// 	});
+		// },600);
+		$('.page_accounts').css({
+			'opacity': '0'
+		});
+		$('.table-responsive').hide();
+		setTimeout(function(){
+			$('.page_accounts').animate({
+				'opacity': '1'
+			},300);
+		},500);
+	    setTimeout(function(){
+	    	$('.table-responsive').each(function(){
+		    	$(this).slideToggle('slow');
+		    });	
+	    },500);
 	};
 
 	/*Controller for module invertions   */
