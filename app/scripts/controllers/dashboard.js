@@ -14,7 +14,6 @@ angular.module('spaApp')
 		if ($location.path().substr(0, path.length) == path) {
 
 			var page_show = '.page_'+path.substr(1, path.length);
-			console.log( page_show );
 			$(page_show).css({
 				'opacity': '0',
 				'position': 'relative',

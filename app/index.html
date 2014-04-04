@@ -20,6 +20,19 @@
 		<!-- build:css({.tmp,app}) styles/main.css -->
 		<link rel="stylesheet" href="styles/main.css">
 		<!-- endbuild -->
+<style>
+	.breadcrumbs {
+	  list-style-type: none;
+	}
+	.breadcrumbs li {
+	  float: left;
+	}
+	.breadcrumbs .fa {
+	  line-height: inherit;
+	  margin-right: 10px;
+	}
+</style>
+
 	</head>
 	<body ng-app="spaApp">
 		<div class="fondoMFM"></div>
@@ -63,6 +76,9 @@
 
 		<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="scripts/app.js"></script>
+		<script src="scripts/filters.js"></script>
+		<script src="scripts/services.js"></script>
+		<script src="scripts/directives.js"></script>
 		<script src="scripts/controllers/login.js"></script>
 		<script src="scripts/controllers/accounts.js"></script>
 		<script src="scripts/controllers/dashboard.js"></script>
@@ -82,7 +98,6 @@
 		<script src="scripts/controllers/setUpNotifications.js"></script>
 		<script src="scripts/controllers/authorizeChanges.js"></script>
 		<script src="scripts/controllers/user_administration.js"></script>
-		<script src="scripts/filters.js"></script>
 		<!-- endbuild -->
 	</body>
 </html>

@@ -19,7 +19,6 @@ angular.module('spaApp')
 			//get the session token from the response and store it in the user service
 			//userInformationService.setUserSessionId(headers('X-AUTH-TOKEN'));
 			//get the user information from the response content
-			console.log(data);
 			$location.path( '/accounts' );
 		}).
 			error(function(data, status) {
