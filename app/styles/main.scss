@@ -170,6 +170,7 @@ body{
         background:transparent url(../images/bg.png) no-repeat;
         background-size: cover;
         background-attachment:fixed;
+        z-index: -9;
     }
     #mainDiv{
         background: transparent;
@@ -509,7 +510,7 @@ body{
 .content{
     padding: 110px 0 30px 0;
     .area_menu{
-        min-height: 650px;
+        min-height: 703px;
     }
 }
 .title-page{
@@ -715,6 +716,12 @@ body{
         color: #000000;
         @include anim_transicion_ease(0.5s);
     }
+    i.visible{
+        display: block;  
+    }
+    i.oculto{
+        display: none;  
+    }
     i{
         display: none;
         position: absolute;
@@ -750,7 +757,7 @@ body{
     }
 }
 .banners-ayuda{
-    margin-top: -376px;
+    margin-top: -429px;
     position: absolute;
     z-index: 99;
     padding: 0 15px 40px 15px;
@@ -873,6 +880,7 @@ body{
     }
 }
 .footer {
+    width: auto;
     background: #000000;
     position: fixed;
     bottom: 0;
@@ -882,6 +890,7 @@ body{
     font-size: 11px;
     padding: 5px;
     z-index: 999;
+    overflow: hidden;
 
     a, a:hover {
         @include anim_transicion_ease(0.5s);
@@ -936,7 +945,7 @@ body{
         }
     }
     .content{
-        padding: 110px 0 400px 0;
+        padding: 110px 0 468px 0;
         .area_menu{
             min-height: 0px;
         }
@@ -945,7 +954,7 @@ body{
         width: auto;
         left: 20px;
         right: 0;
-        margin-top: -391px;
+        margin-top: -440px;
         .ayuda_linea{
             right: 25px;
         }
@@ -986,10 +995,10 @@ body{
         position: static;
     }
     .content{
-        padding: 20px 0 400px 0;
+        padding: 20px 0 468px 0;
     }
     .banners-ayuda{
-        margin-top: -350px;
+        margin-top: -405px;
     }
     .login_back {
         .login_footer {
@@ -1076,5 +1085,28 @@ body{
         h4{
             font-size: 14px;
         } 
+    }
+    .conexion_btn,
+    .conexion_btn:hover,
+    .conexion_btn:active{
+        
+        span{
+            width: 90%;
+        }
+        span.text,
+        span.text2{
+            text-align: center;
+            i.visible{
+                display: none;  
+            }
+            i.oculto{
+                display: none;  
+            }
+        }
+        .input_tel{
+            width: 150px;
+            float: none;
+            margin-right: 10px;
+        }
     }
 }

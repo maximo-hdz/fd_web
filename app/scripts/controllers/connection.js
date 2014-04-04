@@ -20,7 +20,7 @@ angular.module('spaApp')
 			var $this = $(this);
 			setTimeout(function(){
 				$this.removeClass('desactivo').addClass('activo');
-				$this.find('i').css('display','block');
+				$this.find('i').removeClass('oculto').addClass('visible');
 			}, ((index + 1) * 400) );
 		});	
 
