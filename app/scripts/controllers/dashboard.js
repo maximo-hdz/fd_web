@@ -12,22 +12,6 @@ angular.module('spaApp')
 	**/
 	$scope.getClass = function(path) {
 		if ($location.path().substr(0, path.length) == path) {
-
-			var page_show = '.page_'+path.substr(1, path.length);
-			$(page_show).css({
-				'opacity': '0',
-				'position': 'relative',
-				'left': '100px'
-			});
-			setTimeout(function(){
-				$(page_show).animate({
-					'opacity': '1',
-					'left': '0'
-				},300,function(){
-					$(page_show).css('position','static');
-				});
-			},600);
-
 			return "active"
 		} else {
 			return ""

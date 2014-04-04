@@ -98,8 +98,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.transfer', {
     url: 'transfer',
-    templateUrl: 'views/transferAddCount.html',
-    controller: 'transferAddCount',
+    //templateUrl: 'views/transferAddCount.html',
+    //controller: 'transferAddCount',
+    templateUrl: 'views/transfer.html',
+    controller: 'transferCtrl',
     breadcrumb: {
       title: 'Dashboard.Add Account'
     }
