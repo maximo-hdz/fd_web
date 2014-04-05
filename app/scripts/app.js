@@ -10,7 +10,7 @@ var app = angular.module('spaApp', [
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
-  $urlRouterProvider.otherwise("/login");
+  //$urlRouterProvider.otherwise("/login");
 
   $stateProvider
   .state('login', {
@@ -91,9 +91,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/biometrics.html',
     controller: 'BiometricsCtrl'
   })
-  .state('dashboard.detail', {
-    url: ':account_id/detail',
-    templateUrl: 'views/detail.html'
+  .state('dashboard.detailMovement', {
+    url: ':account_id/detailMovement',
+    templateUrl: 'views/detailMovement.html'
   })
   .state('dashboard.credit', {
     url: ':account_id/credit',
@@ -115,11 +115,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/creditValueDate.html',
     controller: 'valueDateCtrl'
   })
-
+  .state('dashboard.detailCreditPactedOp', {
+    url: ':account_id/detailCreditPactedOp',
+   templateUrl : 'views/detailLineCredit.html',
+  })
+}).factory('ctsCreditPacted', function(){
+  return {}
 }).factory('ctsBiometricas', function() {
   return {}
 });
-
 app.run(function($rootScope){
   $rootScope.restAPIBaseUrl = 'http://projects.anzen.com.mx:3000/api/';
 });

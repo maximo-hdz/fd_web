@@ -4,6 +4,11 @@ angular.module('spaApp')
 .controller('BiometricsCtrl', function($scope,$http,$location,ctsBiometricas,$rootScope,$log,$stateParams) {
 
 	/*$scope.biometricAccounts = ctsBiometricas.accounts;
+
+	.controller('BiometricsCtrl', function($scope,$http,$location,$sce,$stateParams,ctsBiometricas) {
+	
+	$scope.biometricAccounts = ctsBiometricas.accounts; 
+
 	$scope.seleccionTMP = {};
 	$scope.mySelections = [];
 	for(var x in $scope.biometricAccounts.accounts){
@@ -24,9 +29,12 @@ angular.module('spaApp')
 			{field:'alias', displayName:'Cargo'},
 			{field:'currency', displayName:'Abono'},
 			{field:'last_digits', displayName:'Saldo'}],
+		
 		afterSelectionChange: function(data) {
-				$location.path( $scope.mySelections[0]._account_id+'/detail' );
+				$location.path( $scope.mySelections[0]._account_id+'/detailMovement' );
 			}	
+		
+
 	};
 
 	$scope.amount=100000;

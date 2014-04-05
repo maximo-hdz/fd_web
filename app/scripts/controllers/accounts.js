@@ -67,10 +67,10 @@ angular.module('spaApp')
 	};
 
 	$scope.load_accounts = function () {
-		$('.page_accounts').hide();
-	    setTimeout(function(){
-	    	$('.page_accounts').fadeIn('slow');	
-	    },600);
+		// $('.page_accounts').hide();
+	 //    setTimeout(function(){
+	 //    	$('.page_accounts').fadeIn('slow');	
+	 //    },600);
 	};
 
 	/*Controller for module invertions   */

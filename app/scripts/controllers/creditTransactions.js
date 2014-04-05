@@ -16,7 +16,7 @@ angular.module('spaApp')
 				{field:'currency', displayName:'Abono'},
 				{field:'last_digits', displayName:'Saldo'}],
 			afterSelectionChange: function(data) {
-				$location.path( $scope.mySelections[0]._account_id+'/detail' );
+				$location.path( $scope.mySelections[0]._account_id+'/detailCredit' );
 			}
 	};
 

@@ -14,14 +14,31 @@ angular.module('spaApp')
 
 	$scope.getClass = function(path) {
 		if ($location.path().substr(0, path.length) == path) {
+
+			var page_show = '.page_'+path.substr(1, path.length);
+			console.log( page_show );
+			$(page_show).css({
+				'opacity': '0',
+				'position': 'relative',
+				'left': '100px'
+			});
+			setTimeout(function(){
+				$(page_show).animate({
+					'opacity': '1',
+					'left': '0'
+				},300,function(){
+					$(page_show).css('position','static');
+				});
+			},600);
+
 			return "active"
 		} else {
 			return ""
 		}
 	}
 
-	 //behavior stack accounts group
-	 //TODO Do not use jQuery
+	//behavior stack accounts group
+	//TODO Do not use jQuery
 	$scope.show_hide_table=function(elemento, titulo ){
 		if( $(elemento).css('display') == 'block' ){
 			$(elemento).hide();
@@ -45,8 +62,8 @@ angular.module('spaApp')
 	}
 
 	/** Biometrics Detail  **/
-	$scope.detail=function(account_id){
-		$location.path( account_id + '#/detail');
+	$scope.detailMovement=function(account_id){
+		$location.path( account_id + '#/detailMovement');
 	}	
 
 	/*Controller for module invertions   */
@@ -64,7 +81,7 @@ angular.module('spaApp')
 	$scope.creditTransaction=function(account_id){
 		$location.path( account_id + '/credit/transactions');
 		$( "#transaction" ).addClass( "active" );
- 		$( "#valueDate" ).removeClass( "active" );
+		$( "#valueDate" ).removeClass( "active" );
 		$( "#dueDate" ).removeClass( "active" );		
 	}	
 
@@ -94,14 +111,22 @@ angular.module('spaApp')
 		$location.path(account_id+ '#/detailCreditPacted');
 	}
 
+	$scope.detailCreditPactedOp=function(account_id){
+		$location.path( account_id + '#/detailCreditPactedOp');
+	}
+
 	//behavior stack help
 	$scope.show_hide_help=function(elemento, link){
 		if( $(elemento).css('display') == 'block' ){
-	 		$(elemento).slideToggle('fast');
-	 		$(link).removeClass('abierto').addClass('cerrado').slideToggle('fast');
-	 	}else{
-	 		$(elemento).slideToggle('fast');
-	 		$(link).removeClass('cerrado').addClass('abierto').slideToggle('fast');
-	 	}
+			$(elemento).slideToggle('fast');
+			$(link).removeClass('abierto').addClass('cerrado').slideToggle('fast');
+		}else{
+			$(elemento).slideToggle('fast');
+			$(link).removeClass('cerrado').addClass('abierto').slideToggle('fast');
+		}
 	};
+
+	$scope.$on('$routeChangeSuccess', function () {
+		console.log('cambio');
+	});
 });
