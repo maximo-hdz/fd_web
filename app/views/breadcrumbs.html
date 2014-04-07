@@ -1,0 +1,9 @@
+<span translate-cloak>
+    <ul class="breadcrumbs">
+        <li ng-repeat="breadcrumb in breadcrumbList">
+            <a ng-if="breadcrumb.state && !$last" ui-sref="{{breadcrumb.state}}">{{breadcrumb.title}}</a>
+            <span class="active" ng-show="$last">{{breadcrumb.title}}</span>
+            <span ng-hide="$last" class="divider"><i class="fa fa-angle-right"></i></span>
+        </li>
+    </ul>
+</span>

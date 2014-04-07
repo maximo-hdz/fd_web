@@ -11,11 +11,11 @@ angular.module('spaApp')
 	// Get Biometric Accounts
 	$http({
 		url: $rootScope.restAPIBaseUrl + 'accounts/1',
-	 	method: 'GET'
+		method: 'GET'
 	}).
 	success(function(data, status, headers) {
-	 	$scope.biometricAccounts = data;
-	 	ctsBiometricas.accounts = data;
+		$scope.biometricAccounts = data;
+		ctsBiometricas.accounts = data;
 	}).
 	error(function(data, status) {
 		//put an error message in the scope
@@ -40,7 +40,7 @@ angular.module('spaApp')
 	// Get Investment Accounts
 	$http({
 		url: $rootScope.restAPIBaseUrl + 'accounts/3',
-	 	method: 'GET'
+		method: 'GET'
 	}).
 	success(function(data, status, headers) {
 		$scope.investmentAccounts = data;
@@ -67,15 +67,39 @@ angular.module('spaApp')
 	};
 
 	$scope.load_accounts = function () {
-		// $('.page_accounts').hide();
-	 //    setTimeout(function(){
-	 //    	$('.page_accounts').fadeIn('slow');	
-	 //    },600);
+		// $('.page_accounts').css({
+		// 	'opacity': '0',
+		// 	'position': 'relative',
+		// 	'left': '100px'
+		// });
+		// setTimeout(function(){
+		// 	$('.page_accounts').animate({
+		// 		'opacity': '1',
+		// 		'left': '0'
+		// 	},300,function(){
+		// 		$('.page_accounts').css('position','static');
+		// 	});
+		// },600);
+		$('.page_accounts').css({
+			'opacity': '0'
+		});
+		$('.table-responsive').hide();
+		setTimeout(function(){
+			$('.page_accounts').animate({
+				'opacity': '1'
+			},300);
+		},500);
+
+		$( $('.table-responsive').get().reverse() ).each(function( index ){
+			var $this = $(this);
+			setTimeout(function(){
+				$this.slideToggle('slow');
+			}, ((index + 1) * 500) );	
+		});	
 	};
 
 	/*Controller for module invertions   */
 	$scope.inversiones=function(){
 		$location.path('#investment' );  
-
 	}
 });

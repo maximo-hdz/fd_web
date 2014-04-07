@@ -47,4 +47,9 @@ angular.module('spaApp')
       {name:'Memo Ochoa'},
       {name:'Cristiano(Hala)'}    
     ];
+    $scope.metodo = [
+      {name:'551234567'},
+      {name:'5512345678'},
+      {name:'prueba@anzen.com.mx'}    
+    ];
 });
