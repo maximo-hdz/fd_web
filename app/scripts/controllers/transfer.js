@@ -6,6 +6,10 @@ angular.module('spaApp')
 .controller('transferCtrl', function($scope,$http,$location,$rootScope,$log) {
 	$scope.specialist =  'David Torres Fernandez';
 
+	$scope.agregarBeneficiario=function(){
+		$location.path('transfer/add/beneficiary');
+	}
+
 	$scope.load_conection = function () {
 		$('.page_conection').css({
 			'opacity': '0'
