@@ -10,13 +10,14 @@ angular.module('spaApp')
 	$scope.biometricAccounts = ctsBiometricas.accounts; 
 
 	$scope.seleccionTMP = {};
-	$scope.mySelections = [];
+
 	for(var x in $scope.biometricAccounts.accounts){
 		if($stateParams.account_id == $scope.biometricAccounts.accounts[x]._account_id+'#'){
 			$scope.seleccionTMP = $scope.biometricAccounts.accounts[x];
 			break;
 		}
 	}*/
+	$scope.mySelections = [];
 	$rootScope.titulo = 'Saldos - Cuentas Biométricas - Cuenta ####';
 	$scope.gridOptions = {
 		data: 'myData',
