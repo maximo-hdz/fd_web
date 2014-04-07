@@ -1,4 +1,4 @@
-<div>
+x<div>
 	<div class="content_table">
 		<div class="row">
 			<div class="col-md-12"><span style="color:white">< Alta Interbancaria - Persona Física</span></div>
@@ -39,24 +39,23 @@
 		</div>
 		<hr>
 		<div class="row">
-			<div class="col-md-2">Autoriza</div>
-			<div class="col-md-4">
+			<div class="col-md-3 pull-right">
 				<select name="" id="">
-					<option value="">Nombre de persona autorizada</option>
+					<option value="">amigo@correo.com</option>
 				</select>
 			</div>
-			<div class="col-md-3">Medio</div>
-			<div class="col-md-3">
-				<select name="" id="">
-					<option value="">+55 56581111</option>
-				</select>
-			</div>
+			<div class="col-md-3 pull-right">Enviar a</div>
 		</div>	
 		<br>
 		<div class="row">
+			<div class="col-md-3 pull-left">
+				<a ng-click="print();" class="btn">
+					<span class="button"><i class="glyphicon glyphicon-print"></i> Imprimir</span>
+				</a>				
+			</div>
 			<div class="col-md-3 pull-right">
-				<a ng-click="confirm();" class="btn">
-					<span class="button"><i class="glyphicon glyphicon-ok"></i> Autorizar</span>
+				<a ng-click="send();" class="btn">
+					<span class="button"><i class="glyphicon glyphicon-ok"></i> Enviar</span>
 				</a>				
 			</div>
 		</div>

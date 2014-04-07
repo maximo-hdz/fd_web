@@ -119,6 +119,14 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/addBeneficiaryConfirm.html',
     controller: 'transferAddBeneficiaryConfirmCtrl',
     breadcrumb: {
+      title: 'Beneficiary.Confirm'
+    }
+  })
+  .state('dashboard.addBeneficiaryResult', {
+    url: 'transfer/add/beneficiary/result',
+    templateUrl: 'views/addBeneficiaryResult.html',
+    controller: 'transferAddBeneficiaryResultCtrl',
+    breadcrumb: {
       title: 'Beneficiary'
     }
   })
