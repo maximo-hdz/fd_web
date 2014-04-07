@@ -1,9 +1,14 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('BiometricsCtrl', function($scope,$http,$location,$sce,$stateParams,ctsBiometricas) {
+.controller('BiometricsCtrl', function($scope,$http,$location,ctsBiometricas,$rootScope,$log,$stateParams) {
+
+	/*$scope.biometricAccounts = ctsBiometricas.accounts;
+
+	.controller('BiometricsCtrl', function($scope,$http,$location,$sce,$stateParams,ctsBiometricas) {
 	
-	$scope.biometricAccounts = ctsBiometricas.accounts;
+	$scope.biometricAccounts = ctsBiometricas.accounts; 
+
 	$scope.seleccionTMP = {};
 	$scope.mySelections = [];
 	for(var x in $scope.biometricAccounts.accounts){
@@ -11,8 +16,8 @@ angular.module('spaApp')
 			$scope.seleccionTMP = $scope.biometricAccounts.accounts[x];
 			break;
 		}
-	}
-
+	}*/
+	$rootScope.titulo = 'Saldos - Cuentas Biométricas - Cuenta ####';
 	$scope.gridOptions = {
 		data: 'myData',
 		multiSelect: false,

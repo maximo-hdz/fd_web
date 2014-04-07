@@ -6,6 +6,7 @@
 angular.module('spaApp')
 .controller('AccountsCtrl', function($scope,$http,$location,ctsBiometricas,$rootScope,$log) {
 	$scope.client = 'Ricardo Montemayor Morales';
+	$rootScope.titulo = 'Saldos';
 
 	// Get Biometric Accounts
 	$http({

@@ -4,7 +4,7 @@
 angular.module('spaApp')
 .controller('detailCreditCtrl',
   function($scope,$http,$location,$rootScope,$log,$stateParams){
-   
+   $rootScope.titulo = 'Saldos - Línea de Crédito - Cuenta #### - Detalle de la Operación';
     $scope.gridOptions ={data: 'myData',
       columnDefs: [{field:'name',displayName:'Nombre del beneficiario'},
       {field:'monto',displayName:'Monto'},
