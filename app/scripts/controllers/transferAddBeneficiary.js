@@ -6,7 +6,7 @@ angular.module('spaApp')
 .controller('transferAddBeneficiaryCtrl', function($scope,$http,$location,$rootScope,$log) {
 
 	$scope.addBeneficiary=function(){
-		$location.path('transfer/add/beneficiary/physical');
+		$location.path('transfer/add/beneficiary/confirm');
 	};
 
 });
