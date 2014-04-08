@@ -5,7 +5,7 @@ angular.module('spaApp').directive("breadcrumbs", function(breadcrumbService) {
     restrict: 'E',
     replace: true,
     priority: 100,
-    templateUrl: 'views/breadcrumbs.html',
+    templateUrl: 'views/directives/breadcrumbs.html',
     link: function($scope) {
       
       $scope.$on('$stateChangeSuccess', function(){

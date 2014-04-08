@@ -15,7 +15,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   $stateProvider
   .state('login', {
     url: '/login',
-    templateUrl: 'views/login.html',
+    templateUrl: 'views/partials/authentication/login.html',
     controller: 'LoginCtrl'
   })
   .state('dashboard', {
@@ -28,8 +28,13 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     }
   })
   .state('dashboard.accounts', {
+    resolve: {
+          accounts: ['accountsProvider', function(accountsProvider) {
+            return accountsProvider.getBiometricAccounts();
+      }]
+    } ,
     url: 'accounts',
-    templateUrl: 'views/accounts.html',
+    templateUrl: 'views/partials/accounts/accounts.html',
     controller: 'AccountsCtrl',
     breadcrumb: {
       title: 'accounts'
@@ -38,7 +43,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for investment bank(menu initial)
   .state('dashboard.investment',{
     url: ':account_id/investment',
-    templateUrl: 'views/investment.html',
+    templateUrl: 'views/partials/accounts/investment.html',
     controller: 'InvestmentCtrl',
     breadcrumb: {
       title: 'investment'
@@ -48,16 +53,16 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for investment bank(menu initial)
   .state('dashboard.detailInvestment',{
     url: ':account_id/detailInvestment',
-    templateUrl: 'views/transactionDetailInvestment.html',
+    templateUrl: 'views/partials/accounts/transactionDetailInvestment.html',
     controller: 'InvestmentDetailCtrl',
     breadcrumb: {
       title: 'detail'
     }
   })
-  //view for detail credit liquidated  
+  //view for detail credit liquidated
   .state('dashboard.detailCredit',{
     url: ':acount_id/detailCredit',
-    templateUrl: 'views/detailLineCredit.html',
+    templateUrl: 'views/partials/accounts/detailLineCredit.html',
     controller: 'detailCreditCtrl',
     breadcrumb: {
       title: 'detail'
@@ -66,7 +71,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for detail credit pacted
   .state('dashboard.detailCreditPacted',{
     url: ':account_id/detailCreditPacted',
-    templateUrl: 'views/detailOperationPactada.html',
+    templateUrl: 'views/partials/accounts/detailOperationPactada.html',
     controller: 'detailCreditPactedCtrl',
     breadcrumb: {
       title: 'detail'
@@ -74,7 +79,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.connection', {
     url: 'connection',
-    templateUrl: 'views/connection.html',
+    templateUrl: 'views/partials/connection/connection.html',
     controller: 'ConnectionCtrl',
     breadcrumb: {
       title: 'connection'
@@ -82,7 +87,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.authorize', {
     url: 'authorize',
-    templateUrl: 'views/authorizePendingOperations.html',
+    templateUrl: 'views/partials/accounts/authorizePendingOperations.html',
     controller: 'AuthorizeCtrl',
     breadcrumb: {
       title: 'authorize'
@@ -90,7 +95,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.authorizeMod', {
     url: 'authorizeMod',
-    templateUrl: 'views/authorizePendingModifications.html',
+    templateUrl: 'views/partials/accounts/authorizePendingModifications.html',
     controller: 'AuthorizeModCtrl',
     breadcrumb: {
       title: 'Modify'
@@ -100,7 +105,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     url: 'transfer',
     //templateUrl: 'views/transferAddCount.html',
     //controller: 'transferAddCount',
-    templateUrl: 'views/transfer.html',
+    templateUrl: 'views/partials/transfers/transfer.html',
     controller: 'transferCtrl',
     breadcrumb: {
       title: 'Transfer'
@@ -108,7 +113,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.addBeneficiary', {
     url: 'transfer/add/beneficiary',
-    templateUrl: 'views/addBeneficiary.html',
+    templateUrl: 'views/partials/transfers/addBeneficiary.html',
     controller: 'transferAddBeneficiaryCtrl',
     breadcrumb: {
       title: 'Beneficiary'
@@ -116,7 +121,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.authorizeChanges', {
     url: 'authorizeChanges',
-    templateUrl: 'views/authorizeAdminChange.html',
+    templateUrl: 'views/partials/authorize/authorizeAdminChange.html',
     controller: "authorizeChanges",
     breadcrumb: {
       title: 'Authorize'
@@ -126,7 +131,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     url: 'administration',
 /*    templateUrl: 'views/setUpNotifications.html',
     controller: "setUpNotifications"*/
-    templateUrl: 'views/user_administration.html',
+    templateUrl: 'views/partials/administration/user_administration.html',
     controller: 'user_administration',
     breadcrumb: {
       title: 'Administration'
@@ -134,7 +139,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.biometrics', {
     url: ':account_id/biometrics',
-    templateUrl: 'views/biometrics.html',
+    templateUrl: 'views/partials/accounts/biometrics.html',
     controller: 'BiometricsCtrl',
     breadcrumb: {
       title: 'Biometrics'
@@ -142,14 +147,14 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.detailMovement', {
     url: ':account_id/detailMovement',
-    templateUrl: 'views/detailMovement.html',
+    templateUrl: 'views/partials/accounts/detailMovement.html',
     breadcrumb: {
       title: 'Detail'
     }
   })
   .state('dashboard.credit', {
     url: ':account_id/credit',
-    templateUrl: 'views/credit.html',
+    templateUrl: 'views/partials/accounts/credit.html',
     controller: 'CreditCtrl',
     breadcrumb: {
       title: 'Credit'
@@ -157,7 +162,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.credit.transactions', {
     url: '/transactions',
-    templateUrl: 'views/creditTransactions.html',
+    templateUrl: 'views/partials/accounts/creditTransactions.html',
     controller: 'transactionsCtrl',
     breadcrumb: {
       title: 'Transactions'
@@ -165,7 +170,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.credit.dueDate', {
     url: '/dueDate',
-    templateUrl: 'views/creditDueDate.html',
+    templateUrl: 'views/partials/accounts/creditDueDate.html',
     controller: 'dueDateCtrl',
     breadcrumb: {
       title: 'Due Date'
@@ -173,15 +178,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.credit.valueDate', {
     url: '/valueDate',
-    templateUrl: 'views/creditValueDate.html',
+    templateUrl: 'views/partials/accounts/creditValueDate.html',
     controller: 'valueDateCtrl',
     breadcrumb: {
       title: 'Value Date'
     }
   })
   .state('dashboard.detailCreditPactedOp', {
-    url: ':account_id/detailCreditPactedOp',
-   templateUrl : 'views/detailLineCredit.html',
+    url: ':account_id/partials/detailCreditPactedOp',
+   templateUrl : 'views/accounts/detailLineCredit.html',
     breadcrumb: {
       title: 'Detail'
     }

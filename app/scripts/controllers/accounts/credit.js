@@ -16,7 +16,7 @@ angular.module('spaApp')
 	error(function(data, status) {
 		$log.error('Error: '+data, status);
 		$location.path( '/login' );
-	});	
+	});
 
 
  $scope.gridOptions ={data: 'myData',
@@ -26,7 +26,7 @@ angular.module('spaApp')
     };
 
     $http({
-      url: $rootScope.restAPIBaseUrl + 'accounts/detailCredit.json',
+      url:'/accounts/detailCredit.json',
       method: 'GET'
     }).
     success(function(data, status) {
@@ -44,10 +44,10 @@ angular.module('spaApp')
    $scope.date="DD/MM/YYYY";
    $scope.tc="00.00";
    $scope.operacion=45698;
-   $scope.autorizaMas="+ 123859"; 
+   $scope.autorizaMas="+ 123859";
    $scope.authorized = [
       {name:'Rafa MArquez'},
       {name:'Memo Ochoa'},
-      {name:'Cristiano'}    
+      {name:'Cristiano'}
     ];
 });

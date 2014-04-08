@@ -8,7 +8,7 @@ angular.module('spaApp')
 	function($scope,$http,$location,$rootScope,$log) {
 
 		$http({
-			url: $rootScope.restAPIBaseUrl + 'accounts/invertions.json',
+			url:'accounts/investment.json',
 			method: 'GET'
 		}).
 		success(function(data, status, headers) {
@@ -21,7 +21,7 @@ angular.module('spaApp')
 		});
 
 		$http({
-			url: $rootScope.restAPIBaseUrl + 'accounts/investment.json',
+			url: 'accounts/investment.json',
 			method: 'GET'
 		}).
 		success(function(data, status, headers) {
