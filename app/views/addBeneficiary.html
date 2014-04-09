@@ -1,9 +1,14 @@
 <div>
 	<div class="content_table">
 		<div class="row">
-			<div class="col-md-12"><span style="color:white">< Alta Interbancaria</span></div>
+			<div class="col-md-12">
+				<div class="col-md-1">
+					<span type="button" href="/#/transfer" class="btn btn-default btn-large btn-block">&lt;</span>
+				</div>
+			<span style="color:white;font-size:x-large">Alta Interbancaria</span></div>
 		</div>
-		<div class="row">
+		<br>
+		<div class="row well">
 			<div class="col-md-3">Seleccionar</div>
 			<div class="col-md-3">
 				<select ng-model="tipo">
@@ -12,7 +17,6 @@
 				</select>
 			</div>
 		</div>
-		<hr>
 		<div ui-view></div>
 	</div>
 </div>
