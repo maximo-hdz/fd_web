@@ -10,7 +10,7 @@ var app = angular.module('spaApp', [
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
-  //$urlRouterProvider.otherwise("/login");
+  $urlRouterProvider.otherwise("/login");
 
   $stateProvider
   .state('login', {
@@ -103,7 +103,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     templateUrl: 'views/transfer.html',
     controller: 'transferCtrl',
     breadcrumb: {
-      title: 'Dashboard.Add Account'
+      title: 'Transfer'
+    }
+  })
+  .state('dashboard.addBeneficiary', {
+    url: 'transfer/add/beneficiary',
+    templateUrl: 'views/addBeneficiary.html',
+    controller: 'transferAddBeneficiaryCtrl',
+    breadcrumb: {
+      title: 'Beneficiary'
     }
   })
   .state('dashboard.authorizeChanges', {
@@ -177,6 +185,22 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     breadcrumb: {
       title: 'Detail'
     }
+  })
+  .state('dashboard.internationalTransfer', {
+    url: ':transfer/internationalTransfer',
+   templateUrl : 'views/internationalTransfer.html',
+   controller: 'internationalTransfer',
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.confirmInternationalTransfer', {
+    url: ':transfer/confirmInternationalTransfer',
+   templateUrl : 'views/confirmInternationalTransfer.html',
+   controller: 'internationalTransfer',
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
   })
 }).factory('ctsCreditPacted', function(){
   return {}

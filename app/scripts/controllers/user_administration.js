@@ -26,7 +26,7 @@ angular.module('spaApp')
     
     
 	$http({
-		url: 'http://localhost:9000/accounts/table.json',
+		url: '/accounts/table.json',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {
