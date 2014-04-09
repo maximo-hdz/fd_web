@@ -114,12 +114,44 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
       title: 'Beneficiary'
     }
   })
+  .state('dashboard.addBeneficiary.physical', {
+    url: '/physical',
+    templateUrl: 'views/addBeneficiaryPhysical.html',
+    controller: 'TransferAddBeneficiaryPhysicalCtrl',
+    breadcrumb: {
+      title: 'Physical'
+    }
+  })
+  .state('dashboard.addBeneficiary.moral', {
+    url: '/moral',
+    templateUrl: 'views/transfer_add_beneficiary_moral.html',
+    controller: 'TransferAddBeneficiaryMoralCtrl',
+    breadcrumb: {
+      title: 'Moral'
+    }
+  })
+  .state('dashboard.addMoralBeneficiaryConfirm', {
+    url: 'transfer/add/moralbeneficiary/confirm',
+    templateUrl: 'views/transfer_add_beneficiary_moral_confirm.html',
+    controller: 'TransferAddBeneficiaryMoralConfirmCtrl',
+    breadcrumb: {
+      title: 'Confirm'
+    }
+  })
   .state('dashboard.addBeneficiaryConfirm', {
     url: 'transfer/add/beneficiary/confirm',
     templateUrl: 'views/addBeneficiaryConfirm.html',
     controller: 'transferAddBeneficiaryConfirmCtrl',
     breadcrumb: {
-      title: 'Beneficiary.Confirm'
+      title: 'Confirm'
+    }
+  })
+  .state('dashboard.addMoralBeneficiaryResult', {
+    url: 'transfer/add/moralbeneficiary/result',
+    templateUrl: 'views/transfer_add_beneficiary_moral_result.html',
+    controller: 'TransferAddBeneficiaryMoralResultCtrl',
+    breadcrumb: {
+      title: 'Beneficiary'
     }
   })
   .state('dashboard.addBeneficiaryResult', {

@@ -1,12 +1,13 @@
 'use strict';
-/**
- * The connection controller
- */
+
 angular.module('spaApp')
-.controller('transferAddBeneficiaryCtrl', function($scope,$http,$location,$rootScope,$log) {
-
-	$scope.addBeneficiary=function(){
-		$location.path('transfer/add/beneficiary/confirm');
-	};
-
-});
+	.controller('transferAddBeneficiaryCtrl', function($scope,$location) {
+		$scope.tipo = 'fisica';
+		$scope.$watch('tipo',function(){
+			if($scope.tipo=='fisica'){
+				$location.path('transfer/add/beneficiary/physical');
+			}else{
+				$location.path('transfer/add/beneficiary/moral');
+			}
+		});
+	});
