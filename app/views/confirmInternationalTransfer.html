@@ -152,29 +152,28 @@
 			<hr>
 
 			<div class="row">
-				<div class="col-md-2">
-					<span class="pull-right">Autoriza:</span>
+				<div ng-switch on="x">
+					<div ng-switch-when="true">
+						<div ng-include="'/views/partialTransfer.html'"></div>
+					</div>
+      				<div ng-switch-default></div>
 				</div>
-				<div class="col-md-4">
-					<select>
-						<option>Nombre de Persona Autorizada</option>
-					</select>
-				</div>
-				<div class="col-md-2">
-					<span class="pull-right">Medio:</span>
-				</div>
-				<div class="col-md-4">
-					<select>
-						<option>+5281 777 0022</option>
-						<option>{{date}}</option>
-					</select>
-				</div>
+				
 			</div>
 
     	</div><!--end well-->
     	<div class="row">
-			<div class="col-md-3 pull-right">
-				<a type="button" href="/#/transfer/confirmInternationalTransfer" class="btn btn-default btn-large btn-block">Autorizar</a>
+    		<div ng-switch on="x">
+					<div ng-switch-when="true">
+						<div class="col-md-3 pull-right">
+							<a type="button" href="/#/transfer/confirmInternationalTransfer" class="btn btn-default btn-large btn-block" ng-click="switch()">Autorizar</a>
+						</div>
+					</div>
+      				<div ng-switch-default>
+						<div class="col-md-3 pull-right">
+							<a type="button" href="/#/transfer/confirmInternationalTransfer" class="btn btn-default btn-large btn-block" ng-click="switch()">Imprimir</a>
+						</div>
+      				</div>
 			</div>
 		</div>
 	</div><!-- end col-md-12-->
