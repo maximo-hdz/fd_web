@@ -1,53 +1,60 @@
 <div>
 	<div class="content_table">
 		<div class="row">
-			<div class="col-md-12"><span style="color:white">< Alta Interbancaria - Persona Moral</span></div>
+			<div class="col-md-12">
+				<div class="col-md-1">
+					<span type="button" class="btn btn-default btn-large btn-block">&lt;</span>
+				</div>
+				<span style="color:white;font-size:x-large">Alta Interbancaria - Persona Moral</span>
+		    </div>
 		</div>
-		<div class="row">
-			<div class="col-md-3">Cuenta del Beneficiario</div>
-			<div class="col-md-3"><input type="text"  ng-model="cuenta" size="20"/></div>
-			<div class="col-md-3">Alias de la Cuenta</div>
-			<div class="col-md-3"><input type="text"  ng-model="alias" size="20"/></div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3">Titular Beneficiario</div>
-			<div class="col-md-3"><input type="text"  ng-model="nombre" size="20"/></div>
-			<div class="col-md-3">Banco Beneficiario</div>
-			<div class="col-md-3"><input type="text"  ng-model="banco" size="20"/></div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3">Correo Electrónico</div>
-			<div class="col-md-3"><input type="text"  ng-model="correo" size="20"/></div>
-			<div class="col-md-3">Límite de Pago Diario</div>
-			<div class="col-md-3"><input type="text"  ng-model="limiteDiario" size="20"/></div>
-		</div>
-		<div class="row">
-			<div class="col-md-3">Divisa</div>
-			<div class="col-md-3"><input type="text"  ng-model="divisa" size="20"/></div>
-			<div class="col-md-3">Límite de Pago Mensual</div>
-			<div class="col-md-3"><input type="text"  ng-model="limiteMensual" size="20"/></div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-md-3 pull-right">
-				<select name="" id="">
-					<option value="">amigo@correo.com</option>
-				</select>
-			</div>
-			<div class="col-md-3 pull-right">Enviar a</div>
-		</div>	
 		<br>
+		<div class="well">
+			<div class="row">
+				<div class="col-md-3">Cuenta del Beneficiario</div>
+				<div class="col-md-3"><input type="text"  ng-model="cuenta" size="20"/></div>
+				<div class="col-md-3">Alias de la Cuenta</div>
+				<div class="col-md-3"><input type="text"  ng-model="alias" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Titular Beneficiario</div>
+				<div class="col-md-3"><input type="text"  ng-model="nombre" size="20"/></div>
+				<div class="col-md-3">Banco Beneficiario</div>
+				<div class="col-md-3"><input type="text"  ng-model="banco" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Correo Electrónico</div>
+				<div class="col-md-3"><input type="text"  ng-model="correo" size="20"/></div>
+				<div class="col-md-3">Límite de Pago Diario</div>
+				<div class="col-md-3"><input type="text"  ng-model="limiteDiario" size="20"/></div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">Divisa</div>
+				<div class="col-md-3"><input type="text"  ng-model="divisa" size="20"/></div>
+				<div class="col-md-3">Límite de Pago Mensual</div>
+				<div class="col-md-3"><input type="text"  ng-model="limiteMensual" size="20"/></div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-3 pull-right">
+					<select name="" id="">
+						<option value="">amigo@correo.com</option>
+					</select>
+				</div>
+				<div class="col-md-3 pull-right">Enviar a</div>
+			</div>
+		</div>
 		<div class="row">
-			<div class="col-md-3 pull-left">
+			<div class="col-md-3 pull-left col-sm-offset-1">
 				<a ng-click="print();" class="btn">
-					<span class="button"><i class="glyphicon glyphicon-print"></i> Imprimir</span>
+					<span class="btn btn-default btn-sm"><i class="glyphicon glyphicon-print"></i> Imprimir</span>
 				</a>				
 			</div>
 			<div class="col-md-3 pull-right">
 				<a ng-click="send();" class="btn">
-					<span class="button"><i class="glyphicon glyphicon-ok"></i> Enviar</span>
+					<span class="btn btn-default btn-sm"><i class="glyphicon glyphicon-ok"></i> Enviar</span>
 				</a>				
 			</div>
 		</div>
