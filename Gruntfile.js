@@ -61,7 +61,7 @@ module.exports = function (grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-      files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+      files: ['<%= yeoman.app %>/scripts/{,*/*/}*.js'],
       tasks: ['newer:jshint:all'],
       options: {
         livereload: true
@@ -83,7 +83,7 @@ livereload: {
     livereload: '<%= connect.options.livereload %>'
   },
   files: [
-'<%= yeoman.app %>/{,*/}*.html',
+'<%= yeoman.app %>/{,*/*/*/}*.html',
 '.tmp/styles/{,*/}*.css',
 '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 ]
@@ -246,9 +246,9 @@ livereload: {
       dist: {
         files: {
           src: [
-        '<%= yeoman.dist %>/static/scripts/{,*/}*.js',
-      '<%= yeoman.dist %>/static/styles/{,*/}*.css',
-    '<%= yeoman.dist %>/static/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+        '<%= yeoman.dist %>/scripts/{,*/}*.js',
+      '<%= yeoman.dist %>/styles/{,*/}*.css',
+    '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
     '<%= yeoman.dist %>/static/styles/fonts/*'
     ]
   }
@@ -259,7 +259,7 @@ livereload: {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
+      html: '<%= yeoman.app %>/**/*.html',
       options: {
         dest: '<%= yeoman.dist %>'
       }
@@ -267,8 +267,8 @@ livereload: {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-    html: ['<%= yeoman.dist %>/{,*/}*.html'],
-  css: ['<%= yeoman.dist %>/static/styles/{,*/}*.css'],
+    html: ['<%= yeoman.dist %>/**/*.html'],
+  css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
   options: {
     assetsDirs: ['<%= yeoman.dist %>']
   }
@@ -306,7 +306,7 @@ htmlmin: {
     files: [{
       expand: true,
       cwd: '<%= yeoman.dist %>',
-    src: ['*.html', 'views/{,*/}*.html'],
+    src: ['*.html','views/{,*/}*.html','views/{,*/*/}*.html'],
     dest: '<%= yeoman.dist %>'
   }]
 }
@@ -345,8 +345,8 @@ htmlmin: {
           '.htaccess',
           'PIE.htc' ,
           '*.html',
-        'views/{,*/}*.html',
-        'bower_components/**/*',
+         'views/{,*/}*.html',
+        'views/{,*/*/}*.html',
       'images/{,*/}*.{webp}',
       'fonts/*',
       'audio/*'
