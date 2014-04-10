@@ -67,7 +67,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for detail credit pacted
   .state('dashboard.detailCreditPacted',{
     url: ':account_id/detailCreditPacted',
-    templateUrl: 'views/partials/accounts/detailOperationPactada.html',
+    templateUrl: 'views/partials/accounts/credit-detail-agreement.html',
     controller: 'CreditDetailAgreementCtrl',
     breadcrumb: {
       title: 'detail'
@@ -83,7 +83,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.authorize', {
     url: 'authorize',
-    templateUrl: 'views/partials/accounts/authorizePendingOperations.html',
+    templateUrl: 'views/partials/authorize/pending-operations.html',
     controller: 'AuthorizeOperationsCtrl',
     breadcrumb: {
       title: 'authorize'
@@ -91,7 +91,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.authorizeMod', {
     url: 'authorizeMod',
-    templateUrl: 'views/partials/accounts/authorizePendingModifications.html',
+    templateUrl: 'views/partials/authorize/pending-modifications.html',
     controller: 'AuthorizeModCtrl',
     breadcrumb: {
       title: 'Modify'
@@ -108,7 +108,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     url: 'transfer',
     //templateUrl: 'views/transferAddCount.html',
     //controller: 'transferAddCount',
-    templateUrl: 'views/partials/transfers/transfer.html',
+    templateUrl: 'views/partials/transfers/transfers.html',
     controller: 'TransfersCtrl',
     breadcrumb: {
       title: 'Transfer'
@@ -116,7 +116,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.addBeneficiary', {
     url: 'transfer/add/beneficiary',
-    templateUrl: 'views/partials/transfers/addBeneficiary.html',
+    templateUrl: 'views/partials/transfers/add-beneficiary.html',
     controller: 'AddBeneficiaryCtrl',
     breadcrumb: {
       title: 'Beneficiary'
@@ -126,8 +126,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     url: 'administration',
 /*    templateUrl: 'views/setUpNotifications.html',
     controller: "setUpNotifications"*/
-    templateUrl: 'views/partials/administration/user_administration.html',
-    controller: 'AdministrationCtrl',
+    templateUrl: 'views/partials/administration/users-admin.html',
+    controller: 'UsersAdministrationCtrl',
     breadcrumb: {
       title: 'Administration'
     }
@@ -142,7 +142,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.detailMovement', {
     url: ':account_id/detailMovement',
-    templateUrl: 'views/partials/accounts/detailMovement.html',
+    templateUrl: 'views/partials/accounts/credit-detail.html',
     controller : 'CreditDetailCtrl' ,
     breadcrumb: {
       title: 'Detail'
@@ -158,7 +158,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.credit.transactions', {
     url: '/transactions',
-    templateUrl: 'views/partials/accounts/creditTransactions.html',
+    templateUrl: 'views/partials/accounts/credit-transactions.html',
     controller: 'CreditTransactionsCtrl',
     breadcrumb: {
       title: 'Transactions'
@@ -166,7 +166,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.credit.dueDate', {
     url: '/dueDate',
-    templateUrl: 'views/partials/accounts/creditDueDate.html',
+    templateUrl: 'views/partials/accounts/credit-duedate.html',
     controller: 'CreditDueDateCtrl',
     breadcrumb: {
       title: 'Due Date'
@@ -174,15 +174,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.credit.valueDate', {
     url: '/valueDate',
-    templateUrl: 'views/partials/accounts/creditValueDate.html',
+    templateUrl: 'views/partials/accounts/credit-valuedate.html',
     controller: 'CreditValueDateCtrl',
     breadcrumb: {
       title: 'Value Date'
     }
   })
   .state('dashboard.detailCreditPactedOp', {
-    url: ':account_id/partials/detailCreditPactedOp',
-   templateUrl : 'views/accounts/detailLineCredit.html',
+    url: ':account_id/detail/operation',
+   templateUrl : 'views/accounts/credit-detail-operation.html',
     breadcrumb: {
       title: 'Detail'
     }

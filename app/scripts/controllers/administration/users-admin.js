@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('AdministrationCtrl', function ($scope,$http,$location,$sce,$stateParams) {
+.controller('UsersAdministrationCtrl', function ($scope,$http,$location,$sce,$stateParams) {
 
 	$scope.gridOptions = {
 		data: 'myData',
