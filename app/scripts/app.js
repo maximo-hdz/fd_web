@@ -202,6 +202,22 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
       //title: 'Detail'
    // }
   })
+  .state('dashboard.same-bank-transfer', {
+    url: ':transfer/same-bank-transfer',
+   templateUrl : 'views/same-bank-transfer.html',
+   controller: 'same-bank-transfer',
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.same-bank-transfer-confirmation', {
+    url: ':transfer/same-bank-transfer-confirmation',
+   templateUrl : 'views/same-bank-transfer-confirmation.html',
+   controller: 'same-bank-transfer',
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
 }).factory('ctsCreditPacted', function(){
   return {}
 }).factory('ctsBiometricas', function() {
