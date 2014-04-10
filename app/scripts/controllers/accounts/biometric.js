@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('BiometricsCtrl', function($scope,$http,$location,ctsBiometricas,$rootScope,$log,$stateParams) {
+.controller('BiometricCtrl', function($scope,$http,$location,ctsBiometricas,$rootScope,$log,$stateParams) {
 
 	/*$scope.biometricAccounts = ctsBiometricas.accounts;
 
 	.controller('BiometricsCtrl', function($scope,$http,$location,$sce,$stateParams,ctsBiometricas) {
-	
-	$scope.biometricAccounts = ctsBiometricas.accounts; 
+
+	$scope.biometricAccounts = ctsBiometricas.accounts;
 
 	$scope.seleccionTMP = {};
 
@@ -24,17 +24,17 @@ angular.module('spaApp')
 		multiSelect: false,
 		selectedItems: $scope.mySelections,
 		columnDefs: [
-			{field:'_account_id', displayName:'Fecha'}, 
+			{field:'_account_id', displayName:'Fecha'},
 			{field:'account_type', displayName:'Operación'},
 			{field:'name', displayName:'Descripcion'},
 			{field:'alias', displayName:'Cargo'},
 			{field:'currency', displayName:'Abono'},
 			{field:'last_digits', displayName:'Saldo'}],
-		
+
 		afterSelectionChange: function(data) {
 				$location.path( $scope.mySelections[0]._account_id+'/detailMovement' );
-			}	
-		
+			}
+
 
 	};
 

@@ -4,9 +4,12 @@
 Navigation-bar  controller  for dashboard
 **/
 angular.module('spaApp')
-.controller('Dashboard', function($scope,$location) {
+.controller('DashboardCtrl', function($scope,$location) {
 	$scope.client = 'Ricardo Montemayor Morales';
-	
+
+	$scope.$on('$routeChangeStart', function(next, current) {
+		console.log("Change route");
+	 });
 
 	/**
 	Add class active for item selected
@@ -47,11 +50,11 @@ angular.module('spaApp')
 	/** Biometrics Detail  **/
 	$scope.detailMovement=function(account_id){
 		$location.path( account_id + '#/detailMovement');
-	}	
+	}
 
 	/*Controller for module invertions   */
 	$scope.investment=function(account_id){
-		$location.path(account_id + '#/investment');  
+		$location.path(account_id + '#/investment');
 	}
 
 	/* Credit Account */
@@ -65,8 +68,8 @@ angular.module('spaApp')
 		$location.path( account_id + '/credit/transactions');
 		$( "#transaction" ).addClass( "active" );
 		$( "#valueDate" ).removeClass( "active" );
-		$( "#dueDate" ).removeClass( "active" );		
-	}	
+		$( "#dueDate" ).removeClass( "active" );
+	}
 
 	/* Credit Due Date */
 	$scope.dueDate=function(account_id){
@@ -74,7 +77,7 @@ angular.module('spaApp')
 		$( "#dueDate" ).addClass( "active" );
 		$( "#valueDate" ).removeClass( "active" );
 		$( "#transaction" ).removeClass( "active" );
-	}	
+	}
 
 	/* Credit value Date */
 	$scope.valueDate=function(account_id){
@@ -82,7 +85,7 @@ angular.module('spaApp')
 		$( "#valueDate" ).addClass( "active" );
 		$( "#dueDate" ).removeClass( "active" );
 		$( "#transaction" ).removeClass( "active" );
-	}	
+	}
 
 	/* Mapping for view detail credit operation liquidated */
 	$scope.detailCredit=function(account_id){

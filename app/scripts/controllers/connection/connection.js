@@ -7,7 +7,6 @@ angular.module('spaApp')
 	$scope.specialist =  'David Torres Fernandez';
 	$rootScope.titulo = 'Connection';
 
-
 	$scope.load_conection = function () {
 		$('.page_conection').css({
 			'opacity': '0'
@@ -17,20 +16,20 @@ angular.module('spaApp')
 				'opacity': '1'
 			},300);
 		},500);
-		
+
 		$( $('.conexion_btn').get().reverse() ).each(function( index ){
 			var $this = $(this);
 			setTimeout(function(){
 				$this.removeClass('desactivo').addClass('activo');
 				$this.find('i').removeClass('oculto').addClass('visible');
 			}, ((index + 1) * 400) );
-		});	
+		});
 
 		// setTimeout(function(){
 		// 	$('.conexion_btn').each(function(){
 		   //  	$(this).removeClass('desactivo').addClass('activo');
 		   //  	$(this).find('i').css('display','block');
-		   //  });	
+		   //  });
 		// },500);
 	};
 });

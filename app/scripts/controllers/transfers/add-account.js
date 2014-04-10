@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('transferAddCount', function($scope,$http,$location,$rootScope,$log) {
+.controller('AddAccountCtrl', function($scope,$http,$location,$rootScope,$log) {
 	$scope.data={
 		"alias":"Alias Seleccionado",
 		"CLABE":"Número CLABE",

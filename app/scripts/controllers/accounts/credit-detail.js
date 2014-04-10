@@ -2,7 +2,7 @@
 
 /* This controller is work flow of detail credit, obtain a .json to see on the view detailLineCredit.html */
 angular.module('spaApp')
-.controller('detailCreditCtrl',
+.controller('CreditDetailCtrl',
   function($scope,$http,$location,$rootScope,$log,$stateParams){
    $rootScope.titulo = 'Saldos - Línea de Crédito - Cuenta #### - Detalle de la Operación';
     $scope.gridOptions ={data: 'myData',
@@ -34,6 +34,6 @@ angular.module('spaApp')
     $scope.mail = [
       {name:'jbravor@anze.com.mx'},
       {name:'amigo@gmail.com'},
-      {name:'cliente@banco.com.mx'}    
+      {name:'cliente@banco.com.mx'}
     ];
 });

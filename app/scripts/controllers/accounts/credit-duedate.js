@@ -1,20 +1,20 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('dueDateCtrl', function ($scope,$http,$location,$rootScope,$log,$stateParams) {
-	
+.controller('CreditDueDateCtrl', function ($scope,$http,$location,$rootScope,$log,$stateParams) {
+
 	$scope.mySelections = [];
-	$scope.gridOptions = { 
+	$scope.gridOptions = {
 			data: 'myData',
 			multiSelect: false,
 			selectedItems: $scope.mySelections,
 			columnDefs: [
-				{field:'_account_id', displayName:'No. de Operación'}, 
+				{field:'_account_id', displayName:'No. de Operación'},
 				{field:'account_type', displayName:'Cliente'},
 				{field:'name', displayName:'Fecha Vencimiento'},
 				{field:'alias', displayName:'Monto a Pagar'},
 				{field:'currency', displayName:'Divisa'}]
-	};	
+	};
 
 	$http({
 		url: $rootScope.restAPIBaseUrl + 'accounts/1',

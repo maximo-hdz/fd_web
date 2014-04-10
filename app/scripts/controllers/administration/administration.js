@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('user_administration', function ($scope,$http,$location,$sce,$stateParams) {
+.controller('AdministrationCtrl', function ($scope,$http,$location,$sce,$stateParams) {
 
 	$scope.gridOptions = {
 		data: 'myData',
@@ -17,14 +17,14 @@ angular.module('spaApp')
 			],
 		afterSelectionChange: function(data) {
 				$location.path( $scope.mySelections[0]._account_id+'/detail' );
-			}	
+			}
 	};
 
 	$scope.amount="100000";
 	$scope.from="06/03/2014";
 	$scope.to="20/03/2014";
-    
-    
+
+
 	$http({
 		url: '/accounts/table.json',
 		method: 'GET'

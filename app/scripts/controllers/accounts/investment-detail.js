@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('InvestmentDetailCtrl',
-	function($scope,$http,$location,$rootScope,$log) {
+.controller('InvestmentDetailCtrl',	function($scope,$http,$location,$rootScope,$log) {
 
 		$scope.InvestmentDetail = {
 			"name":"Juan Pérez",
@@ -19,14 +18,14 @@ angular.module('spaApp')
 			multiSelect: false,
 			selectedItems: $scope.mySelections,
 			columnDefs: [
-				{field:'_account_id', displayName:'Fecha'}, 
+				{field:'_account_id', displayName:'Fecha'},
 				{field:'account_type', displayName:'Interés mensual'},
 				{field:'name', displayName:'Retención 0.60%'},
 				{field:'alias', displayName:'Interés neto'},
 				{field:'currency', displayName:'Retiro de intereses'}],
 			afterSelectionChange: function(data) {
 					$location.path( $scope.mySelections[0]._account_id+'/detail' );
-				}	
+				}
 		};
 
 		$http({

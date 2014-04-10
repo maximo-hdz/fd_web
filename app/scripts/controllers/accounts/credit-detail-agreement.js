@@ -1,28 +1,28 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('detailCreditPactedCtrl', function ($scope,$http,$location,$sce,$stateParams,ctsCreditPacted) {
+.controller('CreditDetailAgreementCtrl', function ($scope,$http,$location,$sce,$stateParams,ctsCreditPacted) {
 
 
 	$scope.mySelections = [];
-	
+
 
 	$scope.gridOptions = {
 		data: 'myData',
 		multiSelect: false,
 		selectedItems: $scope.mySelections,
 		columnDefs: [
-			{field:'_account_id', displayName:'Fecha'}, 
+			{field:'_account_id', displayName:'Fecha'},
 			{field:'account_type', displayName:'Operación'},
 			{field:'name', displayName:'Descripcion'},
 			{field:'alias', displayName:'Cargo'},
 			{field:'currency', displayName:'Abono'},
 			{field:'last_digits', displayName:'Saldo'}],
-		
+
 		afterSelectionChange: function(data) {
 				$location.path( $scope.mySelections[0].acount+'/detailCreditPactedOp' );
-			}	
-		
+			}
+
 
 	};
 
@@ -45,6 +45,6 @@ angular.module('spaApp')
 	    $scope.authorized = [
       {name:'Rafa Marquez'},
       {name:'Memo Ochoa'},
-      {name:'Cristiano(Hala)'}    
+      {name:'Cristiano(Hala)'}
     ];
 });

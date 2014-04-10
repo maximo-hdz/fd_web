@@ -3,7 +3,7 @@
  * The connection controller
  */
 angular.module('spaApp')
-.controller('transferCtrl', function($scope,$http,$location,$rootScope,$log) {
+.controller('TransfersCtrl', function($scope,$http,$location,$rootScope,$log) {
 	$scope.specialist =  'David Torres Fernandez';
 
 	$scope.agregarBeneficiario=function(){
@@ -23,7 +23,7 @@ angular.module('spaApp')
 	    	$('.conexion_btn').each(function(){
 		    	$(this).removeClass('desactivo').addClass('activo');
 		    	$(this).find('i').css('display','block');
-		    });	
+		    });
 	    },500);
 	};
 });

@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('transactionsCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
+.controller('CreditTransactionsCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
 
 	$scope.mySelections = [];
-	$scope.gridOptions = { 
+	$scope.gridOptions = {
 			data: 'myData',
 			multiSelect: false,
 			selectedItems: $scope.mySelections,
 			columnDefs: [
-				{field:'_account_id', displayName:'Fecha'}, 
+				{field:'_account_id', displayName:'Fecha'},
 				{field:'account_type', displayName:'Operación'},
 				{field:'name', displayName:'Descripcion'},
 				{field:'alias', displayName:'Cargo'},
