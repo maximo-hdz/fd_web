@@ -11,7 +11,10 @@ var app = angular.module('spaApp', [
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
   $urlRouterProvider.otherwise("/login");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 95fe62d2d689e5517eea642915b62b5c2bca18ac
 
   $stateProvider
     .state('dashboard', {
@@ -112,6 +115,17 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     controller: 'TransfersCtrl',
     breadcrumb: {
       title: 'Transfer'
+<<<<<<< HEAD
+=======
+    }
+  })
+  .state('dashboard.addBeneficiary', {
+    url: 'transfer/add/beneficiary',
+    templateUrl: 'views/addBeneficiary.html',
+    controller: 'transferAddBeneficiaryCtrl',
+    breadcrumb: {
+      title: 'Beneficiary'
+>>>>>>> 95fe62d2d689e5517eea642915b62b5c2bca18ac
     }
   })
   .state('dashboard.addBeneficiary', {
@@ -237,12 +251,30 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
       title: 'Detail'
     }
   })
-}).factory('ctsCreditPacted', function(){
-  return {}
-}).factory('ctsBiometricas', function() {
-  return {}
-});
-app.run(function($rootScope){
-  $rootScope.restAPIBaseUrl = 'http://projects.anzen.com.mx:3000/api/';
-});
-
+  .state('dashboard.internationalTransfer', {
+    url: ':transfer/internationalTransfer',
+   templateUrl : 'views/internationalTransfer.html',
+   controller: 'internationalTransfer',
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.confirmInternationalTransfer', {
+    url: ':transfer/confirmInternationalTransfer',
+   templateUrl : 'views/confirmInternationalTransfer.html',
+   controller: 'internationalTransfer',
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.same-bank-transfer', {
+    url: ':transfer/same-bank-transfer',
+   templateUrl : 'views/same-bank-transfer.html',
+   controller: 'same-bank-transfer',
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.same-bank-transfer-confirmation', {
+    url: ':transfer/same-bank-transfer-confirmation',
+   templateUrl : 'views/same-bank-tra
