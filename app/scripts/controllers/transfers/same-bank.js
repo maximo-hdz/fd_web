@@ -16,7 +16,8 @@ angular.module('spaApp')
 	$scope.address="????";
 	$scope.number="+5281 777 0022";
 	$scope.numericReference="????";
-	$scope.dateApplied="14/04/2014"
+	$scope.dateApplied="14/04/2014";
+	$scope.mainNameRecipient="????";
 
 	$scope.x=true;
 

@@ -246,7 +246,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.confirmInternationalTransfer', {
     url: ':transfer/confirmInternationalTransfer',
-   templateUrl : 'views/partials/transfers/international-confirm.html'
+   templateUrl : 'views/partials/transfers/international-confirm.html',
+   controller: 'InternationalCtrl'
    // breadcrumb: {
       //title: 'Detail'
    // }
@@ -261,8 +262,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.same-bank-transfer-confirmation', {
     url: ':transfer/same-bank-transfer-confirmation',
-   templateUrl : 'views/partials/transfers/same-bank-confirmation.html'
-   //controller: 'SameBankCtrl',
+   templateUrl : 'views/partials/transfers/same-bank-confirmation.html',
+   controller: 'SameBankCtrl'
    // breadcrumb: {
       //title: 'Detail'
    // }

@@ -4,7 +4,7 @@
       		<div class="col-md-1">
        			 <a type="button" href="/#/transfer/same-bank-transfer" class="btn btn-default btn-large btn-block"><span class="glyphicon glyphicon-chevron-left"></span></a>
       		</div>
-      		<span style="color:#FFFFFF;"><font size="5">Pago Internacional</font></span>
+      		<span style="color:#FFFFFF;"><font size="5">Pago Mismo Banco</font></span>
     	</div>
     	<br></br>
     <div class="col-md-12">
@@ -62,10 +62,10 @@
 					<input value="{{mainName}}" disabled></input>
 				</div>
 				<div class="col-md-3">
-					<span class="pull-right">Divisa</span>
+					<span class="pull-right">Titular Beneficiario</span>
 				</div>
 				<div class="col-md-3">
-					<input value="{{coin}}" disabled></input>
+					<input value="{{mainNameRecipient}}" disabled></input>
 				</div>
 			</div><!--end row-->
 
@@ -115,7 +115,24 @@
 			<div class="row">
 				<div ng-switch on="x">
 					<div ng-switch-when="true">
-						<div ng-include="'/views/transfers/partial-transfer.html'"></div>
+						<div class="row">
+				<div class="col-md-3">
+					<span class="pull-right">Autorizar:</span>
+				</div>
+				<div class="col-md-3">
+					<select name="" id="">
+     					<option value="">Nombre de Persona Autorizada</option>
+    				</select>
+				</div>
+				<div class="col-md-3">
+					<span class="pull-right">Medio:</span>
+				</div>
+				<div class="col-md-3">
+					<select name="" id="">
+     					<option value="">+5281 777 0022</option>
+    				</select>
+				</div>
+			</div><!--end row-->
 					</div>
       				<div ng-switch-default></div>
 				</div>
