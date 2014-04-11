@@ -12,24 +12,25 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
 
   $urlRouterProvider.otherwise("/login");
 
+
   $stateProvider
-  .state('login', {
-    url: '/login',
-    templateUrl: 'views/login.html',
-    controller: 'LoginCtrl'
-  })
-  .state('dashboard', {
+    .state('dashboard', {
     abstract: true,
     url: '/',
     templateUrl: 'views/dashboard.html',
-    controller: 'Dashboard',
+    controller: 'DashboardCtrl',
     breadcrumb: {
       title: 'dashboard'
     }
   })
+  .state('login', {
+    url: '/login',
+    templateUrl: 'views/partials/authentication/login.html',
+    controller: 'LoginCtrl'
+  })
   .state('dashboard.accounts', {
     url: 'accounts',
-    templateUrl: 'views/accounts.html',
+    templateUrl: 'views/partials/accounts/accounts.html',
     controller: 'AccountsCtrl',
     breadcrumb: {
       title: 'accounts'
@@ -38,7 +39,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for investment bank(menu initial)
   .state('dashboard.investment',{
     url: ':account_id/investment',
-    templateUrl: 'views/investment.html',
+    templateUrl: 'views/partials/accounts/investment.html',
     controller: 'InvestmentCtrl',
     breadcrumb: {
       title: 'investment'
@@ -48,17 +49,17 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for investment bank(menu initial)
   .state('dashboard.detailInvestment',{
     url: ':account_id/detailInvestment',
-    templateUrl: 'views/transactionDetailInvestment.html',
+    templateUrl: 'views/partials/accounts/transactionDetailInvestment.html',
     controller: 'InvestmentDetailCtrl',
     breadcrumb: {
       title: 'detail'
     }
   })
-  //view for detail credit liquidated  
+  //view for detail credit liquidated
   .state('dashboard.detailCredit',{
     url: ':acount_id/detailCredit',
-    templateUrl: 'views/detailLineCredit.html',
-    controller: 'detailCreditCtrl',
+    templateUrl: 'views/partials/accounts/detailLineCredit.html',
+    controller: 'CreditDetailCtrl',
     breadcrumb: {
       title: 'detail'
     }
@@ -66,15 +67,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   //view for detail credit pacted
   .state('dashboard.detailCreditPacted',{
     url: ':account_id/detailCreditPacted',
-    templateUrl: 'views/detailOperationPactada.html',
-    controller: 'detailCreditPactedCtrl',
+    templateUrl: 'views/partials/accounts/credit-detail-agreement.html',
+    controller: 'CreditDetailAgreementCtrl',
     breadcrumb: {
       title: 'detail'
     }
   })
   .state('dashboard.connection', {
     url: 'connection',
-    templateUrl: 'views/connection.html',
+    templateUrl: 'views/partials/connection/connection.html',
     controller: 'ConnectionCtrl',
     breadcrumb: {
       title: 'connection'
@@ -82,122 +83,124 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.authorize', {
     url: 'authorize',
-    templateUrl: 'views/authorizePendingOperations.html',
-    controller: 'AuthorizeCtrl',
+    templateUrl: 'views/partials/authorize/pending-operations.html',
+    controller: 'AuthorizeOperationsCtrl',
     breadcrumb: {
       title: 'authorize'
     }
   })
   .state('dashboard.authorizeMod', {
     url: 'authorizeMod',
-    templateUrl: 'views/authorizePendingModifications.html',
+    templateUrl: 'views/partials/authorize/pending-modifications.html',
     controller: 'AuthorizeModCtrl',
     breadcrumb: {
       title: 'Modify'
+    }
+  })
+  .state('dashboard.authorizeChanges', {
+    url: 'authorizeChanges',
+    templateUrl: 'views/partials/authorize/authorizeAdminChange.html',
+    breadcrumb: {
+      title: 'Authorize'
     }
   })
   .state('dashboard.transfer', {
     url: 'transfer',
     //templateUrl: 'views/transferAddCount.html',
     //controller: 'transferAddCount',
-    templateUrl: 'views/transfer.html',
-    controller: 'transferCtrl',
+    templateUrl: 'views/partials/transfers/transfers.html',
+    controller: 'TransfersCtrl',
     breadcrumb: {
       title: 'Transfer'
     }
   })
   .state('dashboard.addBeneficiary', {
     url: 'transfer/add/beneficiary',
-    templateUrl: 'views/addBeneficiary.html',
-    controller: 'transferAddBeneficiaryCtrl',
+    templateUrl: 'views/partials/transfers/add-beneficiary.html',
+    controller: 'AddBeneficiaryCtrl',
     breadcrumb: {
       title: 'Beneficiary'
     }
   })
+  /**news*/
   .state('dashboard.addBeneficiary.physical', {
     url: '/physical',
-    templateUrl: 'views/addBeneficiaryPhysical.html',
-    controller: 'TransferAddBeneficiaryPhysicalCtrl',
+    templateUrl: 'views/transfers/add-beneficiary-physical.html',
+    controller: 'AddBeneficiaryPhysicalCtrl',
     breadcrumb: {
       title: 'Physical'
     }
   })
   .state('dashboard.addBeneficiary.moral', {
     url: '/moral',
-    templateUrl: 'views/transfer_add_beneficiary_moral.html',
-    controller: 'TransferAddBeneficiaryMoralCtrl',
+    templateUrl: 'views/transfers/add-beneficiary-moral.html',
+    controller: 'AddBeneficiaryMoralCtrl',
     breadcrumb: {
       title: 'Moral'
     }
   })
   .state('dashboard.addMoralBeneficiaryConfirm', {
     url: 'transfer/add/moralbeneficiary/confirm',
-    templateUrl: 'views/transfer_add_beneficiary_moral_confirm.html',
-    controller: 'TransferAddBeneficiaryMoralConfirmCtrl',
+    templateUrl: 'views/transfers/add-beneficiary-moral-confirm.html',
+    controller: 'AddBeneficiaryMoralConfirmCtrl',
     breadcrumb: {
       title: 'Confirm'
     }
   })
   .state('dashboard.addBeneficiaryConfirm', {
     url: 'transfer/add/beneficiary/confirm',
-    templateUrl: 'views/addBeneficiaryConfirm.html',
-    controller: 'transferAddBeneficiaryConfirmCtrl',
+    templateUrl: 'views/transfers/add-beneficiary-confirm.html',
+    controller: 'AddBeneficiaryConfirmCtrl',
     breadcrumb: {
       title: 'Confirm'
     }
   })
   .state('dashboard.addMoralBeneficiaryResult', {
     url: 'transfer/add/moralbeneficiary/result',
-    templateUrl: 'views/transfer_add_beneficiary_moral_result.html',
-    controller: 'TransferAddBeneficiaryMoralResultCtrl',
+    templateUrl: 'views/transfers/add-beneficiary-moral_result.html',
+    controller: 'AddBeneficiaryMoralResultCtrl',
     breadcrumb: {
       title: 'Beneficiary'
     }
   })
   .state('dashboard.addBeneficiaryResult', {
     url: 'transfer/add/beneficiary/result',
-    templateUrl: 'views/addBeneficiaryResult.html',
-    controller: 'transferAddBeneficiaryResultCtrl',
+    templateUrl: 'views/transfers/add-beneficiary-result.html',
+    controller: 'AddBeneficiaryResultCtrl',
     breadcrumb: {
       title: 'Beneficiary'
     }
   })
-  .state('dashboard.authorizeChanges', {
-    url: 'authorizeChanges',
-    templateUrl: 'views/authorizeAdminChange.html',
-    controller: "authorizeChanges",
-    breadcrumb: {
-      title: 'Authorize'
-    }
-  })
+  /****END TO VIEWS */
   .state('dashboard.administration', {
     url: 'administration',
 /*    templateUrl: 'views/setUpNotifications.html',
     controller: "setUpNotifications"*/
-    templateUrl: 'views/user_administration.html',
-    controller: 'user_administration',
+    templateUrl: 'views/partials/administration/users-admin.html',
+    controller: 'UsersAdministrationCtrl',
     breadcrumb: {
       title: 'Administration'
     }
   })
   .state('dashboard.biometrics', {
     url: ':account_id/biometrics',
-    templateUrl: 'views/biometrics.html',
-    controller: 'BiometricsCtrl',
+    templateUrl: 'views/partials/accounts/biometrics.html',
+    controller: 'BiometricCtrl',
     breadcrumb: {
       title: 'Biometrics'
     }
   })
   .state('dashboard.detailMovement', {
     url: ':account_id/detailMovement',
-    templateUrl: 'views/detailMovement.html',
+    templateUrl: 'views/partials/accounts/credit-detail.html',
+    controller : 'CreditDetailCtrl' ,
     breadcrumb: {
       title: 'Detail'
     }
   })
   .state('dashboard.credit', {
     url: ':account_id/credit',
-    templateUrl: 'views/credit.html',
+    templateUrl: 'views/partials/accounts/credit.html',
     controller: 'CreditCtrl',
     breadcrumb: {
       title: 'Credit'
@@ -205,31 +208,31 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.credit.transactions', {
     url: '/transactions',
-    templateUrl: 'views/creditTransactions.html',
-    controller: 'transactionsCtrl',
+    templateUrl: 'views/partials/accounts/credit-transactions.html',
+    controller: 'CreditTransactionsCtrl',
     breadcrumb: {
       title: 'Transactions'
     }
   })
   .state('dashboard.credit.dueDate', {
     url: '/dueDate',
-    templateUrl: 'views/creditDueDate.html',
-    controller: 'dueDateCtrl',
+    templateUrl: 'views/partials/accounts/credit-duedate.html',
+    controller: 'CreditDueDateCtrl',
     breadcrumb: {
       title: 'Due Date'
     }
   })
   .state('dashboard.credit.valueDate', {
     url: '/valueDate',
-    templateUrl: 'views/creditValueDate.html',
-    controller: 'valueDateCtrl',
+    templateUrl: 'views/partials/accounts/credit-valuedate.html',
+    controller: 'CreditValueDateCtrl',
     breadcrumb: {
       title: 'Value Date'
     }
   })
   .state('dashboard.detailCreditPactedOp', {
-    url: ':account_id/detailCreditPactedOp',
-   templateUrl : 'views/detailLineCredit.html',
+    url: ':account_id/detail/operation',
+   templateUrl : 'views/accounts/credit-detail-operation.html',
     breadcrumb: {
       title: 'Detail'
     }
@@ -242,3 +245,4 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
 app.run(function($rootScope){
   $rootScope.restAPIBaseUrl = 'http://projects.anzen.com.mx:3000/api/';
 });
+

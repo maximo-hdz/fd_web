@@ -10,7 +10,7 @@
 @font-face {font-family: AvenirB; src: url("../fonts/Avenir-Bold.ttf") /* TTF file for CSS3 browsers */ }
 
 /* VARIABLES */
-$logo_bg: "../images/logo.png";
+$logo_bg: "/images/logo.png";
 
 /* MIXINS */
 @mixin border_radius($radius: 10px) {
@@ -126,19 +126,19 @@ $logo_bg: "../images/logo.png";
     100% { opacity:0;filter:alpha(opacity=0); }
 }
 @keyframes move {
-    0% { 
-        background-position: 0 60%, 100% 50%;  
+    0% {
+        background-position: 0 60%, 100% 50%;
     }
     100% {
-        background-position: 0 60%, 0 50%;  
+        background-position: 0 60%, 0 50%;
     }
 }
 @-webkit-keyframes move {
-    0% { 
-        background-position: 0 60%, 100% 50%;  
+    0% {
+        background-position: 0 60%, 100% 50%;
     }
     100% {
-        background-position: 0 60%, 0 50%;  
+        background-position: 0 60%, 0 50%;
     }
 }
 *{
@@ -152,7 +152,7 @@ b,strong{
     font-family: AvenirB;
 }
 // html{
-    
+
 // }
 body{
     background-color: #000000;
@@ -167,7 +167,7 @@ body{
         bottom:0;
         left:0;
         right:0;
-        background:transparent url(../images/bg.png) no-repeat;
+        background:transparent url("/images/bg.png") no-repeat;
         background-size: cover;
         background-attachment:fixed;
         z-index: -9;
@@ -256,10 +256,10 @@ body{
             @include border_radius( 3px );
         }
         input.input_user{
-            background: url(../images/ico_user.png) 5px 6px no-repeat;
+            background: url("/images/ico_user.png") 5px 6px no-repeat;
         }
         input.input_pass{
-            background: url(../images/ico_pass.png) 5px 6px no-repeat;
+            background: url("/images/ico_pass.png") 5px 6px no-repeat;
         }
         input:focus{
             @include anim_key( input_icon, 0.17s );
@@ -305,12 +305,12 @@ body{
             line-height: 100%;
         }
         .p_big{
-            font-size: 65px;    
+            font-size: 65px;
         }
         .p_small{
-            font-size: 50px;    
+            font-size: 50px;
         }
-        
+
     }
     .login_footer {
         background: #000000;
@@ -382,7 +382,7 @@ body{
             position: relative;
             top: -2px;
             margin-right: 10px;
-            background: url(../images/ico_salir.png) left center no-repeat;
+            background: url("/images/ico_salir.png") left center no-repeat;
             width: 15px;
             height: 17px;
         }
@@ -391,7 +391,7 @@ body{
         /*@include box_shadow(#FFFFFF);*/
         background: #FFFFFF;
         i{
-            background: url(../images/ico_salir.png) right center no-repeat;
+            background: url("/images/ico_salir.png") right center no-repeat;
         }
     }
 }
@@ -411,13 +411,13 @@ body{
         cursor: default;
     }
     span.fecha{
-        background: url(../images/ico_fecha.png) no-repeat;
+        background: url("/images/ico_fecha.png") no-repeat;
         padding: 2px 0 0 20px;
         height: 16px;
         display: inline-block;
     }
     span.hora{
-        background: url(../images/ico_hora.png) no-repeat;
+        background: url("/images/ico_hora.png") no-repeat;
         padding: 2px 0 0 20px;
         height: 16px;
         display: inline-block;
@@ -455,23 +455,23 @@ body{
                 top: 3px;
             }
             i.ico-saldos{
-                background-image: url(../images/menu_saldos.png); 
+                background-image: url("/images/menu_saldos.png");
             }
             i.ico-conexion{
-                background-image: url(../images/menu_conexion.png); 
+                background-image: url("/images/menu_conexion.png");
             }
             i.ico-autorizar{
-                background-image: url(../images/menu_autorizar.png); 
+                background-image: url("/images/menu_autorizar.png");
             }
             i.ico-transferencias{
-                background-image: url(../images/menu_transferencias.png); 
+                background-image: url("/images/menu_transferencias.png");
             }
             i.ico-administracion{
-                background-image: url(../images/menu_administracion.png); 
+                background-image: url("/images/menu_administracion.png");
             }
             span.arrow{
                 @include anim_transicion_ease(0.4s);
-                background: url(../images/menu_h.png) right center no-repeat;
+                background: url("/images/menu_h.png") right center no-repeat;
                 background-size: 23px;
                 width: 23px;
                 height: 46px;
@@ -552,41 +552,41 @@ body{
             width: 16px;
             height: 16px;
             margin-top: 2px;
-            background: url(../images/ico_open_close.png) center center no-repeat;   
+            background: url("/images/ico_open_close.png") center center no-repeat;
             span{
                 display: block;
                 width: 16px;
                 height: 16px;
-                background: url(../images/ico_open_close.png) center center no-repeat;  
+                background: url("/images/ico_open_close.png") center center no-repeat;
                 @include anim_transicion_ease(0.4s);
             }
         }
-    } 
+    }
     h4.abierto{
         i{
             span{
                 transform: rotate(0deg);
                 -webkit-transform: rotate(0deg);
                 -moz-transform: rotate(0deg);
-                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);     
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
             }
         }
-    } 
+    }
     h4.cerrado{
         i{
             span{
                 transform: rotate(90deg);
                 -webkit-transform: rotate(90deg);
                 -moz-transform: rotate(90deg);
-                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);    
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
             }
         }
-    } 
+    }
     .table-responsive{
         margin-top: 20px;
         border:none!important;
         .table{
-            margin: 0; 
+            margin: 0;
             thead{
                 tr{
                     td{
@@ -713,10 +713,10 @@ body{
         @include anim_transicion_ease(0.5s);
     }
     i.visible{
-        display: block;  
+        display: block;
     }
     i.oculto{
-        display: none;  
+        display: none;
     }
     i{
         display: none;
@@ -730,16 +730,16 @@ body{
         background-size: 142px;
     }
     i.llama-PC{
-        background-image: url(../images/ico_pc.png);
+        background-image: url("/images/ico_pc.png");
     }
     i.llama-oficina{
-        background-image: url(../images/ico_telofi.png);
+        background-image: url("/images/ico_telofi.png");
     }
     i.llama-movil{
-        background-image: url(../images/ico_movil.png);
+        background-image: url("/images/ico_movil.png");
     }
     i.llama-tel{
-        background-image: url(../images/ico_tel.png);
+        background-image: url("/images/ico_tel.png");
     }
 }
 .conexion_btn:hover{
@@ -774,17 +774,17 @@ body{
         .btn_ayuda_linea:active{
             display: block;
             width: auto;
-            
+
             padding: 5px 10px 10px 10px;
             text-align: center;
             text-decoration: none;
             color: #000000;
-            
+
             i.ayuda{
                 display: inline-block;
                 position: relative;
                 top: 5px;
-                background: url(../images/ico_ayuda.png) no-repeat;
+                background: url("/images/ico_ayuda.png") no-repeat;
                 background-size: 18px;
                 width: 18px;
                 height: 18px;
@@ -794,7 +794,7 @@ body{
                 @include anim_transicion_ease(0.4s);
                 display: inline-block;
                 position: relative;
-                background: url(../images/arrow_top.png) no-repeat;
+                background: url("/images/arrow_top.png") no-repeat;
                 background-size: 8px;
                 width: 8px;
                 height: 7px;
@@ -806,7 +806,7 @@ body{
                 transform: rotate(0deg);
                 -webkit-transform: rotate(0deg);
                 -moz-transform: rotate(0deg);
-                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);   
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
             }
         }
         .btn_ayuda_linea.abierto{
@@ -814,7 +814,7 @@ body{
                 transform: rotate(180deg);
                 -webkit-transform: rotate(180deg);
                 -moz-transform: rotate(180deg);
-                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);    
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
             }
         }
         .chat{
@@ -830,7 +830,7 @@ body{
                 resize: none;
             }
             .btn_send{
-                background: url(../images/arrow_right.png) center center no-repeat;
+                background: url("/images/arrow_right.png") center center no-repeat;
                 background-size: 14px;
                 height: 34px;
                 width: 34px;
@@ -848,7 +848,7 @@ body{
                     display: inline-block;
                     position: relative;
                     top: 3px;
-                    background: url(../images/arrow_top.png) no-repeat;
+                    background: url("/images/arrow_top.png") no-repeat;
                     background-size: 8px;
                     width: 8px;
                     height: 7px;
@@ -861,7 +861,7 @@ body{
                     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
                 }
             }
-            
+
         }
     }
     .banners{
@@ -924,10 +924,10 @@ body{
         .bienvenida{
             padding-top: 40px;
             .p_big{
-                font-size: 45px;    
+                font-size: 45px;
             }
             .p_small{
-                font-size: 33px;    
+                font-size: 33px;
             }
         }
     }
@@ -1040,18 +1040,18 @@ body{
                 .mfm{
                     background-size: 160px;
                     width: 160px;
-                    height: 68px;    
+                    height: 68px;
                 }
-                
+
             }
         }
         .bienvenida{
             padding-top: 20px;
             .p_big{
-                font-size: 25px;    
+                font-size: 25px;
             }
             .p_small{
-                font-size: 18px;    
+                font-size: 18px;
             }
         }
     }
@@ -1080,12 +1080,12 @@ body{
     .content_table{
         h4{
             font-size: 14px;
-        } 
+        }
     }
     .conexion_btn,
     .conexion_btn:hover,
     .conexion_btn:active{
-        
+
         span{
             width: 90%;
         }
@@ -1093,10 +1093,10 @@ body{
         span.text2{
             text-align: center;
             i.visible{
-                display: none;  
+                display: none;
             }
             i.oculto{
-                display: none;  
+                display: none;
             }
         }
         .input_tel{
