@@ -8,9 +8,9 @@ angular.module('spaApp')
 		$scope.tipo = 'fisica';
 		$scope.$watch('tipo',function(){
 			if($scope.tipo=='fisica'){
-				$location.path('transfer/add/beneficiary/physical');
+				$location.path('partials/transfer/add/beneficiary/physical');
 			}else{
-				$location.path('transfer/add/beneficiary/moral');
+				$location.path('partials/transfer/add/beneficiary/moral');
 			}
 		});
 	});
