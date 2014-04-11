@@ -124,7 +124,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   /**news*/
   .state('dashboard.addBeneficiary.physical', {
     url: '/physical',
-    templateUrl: 'views/transfers/add-beneficiary-physical.html',
+    templateUrl: 'views/partials/transfers/add-beneficiary-physical.html',
     controller: 'AddBeneficiaryPhysicalCtrl',
     breadcrumb: {
       title: 'Physical'
@@ -132,7 +132,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.addBeneficiary.moral', {
     url: '/moral',
-    templateUrl: 'views/transfers/add-beneficiary-moral.html',
+    templateUrl: 'views/partials/transfers/add-beneficiary-moral.html',
     controller: 'AddBeneficiaryMoralCtrl',
     breadcrumb: {
       title: 'Moral'
@@ -140,7 +140,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.addMoralBeneficiaryConfirm', {
     url: 'transfer/add/moralbeneficiary/confirm',
-    templateUrl: 'views/transfers/add-beneficiary-moral-confirm.html',
+    templateUrl: 'views/partials/transfers/add-beneficiary-moral-confirm.html',
     controller: 'AddBeneficiaryMoralConfirmCtrl',
     breadcrumb: {
       title: 'Confirm'
@@ -148,7 +148,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.addBeneficiaryConfirm', {
     url: 'transfer/add/beneficiary/confirm',
-    templateUrl: 'views/transfers/add-beneficiary-confirm.html',
+    templateUrl: 'views/partials/transfers/add-beneficiary-confirm.html',
     controller: 'AddBeneficiaryConfirmCtrl',
     breadcrumb: {
       title: 'Confirm'
@@ -156,7 +156,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.addMoralBeneficiaryResult', {
     url: 'transfer/add/moralbeneficiary/result',
-    templateUrl: 'views/transfers/add-beneficiary-moral_result.html',
+    templateUrl: 'views/partials/transfers/add-beneficiary-moral-result.html',
     controller: 'AddBeneficiaryMoralResultCtrl',
     breadcrumb: {
       title: 'Beneficiary'
@@ -164,7 +164,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.addBeneficiaryResult', {
     url: 'transfer/add/beneficiary/result',
-    templateUrl: 'views/transfers/add-beneficiary-result.html',
+    templateUrl: 'views/partials/transfers/add-beneficiary-result.html',
     controller: 'AddBeneficiaryResultCtrl',
     breadcrumb: {
       title: 'Beneficiary'
