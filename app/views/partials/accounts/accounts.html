@@ -13,7 +13,9 @@
                 <div class="table-responsive tabla_biometric">
                     <table class="table">
                         <tbody>
-                            <tr ng-repeat="biometricAccount in biometricAccounts.accounts" ng-click="biometrics(biometricAccount._account_id)">
+                            <!-- tr ng-repeat="biometricAccount in biometricAccounts.accounts" ng-click="biometrics(biometricAccount._account_id)"-->
+                               <tr ng-repeat="biometricAccount in biometricAccounts.accounts" ng-click="sameAddBeneficiary(sameAddBeneficiary._account_id)">
+
                                 <td>{{biometricAccount.alias}}</td>
                                 <td>{{biometricAccount._account_id}}</td>
                                 <td>{{biometricAccount.balance.current | currency}}</td>
