@@ -267,6 +267,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
       //title: 'Detail'
    // }
   })
+  .state('dashboard.sameAddBeneficiary', {
+    url: ':account_id/sameAddBeneficiary',
+    templateUrl: 'views/partials/transfers/same-confirm-beneficiary.html',
+      controller:'SomeAddBeneficiaryCtrl',
+     breadcrumb: {
+      title: 'SameBank'
+    }
+    
+  })
 }).factory('ctsCreditPacted', function(){
   return {}
 }).factory('ctsBiometricas', function() {
