@@ -46,7 +46,9 @@ angular.module('spaApp')
 	$scope.biometrics=function(account_id){
 		$location.path( account_id + '#/biometrics');
 	}
-
+    $scope.sameAddBeneficiary=function(account_id){
+		$location.path(account_id + '#/sameAddBeneficiary');
+	}
 	/** Biometrics Detail  **/
 	$scope.detailMovement=function(account_id){
 		$location.path( account_id + '#/detailMovement');
@@ -115,4 +117,6 @@ angular.module('spaApp')
 	$scope.$on('$routeChangeSuccess', function () {
 		console.log('cambio');
 	});
+
+	
 });
