@@ -269,13 +269,20 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
    // }
   })
   .state('dashboard.sameAddBeneficiary', {
-    url: ':account_id/sameAddBeneficiary',
-    templateUrl: 'views/partials/transfers/same-confirm-beneficiary.html',
-      controller:'SomeAddBeneficiaryCtrl',
+    url: 'transfer/sameAddBeneficiary',
+    templateUrl: 'views/partials/transfers/same-add-beneficiary.html',
+      controller:'SameAddBeneficiaryCtrl',
      breadcrumb: {
       title: 'SameBank'
     }
-    
+  })
+  .state('dashboard.sameConfirmBeneficiary', {
+    url: 'transfer/sameConfirmBeneficiary',
+    templateUrl: 'views/partials/transfers/same-confirm-beneficiary.html',
+      controller:'SameAddBeneficiaryCtrl',
+     breadcrumb: {
+      title: 'SameBank'
+    }
   })
 }).factory('ctsCreditPacted', function(){
   return {}
