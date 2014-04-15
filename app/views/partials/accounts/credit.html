@@ -40,9 +40,9 @@ x<div class="col-md-9 row-fluid">
 		</table>
 	</div>
 		<ul class="nav nav-tabs">
-			<li id="transaction" class="active"><a href="#" ng-click="creditTransaction(account_id)" ng-href="#/{{account_id}}/credit/transactions">Movimientos</a></li>
-			<li id="dueDate"><a href="#" ng-click="dueDate(account_id)" ng-href="#/{{account_id}}/credit/dueDate">Por Fecha de Vencimiento</a></li>
-			<li id="valueDate"><a href="#" ng-click="valueDate(account_id)" ng-href="#/{{account_id}}/credit/valueDate">Por Fecha Valor</a></li>
+			<li id="transaction" class="active col-md-4"><a href="#" ng-click="creditTransaction(account_id)" ng-href="#/{{account_id}}/credit/transactions">Movimientos</a></li>
+			<li id="dueDate" class="col-md-4"><a href="#" ng-click="dueDate(account_id)" ng-href="#/{{account_id}}/credit/dueDate">Por Fecha de Vencimiento</a></li>
+			<li id="valueDate" class="col-md-4"><a href="#" ng-click="valueDate(account_id)" ng-href="#/{{account_id}}/credit/valueDate">Por Fecha Valor</a></li>
 		</ul>
 		<div ui-view></div>
 	</div>

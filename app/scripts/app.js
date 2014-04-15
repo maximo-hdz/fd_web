@@ -231,7 +231,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.detailCreditPactedOp', {
     url: ':account_id/detail/operation',
-   templateUrl : 'views/accounts/credit-detail-operation.html',
+   templateUrl : 'views/partials/accounts/credit-detail-operation.html',
     breadcrumb: {
       title: 'Detail'
     }

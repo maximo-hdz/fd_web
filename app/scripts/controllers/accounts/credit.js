@@ -4,6 +4,16 @@ angular.module('spaApp')
 .controller('CreditCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
 	$rootScope.titulo = 'Saldos - Línea de Crédito - Cuenta ####';
 	$scope.account_id = $stateParams.account_id;
+  //$scope.pestanaTransVal = true;
+  //$scope.pestanaTrans = true;
+
+  $scope.getClass = function(path) {
+    if ($location.path().substr(0, path.length) == path) {
+      return "active"
+    } else {
+      return ""
+    }
+  }
 
 	$http({
 		//send with $stateParams.account_id
