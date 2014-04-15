@@ -2,7 +2,7 @@
   	<div class="row">
     	<div class="col-md-12">
       		<div class="col-md-1">
-       			 <a type="button" href="/#/transfer/internationalTransfer" class="btn btn-default btn-large btn-block">&lt;</a>
+       			 <a type="button" href="/#/transfer/internationalTransfer" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
       		</div>
       		<span style="color:#FFFFFF;"><font size="5">Pago Internacional</font></span>
     	</div>
@@ -154,7 +154,7 @@
 			<div class="row">
 				<div ng-switch on="x">
 					<div ng-switch-when="true">
-						<div ng-include="'/views/partialTransfer.html'"></div>
+						<div ng-include="'/views/partials/transfers/partial-transfer.html'"></div>
 					</div>
       				<div ng-switch-default></div>
 				</div>
@@ -166,12 +166,12 @@
     		<div ng-switch on="x">
 					<div ng-switch-when="true">
 						<div class="col-md-3 pull-right">
-							<a type="button" href="/#/transfer/confirmInternationalTransfer" class="btn btn-default btn-large btn-block" ng-click="switch()">Autorizar</a>
+							<a type="button" href="" class="btn btn-large button_mfm" ng-click="switch()">Autorizar</a>
 						</div>
 					</div>
       				<div ng-switch-default>
 						<div class="col-md-3 pull-right">
-							<a type="button" href="/#/transfer/confirmInternationalTransfer" class="btn btn-default btn-large btn-block" ng-click="switch()">Imprimir</a>
+							<a type="button" href="" class="btn btn-large button_mfm" ng-click="switch()">Imprimir</a>
 						</div>
       				</div>
 			</div>

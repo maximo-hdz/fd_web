@@ -231,7 +231,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.detailCreditPactedOp', {
     url: ':account_id/detail/operation',
-   templateUrl : 'views/accounts/credit-detail-operation.html',
+   templateUrl : 'views/partials/accounts/credit-detail-operation.html',
     breadcrumb: {
       title: 'Detail'
     }
@@ -246,7 +246,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.confirmInternationalTransfer', {
     url: ':transfer/confirmInternationalTransfer',
-   templateUrl : 'views/partials/transfers/international-confirm.html'
+   templateUrl : 'views/partials/transfers/international-confirm.html',
+   controller: 'InternationalCtrl'
    // breadcrumb: {
       //title: 'Detail'
    // }
@@ -261,20 +262,27 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   })
   .state('dashboard.same-bank-transfer-confirmation', {
     url: ':transfer/same-bank-transfer-confirmation',
-   templateUrl : 'views/partials/transfers/same-bank-confirmation.html'
-   //controller: 'SameBankCtrl',
+   templateUrl : 'views/partials/transfers/same-bank-confirmation.html',
+   controller: 'SameBankCtrl'
    // breadcrumb: {
       //title: 'Detail'
    // }
   })
   .state('dashboard.sameAddBeneficiary', {
-    url: ':account_id/sameAddBeneficiary',
-    templateUrl: 'views/partials/transfers/same-confirm-beneficiary.html',
-      controller:'SomeAddBeneficiaryCtrl',
+    url: 'transfer/sameAddBeneficiary',
+    templateUrl: 'views/partials/transfers/same-add-beneficiary.html',
+      controller:'SameAddBeneficiaryCtrl',
      breadcrumb: {
       title: 'SameBank'
     }
-    
+  })
+  .state('dashboard.sameConfirmBeneficiary', {
+    url: 'transfer/sameConfirmBeneficiary',
+    templateUrl: 'views/partials/transfers/same-confirm-beneficiary.html',
+      controller:'SameAddBeneficiaryCtrl',
+     breadcrumb: {
+      title: 'SameBank'
+    }
   })
 }).factory('ctsCreditPacted', function(){
   return {}

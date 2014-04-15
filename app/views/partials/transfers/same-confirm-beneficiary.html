@@ -2,7 +2,7 @@
    <div class="row" id="bigCallout">   
     <div class="col-md-12">
         <div class="col-md-1">            
-            <a type="button" href="/#/accounts" class="btn btn-default btn-large btn-block">&lt;</a>
+            <a type="button" href="/#/transfer/sameAddBeneficiary" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
         </div>
             <span style="color:#FFFFFF;"><font size="5">Alta Mismo Banco</font></span>
     </div><!--End div cold md 12 button back-->
@@ -14,24 +14,61 @@
                      
                      <div class="col-md-6">
                         
-                        <div class="col-md-6">Titular Beneficiario    </div> <div><input disabled="disabled" ng-model=""  type="text"/></div>
-                        <div class="col-md-6">Cuenta del Beneficiario </div> <div><input disabled="disabled" ng-model=""  type="text"/></div>
-                        <div class="col-md-6">Correo Electrónico      </div> <div><input disabled="disabled" ng-model=""  type="text"/></div>
-                        <div class="col-md-6">Divisa                  </div> <div><input disabled="disabled" ng-model=""  type="text"/></div>
+                        <div class="col-md-6">Titular Beneficiario    </div> <div><input disabled="disabled" ng-model="recipientName"  type="text"/></div>
+                        <div class="col-md-6">Cuenta del Beneficiario </div> <div><input disabled="disabled" ng-model="recipientAccount"  type="text"/></div>
+                        <div class="col-md-6">Correo Electrónico      </div> <div><input disabled="disabled" ng-model="mail"  type="text"/></div>
+                        <div class="col-md-6">Divisa                  </div> <div><input disabled="disabled" ng-model="coin"  type="text"/></div>
 
                      </div>               
                      <div class="col-md-6">
                         <div class="col-md-6">Alias de la Cuenta</div> <div> <input disabled="disabled" ng-model="accountAlias"  type="text"/></div>
-                        <div class="col-md-6">Límite de Pago Diario</div><div> <input disabled="disabled" ng-model="mail" type="text"/></div>
-                        <div class="col-md-6">Límite de Pago Mensual</div><div> <input disabled="disabled" ng-model="mail" type="text"/></div>
-
+                        <div class="col-md-6">Límite de Pago Diario</div><div> <input disabled="disabled" ng-model="limitPayDaily" type="text"/></div>
+                        <div class="col-md-6">Límite de Pago Mensual</div><div> <input disabled="disabled" ng-model="limitPayMonthly" type="text"/></div>
                      </div>
                 </div><!--End row middle -->
+
+                <hr>
+
+              <div class="row">
+                    <div ng-switch on="x">
+                        <div ng-switch-when="true">
+                            <div class="col-md-2">
+                                <span class="pull-right">Autoriza:</span>
+                            </div>
+                            <div class="col-md-4">
+                                <select>
+                                    <option>Nombre de Persona Autorizada</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <span class="pull-right">Medio:</span>
+                            </div>
+                            <div class="col-md-4">
+                                <select>
+                                    <option>+5281 777 0022</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                    <div ng-switch-default>
+                        <div class="col-md-6"></div>
+                        <div class="col-md-3">
+                            <p class="pull-right"> Enviar a: </p>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="" id="">
+                                <option value="">ejemplo@anzen.mx</option>
+                            </select>  
+                        </div>  
+                        </div>
+                    </div>
+                </div>
             </div><!-- End row main -->
         </div><!--End well-->
         <div class="cold-md-12">
-        	<button type="button" class="button_mfm  pull-right"> <span class="glyphicon glyphicon-ok"></span> Autorizar </button>	
+            <a type="button" href="" class="btn btn-large button_mfm  pull-right" ng-click="switch()"> <span class="glyphicon glyphicon-ok"></span> Autorizar </a>	
         </div>
     </div><!--End md-12-->
    </div><!--End bigCallout-->
 </div><!--End div main-->
+
