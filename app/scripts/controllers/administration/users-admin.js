@@ -1,41 +1,43 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('UsersAdministrationCtrl', function ($scope,$http,$location,$sce,$stateParams) {
+.controller('UsersAdministrationCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams) {
 
-	$scope.gridOptions = {
-		data: 'myData',
-		multiSelect: false,
-		selectedItems: $scope.mySelections,
-		showSelectionCheckbox: true,
-		columnDefs: [
-			{field:'account_name', displayName:'Nombre'},
-			{field:'account_usr', displayName:'Usuario'},
-			{field:'status', displayName:'Estatus'},
-			{field:'biometry', displayName:'Biometría'},
-			{field:'change_status', displayName:'Cambiar Estatus'}
-			],
-		afterSelectionChange: function(data) {
-				$location.path( $scope.mySelections[0]._account_id+'/detail' );
-			}
+
+
+$scope.specialist =  'David Torres Fernandez';
+	$rootScope.titulo = 'Administracion';
+
+
+	$scope.load_conection = function () {
+
+		
+		$('.page_conection').css({
+			'opacity': '0'
+		});
+		setTimeout(function(){
+
+			$('.page_conection').animate({
+				'opacity': '1'
+			},300);
+		},500);
+
+		$( $('.conexion_btn').get().reverse() ).each(function( index ){
+			var $this = $(this);
+			setTimeout(function(){
+				$this.css({'height':'100px', 'width': '55%' });
+				$this.removeClass('desactivo').addClass('activo');
+				$this.find('i').removeClass('oculto').addClass('visible');
+				
+
+
+			}, ((index + 1) * 400) );
+		});
+
+	
 	};
 
-	$scope.amount="100000";
-	$scope.from="06/03/2014";
-	$scope.to="20/03/2014";
 
-
-	$http({
-		url: '/accounts/table.json',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		console.log("ya entre");
-		$scope.myData = data.accounts;
-	}).
-	error(function(data, status) {
-		console.log("error "+data);
-		$location.path( '/login' );
-	});
+	
 
 });
