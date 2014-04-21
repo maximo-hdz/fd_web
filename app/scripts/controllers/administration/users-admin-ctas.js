@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('UsersAdministrationCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams) {
+.controller('UsersAdministrationCtasCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams) {
+
+
+
 
 
 
@@ -25,7 +28,7 @@ $scope.specialist =  'David Torres Fernandez';
 		$( $('.conexion_btn').get().reverse() ).each(function( index ){
 			var $this = $(this);
 			setTimeout(function(){
-				$this.css({'height':'100px', 'width': '55%' });
+				$this.css({'height':'100px', 'width': '60%' });
 				$this.removeClass('desactivo').addClass('activo');
 				$this.find('i').removeClass('oculto').addClass('visible');
 				
@@ -41,3 +44,5 @@ $scope.specialist =  'David Torres Fernandez';
 	
 
 });
+
+

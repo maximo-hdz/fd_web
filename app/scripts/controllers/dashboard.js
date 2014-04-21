@@ -73,6 +73,20 @@ angular.module('spaApp')
 		$( "#dueDate" ).removeClass( "active" );
 	}
 
+	$scope.customize=function(){
+
+		$location.path('/administration/accounts/customize');
+		$( "#buttons" ).hide();
+		$( "#transactiont" ).removeClass( "active" );
+		$( "#valueDt" ).addClass( "active" );
+	}
+
+	$scope.ctas_menu=function(){
+		$location.path('/administration/accounts');
+		$( "#buttons" ).show();
+		$( "#transactiont" ).addClass( "active" );
+		$( "#valueDt" ).removeClass( "active" );
+	}
 	/* Credit Due Date */
 	$scope.dueDate=function(account_id){
 		$location.path( account_id + '/credit/dueDate');
@@ -114,9 +128,10 @@ angular.module('spaApp')
 		}
 	};
 
-	$scope.$on('$routeChangeSuccess', function () {
-		console.log('cambio');
-	});
 
-	
+	$scope.userdetail=function(account_){
+		alert('ad');
+	$location.path(  '#/administration/detail');
+
+	};
 });

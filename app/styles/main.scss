@@ -209,7 +209,7 @@ body{
 
 /************** BUTTONS **************/
 .button_mfm{
-    @include border_radius(5px);
+    @include border_radius(5px)	;
     border: 2px solid #FFFFFF;
     background: transparent;
     color: #FFFFFF;
