@@ -1,47 +1,20 @@
 'use strict';
 
+/**
+ * api initializer factory
+ */
+
 angular.module('spaApp')
-  .service('Accounts',['$http','$rootScope', function ($http, $rootScope) {
+.service('accountsService',['$http','$rootScope', function ($http, $rootScope) {
+    this.getBiometricAccounts = function () {
+        return $http.get('/json/account.json');
+    };
 
-  	this.getBiometricAccounts = function () {
+    this.getCreditAccounts = function (accountId,numPage, size) {
+        return $http.get('/json/account2.json');
+    };
 
-    	$http({
-    		url: $rootScope.restAPIBaseUrl + 'accounts/1',
-    		method: 'GET'
-    	});
-  	}
-
-  	this.getCreditAccounts = function () {
-        $http({
-            url: $rootScope.restAPIBaseUrl + 'accounts/2',
-            method: 'GET'
-        }).
-        success(function(data, status, headers) {
-            $scope.creditAccounts = data;
-        }).
-        error(function(data, status) {
-            //put an error message in the scope
-            $log.error('Error: '+data, status);
-            $scope.errorMessage = 'operation failed';
-        });
-  	}
-
-  	this.getInvestmentAccounts = function () {
-        $http({
-            url: $rootScope.restAPIBaseUrl + 'accounts/3',
-            method: 'GET'
-        }).
-        success(function(data, status, headers) {
-            $scope.investmentAccounts = data;
-        }).
-        error(function(data, status) {
-            //put an error message in the scope
-            $log.error('Error: '+data, status);
-            $scope.errorMessage = 'operation failed';
-        });
-
-        $scope.logout=function(){
-            $location.path( '/login' );
-        }
-  	}
+    this.getInvestmentAccounts = function (accountId,numPage, size) {
+        return $http.get('/json/account3.json');
+    };
 }]);

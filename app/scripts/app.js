@@ -5,6 +5,7 @@ var app = angular.module('spaApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
+  'ui.bootstrap',
   'ngGrid'
 ]);
 
@@ -33,7 +34,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     controller: 'AccountsCtrl',
     breadcrumb: {
       title: 'accounts'
-    }
+    },
   })
   //view for investment bank(menu initial)
   .state('dashboard.investment',{
@@ -214,30 +215,30 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   .state('dashboard.administrationuserdetailmod', {
     url: 'administration/users/mod/:account_usr',
     templateUrl: 'views/partials/administration/addmoduser.html',
-   
+
   })
   .state('dashboard.administrationuserdetailadd', {
     url: 'administration/users/add',
     templateUrl: 'views/partials/administration/addmoduser.html',
-   
+
   })
   .state('dashboard.administrationauthorize_change', {
     url: 'administration/users/autorize',
     templateUrl: 'views/partials/administration/authorize_changes.html',
    controller: 'UsersAdministrationAutCtrl'
-   
+
   })
-  .state('dashboard.biometrics', {
-    url: ':account_id/biometrics',
+  .state('dashboard.biometric', {
+    url: 'accounts/biometric/:account_id/transacctions',
     templateUrl: 'views/partials/accounts/biometrics.html',
     controller: 'BiometricCtrl',
     breadcrumb: {
       title: 'Biometrics'
     }
   })
-  .state('dashboard.detailMovement', {
-    url: ':account_id/detailMovement',
-    templateUrl: 'views/partials/accounts/credit-detail.html',
+  .state('dashboard.biometric_detail', {
+    url: 'accounts/biometric/transacction/:transaction_id',
+    templateUrl: 'views/partials/accounts/biometric-detail.html',
     controller : 'CreditDetailCtrl' ,
     breadcrumb: {
       title: 'Detail'

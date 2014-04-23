@@ -4,12 +4,8 @@
 Navigation-bar  controller  for dashboard
 **/
 angular.module('spaApp')
-.controller('DashboardCtrl', function($scope,$location) {
+.controller('DashboardCtrl', function($scope,$rootScope,$location) {
 	$scope.client = 'Ricardo Montemayor Morales';
-
-	$scope.$on('$routeChangeStart', function(next, current) {
-		console.log("Change route");
-	 });
 
 	/**
 	Add class active for item selected
@@ -44,7 +40,7 @@ angular.module('spaApp')
 
 	/** Biometrics  **/
 	$scope.biometrics=function(account_id){
-		$location.path( account_id + '#/biometrics');
+		$location.path( "accounts/biometric/"+account_id+"/transacctions");
 	}
     $scope.sameAddBeneficiary=function(account_id){
 		$location.path(account_id + '#/sameAddBeneficiary');
@@ -127,7 +123,6 @@ angular.module('spaApp')
 			$(link).removeClass('cerrado').addClass('abierto').slideToggle('fast');
 		}
 	};
-
 
 	$scope.userdetail=function(account_){
 		alert('ad');
