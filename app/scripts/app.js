@@ -239,7 +239,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   .state('dashboard.biometric_detail', {
     url: 'accounts/biometric/transacction/:transaction_id',
     templateUrl: 'views/partials/accounts/biometric-detail.html',
-    controller : 'CreditDetailCtrl' ,
+    controller : 'BiometricDetailCtrl' ,
     breadcrumb: {
       title: 'Detail'
     }
