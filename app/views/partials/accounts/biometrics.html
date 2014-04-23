@@ -1,38 +1,45 @@
 
 <div class="col-md-9 row-fluid">
   <div class="row">
-    <div class="col-md-12 nav nav-tabs">
       <div class="col-md-1">
         <a type="button" href="/#/accounts" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
       </div>
-      <span style="color:#FFFFFF;"><font size="5">Cuentas biométricas - Cuenta ###</font></span>
-    </div>
-    <br></br>
+    <span style="color:#FFFFFF;"><font size="5">Cuentas biom&eacute;tricas - Cuenta {{accountNumber}}</font></span>
   </div>
-
   <div class="well">
-    <div class="content_table">
-      <p><span class="text">
-        Detalle
+      <div>
+        <span class="text">Detalle</span>
         <select ng-init="seleccion=seleccionTMP"
         ng-click="biometrics(seleccion._account_id)"
         ng-model="seleccion"
         ng-options="c as c.name for c in biometricAccounts.accounts">
       </select>
-    </span>
-  </p>
-  <p> <span class="text">Saldo<span> {{amount | currency:"MXN $ "}}</span></span></p>
-
-  Movimientos del  <input type="text"  value={{from}}  disabled="disabled" size="20"/>   al  <input type="text"  value={{to}} disabled="disabled" size="20"/>
-
-  <button  class="conexion_btn:active pull-right" value="Historial">Historial </button>
-
-  <div class="table-responsive">
-    <div class="gridStyle" ng-grid="gridOptions"></div>
+      <p>
+        <span class="text">Saldo<span> {{amount | currency:"MXN $ "}}</span></span>
+      </p>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            <span class="text">Movimientos del</span>
+              <input type="text" class="" datepicker-popup="{{format}}" ng-model="dateFrom" is-open="openedfrom" min="minDate" max="'2015-06-22'" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span>
+                <button  ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+              <span class="text">al</span>
+              <input type="text" class="" datepicker-popup="{{format}}" ng-model="dateTo" is-open="openedto" min="minDate" max="'2015-06-22'"  date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span>
+                <button  ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+              <button  class="conexion_btn:active pull-right" value="Historial">Historial </button>
+          </p>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <div class="gridStyle" ng-grid="gridOptions"></div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<div class="col-md-2 pull-right">
-  <button type="button" class="btn btn-large button_mfm"> <span class="glyphicon glyphicon-download-alt">Descargar</span></button>
-</div>
+  <div class="col-md-2 pull-right">
+    <button type="button" class="btn btn-large button_mfm"> <span class="glyphicon glyphicon-download-alt">Descargar</span></button>
+  </div>
 </div>

@@ -4,19 +4,16 @@
 angular.module('spaApp')
 .controller('CreditDetailCtrl',
   function($scope,$http,$location,$rootScope,$log,$stateParams){
-   $rootScope.titulo = 'Saldos - Línea de Crédito - Cuenta #### - Detalle de la Operación';
-    $scope.gridOptions ={data: 'myData',
-      columnDefs: [{field:'name',displayName:'Nombre del beneficiario'},
-      {field:'monto',displayName:'Monto'},
-      {field:'acount',displayName:'Cuenta'}]
-    };
 
     $http({
-      url: $rootScope.restAPIBaseUrl + 'accounts/detailCredit.json',
+      url:'json/biometric-detail.json',
       method: 'GET'
     }).
     success(function(data, status) {
-        $scope.myData=data.detail;
+      $scope.detail = data;
+      $scope.transacction_id = $scope.detail.transacction_id;
+      //TODO: depend json
+      $scope.account_id = 60001;
     }).
     error(function(data, status) {
       //put an error message in the scope
@@ -24,16 +21,4 @@ angular.module('spaApp')
       $scope.errorMessage = 'operation failed';
     });
 
-    $scope.producto="*******";
-    $scope.noOperacion="#####";
-    $scope.montoEnviar="000,000.00";
-    $scope.date="DD/MM/YYYY";
-    $scope.tc="00.00";
-    $scope.operacion=45698;
-
-    $scope.mail = [
-      {name:'jbravor@anze.com.mx'},
-      {name:'amigo@gmail.com'},
-      {name:'cliente@banco.com.mx'}
-    ];
 });

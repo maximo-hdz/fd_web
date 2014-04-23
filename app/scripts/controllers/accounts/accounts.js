@@ -4,25 +4,17 @@
  * The accounts controller. Gets accounts passing auth parameters
  */
 angular.module('spaApp')
-.controller('AccountsCtrl', function($scope,$http,$location,$rootScope,$log,ctsBiometricas) {
+.controller('AccountsCtrl', function($scope,$http,$location,$rootScope,ctsBiometricas,accountsProvider) {
 	$scope.client = 'Ricardo Montemayor Morales';
 	$rootScope.titulo = 'Saldos';
-    $scope.biometricAccounts = $rootScope.biometricAccounts;
 
-	// Get Biometric Accounts
-	$http({
-		url: $rootScope.restAPIBaseUrl + 'accounts/1',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		$scope.biometricAccounts = data;
-		ctsBiometricas.accounts = data;
-	}).
-	error(function(data, status) {
-		//put an error message in the scope
-		$log.error('Error: '+data, status);
-		$scope.errorMessage = 'operation failed';
-	});
+
+    accountsProvider.getBiometricAccounts().then(
+      function(data) {
+ 			$scope.biometricAccounts = $rootScope.biometricAccounts;
+      }
+     );
+
 
 	// Get Credit Accounts
 	$http({
