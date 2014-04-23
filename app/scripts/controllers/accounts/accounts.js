@@ -8,41 +8,23 @@ angular.module('spaApp')
 	$scope.client = 'Ricardo Montemayor Morales';
 	$rootScope.titulo = 'Saldos';
 
-
     accountsProvider.getBiometricAccounts().then(
       function(data) {
  			$scope.biometricAccounts = $rootScope.biometricAccounts;
       }
-     );
+    );
 
+    accountsProvider.getCreditAccounts().then(
+      function(data) {
+ 			$scope.creditAccounts = $rootScope.creditAccounts;
+      }
+    );
 
-	// Get Credit Accounts
-	$http({
-		url: $rootScope.restAPIBaseUrl + 'accounts/2',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		$scope.creditAccounts = data;
-	}).
-	error(function(data, status) {
-		//put an error message in the scope
-		$log.error('Error: '+data, status);
-		$scope.errorMessage = 'operation failed';
-	});
-
-	// Get Investment Accounts
-	$http({
-		url: $rootScope.restAPIBaseUrl + 'accounts/3',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		$scope.investmentAccounts = data;
-	}).
-	error(function(data, status) {
-		//put an error message in the scope
-		$log.error('Error: '+data, status);
-		$scope.errorMessage = 'operation failed';
-	});
+    accountsProvider.getInvestmentAccounts().then(
+      function(data) {
+ 			$scope.investmentAccounts = $rootScope.investmentAccounts;
+      }
+    );
 
 	$scope.logout=function(){
 		$location.path( '/login' );

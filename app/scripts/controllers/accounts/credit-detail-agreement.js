@@ -31,7 +31,7 @@ angular.module('spaApp')
 	$scope.to="20/03/2014";
 
 	$http({
-		url: 'accounts/detailCredit.json',
+		url: 'json/detailCredit.json',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {
@@ -50,11 +50,11 @@ angular.module('spaApp')
     $scope.metodo = [
       {name:'551234567'},
       {name:'5512345678'},
-      {name:'prueba@anzen.com.mx'}    
+      {name:'prueba@anzen.com.mx'}
     ];
     $scope.metodo = [
       {name:'551234567'},
       {name:'5512345678'},
-      {name:'prueba@anzen.com.mx'}    
+      {name:'prueba@anzen.com.mx'}
     ];
 });
