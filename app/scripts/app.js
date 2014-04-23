@@ -337,6 +337,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   return {}
 });
 app.run(function($rootScope){
-  $rootScope.restAPIBaseUrl = 'http://projects.anzen.com.mx:3000/api/';
+  $rootScope.restAPIBaseUrl = 'http://projects.anzen.com.mx:8081/mfm/api/v1/';
 });
 
