@@ -10,14 +10,14 @@ angular.module('spaApp')
     getBiometricTransacctionDetail: function () {
       var deferred = $q.defer();
 
-      if(!$rootScope.biometricAccounts) {
+      if(!$rootScope.biometricDetail) {
         console.log('getting biometric detail');
         biometricService.getBiometricTransacctionDetail().success(function(data, status, headers) {
           $rootScope.biometricDetail = data;
           deferred.resolve();
         }).error(function(data, status) {
           console.log(data, status);
-          return deferred.reject("Error getting biometric detail");
+          return deferred.reject('Error getting biometric detail');
         });
       } else {
         deferred.resolve();

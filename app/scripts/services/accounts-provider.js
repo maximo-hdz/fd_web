@@ -17,7 +17,7 @@ angular.module('spaApp')
           deferred.resolve();
         }).error(function(data, status) {
           console.log(data, status);
-          return deferred.reject("Error getting biometric Accounts");
+          return deferred.reject('Error getting biometric Accounts');
         });
       } else {
         deferred.resolve();
@@ -34,7 +34,7 @@ angular.module('spaApp')
           deferred.resolve();
         }).error(function(data, status) {
           console.log(data, status);
-          return deferred.reject("Error getting credit Accounts");
+          return deferred.reject('Error getting credit Accounts');
         });
       } else {
         deferred.resolve();
@@ -51,7 +51,7 @@ angular.module('spaApp')
           deferred.resolve();
         }).error(function(data, status) {
           console.log(data, status);
-          return deferred.reject("Error getting investment Accounts");
+          return deferred.reject('Error getting investment Accounts');
         });
       } else {
         deferred.resolve();

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('spaApp').factory("breadcrumbService", function($state, $stateParams) {
+angular.module('spaApp').factory('breadcrumbService', function($state, $stateParams) {
   var list = [], title;
 
   function getProperty(object, path) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('spaApp').directive("breadcrumbs", function(breadcrumbService) {
+angular.module('spaApp').directive('breadcrumbs', function(breadcrumbService) {
   return {
     restrict: 'E',
     replace: true,

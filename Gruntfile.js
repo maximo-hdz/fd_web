@@ -40,7 +40,7 @@ module.exports = function (grunt) {
           { extension: 'js', mime_type: 'text/javascript' } ,
           { extension: 'css', mime_type: 'text/css' } ,
           { extension: 'html', mime_type: 'text/html' } ,
-          { extension: 'png', mime_type: 'image/png' } 
+          { extension: 'png', mime_type: 'image/png' }
           ]
         },
         files: [
@@ -61,7 +61,7 @@ module.exports = function (grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-      files: ['<%= yeoman.app %>/scripts/{,*/*/}*.js','<%= yeoman.app %>/scripts/{,*/*/*/}*.js'],
+      files: ['<%= yeoman.app %>/scripts/{,*/}*.js','<%= yeoman.app %>/scripts/{,*/*/}*.js','<%= yeoman.app %>/scripts/{,*/*/*/}*.js'],
       tasks: ['newer:jshint:all'],
       options: {
         livereload: true
@@ -349,7 +349,8 @@ htmlmin: {
         'views/{,*/*/}*.html',
       'images/{,*/}*.{webp}',
       'fonts/*',
-      'audio/*'
+      'audio/*',
+      'json/*'
       ]
     }, {
       expand: true,
