@@ -55,20 +55,6 @@ angular.module('spaApp')
 		$location.path(account_id + '#/investment');
 	}
 
-	/* Credit Account */
-	$scope.credit=function(account_id){
-		$location.path( account_id + '/credit/transactions');
-	}
-
-	/* Credit Transaction */
-	//TODO Do not use JQuery
-	$scope.creditTransaction=function(account_id){
-		$location.path( account_id + '/credit/transactions');
-		$( "#transaction" ).addClass( "active" );
-		$( "#valueDate" ).removeClass( "active" );
-		$( "#dueDate" ).removeClass( "active" );
-	}
-
 	$scope.customize=function(){
 
 		$location.path('/administration/accounts/customize');
@@ -83,6 +69,27 @@ angular.module('spaApp')
 		$( "#transactiont" ).addClass( "active" );
 		$( "#valueDt" ).removeClass( "active" );
 	}
+
+	//behavior stack help
+	$scope.show_hide_help=function(elemento, link){
+		if( $(elemento).css('display') == 'block' ){
+			$(elemento).slideToggle('fast');
+			$(link).removeClass('abierto').addClass('cerrado').slideToggle('fast');
+		}else{
+			$(elemento).slideToggle('fast');
+			$(link).removeClass('cerrado').addClass('abierto').slideToggle('fast');
+		}
+	};
+
+/* Credit Transaction */
+	//TODO Do not use JQuery
+	$scope.creditTransaction=function(account_id){
+		$location.path( account_id + '/credit/transactions');
+		$( "#transaction" ).addClass( "active" );
+		$( "#valueDate" ).removeClass( "active" );
+		$( "#dueDate" ).removeClass( "active" );
+	}
+
 	/* Credit Due Date */
 	$scope.dueDate=function(account_id){
 		$location.path( account_id + '/credit/dueDate');
@@ -98,31 +105,6 @@ angular.module('spaApp')
 		$( "#dueDate" ).removeClass( "active" );
 		$( "#transaction" ).removeClass( "active" );
 	}
-
-	/* Mapping for view detail credit operation liquidated */
-	$scope.detailCredit=function(account_id){
-		$location.path(account_id+ '#/detailCredit');
-	}
-
-	/* Mapping for view detail operation pacted */
-	$scope.detailCreditPacted=function(account_id){
-		$location.path(account_id+ '#/detailCreditPacted');
-	}
-
-	$scope.detailCreditPactedOp=function(account_id){
-		$location.path( account_id + '#/detailCreditPactedOp');
-	}
-
-	//behavior stack help
-	$scope.show_hide_help=function(elemento, link){
-		if( $(elemento).css('display') == 'block' ){
-			$(elemento).slideToggle('fast');
-			$(link).removeClass('abierto').addClass('cerrado').slideToggle('fast');
-		}else{
-			$(elemento).slideToggle('fast');
-			$(link).removeClass('cerrado').addClass('abierto').slideToggle('fast');
-		}
-	};
 
 	$scope.userdetail=function(account_){
 		alert('ad');

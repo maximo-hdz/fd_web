@@ -27,7 +27,8 @@ angular.module('spaApp')
 
 	$http({
 		//Enviar con $stateParams.account_id
-		url: $rootScope.restAPIBaseUrl + 'accounts/1',
+		//url: $rootScope.restAPIBaseUrl + 'json/1',
+		url:'json/account.json',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {

@@ -17,7 +17,8 @@ angular.module('spaApp')
 	};
 
 	$http({
-		url: $rootScope.restAPIBaseUrl + 'accounts/1',
+		//url: $rootScope.restAPIBaseUrl + 'accounts/1',
+		url:'json/account.json',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {
