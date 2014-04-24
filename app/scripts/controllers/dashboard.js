@@ -40,7 +40,9 @@ angular.module('spaApp')
 
 	/** Biometrics  **/
 	$scope.biometrics=function(account_id){
-		$location.path( "accounts/biometric/"+account_id+"/transacctions");
+		if(account_id!=undefined){
+		$location.path( "accounts/biometric/"+account_id+"/transactions");
+		}
 	}
     $scope.sameAddBeneficiary=function(account_id){
 		$location.path(account_id + '#/sameAddBeneficiary');
@@ -72,14 +74,12 @@ angular.module('spaApp')
 	$scope.customize=function(){
 
 		$location.path('/administration/accounts/customize');
-		$( "#buttons" ).hide();
 		$( "#transactiont" ).removeClass( "active" );
 		$( "#valueDt" ).addClass( "active" );
 	}
 
 	$scope.ctas_menu=function(){
-		$location.path('/administration/accounts');
-		$( "#buttons" ).show();
+		$location.path('/administration/accounts/');
 		$( "#transactiont" ).addClass( "active" );
 		$( "#valueDt" ).removeClass( "active" );
 	}

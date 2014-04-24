@@ -33,7 +33,7 @@ $scope.specialist =  'David Torres Fernandez';
 
 
 	$http({
-		url: '/accounts/aut_mod.json',
+		url: '/json/aut_mod.json',
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {
