@@ -1,34 +1,20 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
-	$rootScope.titulo = 'Saldos - Línea de Crédito - Cuenta ####';
+.controller('CreditCtrl', function($scope,$rootScope,$log,$stateParams,creditProvider) {
+
 	$scope.account_id = $stateParams.account_id;
-  //$scope.pestanaTransVal = true;
-  //$scope.pestanaTrans = true;
 
-  $scope.getClass = function(path) {
-    if ($location.path().substr(0, path.length) == path) {
-      return "active"
-    } else {
-      return ""
+  var sessionId = 'id_session';
+  var rowId = 'id_row';
+
+  creditProvider.getCreditDetail(sessionId,rowId).then(
+    function(data) {
+      $scope.credit = $rootScope.creditDetail;
     }
-  }
+  );
 
-	$http({
-		//send with $stateParams.account_id
-		url: $rootScope.restAPIBaseUrl + 'accounts/1',
-		method: 'GET'
-	}).
-	success(function(data) {
-		$scope.credit = data.credit;
-	}).
-	error(function(data, status) {
-		$log.error('Error: '+data, status);
-		$location.path( '/login' );
-	});
-
-
+/*
  $scope.gridOptions ={data: 'myData',
       columnDefs: [{field:'name',displayName:'Nombre del beneficiario'},
       {field:'monto',displayName:'Monto'},
@@ -36,7 +22,7 @@ angular.module('spaApp')
     };
 
     $http({
-      url:'/accounts/detailCredit.json',
+      url:'/json/detailCredit.json',
       method: 'GET'
     }).
     success(function(data, status) {
@@ -47,8 +33,8 @@ angular.module('spaApp')
       $log.error('Error: '+data, status);
       $scope.errorMessage = 'operation failed';
     });
-
-   $scope.producto="*******";
+*/
+/*   $scope.producto="*******";
    $scope.noOperacion="#####";
    $scope.montoEnviar="99,0000.00";
    $scope.date="DD/MM/YYYY";
@@ -60,4 +46,6 @@ angular.module('spaApp')
       {name:'Memo Ochoa'},
       {name:'Cristiano'}
     ];
+*/
+
 });
