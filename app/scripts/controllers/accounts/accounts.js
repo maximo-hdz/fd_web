@@ -26,10 +26,6 @@ angular.module('spaApp')
       }
     );
 
-	$scope.logout=function(){
-		$location.path( '/login' );
-	}
-
 	//behavior stack accounts group
 	$scope.show_hide_table=function(elemento, titulo ){
 		if( $(elemento).css('display') == 'block' ){
@@ -64,4 +60,24 @@ angular.module('spaApp')
 	$scope.inversiones=function(){
 		$location.path('#investment' );
 	}
+
+	/* Credit Account */
+	$scope.credit=function(account_id){
+		$location.path( account_id + '/credit/transactions');
+	}
+
+	/* Mapping for view detail credit operation liquidated */
+	$scope.detailCredit=function(account_id){
+		$location.path(account_id+ '#/detailCredit');
+	}
+
+	/* Mapping for view detail operation pacted */
+	$scope.detailCreditPacted=function(account_id){
+		$location.path(account_id+ '#/detailCreditPacted');
+	}
+
+	$scope.detailCreditPactedOp=function(account_id){
+		$location.path( account_id + '#/detailCreditPactedOp');
+	}
+
 });

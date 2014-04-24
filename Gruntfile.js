@@ -40,7 +40,7 @@ module.exports = function (grunt) {
           { extension: 'js', mime_type: 'text/javascript' } ,
           { extension: 'css', mime_type: 'text/css' } ,
           { extension: 'html', mime_type: 'text/html' } ,
-          { extension: 'png', mime_type: 'image/png' } 
+          { extension: 'png', mime_type: 'image/png' }
           ]
         },
         files: [
@@ -61,7 +61,7 @@ module.exports = function (grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-      files: ['<%= yeoman.app %>/scripts/{,*/*/}*.js','<%= yeoman.app %>/scripts/{,*/*/*/}*.js'],
+      files: ['<%= yeoman.app %>/scripts/{,*/}*.js','<%= yeoman.app %>/scripts/{,*/*/}*.js','<%= yeoman.app %>/scripts/{,*/*/*/}*.js'],
       tasks: ['newer:jshint:all'],
       options: {
         livereload: true
@@ -267,12 +267,12 @@ livereload: {
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
-    html: ['<%= yeoman.dist %>/**/*.html'],
-  css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
-  options: {
-    assetsDirs: ['<%= yeoman.dist %>']
-  }
-},
+      html: ['<%= yeoman.dist %>/**/*.html'],
+    css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+    options: {
+      assetsDirs: ['<%= yeoman.dist %>']
+    }
+  },
 
     // The following *-min tasks produce minified files in the dist folder
     imagemin: {
@@ -345,24 +345,27 @@ htmlmin: {
           '.htaccess',
           'PIE.htc' ,
           '*.html',
-         'views/{,*/}*.html',
-        'views/{,*/*/}*.html',
-      'images/{,*/}*.{webp}',
-      'fonts/*',
-      'audio/*'
-      ]
-    }, {
-      expand: true,
-      cwd: '.tmp/images',
-      dest: '<%= yeoman.dist %>/images',
-      src: ['generated/*']
-    }]
-  },
-  styles: {
+        'views/{,*/}*.html',
+      'views/{,*/*/}*.html',
+      'bower_components/**/*',
+    'images/{,*/}*.{webp}',
+    'fonts/*',
+    'bower_components/sass-bootstrap/fonts/*.*',
+    'audio/*',
+    'json/*'
+    ]
+  }, {
     expand: true,
-    cwd: '<%= yeoman.app %>/styles',
-    dest: '.tmp/styles/',
-  src: '{,*/}*.css'
+    cwd: '.tmp/images',
+    dest: '<%= yeoman.dist %>/images',
+    src: ['generated/*']
+  }]
+},
+styles: {
+  expand: true,
+  cwd: '<%= yeoman.app %>/styles',
+  dest: '.tmp/styles/',
+src: '{,*/}*.css'
 }
 },
 

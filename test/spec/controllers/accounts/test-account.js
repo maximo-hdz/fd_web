@@ -3,7 +3,7 @@
 describe('Controller: AccountsTestAccountCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('mfmFrontSpaApp'));
+  beforeEach(module('spaApp'));
 
   var AccountsTestAccountCtrl,
     scope;

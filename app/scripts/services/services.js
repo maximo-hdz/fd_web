@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('spaApp').factory("breadcrumbService", function($state, $stateParams) {
+angular.module('spaApp').factory('breadcrumbService', function($state, $stateParams) {
   var list = [], title;
 
   function getProperty(object, path) {
@@ -26,13 +26,13 @@ angular.module('spaApp').factory("breadcrumbService", function($state, $statePar
     if(angular.isDefined(state.breadcrumb)) {
       if(angular.isDefined(state.breadcrumb.title)) {
         // addBreadcrumb($interpolate(state.breadcrumb.title)(state.locals.globals), state.name);
-        
+
         var displayName='';
         // Loop through ownParams and replace any expressions with the matching value
         angular.forEach(Object.keys(params), function(param, index){
           displayName = state.breadcrumb.title.replace('{:' + param + '}', params[param]);
         });
-      
+
         addBreadcrumb(displayName, state.name);
       }
     }
