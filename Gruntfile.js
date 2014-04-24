@@ -350,6 +350,7 @@ htmlmin: {
       'bower_components/**/*',
     'images/{,*/}*.{webp}',
     'fonts/*',
+    'bower_components/sass-bootstrap/fonts/*.*',
     'audio/*',
     'json/*'
     ]
