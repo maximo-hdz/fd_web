@@ -11,7 +11,7 @@ var app = angular.module('spaApp', [
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
-  $urlRouterProvider.otherwise("/login");
+  //$urlRouterProvider.otherwise("/login");
 
   $stateProvider
     .state('dashboard', {
@@ -115,7 +115,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     }
   })
   .state('dashboard.addBeneficiary', {
-    url: 'transfer/add/beneficiary',
+    url: 'partials/transfer/add/beneficiary',
     templateUrl: 'views/partials/transfers/add-beneficiary.html',
     controller: 'AddBeneficiaryCtrl',
     breadcrumb: {
@@ -282,6 +282,22 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     breadcrumb: {
       title: 'Detail'
     }
+  })
+  .state('dashboard.interbankTransfer', {
+    url: ':transfer/interbankTransfer',
+   templateUrl : 'views/partials/transfers/interbank.html',
+   controller: 'InterbankCtrl',
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.confirmInterbankTransfer', {
+    url: ':transfer/interbankTransfer/Confirm',
+   templateUrl : 'views/partials/transfers/interbank-confirm.html',
+   controller: 'InterbankCtrl'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
   })
   .state('dashboard.internationalTransfer', {
     url: ':transfer/internationalTransfer',
