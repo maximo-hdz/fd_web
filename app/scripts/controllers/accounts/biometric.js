@@ -24,7 +24,7 @@ angular.module('spaApp')
 
 		afterSelectionChange: function(data) {
 				console.log($scope.mySelections[0].transaction_id);
-				$location.path("accounts/biometric/transacction/" + $scope.mySelections[0].transaction_id);
+				$location.path("accounts/biometric/transaction/" + $scope.mySelections[0].transaction_id);
 			}
 	};
 
@@ -43,6 +43,7 @@ angular.module('spaApp')
 
 
 	$scope.accountNumber = $stateParams.account_id;
+	$rootScope.biometricCurrentAccount= $stateParams.account_id;
 	$scope.amount=100000;
 	$scope.from="06/03/2014";
 	$scope.to="20/03/2014";

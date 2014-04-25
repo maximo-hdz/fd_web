@@ -190,12 +190,17 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   .state('dashboard.administrationctas', {
     url: 'administration/accounts',
     templateUrl: 'views/partials/administration/accounts-admin.html',
-   controller: 'UsersAdministrationCtasCtrl'
+   controller: 'UsersAdministrationCtasCtrlRedirect'
   })
   .state('dashboard.administrationctas.customize', {
     url: '/customize',
     templateUrl: 'views/partials/administration/customize.html',
    //controller: 'UsersAdministrationDetailCtrl'
+  })
+  .state('dashboard.administrationctas.main', {
+    url: '/',
+    templateUrl: 'views/partials/administration/buttons.html',
+   controller: 'UsersAdministrationCtasCtrl'
   })
   .state('dashboard.administrationctas_destino', {
     url: 'administration/accounts/dest',
@@ -229,7 +234,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
 
   })
   .state('dashboard.biometric', {
-    url: 'accounts/biometric/:account_id/transacctions',
+    url: 'accounts/biometric/:account_id/transactions',
     templateUrl: 'views/partials/accounts/biometrics.html',
     controller: 'BiometricCtrl',
     breadcrumb: {
@@ -237,7 +242,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     }
   })
   .state('dashboard.biometric_detail', {
-    url: 'accounts/biometric/transacction/:transaction_id',
+    url: 'accounts/biometric/transaction/:transaction_id',
     templateUrl: 'views/partials/accounts/biometric-detail.html',
     controller : 'BiometricDetailCtrl' ,
     breadcrumb: {
