@@ -11,7 +11,7 @@ var app = angular.module('spaApp', [
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 
-  //$urlRouterProvider.otherwise("/login");
+  $urlRouterProvider.otherwise("/login");
 
   $stateProvider
     .state('dashboard', {

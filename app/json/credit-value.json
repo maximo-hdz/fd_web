@@ -1,0 +1,52 @@
+{
+  "accounts": [
+    {
+      "op_num": "60001",
+      "status": "Cancelada",
+      "client": "Anzen",
+      "value_date": "23/23/2023",
+      "mount": "161116",
+      "currency": "USD"
+    },    
+    {
+      "op_num": "60001",
+      "status": "Cancelada",
+      "client": "Anzen",
+      "value_date": "23/23/2023",
+      "mount": "161116",
+      "currency": "USD"
+    },    
+    {
+      "op_num": "60001",
+      "status": "Cancelada",
+      "client": "Anzen",
+      "value_date": "23/23/2023",
+      "mount": "161116",
+      "currency": "USD"
+    },    
+    {
+      "op_num": "60001",
+      "status": "Cancelada",
+      "client": "Anzen",
+      "value_date": "23/23/2023",
+      "mount": "161116",
+      "currency": "USD"
+    },    
+    {
+      "op_num": "60001",
+      "status": "Cancelada",
+      "client": "Anzen",
+      "value_date": "23/23/2023",
+      "mount": "161116",
+      "currency": "USD"
+    },    
+    {
+      "op_num": "60001",
+      "status": "Cancelada",
+      "client": "Anzen",
+      "value_date": "23/23/2023",
+      "mount": "161116",
+      "currency": "USD"
+    }
+  ]
+}
