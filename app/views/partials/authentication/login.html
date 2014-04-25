@@ -5,11 +5,11 @@
 </audio>
 <div class="login_back">
 	<div class="container">
-		<div class="row-fluid">	
+		<div class="row-fluid">
 			<form class="form-signin col-md-3" ng-controller="LoginCtrl" ng-submit="login(username,password)">
 				<div class="logo"><div class="mfm"></div></div>
-				<input type="text" class="form-control input_user" placeholder="Usuario"  ng-model="username">
-				<input type="password" class="form-control input_pass" placeholder="Contrase&ntilde;a" ng-model="password">
+				<input type="text" class="form-control input_user" placeholder="Usuario"  ng-model="username" required autofocus>
+				<input type="password" class="form-control input_pass" placeholder="Contrase&ntilde;a" ng-model="password" required>
 				<button class="btn" type="submit">Iniciar Sesi&oacute;n</button>
 			</form>
 			<div class="col-md-9 bienvenida text-center">
@@ -21,9 +21,9 @@
 	<div class="login_footer">
 		<div class="container">
 			<div class="row text-center" >
-				<a href="javascript:void(0);">Sobre nosotros</a> |  
-				<a href="javascript:void(0);">Portal m&oacute;vil</a> | 
-				<a href="javascript:void(0);">Privacidad</a> | 
+				<a href="javascript:void(0);">Sobre nosotros</a> |
+				<a href="javascript:void(0);">Portal m&oacute;vil</a> |
+				<a href="javascript:void(0);">Privacidad</a> |
 				<a href="javascript:void(0);">&copy; Copyright 2014 Master Financial Management</a>
 			</div>
 		</div>
