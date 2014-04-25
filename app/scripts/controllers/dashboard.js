@@ -4,7 +4,7 @@
 Navigation-bar  controller  for dashboard
 **/
 angular.module('spaApp')
-.controller('DashboardCtrl', function($scope,$rootScope,$location) {
+.controller('DashboardCtrl', function($scope,$rootScope,$location,AuthenticationService) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
 	/**
@@ -34,9 +34,20 @@ angular.module('spaApp')
 	/**
 	Logout operation
 	**/
-	$scope.logout = function(){
-		$location.path( '/login' );
+	$scope.logout=function(){
+			$location.path( '/login' );
 	}
+
+	/*/TODO: verify API RESTful
+	$scope.logout=function(){
+	 	AuthenticationService.logout()
+	 	.then(function(data){
+	 		$location.path('/logout');
+	 	}, function(error){
+	 		$scope.errorMessage = 'Logout failed';
+	 		$scope.status = error;
+	 	});
+	 }*/
 
 	/** Biometrics  **/
 	$scope.biometrics=function(account_id){
