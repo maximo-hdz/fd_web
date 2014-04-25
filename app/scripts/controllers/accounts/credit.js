@@ -5,7 +5,7 @@ angular.module('spaApp')
 
 	$scope.account_id = $stateParams.account_id;
 
-  var sessionId = 'id_session';
+  var sessionId = '0001';
   var rowId = 'id_row';
 
   creditProvider.getCreditDetail(sessionId,rowId).then(

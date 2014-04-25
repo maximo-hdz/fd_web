@@ -1,31 +1,25 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditValueDateCtrl', function ($scope,$http,$location,$rootScope,$log,$stateParams) {
+.controller('CreditValueDateCtrl', function ($scope,$rootScope,creditValueProvider) {
 
 	$scope.gridOptions = {
 			data: 'myData',
 			multiSelect: false,
 			selectedItems: $scope.mySelections,
 			columnDefs: [
-				{field:'_account_id', displayName:'No. de Operación'},
-				{field:'account_type', displayName:'Estatus'},
-				{field:'name', displayName:'Cliente'},
-				{field:'alias', displayName:'Fecha Valor'},
-				{field:'currency', displayName:'Monto a Disponer'},
-				{field:'last_digits', displayName:'Divisa'}]
+				{field:'op_num', displayName:'No. de Operación'},
+				{field:'status', displayName:'Estatus'},
+				{field:'client', displayName:'Cliente'},
+				{field:'value_date', displayName:'Fecha Valor'},
+				{field:'mount', displayName:'Monto a Disponer'},
+				{field:'currency', displayName:'Divisa'}]
 	};
 
-	$http({
-		//url: $rootScope.restAPIBaseUrl + 'accounts/1',
-		url:'json/account.json',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		$scope.myData = data.accounts;
-	}).
-	error(function(data, status) {
-		$log.error('Error: '+data, status);
-		$location.path( '/login' );
-	});
+  creditValueProvider.getCreditValue().then(
+    function(data) {
+      $scope.myData = $rootScope.creditValue;
+    }
+  );
+
 });
