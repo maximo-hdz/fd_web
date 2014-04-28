@@ -1,0 +1,35 @@
+{
+    "transacctions": [
+        {
+            "alias": "Alias2",
+            "date": "21/03/2012",
+            "typeInvertion": "Pagare 100",
+            "mount": "1500",
+            "rate": 0.05,
+            "periodicityCoupons": "30 dias",
+            "dueDate": "2013-05-0",
+            "remainingCoupons": "10/12"
+        },
+        {
+            "alias": "Alias1",
+            "date": "21/03/2013",
+            "typeInvertion": "Pagare",
+            "mount": "123",
+            "rate": 7.5,
+            "periodicityCoupons": "20 días",
+            "dueDate": "2013-05-0",
+            "remainingCoupons": "08/15"
+        },
+        {
+            "alias": "Alias3",
+            "date": "21/03/2015",
+            "typeInvertion": "Pagare 250",
+            "mount": "2000",
+            "rate": "5.5",
+            "periodicityCoupons": "205 días",
+            "dueDate": "2013-05-09",
+            "remainingCoupons": "15/25"
+        }
+
+    ]
+}
