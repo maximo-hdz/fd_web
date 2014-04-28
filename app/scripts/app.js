@@ -73,6 +73,14 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
       title: 'detail'
     }
   })
+  .state('dashboard.detailCreditPactedOp', {
+    url: ':account_id/detail/operation',
+    templateUrl : 'views/partials/accounts/credit-detail-operation.html',
+    controller: 'CreditDetailAgreementCtrl',
+    breadcrumb: {
+      title: 'Detail'
+    }
+  })
   .state('dashboard.connection', {
     url: 'connection',
     templateUrl: 'views/partials/connection/connection.html',
@@ -279,13 +287,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     controller: 'CreditValueDateCtrl',
     breadcrumb: {
       title: 'Value Date'
-    }
-  })
-  .state('dashboard.detailCreditPactedOp', {
-    url: ':account_id/detail/operation',
-   templateUrl : 'views/partials/accounts/credit-detail-operation.html',
-    breadcrumb: {
-      title: 'Detail'
     }
   })
   .state('dashboard.interbankTransfer', {
