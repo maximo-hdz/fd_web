@@ -34,7 +34,8 @@ angular.module('spaApp')
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {
-		$scope.myData = data.transacctions;
+
+		$scope.myData = data.transacctions;			
 	}).
 	error(function(data, status) {
 		$log.error('Error: '+data, status);
@@ -66,4 +67,22 @@ angular.module('spaApp')
 	    $event.stopPropagation();
 	    $scope.openedto = true;
 	};
+
+	// Init Flow Balance
+
+	$http({
+		url: 'json/biometric-balance.json',
+		method: 'GET'
+
+	}).
+	success(function(data,status,headers){
+		console.log("datos JSON: " + data);
+			$scope.structure=data.respuesta;
+	}).
+	error(function(data, status) {
+		$log.error('Error: '+data, status);
+		$location.path( '/login' );
+	});
+
+
 });
