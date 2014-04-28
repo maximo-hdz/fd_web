@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditDueDateCtrl', function ($scope,$http,$location,$rootScope,$log,$stateParams) {
+.controller('CreditDueDateCtrl', function ($scope,$rootScope,creditDueProvider) {
 
 	$scope.mySelections = [];
 	$scope.gridOptions = {
@@ -9,24 +9,16 @@ angular.module('spaApp')
 			multiSelect: false,
 			selectedItems: $scope.mySelections,
 			columnDefs: [
-				{field:'_account_id', displayName:'No. de Operación'},
-				{field:'account_type', displayName:'Cliente'},
-				{field:'name', displayName:'Fecha Vencimiento'},
-				{field:'alias', displayName:'Monto a Pagar'},
+				{field:'op_num', displayName:'No. de Operación'},
+				{field:'client', displayName:'Cliente'},
+				{field:'due_date', displayName:'Fecha Vencimiento'},
+				{field:'mount', displayName:'Monto a Pagar'},
 				{field:'currency', displayName:'Divisa'}]
 	};
 
-	$http({
-		//url: $rootScope.restAPIBaseUrl + 'accounts/1',
-		url:'json/account.json',
-		method: 'GET'
-	}).
-	success(function(data, status) {
-		$scope.myData = data.accounts;
-	}).
-	error(function(data, status) {
-		$log.error('Error: '+data, status);
-		$scope.errorMessage = 'operation failed';
-	});
-
+  creditDueProvider.getCreditDue().then(
+    function(data) {
+      $scope.myData = $rootScope.creditDue;
+    }
+  );
 });
