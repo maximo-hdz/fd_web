@@ -1,12 +1,20 @@
 'use strict';
 
 angular.module('spaApp')
-  .service('CreditDueService',['$http','$rootScope', function($http, $rootScope) {
+  .service('CreditMovementService', function CreditMovementService() {
+    // AngularJS will instantiate a singleton by calling "new" on this function
+  });
 
-    this.getCreditDue= function () {
+
+'use strict';
+
+angular.module('spaApp')
+  .service('CreditMovementService',['$http','$rootScope', function($http, $rootScope) {
+
+    this.getCreditMovement= function () {
 		return $http({
-				//url: $rootScope.restAPIBaseUrl + 'accounts/credit/duedate',
-				url:'json/credit-due.json',
+				//url: $rootScope.restAPIBaseUrl + 'accounts/credit/movement',
+				url:'json/credit-movement.json',
 				method: 'GET',
 				data: JSON.stringify({
 					'sessionId':'0001',
