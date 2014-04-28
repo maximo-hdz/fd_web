@@ -1,0 +1,14 @@
+{
+    "respuesta": {
+        "page": {
+            "currentPage": "paginactual",
+            "registersPerPage": "1000",
+            "totalPageNumber": "100",
+            "totalRegisterNumber": "100000"
+        },
+        "listaRegistros": [
+            "Monto",
+            "Cargos"
+        ]
+    }
+}
