@@ -21,4 +21,26 @@ angular.module('spaApp')
       $scope.myData = $rootScope.creditDue;
     }
   );
+
+	$scope.today = function() {
+		$scope.dateFrom = new Date();
+		$scope.dateTo = new Date();
+	};
+
+	$scope.today();
+	$scope.from="06/03/2014";
+	$scope.format = 'dd/MM/yyyy';
+	/** functions for datepicker **/
+
+	// Disable weekend selection
+	$scope.disabled = function(date, mode) {
+		return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+	};
+
+	$scope.openFrom = function($event) {
+	    $event.preventDefault();
+	    $event.stopPropagation();
+	    $scope.openedfrom = true;
+	}
+
 });
