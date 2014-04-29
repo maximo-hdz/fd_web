@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('administration-route', ['ui.router'])
 .config(['$locationProvider', '$urlRouterProvider', '$stateProvider', '$httpProvider', 	function($locationProvider, $urlRouterProvider, $stateProvider, $httpProvider){
 $stateProvider	
@@ -27,7 +26,6 @@ $stateProvider
   .state('dashboard.administrationctas.customize', {
     url: '/customize',
     templateUrl: 'views/partials/administration/customize.html',
-   //controller: 'UsersAdministrationDetailCtrl'
   })
   .state('dashboard.administrationctas.main', {
     url: '/',
@@ -51,21 +49,15 @@ $stateProvider
   })
   .state('dashboard.administrationuserdetailmod', {
     url: 'administration/users/mod/:account_usr',
-    templateUrl: 'views/partials/administration/addmoduser.html',
-
+    templateUrl: 'views/partials/administration/addmoduser.html'
   })
   .state('dashboard.administrationuserdetailadd', {
     url: 'administration/users/add',
-    templateUrl: 'views/partials/administration/addmoduser.html',
-
+    templateUrl: 'views/partials/administration/addmoduser.html'
   })
   .state('dashboard.administrationauthorize_change', {
     url: 'administration/users/autorize',
     templateUrl: 'views/partials/administration/authorize_changes.html',
    controller: 'UsersAdministrationAutCtrl'
-
   })
-
-
-
 }]);
