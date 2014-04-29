@@ -113,7 +113,8 @@ angular.module('accounts-route',['ui.router'])
   })
   .state('dashboard.detailCreditPactedOp', {
     url: ':account_id/detail/operation',
-   templateUrl : 'views/partials/accounts/credit-detail-operation.html',
+    templateUrl : 'views/partials/accounts/credit-detail-operation.html',
+    controller: 'CreditValueDateCtrl',
     breadcrumb: {
       title: 'Detail'
     }
