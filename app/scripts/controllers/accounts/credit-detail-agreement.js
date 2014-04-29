@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditDetailAgreementCtrl', function ($scope,$stateParams,$rootScope,creditDetailProvider) {
+.controller('CreditDetailAgreementCtrl', function ($scope,$stateParams,$rootScope,creditDetailProvider,creditBalanceProvider) {
 
 	$scope.mySelections = [];
 	$scope.gridOptions = {
@@ -23,10 +23,14 @@ angular.module('spaApp')
 		}
 	);
 
-	$scope.operation=100000;
-	$scope.amount=100000;
-	$scope.from="06/03/2014";
-	$scope.to="20/03/2014";
+	creditBalanceProvider.getCreditBalance().then(
+		function(data) {
+			$scope.balance = $rootScope.creditBalance;
+		}
+	);
+
+	$scope.operacion="159159";
+
 	$scope.authorized = [
       {name:'Autorizador 1'},
       {name:'Autorizador 2'},
