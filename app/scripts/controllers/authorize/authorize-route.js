@@ -2,7 +2,6 @@ angular.module('authorize-route', ['ui.router'])
 .config(['$urlRouterProvider', '$locationProvider', '$httpProvider', '$stateProvider' , function($urlRouterProvider, $locationProvider, $httpProvider, $stateProvider){
 
 $stateProvider
-
 .state('dashboard.authorize', {
     url: 'authorize',
     templateUrl: 'views/partials/authorize/pending-operations.html',
@@ -26,11 +25,4 @@ $stateProvider
       title: 'Authorize'
     }
   })
-
-
-
-
-
-
-
 }]);
