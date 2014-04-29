@@ -2,7 +2,7 @@
 
 angular.module('spaApp')
 .controller('AuthorizeOperationsCtrl',
-	function($scope,$http,$location,$rootScope,$log) {
+	function($scope,$location,$rootScope,authorizeProvider) {
 
 		$scope.gridOptions = {
 			data: 'myData',
@@ -20,16 +20,10 @@ angular.module('spaApp')
 				}
 		};
 
-		$http({
-			url: $rootScope.restAPIBaseUrl + 'accounts/1',
-			method: 'GET'
-		}).
-		success(function(data, status, headers) {
-			$scope.myData = data.accounts;
-		}).
-		error(function(data, status) {
-			$log.error('Error: '+data, status);
-			$location.path( '/login' );
-		});
+		authorizeProvider.getAuthorize().then(
+			function(data) {
+				$scope.myData = $rootScope.authorize;
+			}
+		);
 	}
 );
