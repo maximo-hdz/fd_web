@@ -1,0 +1,114 @@
+<div>
+	<div class="content_table">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-1">
+				<a type="button" href="/#/transfer/AddBeneficiaryInternational" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
+				</div>
+				<span style="color:white;font-size:x-large">Alta Internacional - Persona F&iacute;sica</span></div>
+		</div>
+		<br>
+		<div class="well">
+			<div class="row">
+				<div class="col-md-3">Alias de la Cuenta</div>
+				<div class="col-md-3"><input type="text"  ng-model="alias" size="20"/></div>
+				<div class="col-md-3">L&iacute;mite de Pago Diario</div>
+				<div class="col-md-3"><input type="text"  ng-model="dailyLimit" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Correo Electr&oacute;onico</div>
+				<div class="col-md-3"><input type="text"  ng-model="eMail" size="20"/></div>
+				<div class="col-md-3">L&iacute;mite de Pago Mensual</div>
+				<div class="col-md-3"><input type="text"  ng-model="monthlyLimit" size="20"/></div>
+			</div>
+			<hr>
+
+			<div class="row">
+				<div class="col-md-3">Cuenta del Beneficiario</div>
+				<div class="col-md-3"><input type="text"  ng-model="beneficiaryAccount" size="20"/></div>
+				<div class="col-md-3">C&oacute;digo SWIFT</div>
+				<div class="col-md-3"><input type="text"  ng-model="option" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Nombre</div>
+				<div class="col-md-3"><input type="text"  ng-model="mainName" size="20"/></div>
+				<div class="col-md-3">Banco Beneficiario</div>
+				<div class="col-md-3"><input type="text"  ng-model="beneficiaryBank" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Apellido Paterno</div>
+				<div class="col-md-3"><input type="text"  ng-model="lastName" size="20"/></div>
+				<div class="col-md-3">Dirección del Banco</div>
+				<div class="col-md-3"><input type="text"  ng-model="bankAddress" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Apellido Materno</div>
+				<div class="col-md-3"><input type="text"  ng-model="secondLastName" size="20"/></div>
+				<div class="col-md-3">Ciudad del Banco</div>
+				<div class="col-md-3"><input type="text"  ng-model="bankCity" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Direcci&oacute;n del Beneficiario</div>
+				<div class="col-md-3"><input type="text"  ng-model="address" size="20"/></div>
+				<div class="col-md-3">País del Banco</div>
+				<div class="col-md-3"><input type="text"  ng-model="bankCountry" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Ciudad del Beneficiario</div>
+				<div class="col-md-3"><input type="text"  ng-model="city" size="20"/></div>
+				<div class="col-md-3">Divisa de la cuenta</div>
+				<div class="col-md-3"><input type="text"  ng-model="coin" size="20"/></div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">Pa&iacute;s del Beneficiario</div>
+				<div class="col-md-3"><input type="text"  ng-model="country" size="20"/></div>
+			</div>
+
+			<hr>
+
+			<div class="row">
+				<div ng-switch on="x">
+				<div ng-switch-when="true">
+				<div class="col-md-2">Autoriza</div>
+				<div class="col-md-4">
+					<select name="" id="">
+						<option value="">Nombre de persona autorizada</option>
+					</select>
+				</div>
+				<div class="col-md-3">Medio</div>
+				<div class="col-md-3">
+					<select name="" id="">
+						<option value="">+55 56581111</option>
+					</select>
+				</div>
+			</div><!-- end true-->
+
+			<div class="ng-switch-default">
+				
+			</div><!-- end false-->
+			</div><!-- end switch-->
+		</div>
+		</div>
+		
+		<div class="row">
+    		<div ng-switch on="x">
+					<div ng-switch-when="true">
+						<div class="col-md-3 pull-right">
+							<a type="button" href="" class="btn btn-large button_mfm" ng-click="switch()"><span class="glyphicon glyphicon-ok"></span> Autorizar</a>
+						</div>
+					</div>
+      				<div ng-switch-default>
+      				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
