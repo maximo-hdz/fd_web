@@ -23,17 +23,17 @@
     <div class="row">
       <div class="row">
           <div class="col-md-6">
-            <div class="col-md-6"> No operaci&oacute;n  </div> <div class="col-md-6"> <input disabled="disabled" ng-model="noOperacion"  type="text"/></div>
-            <div class="col-md-6"> Monto a enviar </div> <div class="col-md-6"><input type="text"  ng-model="montoEnviar"   disabled="disabled"  size="20"/></div>
-            <div class="col-md-6">  Monto a cobrar   </div> <div class="col-md-6"><input type="text"  ng-model="montoEnviar"  disabled="disabled"   size="20"/></div>
-             <div class="col-md-6"> Fecha de operaci&oacute;n  </div> <div class="col-md-6"><input type="text"  ng-model="date"   disabled="disabled"   size="20"/></div>
+            <div class="col-md-6"> No operaci&oacute;n  </div> <div class="col-md-6"> <input disabled="disabled" ng-model="balance.operation_number"  type="text"/></div>
+            <div class="col-md-6"> Monto a enviar </div> <div class="col-md-6"><input type="text"  ng-model="balance.mount_to_send"   disabled="disabled"  size="20"/></div>
+            <div class="col-md-6">  Monto a cobrar   </div> <div class="col-md-6"><input type="text"  ng-model="balance.mount_to_cash"  disabled="disabled"   size="20"/></div>
+             <div class="col-md-6"> Fecha de operaci&oacute;n  </div> <div class="col-md-6"><input type="text"  ng-model="balance.operation_date"   disabled="disabled"   size="20"/></div>
           </div>
           <div class="col-md-6">
-            <div class="col-md-6">Fecha valor  </div> <div class="col-md-6"><input type="text" ng-model="date"   disabled="disabled"  size="20"/></div>
-            <div class="col-md-6">Fecha Vencimiento  </div> <div class="col-md-6"><input type="text" ng-model="date"   disabled="disabled"    size="20"/></div>
-            <div class="col-md-6">Plazo  </div> <div class="col-md-6"> <input type="text" ng-model="noOperacion"  disabled="disabled"   size="20"/></div>
-            <div class="col-md-6">T.C. Pactado  </div> <div class="col-md-6"> <input type="text" ng-model="tc"    disabled="disabled"    size="20"/></div>
-            <div class="col-md-6">Producto      </div> <div class="col-md-6"> <input type="text"    ng-model="producto" disabled="disabled" size="20"/></div>
+            <div class="col-md-6">Fecha valor  </div> <div class="col-md-6"><input type="text" ng-model="balance.value_date"   disabled="disabled"  size="20"/></div>
+            <div class="col-md-6">Fecha Vencimiento  </div> <div class="col-md-6"><input type="text" ng-model="balance.due_date"   disabled="disabled"    size="20"/></div>
+            <div class="col-md-6">Plazo  </div> <div class="col-md-6"> <input type="text" ng-model="balance.deadline"  disabled="disabled"   size="20"/></div>
+            <div class="col-md-6">T.C. Pactado  </div> <div class="col-md-6"> <input type="text" ng-model="balance.tc"    disabled="disabled"    size="20"/></div>
+            <div class="col-md-6">Producto      </div> <div class="col-md-6"> <input type="text"    ng-model="balance.product" disabled="disabled" size="20"/></div>
           </div>
       </div>
    </div>
