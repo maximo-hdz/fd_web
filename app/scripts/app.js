@@ -7,7 +7,10 @@ var app = angular.module('spaApp', [
   'ui.router',
   'ui.bootstrap',
   'ngGrid',
-  'accounts-route'
+  'accounts-route',
+  'administration-route',
+  'authorize-route',
+  'authentication-route'
 ]);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
@@ -24,40 +27,13 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
       title: 'dashboard'
     }
   })
- .state('login', {
-    url: '/login',
-    templateUrl: 'views/partials/authentication/login.html',
-    controller: 'LoginCtrl'
-  })
+ 
   .state('dashboard.connection', {
     url: 'connection',
     templateUrl: 'views/partials/connection/connection.html',
     controller: 'ConnectionCtrl',
     breadcrumb: {
       title: 'connection'
-    }
-  })
-  .state('dashboard.authorize', {
-    url: 'authorize',
-    templateUrl: 'views/partials/authorize/pending-operations.html',
-    controller: 'AuthorizeOperationsCtrl',
-    breadcrumb: {
-      title: 'authorize'
-    }
-  })
-  .state('dashboard.authorizeMod', {
-    url: 'authorizeMod',
-    templateUrl: 'views/partials/authorize/pending-modifications.html',
-    controller: 'AuthorizeModCtrl',
-    breadcrumb: {
-      title: 'Modify'
-    }
-  })
-  .state('dashboard.authorizeChanges', {
-    url: 'authorizeChanges',
-    templateUrl: 'views/partials/authorize/authorizeAdminChange.html',
-    breadcrumb: {
-      title: 'Authorize'
     }
   })
   .state('dashboard.transfer', {
@@ -128,67 +104,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
     }
   })
   /****END TO VIEWS */
-  .state('dashboard.administration', {
-    url: 'administration',
-/*    templateUrl: 'views/setUpNotifications.html',
-    controller: "setUpNotifications"*/
-    templateUrl: 'views/partials/administration/admin_front.html',
-    controller: 'UsersAdministrationCtrl',
-    breadcrumb: {
-      title: 'Administration'
-    }
-  })
-  .state('dashboard.administrationuserdetail', {
-    url: 'administration/users',
-    templateUrl: 'views/partials/administration/users-admin.html',
-   controller: 'UsersAdministrationDetailCtrl'
-  })
-  .state('dashboard.administrationctas', {
-    url: 'administration/accounts',
-    templateUrl: 'views/partials/administration/accounts-admin.html',
-   controller: 'UsersAdministrationCtasCtrlRedirect'
-  })
-  .state('dashboard.administrationctas.customize', {
-    url: '/customize',
-    templateUrl: 'views/partials/administration/customize.html',
-   //controller: 'UsersAdministrationDetailCtrl'
-  })
-  .state('dashboard.administrationctas.main', {
-    url: '/',
-    templateUrl: 'views/partials/administration/buttons.html',
-   controller: 'UsersAdministrationCtasCtrl'
-  })
-  .state('dashboard.administrationctas_destino', {
-    url: 'administration/accounts/dest',
-    templateUrl: 'views/partials/administration/admin_ctas_destino.html',
-   controller: 'UsersAdministrationDestAccCtrl'
-  })
-  .state('dashboard.administrationprivileges', {
-    url: 'administration/users/privileges',
-    templateUrl: 'views/partials/administration/users-and-privileges.html',
-   //controller: 'UsersAdministrationDestAccCtrl'
-  })
-  .state('dashboard.administrationalerts', {
-    url: 'administration/users/alerts',
-    templateUrl: 'views/partials/administration/alert_configure.html',
-   //controller: 'UsersAdministrationDestAccCtrl'
-  })
-  .state('dashboard.administrationuserdetailmod', {
-    url: 'administration/users/mod/:account_usr',
-    templateUrl: 'views/partials/administration/addmoduser.html',
-
-  })
-  .state('dashboard.administrationuserdetailadd', {
-    url: 'administration/users/add',
-    templateUrl: 'views/partials/administration/addmoduser.html',
-
-  })
-  .state('dashboard.administrationauthorize_change', {
-    url: 'administration/users/autorize',
-    templateUrl: 'views/partials/administration/authorize_changes.html',
-   controller: 'UsersAdministrationAutCtrl'
-
-  })
   .state('dashboard.interbankTransfer', {
     url: ':transfer/interbankTransfer',
    templateUrl : 'views/partials/transfers/interbank.html',
