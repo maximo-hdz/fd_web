@@ -315,6 +315,46 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
       //title: 'Detail'
    // }
   })
+  .state('dashboard.internationalAddBeneficiary', {
+    url: 'transfer/AddBeneficiaryInternational',
+   templateUrl : 'views/partials/transfers/international-add-beneficiary.html',
+   controller: 'AddInternationalBeneficiary'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.internationalAddBeneficiary.internationalAddBeneficiaryMoral', {
+    url: '/AddBeneficiaryInternationalMoral',
+   templateUrl : 'views/partials/transfers/add-beneficiary-moral-international.html',
+   controller: 'AddInternationalBeneficiaryMoral'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.internationalAddBeneficiary.internationalAddBeneficiaryPhysical', {
+    url: '/AddBeneficiaryInternationalPhysical',
+   templateUrl : 'views/partials/transfers/add-beneficiary-physical-international.html',
+   controller: 'AddInternationalBeneficiaryPhysical'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })  
+   .state('dashboard.internationalAddMoralBeneficiaryConfirm', {
+    url: 'transfer/AddBeneficiaryInternationalMoralConfirm',
+   templateUrl : 'views/partials/transfers/add-beneficiary-moral-international-confirm.html',
+   controller: 'AddInternationalBeneficiaryMoral'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+ })
+   .state('dashboard.internationalAddPhysicalBeneficiaryConfirm', {
+    url: 'transfer/AddBeneficiaryInternationalPhysicalConfirm',
+   templateUrl : 'views/partials/transfers/add-beneficiary-physical-international-confirm.html',
+   controller: 'AddInternationalBeneficiaryPhysical'
+   // breadcrumb: {
+      //title: 'Detail'
+   // } 
+ })
   .state('dashboard.same-bank-transfer', {
     url: ':transfer/same-bank-transfer',
    templateUrl : 'views/partials/transfers/same-bank.html',
