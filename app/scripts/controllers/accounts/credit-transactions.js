@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditTransactionsCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
+.controller('CreditTransactionsCtrl', function($scope,$rootScope,$location,creditMovementProvider) {
 
 	$scope.mySelections = [];
 	$scope.gridOptions = {
@@ -9,33 +9,55 @@ angular.module('spaApp')
 			multiSelect: false,
 			selectedItems: $scope.mySelections,
 			columnDefs: [
-				{field:'_account_id', displayName:'Fecha'},
-				{field:'account_type', displayName:'Operación'},
-				{field:'name', displayName:'Descripcion'},
-				{field:'alias', displayName:'Cargo'},
-				{field:'currency', displayName:'Abono'},
-				{field:'last_digits', displayName:'Saldo'}],
+				{field:'date', displayName:'Fecha'},
+				{field:'operation', displayName:'Operación'},
+				{field:'description', displayName:'Descripcion'},
+				{field:'charge', displayName:'Cargo'},
+				{field:'payment', displayName:'Abono'},
+				{field:'amount', displayName:'Saldo'}],
 			afterSelectionChange: function(data) {
-				if($scope.mySelections[0].account_type=="SAVINGS"){
-					$location.path( $scope.mySelections[0]._account_id+'/detailCreditPacted');
+				if($scope.mySelections[0].description=="Literal"){
+					$location.path( $scope.mySelections[0].charge+'/detailCreditPacted');
 				}
 				else{
-					$location.path( $scope.mySelections[0]._account_id+'/detail/operation');
+					$location.path( $scope.mySelections[0].charge+'/detail/operation');
 				}
 			}
 	};
 
-	$http({
-		//Enviar con $stateParams.account_id
-		//url: $rootScope.restAPIBaseUrl + 'json/1',
-		url:'json/account.json',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		$scope.myData = data.accounts;
-	}).
-	error(function(data, status) {
-		$log.error('Error: '+data, status);
-		$location.path( '/login' );
-	});
+	creditMovementProvider.getCreditMovement().then(
+		function(data) {
+			$scope.myData = $rootScope.creditMovement;
+		}
+	);
+
+	$scope.today = function() {
+		$scope.dateFrom = new Date();
+		$scope.dateTo = new Date();
+	};
+
+	$scope.today();
+	$scope.from="06/03/2014";
+	$scope.to="20/03/2014";
+	$scope.format = 'dd/MM/yyyy';
+	/** functions for datepicker **/
+
+	// Disable weekend selection
+	$scope.disabled = function(date, mode) {
+		return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+	};
+
+	$scope.openFrom = function($event) {
+	    $event.preventDefault();
+	    $event.stopPropagation();
+	    $scope.openedfrom = true;
+	}
+
+	$scope.openTo = function($event) {
+	    $event.preventDefault();
+	    $event.stopPropagation();
+	    $scope.openedto = true;
+	};
+
 });
+

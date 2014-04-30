@@ -13,7 +13,7 @@ $scope.specialist =  'David Torres Fernandez';
 
 
 	$scope.load_conection = function () {
-
+		
 		
 		$('.page_conection').css({
 			'opacity': '0'
@@ -46,3 +46,16 @@ $scope.specialist =  'David Torres Fernandez';
 });
 
 
+angular.module('spaApp')
+.controller('UsersAdministrationCtasCtrlRedirect', function ($rootScope,$scope,$http,$location,$sce,$stateParams) {
+
+$scope.redirect = function(){
+	
+$location.path("/administration/accounts/");	
+
+
+}
+
+$scope.redirect();
+
+});

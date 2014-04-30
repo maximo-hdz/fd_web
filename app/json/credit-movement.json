@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "date": "23/23/2013",
+      "operation": "By pass coronario",
+      "description": "Literal",
+      "charge": "Jefe",
+      "payment": "Orgánico",
+      "amount": "Blanco"
+    },    
+    {
+      "date": "00/00/2100",
+      "operation": "Abdominoplastia",
+      "description": "Figurada",
+      "charge": "Subordinado",
+      "payment": "Inorgánico",
+      "amount":" Rojo"
+    }
+  ]
+}

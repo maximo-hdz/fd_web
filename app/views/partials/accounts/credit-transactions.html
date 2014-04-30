@@ -1,7 +1,17 @@
 <div class="content_table">
-	<p>
-		Movimientos del 23/06/1978 al 01/05/1980
-	</p> 
+  <p>
+    <span class="text">Movimientos del</span>
+      <input type="text" class="" datepicker-popup="{{format}}" ng-model="dateFrom" is-open="openedfrom" min="minDate" max="'2015-06-22'" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+      <span>
+        <button  ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+      <span class="text">al</span>
+      <input type="text" class="" datepicker-popup="{{format}}" ng-model="dateTo" is-open="openedto" min="minDate" max="'2015-06-22'"  date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+      <span>
+        <button  ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+      <button  class="conexion_btn:active pull-right" value="Historial">Historial </button>
+  </p>
 	<div class="table-responsive">
         <div class="gridStyle" ng-grid="gridOptions"></div>
     </div>

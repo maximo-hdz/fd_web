@@ -24,7 +24,7 @@ angular.module('spaApp')
 
 		afterSelectionChange: function(data) {
 				console.log($scope.mySelections[0].transaction_id);
-				$location.path("accounts/biometric/transacction/" + $scope.mySelections[0].transaction_id);
+				$location.path("accounts/biometric/transaction/" + $scope.mySelections[0].transaction_id);
 			}
 	};
 
@@ -34,7 +34,8 @@ angular.module('spaApp')
 		method: 'GET'
 	}).
 	success(function(data, status, headers) {
-		$scope.myData = data.transacctions;
+
+		$scope.myData = data.transacctions;			
 	}).
 	error(function(data, status) {
 		$log.error('Error: '+data, status);
@@ -43,6 +44,7 @@ angular.module('spaApp')
 
 
 	$scope.accountNumber = $stateParams.account_id;
+	$rootScope.biometricCurrentAccount= $stateParams.account_id;
 	$scope.amount=100000;
 	$scope.from="06/03/2014";
 	$scope.to="20/03/2014";
@@ -65,4 +67,22 @@ angular.module('spaApp')
 	    $event.stopPropagation();
 	    $scope.openedto = true;
 	};
+
+	// Init Flow Balance
+
+	$http({
+		url: 'json/biometric-balance.json',
+		method: 'GET'
+
+	}).
+	success(function(data,status,headers){
+		console.log("datos JSON: " + data);
+			$scope.structure=data.respuesta;
+	}).
+	error(function(data, status) {
+		$log.error('Error: '+data, status);
+		$location.path( '/login' );
+	});
+
+
 });

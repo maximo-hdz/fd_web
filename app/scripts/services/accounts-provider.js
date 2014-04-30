@@ -24,6 +24,21 @@ angular.module('spaApp')
       }
       return deferred.promise;
     },
+    getBiometricPaged: function(){
+      if(!$rootScope.biometricPaged) {
+        console.log('Paged accounts');
+        accountsService.getBiometricPaged().success(function(data, status, headers) {
+          $rootScope.biometricAccountsPaged = data;
+          deferred.resolve();
+        }).error(function(data, status) {
+          console.log(data, status);
+          return deferred.reject("Error getting biometric pagined");
+        });
+      } else {
+        deferred.resolve();
+      }
+      return deferred.promise;
+    },
     getCreditAccounts: function () {
       var deferred = $q.defer();
 
