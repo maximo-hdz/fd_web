@@ -11,7 +11,7 @@ $stateProvider
       title: 'Transfer'
     }
   })
-  .state('dashboard.addBeneficiary', {
+    .state('dashboard.addBeneficiary', {
     url: 'partials/transfer/add/beneficiary',
     templateUrl: 'views/partials/transfers/add-beneficiary.html',
     controller: 'AddBeneficiaryCtrl',
@@ -133,4 +133,44 @@ $stateProvider
       title: 'SameBank'
     }
   })
+  .state('dashboard.internationalAddBeneficiary', {
+    url: 'transfer/AddBeneficiaryInternational',
+   templateUrl : 'views/partials/transfers/international-add-beneficiary.html',
+   controller: 'AddInternationalBeneficiary'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.internationalAddBeneficiary.internationalAddBeneficiaryMoral', {
+    url: '/AddBeneficiaryInternationalMoral',
+   templateUrl : 'views/partials/transfers/add-beneficiary-moral-international.html',
+   controller: 'AddInternationalBeneficiaryMoral'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })
+  .state('dashboard.internationalAddBeneficiary.internationalAddBeneficiaryPhysical', {
+    url: '/AddBeneficiaryInternationalPhysical',
+   templateUrl : 'views/partials/transfers/add-beneficiary-physical-international.html',
+   controller: 'AddInternationalBeneficiaryPhysical'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+  })  
+   .state('dashboard.internationalAddMoralBeneficiaryConfirm', {
+    url: 'transfer/AddBeneficiaryInternationalMoralConfirm',
+   templateUrl : 'views/partials/transfers/add-beneficiary-moral-international-confirm.html',
+   controller: 'AddInternationalBeneficiaryMoral'
+   // breadcrumb: {
+      //title: 'Detail'
+   // }
+ })
+   .state('dashboard.internationalAddPhysicalBeneficiaryConfirm', {
+    url: 'transfer/AddBeneficiaryInternationalPhysicalConfirm',
+   templateUrl : 'views/partials/transfers/add-beneficiary-physical-international-confirm.html',
+   controller: 'AddInternationalBeneficiaryPhysical'
+   // breadcrumb: {
+      //title: 'Detail'
+   // } 
+ })
 }]);
