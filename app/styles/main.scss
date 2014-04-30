@@ -10,7 +10,7 @@
 @font-face {font-family: AvenirB; src: url("/fonts/Avenir-Bold.ttf") /* TTF file for CSS3 browsers */ }
 
 /* VARIABLES */
-$logo_bg: "../images/logo.png";
+$logo_bg: "/images/logo.png";
 
 /* MIXINS */
 @mixin border_radius($radius: 10px) {
