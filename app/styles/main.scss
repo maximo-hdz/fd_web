@@ -2,15 +2,15 @@
 /*@import 'sass-bootstrap/lib/bootstrap';*/
 
 /* FONTS */
-@font-face {font-family: Avenir; src: url("../fonts/Avenir.eot") /* EOT file for IE */ }
-@font-face {font-family: Avenir; src: url("../fonts/Avenir.ttf") /* TTF file for CSS3 browsers */ }
-@font-face {font-family: AvenirM; src: url("../fonts/Avenir-Medium.eot") /* EOT file for IE */ }
-@font-face {font-family: AvenirM; src: url("../fonts/Avenir-Medium.ttf") /* TTF file for CSS3 browsers */ }
-@font-face {font-family: AvenirB; src: url("../fonts/Avenir-Bold.eot") /* EOT file for IE */ }
-@font-face {font-family: AvenirB; src: url("../fonts/Avenir-Bold.ttf") /* TTF file for CSS3 browsers */ }
+@font-face {font-family: Avenir; src: url("/fonts/Avenir.eot") /* EOT file for IE */ }
+@font-face {font-family: Avenir; src: url("/fonts/Avenir.ttf") /* TTF file for CSS3 browsers */ }
+@font-face {font-family: AvenirM; src: url("/fonts/Avenir-Medium.eot") /* EOT file for IE */ }
+@font-face {font-family: AvenirM; src: url("/fonts/Avenir-Medium.ttf") /* TTF file for CSS3 browsers */ }
+@font-face {font-family: AvenirB; src: url("/fonts/Avenir-Bold.eot") /* EOT file for IE */ }
+@font-face {font-family: AvenirB; src: url("/fonts/Avenir-Bold.ttf") /* TTF file for CSS3 browsers */ }
 
 /* VARIABLES */
-$logo_bg: "/images/logo.png";
+$logo_bg: "../images/logo.png";
 
 /* MIXINS */
 @mixin border_radius($radius: 10px) {
@@ -156,11 +156,11 @@ b,strong{
 // }
 body{
     background-color: #000000;
-    background-image: url(), radial-gradient(200px 1000px at center, #FFFFFF 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0));
-    background-size: 125%, 50% 100%;
-    // background-size: 200%;
+    background-image: url(), radial-gradient(200px 1000px at center, #666666 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0));
+    // background-size: 125%, 50% 100%;
+    background-size: 250%;
     background-position: 0 60%, 0 100%;
-    @include anim_key_infinite(move,7s);
+    @include anim_key_infinite(move,10s);
     .fondoMFM{
         position: fixed;
         top:0;
@@ -409,6 +409,11 @@ body{
         font-size: 11px;
         color: #cccccc;
         cursor: default;
+    }
+    span.breadcrumbs{
+        text-transform: capitalize;
+        padding-top: 3px;
+        display: block;
     }
     span.fecha{
         background: url("/images/ico_fecha.png") no-repeat;
@@ -700,10 +705,12 @@ body{
         font-size: 20px;
     }
     span.text{
-        padding-top: 50px;
+        padding-top: 51px;
+        padding-left: 20px;
     }
     span.text2{
         padding-top: 30px;
+        padding-left: 20px;
     }
     .input_tel{
         width: 190px;
@@ -722,7 +729,7 @@ body{
     i{
         display: none;
         position: absolute;
-        margin-top: -8px;
+        margin-top: -16px;
         margin-left: -50px;
         width: 70px;
         height: 60px;
@@ -741,6 +748,7 @@ body{
     }
     i.llama-tel{
         background-image: url("/images/ico_tel.png");
+        margin-top: 3px;
     }
 }
 .conexion_btn:hover{
@@ -939,6 +947,18 @@ body{
                 display: block;
                 clear: none;
             }
+        }
+    }
+    .subheader{
+        .col-md-9{
+            width: 100%;
+        }
+    }
+    .title-page{
+        span.nombre{
+            display: block;
+            clear: both;
+            padding-left: 45px;
         }
     }
     .content{

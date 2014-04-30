@@ -7,23 +7,27 @@
 				</div>
 
 				<button class="btn pull-right button_mfm btn-logout"  ng-click="logout()"><i></i>Salir</button>
-
-				<div class="col-md-6 user">
+				<!-- <div class="col-md-6 user">
 					<p>Bienvenido <b>{{client}}</b></p>
-				</div>
+				</div> -->
 			</div>
 
 		</div>
 	</div>
 	<div class="subheader col-md-12">
 		<div class="container">
-			<span class="pull-left">
-				<breadcrumbs/>
-			</span>
-			<span class="pull-right">
-				<span class="fecha">14 de abril de 2014</span>
-				<span class="hora">15:10 HRS</span>
-			</span>
+			<div class="col-md-9 pull-right">
+				<!-- <span class="pull-left">
+					<breadcrumbs/>
+				</span> -->
+				<span class="pull-left">
+					<span class="breadcrumbs" ng-bind="createBreadcrumb()">Saldos</span>
+				</span>
+				<span class="pull-right">
+					<span class="fecha">14 de abril de 2014</span>
+					<span class="hora">15:10 HRS</span>
+				</span>
+			</div>
 		</div>
 	</div>
 	<div class="container content">
