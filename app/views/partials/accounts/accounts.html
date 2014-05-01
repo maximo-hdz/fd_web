@@ -5,12 +5,8 @@
             Resumen de Cuentas
         </div>
         <div class="content_white">
-            <div class="content_table abierto">
-                <h4 class="abierto titulo_biometric" ng-click="show_hide_table('.tabla_biometric','.titulo_biometric')">
-                    Cuentas Biom&eacute;tricas
-                    <i><span></span></i>
-                </h4>
-                <div class="table-responsive tabla_biometric">
+            <persiana titulo="Cuentas Biom&eacute;tricas" clase="biometricas">
+                <div class="table-responsive">
                     <table class="table">
                         <tbody>
                             <tr ng-repeat="biometricAccount in biometricAccounts.accounts" ng-click="biometrics(biometricAccount._account_id)">
@@ -30,13 +26,9 @@
                         </thead>
                     </table>
                 </div>
-            </div>
-            <div class="content_table abierto">
-                <h4 class="abierto titulo_lineasCred" ng-click="show_hide_table('.tabla_credito','.titulo_lineasCred')">
-                    L&iacute;neas de Cr&eacute;dito
-                    <i><span></span></i>
-                </h4>
-                <div class="table-responsive tabla_credito">
+            </persiana>
+            <persiana titulo="L&iacute;neas de Cr&eacute;dito" clase="credito">
+                <div class="table-responsive">
                     <table class="table">
                         <tbody>
 
@@ -59,13 +51,9 @@
                         </thead>
                     </table>
                 </div>
-            </div>
-            <div class="content_table abierto">
-                <h4 class="abierto titulo_inversiones" ng-click="show_hide_table('.tabla_inversiones','.titulo_inversiones')">
-                    Inversiones
-                    <i><span></span></i>
-                </h4>
-                <div class="table-responsive tabla_inversiones">
+            </persiana>
+            <persiana titulo="Inversiones" clase="inversiones">
+                <div class="table-responsive">
                     <table class="table">
                         <tbody>
                             <tr ng-repeat="investmentAccount in investmentAccounts.accounts" ng-click="investment(investmentAccount._account_id)">
@@ -89,7 +77,8 @@
                         </thead>
                     </table>
                 </div>
-
+            </persiana>
+            <div class="content_table abierto">
                 <div class="notificaciones">
                     <p class="titulo">Notificaciones</p>
                     <div class="row-fluid">
