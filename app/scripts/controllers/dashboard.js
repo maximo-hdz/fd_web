@@ -128,7 +128,7 @@ angular.module('spaApp')
 	**/
 
 	$scope.createBreadcrumb = function() {
-
+		var path;
 		path = '/accounts';
 		if ($location.path().substr(0, path.length) == path) {
 			return 'Saldos';
