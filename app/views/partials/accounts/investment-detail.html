@@ -1,48 +1,100 @@
-<div class="content_table">
-	<h1>Detalle de Movimiento Inversion</h1>
-	<table width="100%">
-		<tr>
-			<td>Nombre</td>
-			<td>Capital Inicial</td>
-			<td>Divisa</td>
-		</tr>
-		<tr>
-			<td>{{InvestmentDetail.name}}</td>
-			<td>{{InvestmentDetail.initialAmount}}</td>
-			<td>{{InvestmentDetail.currency}}</td>
-		</tr>
-		<tr>
-			<td></td>
-			<td>Banco Destino</td>
-			<td>Cuenta Destino</td>
-		</tr>
-		<tr>
-			<td>Pago de Interés a:</td>
-			<td>{{InvestmentDetail.bank}}</td>
-			<td>{{InvestmentDetail.targetAccount}}</td>
-		</tr>
-		<tr>
-			<td>{{InvestmentDetail.initialDate}} - {{InvestmentDetail.finalDate}}</td>
-			<td>Tasa 12.6%</td>
-			<td></td>
-		</tr>
-	</table>
-</div>
+<div class="col-md-9">
+ 	<div class="row">
+	    <div class="col-md-1">
+	      <a type="button" href="/#/accounts/investment" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	    </div>
+     	<span style="color: #FFFFFF;"><font size="5">Inversiones - alias /#cta - Detalle</font></span>
+ 	 </div>
 
-<div class="content_table">
-	<h2>Rendimiento del Pagaré Privado al 30 de Septiembre del 2013</h2>
-	<div class="table-responsive">
-        <div class="gridStyle" ng-grid="gridOptions"></div>
-    </div>
-	<a type="button" class="btn btn-large button_mfm">
-		<span class="glyphicon glyphicon-download-alt"> Descargar</span>
-	</a>
-	<a type="button" class="btn btn-large button_mfm">
-		<span class="glyphicon glyphicon-print"> Imprimir</span>
-	</a>	
-	Enviar a:
-	<input type="text">
-	<a type="button" class="btn btn-large button_mfm">
-		<span class="glyphicon glyphicon-arrow-right"> Enviar</span>
-	</a>	 
+	<div class="well">
+		<div class="content_table">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-6">
+						<span class="pull-right"> Nombre </span>
+					</div>
+					<div class="col-md-2">
+						<span>Capital Inicial</span>
+					</div>	
+					<div class="col-md-2">
+						<span>Divisa</span>
+					</div>
+				</div><!-- end row-->						
+				<div class="row">
+					<div class="col-md-6">
+						<span class="pull-right"> {{detail.nombre}} </span>
+					</div>
+					<div class="col-md-2">
+						<span>{{detail.capitalInicial}}</span>
+					</div>	
+					<div class="col-md-2">
+						<span>{{detail.divisa}}</span>
+					</div>
+				</div>
+				<hr>				
+				<div class="row">
+				<div class="col-md-6"></div>
+
+					<div class="col-md-2">
+						<span class="pull-left"> Banco Destino </span>
+					</div>
+						
+					<div class="col-md-3">
+						<span class="pull-left">Cuenta Destino</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<span class="pull-right">Pago de interes</span>
+					</div>
+					<div class="col-md-2">
+						<span class="pull-left">{{detail.bancoDestino}}</span>
+					</div>					
+					<div class="col-md-3" class="pull-right">
+						<span>{{detail.cuentaDestino}}</span>
+					</div>					
+				</div>
+				<hr>
+				<div class="row"> 
+					<div class="col-md-6">
+						<span class="pull-right"> DD/MM/YYYY - DD/MM/YYYY </span>
+					</div>
+					<div class="cold-md-6">
+						<span class="pull-left">Tasa: {{detail.tasa}}</span>
+					</div>
+				</div>
+			<hr>
+			</div>	<!-- End col-md-12  -->	
+		</div>
+
+		<span>Rendimiento del Pagaré Privado al 30 de Septiembre del 2013 </span>
+
+	<div class="row">
+	
+
+		<div class="table-responsive">
+		    <div class="gridStyle" ng-grid="gridOptions"></div>
+		</div>
+		<div class="col-md-4 pull-right">
+                  Enviar a: <select ng-model="enviar" ng-options="c.name for c in mail"></select>
+        </div>
+	</div>
+	</div><!-- End well-->
+
+		<div class="row">
+			<div class="col-md-10">
+				<a type="button" class="btn btn-large button_mfm">
+					<span class="glyphicon glyphicon-download-alt"> Descargar</span>
+				</a>
+				<a type="button" class="btn btn-large button_mfm">
+					<span class="glyphicon glyphicon-print"> Imprimir</span>
+				</a>			
+			</div>
+			<div class="col-md-2">
+				<a type="button" class="btn btn-large button_mfm">				
+					<span class="glyphicon glyphicon-arrow-right"> Enviar</span>				
+				</a>	
+			</div>
+		</div>
+
 </div>

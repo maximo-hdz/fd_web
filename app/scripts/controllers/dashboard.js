@@ -67,6 +67,10 @@ angular.module('spaApp')
 	$scope.investment=function(account_id){
 		$location.path(account_id + '#/investment');
 	}
+	/*Detail investment view */
+	$scope.detailInvestment=function(account_id){
+		$location.path(account_id + '#/detailInvestment')
+	}
 
 	$scope.customize=function(){
 
