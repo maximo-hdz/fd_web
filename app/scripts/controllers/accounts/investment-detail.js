@@ -1,17 +1,23 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('InvestmentDetailCtrl',	function($scope,$http,$location,$rootScope,$log) {
+.controller('InvestmentDetailCtrl',	function($scope,$http,$location,$rootScope,investmentProvider) {
 
-		$scope.InvestmentDetail = {
-			"name":"Juan Pérez",
-			"initialAmount":"$5,000,000.00",
-			"currency":"MXN",
-			"bank":"BANAMEX",
-			"targetAccount":"1231357",
-			"initialDate":"DD/MM/YYYY",
-			"finalDate":"DD/MM/YYYY"
-		};
+		$scope.mail = [
+		    {name:'client@anze.com.mx'},
+		    {name:'otrherMail@mfm.com'}    
+	  	];
+	  	$scope.enviar = $scope.mail[1]; 
+
+		investmentProvider.getInvestmentDetail().then(function(){
+	  		console.log('Entrada de json detail');
+	  		$scope.detail = $rootScope.investmentDetail;  	
+		});
+
+		investmentProvider.getInvestmentGrid().then(function(){
+	  		console.log('Entrada de json grid');
+	  		$scope.myData = $rootScope.investmentGrid;  	
+		});
 
 		$scope.gridOptions = {
 			data: 'myData',
@@ -23,22 +29,9 @@ angular.module('spaApp')
 				{field:'name', displayName:'Retención 0.60%'},
 				{field:'alias', displayName:'Interés neto'},
 				{field:'currency', displayName:'Retiro de intereses'}],
-			afterSelectionChange: function(data) {
-					$location.path( $scope.mySelections[0]._account_id+'/detail' );
-				}
+			
 		};
 
-		$http({
-			//url: $rootScope.restAPIBaseUrl + 'accounts/1',
-			url:'json/account.json',
-			method: 'GET'
-		}).
-		success(function(data, status, headers) {
-			$scope.myData = data.accounts;
-		}).
-		error(function(data, status) {
-			$log.error('Error: '+data, status);
-			$location.path( '/login' );
-		});
-	}
-);
+	
+	});
+

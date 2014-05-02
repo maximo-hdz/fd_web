@@ -48,15 +48,14 @@ angular.module('accounts-route',['ui.router'])
     }
   })
 
-  //view for investment detail(menu initial)
-  .state('dashboard.detailInvestment',{
-    url: ':account_id/detailInvestment',
-    templateUrl: 'views/partials/accounts/transactionDetailInvestment.html',
+  .state('dashboard.investment_detail', { 
+    url: ':account_id/detailInvestment',   
+    templateUrl: 'views/partials/accounts/investment-detail.html',
     controller: 'InvestmentDetailCtrl',
     breadcrumb: {
-      title: 'detail'
+      title: 'Detail'
     }
-  })
+   })
 
   /*********************************************
     Credit Accounts

@@ -22,7 +22,7 @@ angular.module('spaApp')
 			{field:'payment', displayName:'Abono'},
 			{field:'balance', displayName:'Saldo'}],
 
-		afterSelectionChange: function(data) {
+		zgedg: function(data) {
 				console.log($scope.mySelections[0].transaction_id);
 				$location.path("accounts/biometric/transaction/" + $scope.mySelections[0].transaction_id);
 			}
