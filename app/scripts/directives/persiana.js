@@ -11,11 +11,13 @@ angular.module('spaApp')
 
       		scope.tituloPersiana = attrs.titulo;
       		scope.clase = attrs.clase;
-      		scope.open = true;
 
 			elem.bind('click', function() {
-				scope.open = !scope.open;
-				console.log(scope.clase+": "+scope.open);
+				if($("#"+scope.clase).hasClass('abierto')){
+					$("#"+scope.clase).removeClass('abierto').addClass('cerrado');
+				}else{
+					$("#"+scope.clase).removeClass('cerrado').addClass('abierto');
+				}
 				$("."+scope.clase).slideToggle('slow');
 			});
 
