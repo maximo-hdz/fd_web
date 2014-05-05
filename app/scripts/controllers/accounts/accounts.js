@@ -4,7 +4,7 @@
  * The accounts controller. Gets accounts passing auth parameters
  */
 angular.module('spaApp')
-.controller('AccountsCtrl', function($scope,$http,$location,$rootScope,ctsBiometricas,accountsProvider) {
+.controller('AccountsCtrl',[ '$scope','$http','$location','$rootScope','ctsBiometricas','accountsProvider', function($scope,$http,$location,$rootScope,ctsBiometricas,accountsProvider) {
 	$scope.client = 'Ricardo Montemayor Morales';
 	$rootScope.titulo = 'Saldos';
 
@@ -50,4 +50,4 @@ angular.module('spaApp')
 		$location.path( account_id + '#/detailCreditPactedOp');
 	}
 
-});
+}]);

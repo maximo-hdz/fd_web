@@ -1,0 +1,12 @@
+{
+	"detail":
+    {
+      "nombre": "Xavi Mendez Calixto",
+      "capitalInicial": 15000,
+      "divisa": "EURO",
+      "bancoDestino": "IXE - BANCO",
+      "cuentaDestino": "123654897",
+      "tasa": "12%"
+    }
+
+}
