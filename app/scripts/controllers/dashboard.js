@@ -7,17 +7,6 @@ angular.module('spaApp')
 .controller('DashboardCtrl', function($scope,$rootScope,$location,AuthenticationService) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
-	/**
-	Add class active for item selected
-	**/
-
-	$scope.getClass = function(path) {
-		if ($location.path().substr(0, path.length) == path) {
-			return 'active'
-		} else {
-			return ""
-		}
-	}
 
 	//behavior stack accounts group
 	//TODO Do not use jQuery
@@ -132,9 +121,7 @@ angular.module('spaApp')
 	**/
 
 	$scope.createBreadcrumb = function() {
-
 		var path;
-
 		path = '/accounts';
 		if ($location.path().substr(0, path.length) == path) {
 			return 'Saldos';

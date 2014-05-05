@@ -21,6 +21,18 @@
 				<span class="arrow"></span>
 			</a>
 		</li>
+		<div ng-if="getClass('/authorize')=='active'">
+			<li>
+				<a>Operaciones
+					<span class="arrow"></span>
+				</a>
+			</li>
+			<li>
+				<a>Modificaciones
+					<span class="arrow"></span>
+				</a>
+			</li>
+		</div>
 		<li ng-class="getClass('/transfer')">
 			<a ng-href="#transfer">
 				<i class="ico-transferencias"></i>
