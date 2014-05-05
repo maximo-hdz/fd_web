@@ -16,10 +16,10 @@
 				</div>
 			</div><!--end col-md-6-->
 			<div class="col-md-3">
-				Búsqueda de Cuenta
+				B&uacute;squeda de Cuenta
 			</div>
 			<div class="col-md-3">
-				<input></input>
+				<input value="{{trans.searchAccount}}" disabled=""> </input>
 			</div>
 		</div><!--end row 1-->
 		<div class="row">
@@ -27,14 +27,14 @@
 				Cuenta de Retiro
 			</div>
 			<div class="col-md-3">
-				<input value="{{depositAccount}}" disabled></input>
+				<input value="{{trans.transferAccount}}" disabled></input>
 			</div>
 			<div class="col-md-3">
-				Cuenta de Depósito
+				Cuenta de Dep&oacute;sito
 			</div>
 			<div class="col-md-3">
 				<select>
-					<option>706 58535476</option>
+					<option>{{trans.depositAccount}}</option>
 				</select>
 			</div>
 		</div>
@@ -54,13 +54,13 @@
 				Divisa
 			</div>
 			<div class="col-md-3">
-				<input value="{{coin}}" disabled></input>
+				<input value="{{trans.coin}}" disabled></input>
 			</div>
 			<div class="col-md-3">
 				Divisa
 			</div>
 			<div class="col-md-3">
-				<input value="{{coin}}" disabled></input>
+				<input value="{{trans.coin}}" disabled></input>
 			</div>
 		</div>
 		<hr>
@@ -70,13 +70,13 @@
 				Importe
 			</div>
 			<div class="col-md-3">
-				<input value="{{amount}}" disabled></input>
+				<input value="{{trans.import}}" disabled></input>
 			</div>
 			<div class="col-md-3">
-				Fecha de Aplicación
+				Fecha de Aplicaci&oacute;n
 			</div>
 			<div class="col-md-3">
-				<input value="{{date}}" disabled></input>
+				<input value="{{trans.date}}" disabled></input>
 			</div>
 		</div>
 		<div class="row">
@@ -84,14 +84,14 @@
 				Concepto de Pago
 			</div>
 			<div class="col-md-3">
-				<input value="{{paymentConcept}}"></input>
+				<input value="{{trans.paymentConcept}}" disabled=""></input>
 			</div>
 		</div>
 		</div><!-- end second row-->
 	</div><!-- end well-->
 		<div class="row">
 			<div class="col-md-3">
-				<a type="button" href="/#/transfer" class="btn btn-large button_mfm">Agregar Beneficiario</a>
+				<a type="button" href="/#/transfer/AddBeneficiaryInternational" class="btn btn-large button_mfm">Agregar Beneficiario</a>
 			</div>
 			<div class="col-md-3 pull-right">
 				<a type="button" href="/#/transfer/confirmInternationalTransfer" class="btn btn-large button_mfm">Aceptar</a>
