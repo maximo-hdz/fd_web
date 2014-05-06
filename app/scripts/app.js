@@ -240,7 +240,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   .state('dashboard.sameAddBeneficiary', {
     url: 'transfer/sameAddBeneficiary',
     templateUrl: 'views/partials/transfers/same-add-beneficiary.html',
-      controller:'SameAddBeneficiaryCtrl',
+    //  controller:'SameAddBeneficiaryCtrl',
+    controller: 'SameBankCtrl',
      breadcrumb: {
       title: 'SameBank'
     }
@@ -248,7 +249,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
   .state('dashboard.sameConfirmBeneficiary', {
     url: 'transfer/sameConfirmBeneficiary',
     templateUrl: 'views/partials/transfers/same-confirm-beneficiary.html',
-      controller:'SameAddBeneficiaryCtrl',
+     // controller:'SameAddBeneficiaryCtrl',
+     controller: 'SameBankCtrl',
      breadcrumb: {
       title: 'SameBank'
     }
