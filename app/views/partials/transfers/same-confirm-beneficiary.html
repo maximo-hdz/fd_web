@@ -14,16 +14,16 @@
                      
                      <div class="col-md-6">
                         
-                        <div class="col-md-6">Titular Beneficiario    </div> <div><input disabled="disabled" ng-model="recipientName"  type="text"/></div>
-                        <div class="col-md-6">Cuenta del Beneficiario </div> <div><input disabled="disabled" ng-model="recipientAccount"  type="text"/></div>
-                        <div class="col-md-6">Correo Electrónico      </div> <div><input disabled="disabled" ng-model="mail"  type="text"/></div>
-                        <div class="col-md-6">Divisa                  </div> <div><input disabled="disabled" ng-model="coin"  type="text"/></div>
+                        <div class="col-md-6">Titular Beneficiario    </div> <div><input value="{{confirmation.holder}}"  /></div>
+                        <div class="col-md-6">Cuenta del Beneficiario </div> <div><input value="{{confirmation.accountBeneficiary}}"  disabled/></div>
+                        <div class="col-md-6">Correo Electrónico      </div> <div><input value="{{confirmation.mail}}"  disabled/></div>
+                        <div class="col-md-6">Divisa                  </div> <div><input value="{{confirmation.coin}}"  disabled/></div>
 
                      </div>               
                      <div class="col-md-6">
-                        <div class="col-md-6">Alias de la Cuenta</div> <div> <input disabled="disabled" ng-model="accountAlias"  type="text"/></div>
-                        <div class="col-md-6">Límite de Pago Diario</div><div> <input disabled="disabled" ng-model="limitPayDaily" type="text"/></div>
-                        <div class="col-md-6">Límite de Pago Mensual</div><div> <input disabled="disabled" ng-model="limitPayMonthly" type="text"/></div>
+                        <div class="col-md-6">Alias de la Cuenta</div> <div>   <input value="{{confirmation.accountAlias}}"  disabled/></div>
+                        <div class="col-md-6">Límite de Pago Diario</div><div> <input value="{{confirmation.dayLimitPay}}"  disabled/></div>
+                        <div class="col-md-6">Límite de Pago Mensual</div><div> <input value="{{confirmation.dayLimitMonthly}}" disabled/></div>
                      </div>
                 </div><!--End row middle -->
 

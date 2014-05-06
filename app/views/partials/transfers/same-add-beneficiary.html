@@ -14,14 +14,14 @@
                      
                      <div class="col-md-6">
                         
-                        <div class="col-md-6">Cuenta del Beneficiario </div> <div><input disabled="disabled" ng-model="accountBeneficiary"  type="text"/></div>
-                        <div class="col-md-6">Limite de Pago Diario </div> <div><input disabled="disabled" ng-model="limitPayDaily"  type="text"/></div>
-                        <div class="col-md-6">Limite de Pago Mensual </div> <div><input disabled="disabled" ng-model="limitPayMonthly"  type="text"/></div>
+                        <div class="col-md-6">Cuenta del Beneficiario </div> <div><input disabled="disabled" value="{{beneficiary.accountBeneficiary}}"  type="text"/></div>
+                        <div class="col-md-6">Limite de Pago Diario </div> <div><input disabled="disabled" value="{{beneficiary.dayLimitPay}}"  type="text"/></div>
+                        <div class="col-md-6">Limite de Pago Mensual </div> <div><input disabled="disabled" value="{{beneficiary.dayLimitMonthly}}"  type="text"/></div>
 
                      </div>               
                      <div class="col-md-6">
-                        <div class="col-md-6">Alias de Cuenta</div> <div> <input disabled="disabled" ng-model="accountAlias"  type="text"/></div>
-                        <div class="col-md-6">Correo Electronico</div><div> <input disabled="disabled" ng-model="mail" type="text"/></div>
+                        <div class="col-md-6">Alias de Cuenta</div> <div> <input disabled="disabled"   value="{{beneficiary.alias}}"  type="text"/></div>
+                        <div class="col-md-6">Correo Electronico</div><div> <input disabled="disabled" value="{{beneficiary.mail}}" type="text"/></div>
                      </div>
                 </div><!--End row middle -->
 
