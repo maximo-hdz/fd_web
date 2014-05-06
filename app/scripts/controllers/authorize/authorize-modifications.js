@@ -2,8 +2,9 @@
 
 angular.module('spaApp')
 .controller('AuthorizeModCtrl',
-	function($scope,$http,$location,$rootScope,$log) {
+	function($scope,$location,$rootScope,authorizeProvider) {
 
+		$scope.mySelections = [];
 		$scope.gridOptions = {
 			data: 'myData',
 			multiSelect: false,
@@ -14,21 +15,15 @@ angular.module('spaApp')
 				{field:'account_type', displayName:'Fecha de Operación'},
 				{field:'name', displayName:'Descripcion Modificación'},
 				{field:'alias', displayName:'Usuario'}],
-			afterSelectionChange: function(data) {
-					$location.path( $scope.mySelections[0]._account_id+'/detail' );
+				afterSelectionChange: function(data) {
+					$location.path( '/administration/users/autorize' );
 				}	
 		};
 
-		$http({
-			url: $rootScope.restAPIBaseUrl + 'accounts/1',
-			method: 'GET'
-		}).
-		success(function(data, status, headers) {
-			$scope.myData = data.accounts;
-		}).
-		error(function(data, status) {
-			$log.error('Error: '+data, status);
-			$location.path( '/login' );
-		});
+		authorizeProvider.getAuthorizeMod().then(
+			function(data) {
+				$scope.myData = $rootScope.authorizeMod;
+			}
+		);
 	}
 );
