@@ -1,7 +1,10 @@
 'use strict';
 
+/*
+Users Administration Detail Controller
+*/
 angular.module('spaApp')
-.controller('UsersAdministrationDetailCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams) {
+.controller('UsersAdministrationDetailCtrl', ['$rootScope','$scope','$http','$location','$sce','$stateParams', 'usersAdminDetailProvider', function ($rootScope,$scope,$http,$location,$sce,$stateParams, usersAdminDetailProvider) {
 
 
 
@@ -10,6 +13,7 @@ $scope.specialist =  'David Torres Fernandez';
 
 	$scope.mySelections = [];
 
+/*Grid Data Request*/
 	$scope.gridOptions = {
 		data: 'myData',
 		multiSelect: false,
@@ -28,23 +32,21 @@ $scope.specialist =  'David Torres Fernandez';
 			}
 	};
 
+
+/*Scope Vars*/
 	$scope.amount="100000";
 	$scope.from="06/03/2014";
 	$scope.to="20/03/2014";
 
 
-	$http({
-		url: '/json/table.json',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		console.log("ya entre");
-		$scope.myData = data.accounts;
-	}).
-	error(function(data, status) {
-		console.log("error "+data);
-	alert('Error http() de UsersAdministrationCtrl');
-		$location.path( '/login' );
+/*Promise Test and Data Assign*/
+	usersAdminDetailProvider.getUsersAdminDetailAccounts().then(
+
+		function(){
+
+			$scope.myData = $rootScope.usersAdminDetailAccounts;
 	});
 
-});
+
+
+}]);
