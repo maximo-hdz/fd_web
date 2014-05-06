@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('UsersAdministrationDetailCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams) {
+.controller('UsersAdministrationDetailCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams, usersAdminDetailProvider) {
 
 
 
@@ -32,19 +32,13 @@ $scope.specialist =  'David Torres Fernandez';
 	$scope.from="06/03/2014";
 	$scope.to="20/03/2014";
 
+	usersAdminDetailProvider.getUsersAdminDetailAccounts().then(
 
-	$http({
-		url: '/json/table.json',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		console.log("ya entre");
-		$scope.myData = data.accounts;
-	}).
-	error(function(data, status) {
-		console.log("error "+data);
-	alert('Error http() de UsersAdministrationCtrl');
-		$location.path( '/login' );
+		function(){
+
+			$scope.myData = $rootScope.usersAdminDetailAccounts;
 	});
+
+
 
 });
