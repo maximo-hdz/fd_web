@@ -14,8 +14,11 @@
 				<span class="arrow"></span>
 			</a>
 		</li>
+
+
+
 		<li ng-class="getClass('/authorize')">
-			<a ng-href="#authorize">
+			<a href="#authorize">
 				<i class="ico-autorizar"></i>
 				Autorizar
 				<span class="arrow"></span>
@@ -23,16 +26,22 @@
 		</li>
 		<div ng-if="getClass('/authorize')=='active'">
 			<li>
-				<a>Operaciones
+				<a ng-href="#authorizeChanges">Operaciones
 					<span class="arrow"></span>
 				</a>
 			</li>
 			<li>
-				<a>Modificaciones
+				<a ng-href="#authorizeMod">Modificaciones
 					<span class="arrow"></span>
 				</a>
 			</li>
 		</div>
+
+
+
+
+
+
 		<li ng-class="getClass('/transfer')">
 			<a ng-href="#transfer">
 				<i class="ico-transferencias"></i>

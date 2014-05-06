@@ -2,12 +2,15 @@ angular.module('authorize-route', ['ui.router'])
 .config(['$urlRouterProvider', '$locationProvider', '$httpProvider', '$stateProvider' , function($urlRouterProvider, $locationProvider, $httpProvider, $stateProvider){
 
 $stateProvider
-.state('dashboard.authorize', {
+  .state('dashboard.auth', {
     url: 'authorize',
+  })
+  .state('dashboard.authorizeChanges', {
+    url: 'authorizeChanges',
     templateUrl: 'views/partials/authorize/pending-operations.html',
     controller: 'AuthorizeOperationsCtrl',
     breadcrumb: {
-      title: 'authorize'
+      title: 'Authorize'
     }
   })
   .state('dashboard.authorizeMod', {
@@ -18,11 +21,5 @@ $stateProvider
       title: 'Modify'
     }
   })
-  .state('dashboard.authorizeChanges', {
-    url: 'authorizeChanges',
-    templateUrl: 'views/partials/authorize/authorizeAdminChange.html',
-    breadcrumb: {
-      title: 'Authorize'
-    }
-  })
+
 }]);
