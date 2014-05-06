@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-  .service('AuthenticationService', function ($http, $q, $rootScope) {
+  .service('AuthenticationService',[ '$http', '$q', '$rootScope','api',function ($http, $q, $rootScope,api) {
 
 	return {
 		login: function(username,password) {
@@ -12,6 +12,9 @@ angular.module('spaApp')
 					data: JSON.stringify({'username':username, 'password':password}),
 					headers: {'Content-Type': 'application/json','X-BANK-TOKEN': '1'}
 			}).success(function(data, status, headers) {
+				var token = headers('X-AUTH-TOKEN');
+				$rootScope.session_token = token;
+				api.init();
 			 	deferred.resolve(data);
 			}).error(function(data, status) {
 				$q.reject(data)
@@ -35,4 +38,4 @@ angular.module('spaApp')
 			return deferred.promise;
 		}
 	};
-});
+}]);
