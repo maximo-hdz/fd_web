@@ -1,15 +1,21 @@
 'use strict';
+/*
+Users Administration Destination Accounts Controller
+*/
 
 angular.module('spaApp')
-.controller('UsersAdministrationDestAccCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams) {
+.controller('UsersAdministrationDestAccCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams,usersAdminCtasDestProvider) {
 
 
-
-$scope.specialist =  'David Torres Fernandez';
+	/*scope vars*/
+	$scope.specialist =  'David Torres Fernandez';
 	$rootScope.titulo = 'Administracion';
-
+	$scope.amount="100000";
+	$scope.from="06/03/2014";
+	$scope.to="20/03/2014";
 	$scope.mySelections = [];
 
+	/*Grid Data Request*/
 	$scope.gridOptions = {
 		data: 'myData',
 		multiSelect: false,
@@ -24,27 +30,16 @@ $scope.specialist =  'David Torres Fernandez';
 			],
 		afterSelectionChange: function(data) {
 
-				$location.path( 'administration/detail/mod/'+$scope.mySelections[0].alias ); 
+				//$location.path( 'administration/detail/mod/'+$scope.mySelections[0].alias ); 
 			}
 	};
 
-	$scope.amount="100000";
-	$scope.from="06/03/2014";
-	$scope.to="20/03/2014";
+	
+	/*Promise Test and Data Assign*/
+	usersAdminCtasDestProvider.getUsersAdminCtasDest().then(function(){
 
+			$scope.myData = $rootScope.UsersAdminCtasDest;
 
-	$http({
-		url: '/json/dest_acc.json',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		console.log("ya entre");
-		$scope.myData = data.accounts;
-	}).
-	error(function(data, status) {
-		console.log("error "+data);
-	alert('Error http() de UsersAdministrationCtrl');
-		$location.path( '/login' );
 	});
 
 });
