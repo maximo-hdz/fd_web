@@ -16,6 +16,7 @@ var app = angular.module('spaApp', [
 ]);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  $httpProvider.responseInterceptors.push('httpInterceptor');
 
   $urlRouterProvider.otherwise("/login");
   $stateProvider
@@ -28,12 +29,11 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $htt
       title: 'dashboard'
       }
     })
-  }).factory('ctsCreditPacted', function(){
-  return {}
-}).factory('ctsBiometricas', function() {
-  return {}
-});
-app.run(function($rootScope){
-  $rootScope.restAPIBaseUrl = 'http://projects.anzen.com.mx:8081/mfm/api/v1/';
-});
+  });
+
+app.run(['api','$rootScope', function(api,$rootScope) {
+  api.config();
+  api.init();
+}]);
+
 

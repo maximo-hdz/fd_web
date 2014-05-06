@@ -7,7 +7,4 @@ $stateProvider
     templateUrl: 'views/partials/authentication/login.html',
     controller: 'LoginCtrl'
   })
-
-
-
 }]);

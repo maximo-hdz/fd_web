@@ -5,19 +5,19 @@
  */
 angular.module('spaApp')
 .controller('InvestmentCtrl',function($scope,$http,$location,$rootScope,$log, investmentProvider) {
-	
+
 	$scope.moneda = [
 	    {name:'MXN - Pesos '},
-	    {name:'USD - Dólares'}    
+	    {name:'USD - Dólares'}
   	];
-  	$scope.tipoDivisa = $scope.moneda[0]; 
+  	$scope.tipoDivisa = $scope.moneda[0];
 
 
   	investmentProvider.getInvestmentAccounts().then(function(){
   		console.log('ok1');
 
   		$scope.myData = $rootScope.investAccounts;
-  	
+
 	});
 
   	$scope.mySelections = [];
@@ -33,7 +33,7 @@ angular.module('spaApp')
 			{field:'periodicityCoupons', displayName:'Periocidad de cupones'},
 			{field:'dueDate', displayName:'Fecha Vencimiento'},
 			{field:'remainingCoupons', displayName:'Cupones Restantes'}
-			],		
+			],
 
 		afterSelectionChange: function(data){
 				$location.path($scope.mySelections[0].rate+'/detailInvestment');
