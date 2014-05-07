@@ -1,0 +1,61 @@
+<div class="area_menu">
+	<ul class="menu_lateral nav nav-list bs-docs-sidenav affix-top">
+		<li ng-class="getClass('/accounts')">
+			<a ng-href="#accounts">
+				<i class="ico-saldos"></i>
+				Saldos
+				<span class="arrow"></span>
+			</a>
+		</li>
+		<li ng-class="getClass('/connection')">
+			<a ng-href="#connection">
+				<i class="ico-conexion"></i>
+				Conexi&oacute;n MFM
+				<span class="arrow"></span>
+			</a>
+		</li>
+
+
+
+		<li ng-class="getClass('/authorize')">
+			<a href="#authorize">
+				<i class="ico-autorizar"></i>
+				Autorizar
+				<span class="arrow"></span>
+			</a>
+		</li>
+		<div ng-if="getClass('/authorize')=='active'">
+			<li>
+				<a ng-href="#authorizeChanges">Operaciones
+					<span class="arrow"></span>
+				</a>
+			</li>
+			<li>
+				<a ng-href="#authorizeMod">Modificaciones
+					<span class="arrow"></span>
+				</a>
+			</li>
+		</div>
+
+
+
+
+
+
+		<li ng-class="getClass('/transfer')">
+			<a ng-href="#transfer">
+				<i class="ico-transferencias"></i>
+				Transferencias
+				<span class="arrow"></span>
+			</a>
+		</li>
+		<li ng-class="getClass('/administration')">
+			<a ng-href="#administration">
+				<i class="ico-administracion"></i>
+				Administraci&oacute;n
+				<span class="arrow"></span>
+			</a>
+		</li>
+	</ul>
+</div>
+

@@ -1,0 +1,17 @@
+{
+	"transfer":
+    {
+      
+      "paymentConcept" : "Transferencia Mismo Banco",
+      "accountRemoval" : "456987 1223",
+      "accountAlias" : "Alias ",
+      "coin" : "MXN/USD",
+      "accountDeposit": "456-88-96",
+      "import" : "98,730.33",
+      "date" : "10/10/2015",
+      "numberReference" : "456-9"
+     
+     
+    } 
+
+}
