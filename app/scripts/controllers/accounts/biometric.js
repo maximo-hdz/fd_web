@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('BiometricCtrl', function($scope,$http,$location,ctsBiometricas,$rootScope,$log,$stateParams) {
+.controller('BiometricCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
 
 	$scope.today = function() {
 		$scope.dateFrom = new Date();
@@ -22,7 +22,7 @@ angular.module('spaApp')
 			{field:'payment', displayName:'Abono'},
 			{field:'balance', displayName:'Saldo'}],
 
-		zgedg: function(data) {
+		afterSelectionChange: function(data) {
 				console.log($scope.mySelections[0].transaction_id);
 				$location.path("accounts/biometric/transaction/" + $scope.mySelections[0].transaction_id);
 			}
@@ -35,7 +35,7 @@ angular.module('spaApp')
 	}).
 	success(function(data, status, headers) {
 
-		$scope.myData = data.transacctions;			
+		$scope.myData = data.transacctions;
 	}).
 	error(function(data, status) {
 		$log.error('Error: '+data, status);

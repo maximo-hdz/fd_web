@@ -8,7 +8,7 @@ angular.module('spaApp')
       getCreditBalance: function () {
         var deferred = $q.defer();
 
-        if(!$rootScope.creditValue) {
+        if(!$rootScope.creditBalance) {
           CreditBalanceService.getCreditBalance().success(function(data, status, headers){
             //$rootScope.creditDetail = data.respuesta.page;
             $rootScope.creditBalance = data;

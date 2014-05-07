@@ -2,8 +2,6 @@
 
 angular.module('spaApp')
 .factory('accountsProvider',  ['$rootScope', 'accountsService', '$q', function ($rootScope, accountsService, $q) {
-
-.factory('accountsProvider',  ['$rootScope', 'accountsService', '$q', function ($rootScope, accountsService, $q) {
     // Service logic
     // ...
 

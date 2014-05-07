@@ -79,11 +79,16 @@
 
 		<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="scripts/app.js"></script>
-		<script src="scripts/controllers/dashboard.js"></script>
+		<script src="scripts/services/api.js"></script>
 		<script src="scripts/filters/filters.js"></script>
 		<script src="scripts/services/services.js"></script>
 		<script src="scripts/directives/breadcrumbs.js"></script>
+		<script src="scripts/directives/bar-navigation.js"></script>
+		<script src="scripts/directives/persiana.js"></script>
+		<script src="scripts/directives/connection.js"></script>
+		<script src="scripts/infrastructure/httpinterceptor.js"></script>
 
+		<script src="scripts/controllers/dashboard.js"></script>
 		<script src="scripts/controllers/accounts/accounts-route.js"></script>
 		<script src="scripts/controllers/accounts/accounts.js"></script>
 		<script src="scripts/controllers/accounts/biometric.js"></script>
@@ -95,16 +100,21 @@
 		<script src="scripts/controllers/accounts/credit.js"></script>
 		<script src="scripts/controllers/accounts/investment.js"></script>
 		<script src="scripts/controllers/accounts/investment-detail.js"></script>
+		<script src="scripts/controllers/administration/administration-route.js"></script>
 		<script src="scripts/controllers/administration/users-admin.js"></script>
 		<script src="scripts/controllers/administration/users-admin-ctas.js"></script>
 		<script src="scripts/controllers/administration/users-admin-ctas-dest.js"></script>
 		<script src="scripts/controllers/administration/users-admin-users-aut.js"></script>
 		<script src="scripts/controllers/administration/users-detail.js"></script>
 		<script src="scripts/controllers/administration/setup-notifications.js"></script>
+		<script src="scripts/controllers/authentication/authentication-route.js"></script>
 		<script src="scripts/controllers/authentication/login.js"></script>
+		<script src="scripts/controllers/authorize/authorize-route.js"></script>
 		<script src="scripts/controllers/authorize/authorize-modifications.js"></script>
 		<script src="scripts/controllers/authorize/authorize-operations.js"></script>
+		<script src="scripts/controllers/connection/connection-route.js"></script>
 		<script src="scripts/controllers/connection/connection.js"></script>
+		<script src="scripts/controllers/transfers/transfers-route.js"></script>
 		<script src="scripts/controllers/transfers/transfers.js"></script>
 		<script src="scripts/controllers/transfers/add-account.js"></script>
 		<script src="scripts/controllers/transfers/add-beneficiary.js"></script>
@@ -124,8 +134,10 @@
 		<script src="scripts/controllers/transfers/international.js"></script>
 		<script src="scripts/controllers/transfers/interbank.js"></script>
 		<script src="scripts/controllers/transfers/same-bank.js"></script>
-		<script src="scripts/controllers/some-add-beneficiary.js"></script>
+		<script src="scripts/controllers/transfers/add-international-beneficiary.js"></script>
 		<script src="scripts/services/authentication-service.js"></script>
+		<script src="scripts/services/credit-balance-provider.js"></script>
+		<script src="scripts/services/credit-balance-service.js"></script>
 		<script src="scripts/services/credit-service.js"></script>
 		<script src="scripts/services/credit-provider.js"></script>
 		<script src="scripts/services/credit-value-service.js"></script>
@@ -138,10 +150,24 @@
 		<script src="scripts/services/credit-detail-provider.js"></script>
 		<script src="scripts/services/investment-provider.js"></script>
 		<script src="scripts/services/investment-service.js"></script>
+		<script src="scripts/services/authorize-service.js"></script>
+		<script src="scripts/services/authorize-provider.js"></script>
 		<script src="scripts/services/transfers/international-service.js"></script>
 		<script src="scripts/services/transfers/international-provider.js"></script>
+
 		<script src="scripts/services/transfers/same-bank-service.js"></script>
 		<script src="scripts/services/transfers/same-bank-provider.js"></script>
+
+		<script src="scripts/services/users-admin-detail-service.js"></script>
+		<script src="scripts/services/users-admin-detail-provider.js"></script>
+		<script src="scripts/services/users-admin-users-aut-service.js"></script>
+		<script src="scripts/services/users-admin-users-aut-provider.js"></script>
+		<script src="scripts/services/users-admin-ctas-dest-service.js"></script>
+		<script src="scripts/services/users-admin-ctas-dest-provider.js"></script>
+
 		<!-- endbuild -->
+		<script src="scripts/controllers/transfers/add-international-beneficiary-moral.js"></script>
+		<script src="scripts/controllers/transfers/add-international-beneficiary-physical.js"></script>
+
 	</body>
 </html>

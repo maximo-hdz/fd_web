@@ -2,8 +2,9 @@
 
 angular.module('spaApp')
 .controller('AuthorizeOperationsCtrl',
-	function($scope,$http,$location,$rootScope,$log) {
+	function($scope,$location,$rootScope,authorizeProvider) {
 
+		$scope.mySelections = [];
 		$scope.gridOptions = {
 			data: 'myData',
 			multiSelect: false,
@@ -16,20 +17,19 @@ angular.module('spaApp')
 				{field:'alias', displayName:'Divisa'},
 				{field:'currency', displayName:'Estatus'}],
 				afterSelectionChange: function(data) {
-					$location.path( $scope.mySelections[0]._account_id+'/detail' );
+					if($scope.mySelections[0].account_type=="CREDIT_CARD"){
+						$location.path( $scope.mySelections[0]._account_id+'/detailCreditPacted');
+					}
+					else{
+						$location.path( $scope.mySelections[0]._account_id+'/detail/operation');
+					}
 				}
 		};
 
-		$http({
-			url: $rootScope.restAPIBaseUrl + 'accounts/1',
-			method: 'GET'
-		}).
-		success(function(data, status, headers) {
-			$scope.myData = data.accounts;
-		}).
-		error(function(data, status) {
-			$log.error('Error: '+data, status);
-			$location.path( '/login' );
-		});
+		authorizeProvider.getAuthorizeOp().then(
+			function(data) {
+				$scope.myData = $rootScope.authorizeOp;
+			}
+		);
 	}
 );

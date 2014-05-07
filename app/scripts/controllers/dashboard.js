@@ -7,17 +7,6 @@ angular.module('spaApp')
 .controller('DashboardCtrl', function($scope,$rootScope,$location,AuthenticationService) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
-	/**
-	Add class active for item selected
-	**/
-
-	$scope.getClass = function(path) {
-		if ($location.path().substr(0, path.length) == path) {
-			return 'active'
-		} else {
-			return ""
-		}
-	}
 
 	//behavior stack accounts group
 	//TODO Do not use jQuery
@@ -126,4 +115,32 @@ angular.module('spaApp')
 	$location.path(  '#/administration/detail');
 
 	};
+
+	/**
+	Add class active for item selected
+	**/
+
+	$scope.createBreadcrumb = function() {
+		var path;
+		path = '/accounts';
+		if ($location.path().substr(0, path.length) == path) {
+			return 'Saldos';
+		}
+		path = '/connection';
+		if ($location.path().substr(0, path.length) == path) {
+			return 'Conexi\u00F3n MFM';
+		}
+		path = '/authorize';
+		if ($location.path().substr(0, path.length) == path) {
+			return 'Autorizar';
+		}
+		path = '/transfer';
+		if ($location.path().substr(0, path.length) == path) {
+			return 'Transferencias';
+		}
+		path = '/administration';
+		if ($location.path().substr(0, path.length) == path) {
+			return 'Administraci\u00F3n';
+		}
+	}
 });

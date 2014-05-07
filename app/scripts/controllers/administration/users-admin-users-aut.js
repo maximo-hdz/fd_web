@@ -1,7 +1,10 @@
 'use strict';
+/*
+Users Administration Authorize Controller
+*/
 
 angular.module('spaApp')
-.controller('UsersAdministrationAutCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams) {
+.controller('UsersAdministrationAutCtrl', ['$rootScope','$scope','$http','$location','$sce','$stateParams','usersAdminUsersAutProvider', function ($rootScope,$scope,$http,$location,$sce,$stateParams,usersAdminUsersAutProvider) {
 
 
 
@@ -10,6 +13,8 @@ $scope.specialist =  'David Torres Fernandez';
 
 	$scope.mySelections = [];
 
+
+/*Grid Data Request*/
 	$scope.gridOptions = {
 		data: 'myData',
 		multiSelect: false,
@@ -27,23 +32,16 @@ $scope.specialist =  'David Torres Fernandez';
 			}
 	};
 
+/*Scope Vars*/
 	$scope.amount="100000";
 	$scope.from="06/03/2014";
 	$scope.to="20/03/2014";
 
+/*Promise Test and Data Assign*/
+	usersAdminUsersAutProvider.getUsersAdminUsersAut().then(function(){
 
-	$http({
-		url: '/json/aut_mod.json',
-		method: 'GET'
-	}).
-	success(function(data, status, headers) {
-		console.log("ya entre");
-		$scope.myData = data.accounts;
-	}).
-	error(function(data, status) {
-		console.log("error "+data);
-	alert('Error http() de UsersAdministrationCtrl');
-		$location.path( '/login' );
+		$scope.myData = $rootScope.usersAdminUsersAut;
+
 	});
 
-});
+}]);

@@ -8,7 +8,7 @@ angular.module('spaApp')
       getCreditDetail: function () {
         var deferred = $q.defer();
 
-        if(!$rootScope.creditValue) {
+        if(!$rootScope.creditDetail) {
           CreditDetailService.getCreditDetail().success(function(data, status, headers){
 
             //$rootScope.creditDetail = data.respuesta.page;

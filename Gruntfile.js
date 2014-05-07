@@ -345,21 +345,28 @@ htmlmin: {
           '.htaccess',
           'PIE.htc' ,
           '*.html',
-        'views/{,*/}*.html',
-      'views/{,*/*/}*.html',
-      'bower_components/**/*',
-    'images/{,*/}*.{webp}',
-    'fonts/*',
-    'bower_components/sass-bootstrap/fonts/*.*',
-    'audio/*',
-    'json/*'
-    ]
-  }, {
-    expand: true,
-    cwd: '.tmp/images',
-    dest: '<%= yeoman.dist %>/images',
-    src: ['generated/*']
-  }]
+          'views/{,*/}*.html',
+          'views/{,*/*/}*.html',
+          'bower_components/**/*',
+          'images/{,*/}*.{webp}',
+          'fonts/*',
+          'audio/*',
+          'json/*'
+          ]
+        },
+        {
+          expand: true,
+          flatten: true,
+          cwd: '<%= yeoman.app %>',
+          dest: '<%= yeoman.dist %>/fonts',
+          src: ['bower_components/sass-bootstrap/dist/fonts/*.*']
+        },
+        {
+          expand: true,
+          cwd: '.tmp/images',
+          dest: '<%= yeoman.dist %>/images',
+          src: ['generated/*']
+        }]
 },
 styles: {
   expand: true,
