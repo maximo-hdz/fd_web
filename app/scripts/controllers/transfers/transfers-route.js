@@ -120,7 +120,7 @@ $stateProvider
   .state('dashboard.sameAddBeneficiary', {
     url: 'transfer/sameAddBeneficiary',
     templateUrl: 'views/partials/transfers/same-add-beneficiary.html',
-      controller:'SameAddBeneficiaryCtrl',
+      controller:'SameBankCtrl',
      breadcrumb: {
       title: 'SameBank'
     }
@@ -128,7 +128,7 @@ $stateProvider
   .state('dashboard.sameConfirmBeneficiary', {
     url: 'transfer/sameConfirmBeneficiary',
     templateUrl: 'views/partials/transfers/same-confirm-beneficiary.html',
-      controller:'SameAddBeneficiaryCtrl',
+      controller:'SameBankCtrl',
      breadcrumb: {
       title: 'SameBank'
     }
