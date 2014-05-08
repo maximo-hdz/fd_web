@@ -52,13 +52,14 @@
 							Nombre del especialista
 							<i class="arrow"></i>
 						</a>
-						<textarea class="form-control"></textarea>
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Escribir mensaje">
+							<input type="text" class="form-control" id="input" placeholder="Escribir mensaje" />
 							<span class="input-group-btn">
-								<button class="btn btn-default btn_send" type="button"></button>
+								<button class="btn btn-default btn_send" type="button" ng-click="enviar();"></button>
 							</span>
 						</div>
+						<br>
+						<div id="box"></div>
 					</div>
 					<a class="btn_ayuda_linea" href="javascript:void(0)" ng-click="show_hide_help('.chat','.btn_ayuda_linea')">
 						<i class="ayuda"></i>

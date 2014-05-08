@@ -7,6 +7,26 @@ angular.module('spaApp')
 .controller('DashboardCtrl', function($scope,$rootScope,$location,AuthenticationService) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
+	var box = PUBNUB.$('box'), input = PUBNUB.$('input'), channel = 'chatPrivado';
+
+	(function(){
+		var p = PUBNUB.init({publish_key : 'demo' , subscribe_key : 'demo'});
+		PUBNUB.subscribe({
+		    channel : channel,
+		    message : function(text) { box.innerHTML = (''+text).replace( /[<>]/g, '' )+'<'+'br>'+box.innerHTML }
+		});
+		PUBNUB.bind( 'keyup', input, function(e) {
+		    (e.keyCode || e.charCode) === 13 && PUBNUB.publish({
+		        channel : channel, message : input.value, x : (input.value='')
+		    })
+		});
+	})()
+
+	$scope.enviar = function(){
+		PUBNUB.publish({
+	        channel : channel, message : input.value, x : (input.value='')
+	    });
+	}
 
 	//behavior stack accounts group
 	//TODO Do not use jQuery
