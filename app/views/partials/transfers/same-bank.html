@@ -19,7 +19,7 @@
 				B&uacute;squeda de Cuenta
 			</div>	
 			<div class="col-md-3">
-				<input></input>
+				<input value="{{same.searchAccount}}" disabled></input>
 			</div>
 		</div><!--end row 1-->
 		<div class="row">
@@ -27,14 +27,14 @@
 				Cuenta de Retiro
 			</div>
 			<div class="col-md-3">
-				<input value="{{depositAccount}}" disabled></input>
+				<input value="{{same.accountRemoval}}" disabled></input>
 			</div>
 			<div class="col-md-3">
 				Cuenta de Dep&oacute;sito
 			</div>
 			<div class="col-md-3">
 				<select>
-					<option>706 58535476</option>
+					<option>{{same.accountDeposit}}</option>
 				</select>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 				<select name="" id="">
      					<option value="">Alias Cuenta</option>
      					<option value="">Segundo Alias</option>
-    				</select>
+    			</select>
 			</div>
 			<div class="col-md-3">
 				Alias
@@ -55,51 +55,37 @@
 				<select name="" id="">
      					<option value="">Alias Cuenta</option>
     					<option value="">Segundo Alias</option>
-    				</select>
-			</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3">
-					Divisa
-				</div>
-				<div class="col-md-3">
-					<input value="{{coin}}" disabled></input>
-				</div>
-				<div class="col-md-3">
-					Divisa
-				</div>
-				<div class="col-md-3">
-					<input value="{{coin}}" disabled></input>
-				</div>
-			</div>
-			<div class="row">
-			<div class="col-md-3">
-				Divisa
-			</div>
-			<div class="col-md-3">
-				<input value="{{coin}}" disabled></input>
-			</div>
-			<div class="col-md-3">
-				Divisa
-			</div>
-			<div class="col-md-3">
-				<input value="{{coin}}" disabled></input>
+    			</select>
 			</div>
 		</div>
-		<hr>
-			
+		<div class="row">
+				<div class="col-md-3">
+					Divisa
+				</div>
+				<div class="col-md-3">
+					<input value="{{same.coin}}" disabled></input>							
+				</div>
+		<div class="row">
+			<div class="col-md-3">
+				Divisa
+			</div>
+			<div class="col-md-3">
+				<input value="{{same.coin}}" disabled></input>
+			</div>
+		</div>
+		<hr>			
 			<div class="row">
 			<div class="col-md-3">
 				Importe
 			</div>
 			<div class="col-md-3">
-				<input value="{{amount}}" disabled></input>
+				<input value="{{same.import}}" disabled></input>
 			</div>
 			<div class="col-md-3">
 				Concepto de Pago
 			</div>
 			<div class="col-md-3">
-				<input value="{{paymentConcept}}" disabled></input>
+				<input value="{{same.paymentConcept}}" disabled></input>
 			</div>
 		</div>
 		<div class="row">
@@ -107,13 +93,13 @@
 				Fecha de Aplicaci&oacute;n
 			</div>
 			<div class="col-md-3">
-				<input value="{{date}}" disabled></input>
+				<input value="{{same.dateApply}}" disabled></input>
 			</div>
 			<div class="col-md-3">
 				Referencia Num&eacute;rica
 			</div>
 			<div class="col-md-3">
-				<input value="{{numericReference}}" disabled></input>
+				<input value="{{same.numberReference}}" disabled></input>
 			</div>
 		</div>
 		</div><!-- end second row-->
@@ -127,6 +113,5 @@
 			</div>
 		</div>
 </div><!-- end col-md-12-->
-
 </div><!-- end row-->
 </div><!-- end col-md-9-->

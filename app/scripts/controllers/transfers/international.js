@@ -5,8 +5,8 @@ angular.module('spaApp')
 
 
 	internationalProvider.getTransferInternational().then(function(){
-		console.log('data');
-		$scope.trans = $rootScope.internationalTransfer;
+		
+		$scope.transfer = $rootScope.internationalTransfer;
 	});
 
 });

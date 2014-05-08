@@ -1,0 +1,17 @@
+{
+	"transfer":
+    {
+      
+      "holder" : "Transferencia Mismo Banco",
+      "accountBeneficiary" : "456987 1223",
+      "mail" : "correo@anzen.com.mx",
+      "coin" : "MXN/USD",
+      "accountAlias" : "Esposa",
+      "dayLimitPay" : "700.00",
+      "dayLimitMonthly" : "1,700.00"
+
+
+     
+    } 
+
+}
