@@ -13,6 +13,7 @@ angular.module('spaApp')
 					headers: {'Content-Type': 'application/json','X-BANK-TOKEN': '1'}
 			}).success(function(data, status, headers) {
 				var token = headers('X-AUTH-TOKEN');
+				$rootScope.is
 				$rootScope.session_token = token;
 				api.init();
 			 	deferred.resolve(data);
