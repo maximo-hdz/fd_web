@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('InvestmentDetailCtrl',	function($scope,$http,$location,$rootScope,investmentProvider) {
+.controller('InvestmentDetailCtrl',	['$scope','$http','$location','$rootScope','investmentProvider', function($scope,$http,$location,$rootScope,investmentProvider) {
 
 		$scope.mail = [
 		    {name:'client@anze.com.mx'},
@@ -33,5 +33,5 @@ angular.module('spaApp')
 		};
 
 	
-	});
+	}]);
 

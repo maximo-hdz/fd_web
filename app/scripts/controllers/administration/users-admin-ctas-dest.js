@@ -4,7 +4,7 @@ Users Administration Destination Accounts Controller
 */
 
 angular.module('spaApp')
-.controller('UsersAdministrationDestAccCtrl', function ($rootScope,$scope,$http,$location,$sce,$stateParams,usersAdminCtasDestProvider) {
+.controller('UsersAdministrationDestAccCtrl', ['$rootScope','$scope','$http','$location','$sce','$stateParams','usersAdminCtasDestProvider', function ($rootScope,$scope,$http,$location,$sce,$stateParams,usersAdminCtasDestProvider) {
 
 
 	/*scope vars*/
@@ -42,4 +42,4 @@ angular.module('spaApp')
 
 	});
 
-});
+}]);

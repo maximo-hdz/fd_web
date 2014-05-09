@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('InternationalCtrl',  function($scope, $log, $http,$location,$rootScope,internationalProvider) {
+.controller('InternationalCtrl',  ['$scope', '$log', '$http','$location','$rootScope','internationalProvider', function($scope, $log, $http,$location,$rootScope,internationalProvider) {
 
 
 	internationalProvider.getTransferInternational().then(function(){
@@ -9,4 +9,4 @@ angular.module('spaApp')
 		$scope.transfer = $rootScope.internationalTransfer;
 	});
 
-});
+}]);

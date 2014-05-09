@@ -4,7 +4,7 @@
 Navigation-bar  controller  for dashboard
 **/
 angular.module('spaApp')
-.controller('DashboardCtrl', function($scope,$rootScope,$location,AuthenticationService) {
+.controller('DashboardCtrl', ['$scope','$rootScope','$location','AuthenticationService', function($scope,$rootScope,$location,AuthenticationService) {
 	$scope.client = 'Ricardo Montemayor Morales';
 
 	var box = PUBNUB.$('box'), input = PUBNUB.$('input'), channel = 'chatPrivado';
@@ -163,4 +163,4 @@ angular.module('spaApp')
 			return 'Administraci\u00F3n';
 		}
 	}
-});
+}]);

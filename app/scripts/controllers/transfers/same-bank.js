@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('SameBankCtrl', function($scope, $log, $http,$location,$rootScope, sameBankProvider) {
+.controller('SameBankCtrl', ['$scope', '$log', '$http','$location','$rootScope', 'sameBankProvider', function($scope, $log, $http,$location,$rootScope, sameBankProvider) {
 
 
 	sameBankProvider.getSameBank().then(function(){
@@ -21,4 +21,4 @@ angular.module('spaApp')
 		$scope.confirmation=$rootScope.sameBankConfirmation;
 	});
 	
-});
+}]);

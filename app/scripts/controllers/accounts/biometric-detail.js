@@ -2,8 +2,7 @@
 
 /* This controller is work flow of detail credit, obtain a .json to see on the view detailLineCredit.html */
 angular.module('spaApp')
-.controller('BiometricDetailCtrl',
-  function($scope,$http,$location,$rootScope,$log,$stateParams,biometricProvider){
+.controller('BiometricDetailCtrl', ['$scope','$http','$location','$rootScope','$log','$stateParams','biometricProvider', function($scope,$http,$location,$rootScope,$log,$stateParams,biometricProvider){
 
 
   	$scope.account_id = $rootScope.biometricCurrentAccount;
@@ -14,4 +13,4 @@ angular.module('spaApp')
       $scope.detail = $rootScope.biometricDetail;
       }
     );
-});
+}]);

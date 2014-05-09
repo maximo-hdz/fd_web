@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditDetailAgreementCtrl', function ($scope,$stateParams,$rootScope,creditDetailProvider,creditBalanceProvider) {
+.controller('CreditDetailAgreementCtrl', ['$scope','$stateParams','$rootScope','creditDetailProvider','creditBalanceProvider', function ($scope,$stateParams,$rootScope,creditDetailProvider,creditBalanceProvider) {
 
 	$scope.mySelections = [];
 	$scope.gridOptions = {
@@ -41,4 +41,4 @@ angular.module('spaApp')
       {name:'5512345678'}
     ];
 
-});
+}]);

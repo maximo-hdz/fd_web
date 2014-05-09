@@ -4,7 +4,7 @@
  * Add beneficiary  controller
  */
 angular.module('spaApp')
-.controller('AddInternationalBeneficiaryMoral', function($scope,$http,$location,$rootScope,$log) {
+.controller('AddInternationalBeneficiaryMoral', ['$scope','$http','$location','$rootScope','$log', function($scope,$http,$location,$rootScope,$log) {
 		$scope.beneficiaryAccount="#####";
 		$scope.mainName="????";
 		$scope.lastName="????";
@@ -30,4 +30,4 @@ angular.module('spaApp')
 			$scope.x = false;
 			
 }
-	});
+	}]);

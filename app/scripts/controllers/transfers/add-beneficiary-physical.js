@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('spaApp')
-  .controller('AddBeneficiaryPhysicalCtrl', function ($scope, $location) {
+  .controller('AddBeneficiaryPhysicalCtrl', ['$scope','$location', function ($scope, $location) {
 
 		$scope.addBeneficiary=function(){
 			$location.path('transfer/add/beneficiary/confirm');
 		};
 
-  });
+  }]);
