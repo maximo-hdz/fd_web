@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('spaApp').directive('navigationBar', function($location) {
+angular.module('spaApp').directive('navigationBar', ['$location',function($location) {
   return {
     restrict: 'E',
     replace: true,
@@ -17,4 +17,4 @@ angular.module('spaApp').directive('navigationBar', function($location) {
     },
     templateUrl: 'views/directives/bar-navigation.html'
   };
-});
+}]);

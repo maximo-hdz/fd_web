@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditValueDateCtrl', function ($scope,$rootScope,creditValueProvider) {
+.controller('CreditValueDateCtrl', ['$scope','$rootScope','creditValueProvider', function ($scope,$rootScope,creditValueProvider) {
 
 	$scope.gridOptions = {
 			data: 'myData',
@@ -50,4 +50,4 @@ angular.module('spaApp')
 	    $scope.openedto = true;
 	};
 
-});
+}]);

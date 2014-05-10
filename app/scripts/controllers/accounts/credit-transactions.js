@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditTransactionsCtrl', function($scope,$rootScope,$location,creditMovementProvider) {
+.controller('CreditTransactionsCtrl', ['$scope','$rootScope','$location','creditMovementProvider', function($scope,$rootScope,$location,creditMovementProvider) {
 
 	$scope.mySelections = [];
 	$scope.gridOptions = {
@@ -59,5 +59,5 @@ angular.module('spaApp')
 	    $scope.openedto = true;
 	};
 
-});
+}]);
 

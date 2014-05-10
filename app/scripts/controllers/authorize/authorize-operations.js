@@ -2,7 +2,7 @@
 
 angular.module('spaApp')
 .controller('AuthorizeOperationsCtrl',
-	function($scope,$location,$rootScope,authorizeProvider) {
+	['$scope','$location','$rootScope','authorizeProvider', function($scope,$location,$rootScope,authorizeProvider) {
 
 		$scope.mySelections = [];
 		$scope.gridOptions = {
@@ -31,5 +31,5 @@ angular.module('spaApp')
 				$scope.myData = $rootScope.authorizeOp;
 			}
 		);
-	}
+	}]
 );

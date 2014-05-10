@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('BiometricCtrl', function($scope,$http,$location,$rootScope,$log,$stateParams) {
+.controller('BiometricCtrl', ['$scope','$http','$location','$rootScope','$log','$stateParams',function($scope,$http,$location,$rootScope,$log,$stateParams) {
 
 	$scope.today = function() {
 		$scope.dateFrom = new Date();
@@ -85,4 +85,4 @@ angular.module('spaApp')
 	});
 
 
-});
+}]);

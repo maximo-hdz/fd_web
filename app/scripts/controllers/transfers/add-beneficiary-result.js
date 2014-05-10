@@ -3,7 +3,7 @@
  * The connection controller
  */
 angular.module('spaApp')
-.controller('AddBeneficiaryResultCtrl', function($scope,$http,$location,$rootScope,$log) {
+.controller('AddBeneficiaryResultCtrl', ['$scope','$http','$location','$rootScope','$log', function($scope,$http,$location,$rootScope,$log) {
 
 	$scope.send=function(){
 		$location.path('transfer/add/beneficiary/send');
@@ -13,4 +13,4 @@ angular.module('spaApp')
 		$location.path('transfer/add/beneficiary/print');
 	};
 
-});
+}]);

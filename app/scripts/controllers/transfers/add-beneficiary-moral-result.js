@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-  .controller('AddBeneficiaryMoralResultCtrl', function ($scope,$location) {
+  .controller('AddBeneficiaryMoralResultCtrl', ['$scope','$location', function ($scope,$location) {
 
 	$scope.send=function(){
 		$location.path('transfer/add/moralbeneficiary/send');
@@ -11,4 +11,4 @@ angular.module('spaApp')
 		$location.path('transfer/add/moralbeneficiary/print');
 	};
 
-  });
+  }]);

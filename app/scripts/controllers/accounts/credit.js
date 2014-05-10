@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('CreditCtrl', function($scope,$rootScope,$log,$stateParams,creditProvider) {
+.controller('CreditCtrl', ['$scope','$rootScope','$log','$stateParams','creditProvider', function($scope,$rootScope,$log,$stateParams,creditProvider) {
 
 	$scope.account_id = $stateParams.account_id;
 
@@ -48,4 +48,4 @@ angular.module('spaApp')
     ];
 */
 
-});
+}]);

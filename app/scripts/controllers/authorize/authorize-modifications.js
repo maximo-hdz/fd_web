@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('AuthorizeModCtrl',
-	function($scope,$location,$rootScope,authorizeProvider) {
+.controller('AuthorizeModCtrl', ['$scope','$location','$rootScope','authorizeProvider', function($scope,$location,$rootScope,authorizeProvider) {
 
 		$scope.mySelections = [];
 		$scope.gridOptions = {
@@ -25,5 +24,5 @@ angular.module('spaApp')
 				$scope.myData = $rootScope.authorizeMod;
 			}
 		);
-	}
+	}]
 );

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('AddAccountCtrl', function($scope,$http,$location,$rootScope,$log) {
+.controller('AddAccountCtrl', ['$scope','$http','$location','$rootScope','$log', function($scope,$http,$location,$rootScope,$log) {
 	$scope.data={
 		"alias":"Alias Seleccionado",
 		"CLABE":"Número CLABE",
@@ -10,4 +10,4 @@ angular.module('spaApp')
 		"bank":"Banco del Beneficiario",
 		"email":"beneficiario@mail.com",
 	}
-});
+}]);

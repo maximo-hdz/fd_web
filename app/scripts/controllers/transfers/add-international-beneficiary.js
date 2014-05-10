@@ -4,7 +4,7 @@
  * Add beneficiary  controller
  */
 angular.module('spaApp')
-.controller('AddInternationalBeneficiary', function($scope,$http,$location,$rootScope,$log) {
+.controller('AddInternationalBeneficiary', ['$scope','$http','$location','$rootScope','$log', function($scope,$http,$location,$rootScope,$log) {
 		$scope.tipo = 'fisica';
 
 		$scope.$watch('tipo',function(){
@@ -16,4 +16,4 @@ angular.module('spaApp')
 			}
 		});
 
-	});
+	}]);
