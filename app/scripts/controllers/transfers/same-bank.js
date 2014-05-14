@@ -5,8 +5,9 @@ angular.module('spaApp')
 
 
 	sameBankProvider.getSameBank().then(function(){
-		console.log('Petition in same bank controller');
+		console.log('Petition in same bank controller'+$rootScope.sameBankTransfer);
 		$scope.same=$rootScope.sameBankTransfer;
+		$scope.currencySymbol='$';
 
 	});
 

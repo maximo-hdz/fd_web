@@ -15,7 +15,7 @@
                      <div class="col-md-6">                        
 
                         <div class="col-md-6">Cuenta del Beneficiario </div> <div><input disabled="disabled" value="{{beneficiary.accountBeneficiary}}"  type="text"/></div>
-                        <div class="col-md-6">L&iacute;mite de Pago Diario </div> <div><input disabled="disabled" value="{{beneficiary.dayLimitPay}}"  type="text"/></div>
+                        <div class="col-md-6">L&iacute;mite de Pago Diario </div> <div><input disabled="disabled" value="{{beneficiary.dayLimitPay | currency: beneficiary.currencySymbol}}"  type="text"/></div>
                         <div class="col-md-6">L&iacute;mite de Pago Mensual </div> <div><input disabled="disabled" value="{{beneficiary.dayLimitMonthly}}"  type="text"/></div>
 
                      </div>               

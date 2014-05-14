@@ -70,7 +70,7 @@
 				Importe
 			</div>
 			<div class="col-md-3">
-				<input value="{{transfer.import}}" disabled></input>
+				<input value="{{transfer.import | currency: transfer.currencySymbol}}" disabled></input>
 			</div>
 			<div class="col-md-3">
 				Fecha de Aplicaci&oacute;n

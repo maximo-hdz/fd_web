@@ -79,7 +79,8 @@
 				Importe
 			</div>
 			<div class="col-md-3">
-				<input value="{{same.import}}" disabled></input>
+
+				<input value="{{same.import | currency:same.currencySymbol}}" disabled></input>
 			</div>
 			<div class="col-md-3">
 				Concepto de Pago

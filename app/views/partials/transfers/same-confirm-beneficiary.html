@@ -22,8 +22,8 @@
                      </div>               
                      <div class="col-md-6">
                         <div class="col-md-6">Alias de la Cuenta</div> <div>   <input value="{{confirmation.accountAlias}}"  disabled/></div>
-                        <div class="col-md-6">L&iacute;mite de Pago Diario</div><div> <input value="{{confirmation.dayLimitPay}}"  disabled/></div>
-                        <div class="col-md-6">L&iacute;mite de Pago Mensual</div><div> <input value="{{confirmation.dayLimitMonthly}}" disabled/></div>
+                        <div class="col-md-6">L&iacute;mite de Pago Diario</div><div> <input value="{{confirmation.dayLimitPay | currency: confirmation.currencySymbol}}"  disabled/></div>
+                        <div class="col-md-6">L&iacute;mite de Pago Mensual</div><div> <input value="{{confirmation.dayLimitMonthly | currency: confirmation.currencySymbol}}" disabled/></div>
 
                      </div>
                 </div><!--End row middle -->

@@ -7,10 +7,12 @@
       "accountAlias" : "Alias ",
       "coin" : "MXN/USD",
       "accountDeposit": "456-88-96",
-      "import" : "98,730.33",
+      "import" : "98730.33",
       "date" : "10/10/2015",
        "accountSearch" : "987-456-321",
-      "numberReference" : "456-9"     
+      "numberReference" : "456-9",
+      "currencySymbol" : "$"
+     
      
     } 
 

@@ -13,8 +13,9 @@
       "codes" : "465321",
       "bank" : "INBURSA",
       "address" : "Street 34, cross Peterson AV.",
-      "import" : "75,000.00",
-      "searchAccount" : "78495463278"
+      "import" : "75000.00",
+      "searchAccount" : "78495463278",
+      "currencySymbol" : "$"
 
     }
 

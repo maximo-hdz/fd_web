@@ -3,10 +3,12 @@
     {
       
       "accountBeneficiary" : "654789-99",
-      "dayLimitPay" : "3,000.42 ",
+      "dayLimitPay" : "3000.42 ",
 	  "dayLimitMonthly" : "23 De cada mes",	
 	  "alias" : "Beneficario Unico",
-      "mail" : "correoUsuario@anzen.com.mx"
+      "mail" : "correoUsuario@anzen.com.mx",
+      "currencySymbol" : "$"
+
     } 
 
 }
