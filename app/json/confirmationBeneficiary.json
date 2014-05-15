@@ -8,7 +8,9 @@
       "coin" : "MXN/USD",
       "accountAlias" : "Esposa",
       "dayLimitPay" : "700.00",
-      "dayLimitMonthly" : "1,700.00"
+      "dayLimitMonthly" : "1700.00",
+      "currencySymbol" : "$"
+
 
 
      

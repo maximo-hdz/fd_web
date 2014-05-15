@@ -1,11 +1,11 @@
 <div class="col-md-9">
   <div class="row">
-    <div class="col-md-12">
+    
       <div class="col-md-1">
         <a type="button" href="/#/transfer" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
       </div>
       <span style="color:#FFFFFF;"><font size="5">Pago Mismo Banco</font></span>
-    </div>
+    
     <br></br>
 <div class="col-md-12">
 	<div class="well">
@@ -79,7 +79,8 @@
 				Importe
 			</div>
 			<div class="col-md-3">
-				<input value="{{same.import}}" disabled></input>
+
+				<input value="{{same.import | currency:same.currencySymbol}}" disabled></input>
 			</div>
 			<div class="col-md-3">
 				Concepto de Pago

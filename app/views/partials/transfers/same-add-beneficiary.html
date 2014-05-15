@@ -1,11 +1,11 @@
 <div class="col-md-9  row-fluid">
    <div class="row" id="bigCallout">   
-    <div class="col-md-12">
+    
         <div class="col-md-1">            
             <a type="button" href="/#/transfer/same-bank-transfer" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
         </div>
             <span style="color:#FFFFFF;"><font size="5">Alta Mismo Banco</font></span>
-    </div><!--End div cold md 12 button back-->
+    
     <br></br>
     <div class="col-md-12">
         <div class="well">           
@@ -15,7 +15,7 @@
                      <div class="col-md-6">                        
 
                         <div class="col-md-6">Cuenta del Beneficiario </div> <div><input disabled="disabled" value="{{beneficiary.accountBeneficiary}}"  type="text"/></div>
-                        <div class="col-md-6">L&iacute;mite de Pago Diario </div> <div><input disabled="disabled" value="{{beneficiary.dayLimitPay}}"  type="text"/></div>
+                        <div class="col-md-6">L&iacute;mite de Pago Diario </div> <div><input disabled="disabled" value="{{beneficiary.dayLimitPay | currency: beneficiary.currencySymbol}}"  type="text"/></div>
                         <div class="col-md-6">L&iacute;mite de Pago Mensual </div> <div><input disabled="disabled" value="{{beneficiary.dayLimitMonthly}}"  type="text"/></div>
 
                      </div>               
