@@ -4,8 +4,40 @@
 Navigation-bar  controller  for dashboard
 **/
 angular.module('spaApp')
-.controller('DashboardCtrl', ['$scope','$rootScope','$location','AuthenticationService', function($scope,$rootScope,$location,AuthenticationService) {
+.controller('DashboardCtrl', ['$scope','$rootScope','$location','AuthenticationService', '$idle', '$keepalive', '$modal', function($scope,$rootScope,$location,AuthenticationService ,$idle, $keepalive, $modal) {
 	$scope.client = 'Ricardo Montemayor Morales';
+	$scope.started = true;
+
+
+      function closeModals() {
+        if ($scope.warning) {
+          $scope.warning.close();
+          $scope.warning = null;
+        }
+
+        if ($scope.timedout) {
+          $scope.timedout.close();
+          $scope.timedout = null;
+        }
+      }
+
+      $scope.$on('$idleStart', function() {
+        closeModals();
+
+        $scope.warning = $modal.open({
+          templateUrl: 'warning-dialog.html',
+          windowClass: 'modal-danger'
+        });
+      });
+
+      $scope.$on('$idleEnd', function() {
+        closeModals();
+      });
+
+      $scope.$on('$idleTimeout', function() {
+        closeModals();
+        $location.path('/login');
+      });
 
 	var box = PUBNUB.$('box'), input = PUBNUB.$('input'), channel = 'chatPrivado';
 

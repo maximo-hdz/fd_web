@@ -12,11 +12,15 @@ var app = angular.module('spaApp', [
   'authorize-route',
   'authentication-route',
   'connection-route',
-  'transfers-route'
+  'transfers-route',
+  'ngIdle'
 ]);
 
-app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $keepaliveProvider, $idleProvider) {
   $httpProvider.responseInterceptors.push('httpInterceptor');
+  $idleProvider.idleDuration(5);
+  $idleProvider.warningDuration(5);
+  $keepaliveProvider.interval(10);
 
   $urlRouterProvider.otherwise("/login");
   $stateProvider

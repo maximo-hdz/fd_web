@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-  .service('AuthenticationService',[ '$http', '$q', '$rootScope','api',function ($http, $q, $rootScope,api) {
+  .service('AuthenticationService',[ '$http', '$q', '$idle' ,'$rootScope','api',function ($http, $q, $idle, $rootScope,api) {
 
 	return {
 		login: function(username,password) {
@@ -12,6 +12,7 @@ angular.module('spaApp')
 					data: JSON.stringify({'username':username, 'password':password}),
 					headers: {'Content-Type': 'application/json','X-BANK-TOKEN': '1'}
 			}).success(function(data, status, headers) {
+				$idle.watch();
 				var token = headers('X-AUTH-TOKEN');
 				$rootScope.is
 				$rootScope.session_token = token;
