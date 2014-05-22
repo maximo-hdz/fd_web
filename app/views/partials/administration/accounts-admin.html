@@ -1,19 +1,27 @@
 
 <div class="col-md-9" data-ng-init="load_conection()">
-	<div class="page_conection">
+			<div class="page_conection">
 		
 
-
-		<div class="title-page">
-	        <span class="btn_back"></span>
-	        Administraci&oacute;n - Cuentas
-	    </div>
-	    <br />
-	    <ul class="nav nav-tabs">
-			<li id="transactiont" class="active"><a href="#" ng-click="ctas_menu()" ng-href="#/administration/accounts/">Alta y modificaci&oacute;n de Cuentas Destino</a></li>
+		
+				<div class="title-page">
+					<div class="col-md-1">
+	        			<a class="btn btn-default btn-large btn-block button_mfm" ng-href="#administration"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	        		</div>
+	        		Administraci&oacute;n - Cuentas
+	    		</div>
+	    		<br />
+	    		<div class="col-md-12">
+	    			<div class="col-md-6">
+	    				<a class="btn btn-default btn-large btn-block button_mfm" href="#" ng-click="ctas_menu()" ng-href="#/administration/accounts/">Alta y modificaci&oacute;n de Cuentas Destino</a>
+	    			</div>
+	    			<div class="col-md-6">
+	    				<a class="btn btn-default btn-large btn-block button_mfm" href="#"  ng-click="customize()" ng-href="#/administration/accounts/customize">Personalizar Cuentas Origen</a>
+	    			</div>
+	    		</div>
+	    		<br><br><br/>
+	    	</div>
+				<div ui-view></div>
 			
-			<li id="valueDt"><a href="#"  ng-click="customize()" ng-href="#/administration/accounts/customize">Personalizar Cuentas Origen</a></li>
-		</ul>
-		<div ui-view></div>
-	</div>
-</div>
+		</div>
+	
