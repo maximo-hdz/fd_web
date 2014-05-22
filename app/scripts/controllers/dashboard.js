@@ -40,14 +40,6 @@ angular.module('spaApp')
 		}
 	};
 
-	/**
-	Logout operation
-	**/
-	$scope.logout=function(){
-			$location.path( '/login' );
-	}
-
-	/*/TODO: verify API RESTful
 	$scope.logout=function(){
 	 	AuthenticationService.logout()
 	 	.then(function(data){
@@ -56,7 +48,7 @@ angular.module('spaApp')
 	 		$scope.errorMessage = 'Logout failed';
 	 		$scope.status = error;
 	 	});
-	 }*/
+	 }
 
 	/** Biometrics  **/
 	$scope.biometrics=function(account_id){
