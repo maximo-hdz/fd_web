@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-  .service('AuthenticationService',[ '$http', '$q', '$rootScope','api',function ($http, $q, $rootScope,api) {
+  .service('AuthenticationService',[ '$http', '$q','$rootScope','api',function ($http, $q, $rootScope,api) {
 
 	return {
 		login: function(username,password) {
@@ -10,11 +10,10 @@ angular.module('spaApp')
 				url: $rootScope.restAPIBaseUrl + 'users/login',
 					method: 'POST',
 					data: JSON.stringify({'username':username, 'password':password}),
-					headers: {'Content-Type': 'application/json','X-BANK-TOKEN': '1'}
+					headers: {'Content-Type': 'application/json'}
 			}).success(function(data, status, headers) {
-				var token = headers('X-AUTH-TOKEN');
-				$rootScope.is
-				$rootScope.session_token = token;
+				var token_header = headers('X-AUTH-TOKEN');
+				$rootScope.session_token = token_header;
 				api.init();
 			 	deferred.resolve(data);
 			}).error(function(data, status) {
@@ -30,8 +29,9 @@ angular.module('spaApp')
 				url: $rootScope.restAPIBaseUrl + 'users/logout',
 					method: 'POST',
 					data: JSON.stringify({'sessionID':sessionID}),
-					headers: {'Content-Type': 'application/json','X-BANK-TOKEN': '1'}
+					headers: {'Content-Type': 'application/json'}
 			}).success(function(data, status, headers) {
+				delete $rootScope.session_token;
 			 	deferred.resolve(data);
 			}).error(function(data, status) {
 				$q.reject(data)
