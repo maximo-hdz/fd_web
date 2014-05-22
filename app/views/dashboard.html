@@ -1,3 +1,12 @@
+<script type="text/ng-template" id="warning-dialog.html">
+  <div class="modal-header">
+   <p>Tu sesi&oacute; esta inactiva!</p>
+  </div>
+  <div ng-idle-countdown="countdown" ng-init="countdown=5" class="modal-body">
+   <progressbar max="5" value="5" animate="false" class="progress-striped active">Tu sesi&oacute;n finalizara en {{countdown}} segundos </progressbar>
+  </div>
+
+</script>
 <div class="account_back">
 	<div class="header">
 		<div class="container">

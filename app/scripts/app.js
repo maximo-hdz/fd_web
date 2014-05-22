@@ -7,15 +7,21 @@ var app = angular.module('spaApp', [
   'ui.router',
   'ui.bootstrap',
   'ngGrid',
+  'ngIdle',
   'accounts-route',
   'administration-route',
   'authorize-route',
   'authentication-route',
   'connection-route',
-  'transfers-route'
+  'transfers-route',
+  'ngIdle'
 ]);
 
-app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', '$keepaliveProvider', '$idleProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider ,$keepaliveProvider, $idleProvider) {
+  $httpProvider.responseInterceptors.push('httpInterceptor');
+  $idleProvider.idleDuration(5);
+  $idleProvider.warningDuration(5);
+  $keepaliveProvider.interval(60);
 
   $urlRouterProvider.otherwise("/login");
   $stateProvider
