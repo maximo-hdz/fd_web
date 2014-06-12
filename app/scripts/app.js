@@ -15,7 +15,7 @@ var app = angular.module('spaApp', [
   'connection-route',
   'transfers-route',
   'ngIdle'
-]);
+  ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', '$keepaliveProvider', '$idleProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider ,$keepaliveProvider, $idleProvider) {
   $httpProvider.responseInterceptors.push('httpInterceptor');

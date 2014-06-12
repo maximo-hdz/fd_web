@@ -14,7 +14,7 @@ angular.module('spaApp')
 			}).success(function(data, status, headers) {
 				var token_header = headers('X-AUTH-TOKEN');
 				$rootScope.session_token = token_header;
-				$idle.watch();
+				//$idle.watch();
 				api.init();
 			 	deferred.resolve(data);
 			}).error(function(data, status) {
