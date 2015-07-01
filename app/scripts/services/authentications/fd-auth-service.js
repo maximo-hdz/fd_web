@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spaApp')
-  .service('AuthorizeService',['$http','$rootScope', function($http, $rootScope) {
+  .service('AuthorizeServiceFD',['$http','$rootScope', function($http, $rootScope) {
 
 	this.checkLogin = function(user_login, with_token){
 		return $http({
