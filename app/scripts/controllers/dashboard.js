@@ -73,6 +73,11 @@ angular.module('spaApp')
 		}
 	};
 
+
+	// $scope.show_hide_menu=function( menu ){
+	// 	$('.'+menu).find('.child').toggle();
+	// };
+
 	$scope.logout=function(){
 	 	AuthenticationService.logout()
 	 	.then(function(data){
