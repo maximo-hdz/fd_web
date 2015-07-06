@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>MFM</title>
+		<title>Fundaci&oacute;n Dond&eacute; Banco</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta name="description" content="">
 
@@ -34,7 +34,6 @@
 		</style>
 	</head>
 	<body ng-app="spaApp">
-		<div class="fondoMFM"></div>
 		<!--[if lt IE 7]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
@@ -178,5 +177,16 @@
 		<script src="scripts/services/users/users-admin-ctas-dest-service.js"></script>
 		<script src="scripts/services/users/users-admin-ctas-dest-provider.js"></script>
 		<!-- endbuild -->
+
+		<script type="text/javascript">
+			function show_hide_menu( menu ){
+				$('.'+menu).find('.child').toggle("fast");
+				if( $('.'+menu).find('.head').hasClass('open') ){
+					$('.'+menu).find('.head').removeClass('open')
+				}else{
+					$('.'+menu).find('.head').addClass('open')
+				}
+			};
+		</script>
 	</body>
 </html>
