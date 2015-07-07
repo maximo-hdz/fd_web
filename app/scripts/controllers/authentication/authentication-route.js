@@ -1,5 +1,5 @@
 angular.module('authentication-route', ['ui.router'])
-.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider){
+.config(['$stateProvider', function($stateProvider){
 
 $stateProvider
 .state('login', {
