@@ -1,19 +1,27 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('LoginCtrl',['$scope','$rootScope','$location','AuthenticationService',function ($scope,$rootScope,$location,AuthenticationService) {
-	/**
-	 * the login function connect the Rest-API: if the response status is OK, redirect to route "homePage",
-	 * else put an error message in the scope
-	 */
-	 $scope.login=function(username,password){
-	 	AuthenticationService.login(username,password)
-	 	.then(function(data){
-	 		$rootScope.isAuthenticated = true;
-	 		$location.path('/accounts');
-	 	}, function(error){
-	 		$scope.errorMessage = 'Login failed';
-	 		$scope.status = error;
-	 	});
-	 };
+.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', function($scope, $rootScope, $location, authorizeProviderFD) {
+
+	$scope.CheckLogin = true;
+	$scope.auth;
+
+	$scope.checkLogin = function(){
+		authorizeProviderFD.checkLogin($scope.auth.user_login, $scope.auth.with_token).then(
+			function(data) {
+				$scope.CheckLogin = false;
+				$scope.auth.response = data;
+			}
+		);
+	}
+
+	$scope.login=function(){
+		authorizeProviderFD.login($scope.auth.user_login, $scope.auth.password, 'N', $scope.auth.with_token).then(
+			function(data) {
+				$scope.CheckLogin = true;
+				$scope.myData = data;
+			}
+		);
+	};
+
 }]);
