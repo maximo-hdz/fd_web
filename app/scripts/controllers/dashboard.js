@@ -4,7 +4,7 @@
 Navigation-bar  controller  for dashboard
 **/
 angular.module('spaApp')
-.controller('DashboardCtrl', ['$scope','$rootScope','$location','AuthenticationService', '$idle', '$keepalive', '$modal', function($scope,$rootScope,$location,AuthenticationService ,$idle, $keepalive, $modal) {
+.controller('DashboardCtrl', ['$scope','$rootScope','$location','authorizeProviderFD', '$idle', '$keepalive', '$modal', function($scope,$rootScope,$location,authorizeProviderFD ,$idle, $keepalive, $modal) {
 	$scope.client = 'Ricardo Montemayor Morales';
 	$scope.started = true;
 
@@ -35,31 +35,10 @@ angular.module('spaApp')
       });
 
       $scope.$on('$idleTimeout', function() {
-      	AuthenticationService.logout()
+		authorizeProviderFD.logout()
         closeModals();
         $location.path('/login');
       });
-
-	var box = PUBNUB.$('box'), input = PUBNUB.$('input'), channel = 'chatPrivado';
-
-	(function(){
-		var p = PUBNUB.init({publish_key : 'demo' , subscribe_key : 'demo'});
-		PUBNUB.subscribe({
-		    channel : channel,
-		    message : function(text) { box.innerHTML = (''+text).replace( /[<>]/g, '' )+'<'+'br>'+box.innerHTML }
-		});
-		PUBNUB.bind( 'keyup', input, function(e) {
-		    (e.keyCode || e.charCode) === 13 && PUBNUB.publish({
-		        channel : channel, message : input.value, x : (input.value='')
-		    })
-		});
-	})()
-
-	$scope.enviar = function(){
-		PUBNUB.publish({
-	        channel : channel, message : input.value, x : (input.value='')
-	    });
-	}
 
 	//behavior stack accounts group
 	//TODO Do not use jQuery
@@ -74,19 +53,16 @@ angular.module('spaApp')
 	};
 
 
-	// $scope.show_hide_menu=function( menu ){
-	// 	$('.'+menu).find('.child').toggle();
-	// };
-
 	$scope.logout=function(){
-	 	AuthenticationService.logout()
-	 	.then(function(data){
-	 		$location.path('/logout');
-	 	}, function(error){
-	 		$scope.errorMessage = 'Logout failed';
-	 		$scope.status = error;
-	 	});
-	 }
+		authorizeProviderFD.logout().then(
+			function(data){
+				$location.path('/logout');
+			},
+			function(error){
+				$scope.status = error;
+			}
+		);
+	}
 
 	/** Biometrics  **/
 	$scope.biometrics=function(account_id){
