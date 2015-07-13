@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', function($scope, $rootScope, $location, authorizeProviderFD) {
+.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api',
+	function($scope, $rootScope, $location, authorizeProviderFD, api) {
 
 	$scope.CheckLogin = true;
 	$scope.auth;
