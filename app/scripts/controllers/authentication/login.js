@@ -35,11 +35,6 @@ angular.module('spaApp')
 			})
 		}).success(
 			function(data, status, headers) {
-
-				console.log(data);
-				console.log(status);
-				console.log(headers);
-
 				$scope.CheckLogin = true;
 				var token = headers('X-AUTH-TOKEN');
 				$rootScope.session_token = token;

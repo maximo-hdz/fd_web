@@ -1,519 +1,382 @@
-<!-- <script type="text/ng-template" id="warning-dialog.html">
-  // <div class="modal-header">
-  //  <p>Tu sesi&oacute; esta inactiva!</p>
-  // </div>
-  // <div ng-idle-countdown="countdown" ng-init="countdown=5" class="modal-body">
-  //  <progressbar max="5" value="5" animate="false" class="progress-striped active">Tu sesi&oacute;n finalizara en {{countdown}} segundos </progressbar>
-  // </div>
-</script> -->
-<div class="account_back">
-	<div class="header">
-		<div class="top-menu hidden-xs">
-			<div class="container">
-				<a href="javascript:void(0);">Aclaraciones</a> |
-				<a href="javascript:void(0);">Aviso de privacidad</a> |
-				<a href="javascript:void(0);">Reportes por robo y/o p&eacute;rdida</a> |
-				<a href="javascript:void(0);">Contratos</a> |
-				<a href="javascript:void(0);">Sucursales</a>
-			</div>	
-		</div>
-		<div class="main-menu">
-			<div class="container">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-options">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<div class="logo"></div>
-						</div>
-						<div class="collapse navbar-collapse pull-left" id="menu-options">
-							<ul class="nav navbar-nav">
-								<li class="active"><a href="index.html">Mis productos</a></li>
-								<li><a href="javascript:void(0);">Pagos y Transferencias</a></li>
-								<li><a href="javascript:void(0);">Administracion</a></li>
-								<li class="visible-xs-block hidden-sm hidden-md hidden-lg">
-									<a href="javascript:void(0);">Sucursales</a>
-								</li>
-								<li class="visible-xs-block hidden-sm hidden-md hidden-lg">
-									<a href="javascript:void(0);">Reporte por robo o p&eacute;rdida</a>
-								</li>
-								<li class="visible-xs-block hidden-sm hidden-md hidden-lg">
-									<a href="javascript:void(0);" ng-click="logout()">Cerrar sesi&oacute;n</a>
-								</li>
-							</ul>
-						</div>
-						<button class="btn btn-danger btn-salir pull-right hidden-xs" ng-click="logout();">Cerrar sesi&oacute;n</button>
-						<div class="user hidden-sm hidden-xs">
-							<p>
-								Angel Buendia Cortes
-								<span>&Uacute;ltimo acceso: 21/04/2015 a las 23:34:56 pm</span>
-							</p>
-						</div>
-					</div>
-				</nav>
-				<!-- <div class="row">
-					<div class="col-md-3 pull-left">
-						<a class="logo" href="javascript:void(0);"><span class="mfm"></span></a>
-					</div>
+<div class="products">
+    <div class="outter">
+        <div ng-include="'views/partials/layout/main-header.html'"></div>
+        <main>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
 
-					<button class="btn pull-right button_mfm btn-logout"  ><i></i>Salir</button>
-					<div class="col-md-6 user">
-						<p>Bienvenido <b>{{client}}</b></p>
-					</div>
-				</div> -->
 
-			</div>
-		</div>
-		<div class="content-breadcrumb hidden-xs">
-			<div class="container">
-				<ol class="breadcrumb">
-					<li><a href="javascript:void(0);">Panel de productos</a></li>
-					<li><a href="javascript:void(0);">Lo que tengo</a></li>
-					<li class="active">Mi Alcanc&iacute;a Dond&eacute; ***2023</li>
-				</ol>
-			</div>
-		</div>
+
+<div class="col-md-4">
+	<div class="left-menu">
+		<ul class="menu menu-tengo">
+			<li class="head" onclick="show_hide_menu('menu-tengo');">
+				<span class="arrow"></span>
+				<span class="title">LO QUE TENGO</span>
+				<span class="amount">$ 16,570.00</span>
+			</li>
+			<li class="parent">
+				<span class="text">Mis cuentas de ahorro</span>
+				<span class="amount">$ 10,650.00</span>
+			</li>
+			<li class="child">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">Mi alcanc&iacute;a ***2023</span>
+					<span class="amount">$ 5,670.00</span>
+				</a>
+			</li>
+			<li class="child active">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">Mi alcanc&iacute;a Dond&eacute; ***2023</span>
+					<span class="amount">$ 5,670.00</span>
+				</a>
+			</li>
+			<li class="parent">
+				<span class="text">Mis cuentas de inversi&oacute;n</span>
+				<span class="amount">$ 6,000.00</span>
+			</li>
+			<li class="child">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">Inversi&oacute;n Dond&eacute; ***2023</span>
+					<span class="amount">$ 3,000.00</span>
+				</a>
+			</li>
+			<li class="child">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">Inversi&oacute;n Dond&eacute; ***2023</span>
+					<span class="amount">$ 3,000.00</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="menu menu-debo">
+			<li class="head" onclick="show_hide_menu('menu-debo');">
+				<span class="arrow"></span>
+				<span class="title">LO QUE DEBO</span>
+				<span class="amount">$ 3,570.00</span>
+			</li>
+			<li class="parent">
+				<span class="text">Mis cr&eacute;ditos activos</span>
+				<span class="amount">$ 2,570.00</span>
+			</li>
+			<li class="child">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">CrediDond&eacute; ***7867</span>
+					<span class="amount red">$ 640.00</span>
+				</a>
+			</li>
+			<li class="child">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">Presta Dond&eacute; Plus 180</span>
+					<span class="amount red">$ 640.00</span>
+				</a>
+			</li>
+			<li class="child">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">CrediDond&eacute; ***7867</span>
+					<span class="amount red">$ 640.00</span>
+				</a>
+			</li>
+			<li class="child">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">Presta Dond&eacute; Plus 180</span>
+					<span class="amount red">$ 640.00</span>
+				</a>
+			</li>
+			<li class="parent">
+				<span class="text">Mis tarjetas de cr&eacute;dito</span>
+				<span class="amount">$ 1,000.00</span>
+			</li>
+			<li class="child">
+				<a href="javascript:void(0);">
+					<span class="arrow"></span>
+					<span class="text">Cr&eacute;dito Dond&eacute; ***1653</span>
+					<span class="amount red">$ 1,000.00</span>
+				</a>
+			</li>
+		</ul>
 	</div>
-	<!-- <div class="subheader col-md-12">
-		<div class="container">
-			<div class="col-md-9 pull-right">
-				<span class="pull-left">
-					<breadcrumbs/>
-				</span>
-				<span class="pull-left">
-					<span class="breadcrumbs" ng-bind="createBreadcrumb()">Saldos</span>
-				</span>
-				<span class="pull-right">
-					<span class="fecha">14 de abril de 2014</span>
-					<span class="hora">15:10 HRS</span>
-				</span>
-			</div>
-		</div>
-	</div>
-	<div class="container content">
-		<div class="row-fluid">
-			<div class="col-md-3"><navigation-bar/></div>
-			<div ui-view autoscroll="false"></div>
-		</div>
-	</div> -->
 </div>
-
-<!-- <div class="container container_banners_ayuda">
-	<div class="row">
-		<div class="col-md-3">
-			<div class="banners-ayuda">
-				<div class="ayuda_linea">
-					<div class="chat">
-						<a class="btn_close_ayuda" href="javascript:void(0)" ng-click="show_hide_help('.chat','.btn_ayuda_linea')">
-							Nombre del especialista
-							<i class="arrow"></i>
-						</a>
-						<div class="input-group">
-							<input type="text" class="form-control" id="input" placeholder="Escribir mensaje" />
-							<span class="input-group-btn">
-								<button class="btn btn-default btn_send" type="button" ng-click="enviar();"></button>
-							</span>
-						</div>
-						<br>
-						<div id="box"></div>
-					</div>
-					<a class="btn_ayuda_linea" href="javascript:void(0)" ng-click="show_hide_help('.chat','.btn_ayuda_linea')">
-						<i class="ayuda"></i>
-						Ayuda en l&iacute;nea
-						<i class="arrow"></i>
-					</a>
-				</div>
-			</div>
-		</div>
+<div class="col-md-8">
+	<div class="alert alert-success alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<p>
+			<strong>MENSAJE IMPORTANTE:</strong><br>
+			&iexcl;Enhorabuena! Gracias a que eres un buen cliente, te hemos pre-autorizado un cr&eacute;dito de $5,000. Ac&eacute;rcate a tu sucursal mas cercana o ll&aacute;manos al 01 800 36686.
+		</p>
 	</div>
-</div> -->
-<div class="content">
-	<div class="container">
+
+	<h1 class="title-green">Notificaciones recientes</h1>
+	<div class="box-notifications">
 		<div class="row">
-			<div class="col-md-4">
-				<div class="left-menu">
-					<ul class="menu menu-tengo">
-						<li class="head" onclick="show_hide_menu('menu-tengo');">
-							<span class="arrow"></span>
-							<span class="title">LO QUE TENGO</span>
-							<span class="amount">$ 16,570.00</span>
-						</li>
-						<li class="parent">
-							<span class="text">Mis cuentas de ahorro</span>
-							<span class="amount">$ 10,650.00</span>
-						</li>
-						<li class="child">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">Mi alcanc&iacute;a ***2023</span>
-								<span class="amount">$ 5,670.00</span>
-							</a>
-						</li>
-						<li class="child active">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">Mi alcanc&iacute;a Dond&eacute; ***2023</span>
-								<span class="amount">$ 5,670.00</span>
-							</a>
-						</li>
-						<li class="parent">
-							<span class="text">Mis cuentas de inversi&oacute;n</span>
-							<span class="amount">$ 6,000.00</span>
-						</li>
-						<li class="child">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">Inversi&oacute;n Dond&eacute; ***2023</span>
-								<span class="amount">$ 3,000.00</span>
-							</a>
-						</li>
-						<li class="child">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">Inversi&oacute;n Dond&eacute; ***2023</span>
-								<span class="amount">$ 3,000.00</span>
-							</a>
-						</li>
-					</ul>
-					<ul class="menu menu-debo">
-						<li class="head" onclick="show_hide_menu('menu-debo');">
-							<span class="arrow"></span>
-							<span class="title">LO QUE DEBO</span>
-							<span class="amount">$ 3,570.00</span>
-						</li>
-						<li class="parent">
-							<span class="text">Mis cr&eacute;ditos activos</span>
-							<span class="amount">$ 2,570.00</span>
-						</li>
-						<li class="child">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">CrediDond&eacute; ***7867</span>
-								<span class="amount red">$ 640.00</span>
-							</a>
-						</li>
-						<li class="child">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">Presta Dond&eacute; Plus 180</span>
-								<span class="amount red">$ 640.00</span>
-							</a>
-						</li>
-						<li class="child">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">CrediDond&eacute; ***7867</span>
-								<span class="amount red">$ 640.00</span>
-							</a>
-						</li>
-						<li class="child">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">Presta Dond&eacute; Plus 180</span>
-								<span class="amount red">$ 640.00</span>
-							</a>
-						</li>
-						<li class="parent">
-							<span class="text">Mis tarjetas de cr&eacute;dito</span>
-							<span class="amount">$ 1,000.00</span>
-						</li>
-						<li class="child">
-							<a href="javascript:void(0);">
-								<span class="arrow"></span>
-								<span class="text">Cr&eacute;dito Dond&eacute; ***1653</span>
-								<span class="amount red">$ 1,000.00</span>
-							</a>
-						</li>
-					</ul>
+			<div class="col-md-3 hidden-xs hidden-sm">
+				<div class="cell">
+					<div class="logo logo-inversion"></div>
 				</div>
 			</div>
-			<div class="col-md-8">
-				<div class="alert alert-success alert-dismissible" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<div class="col-md-4 col-xs-6 info-account">
+				<div class="cell">
 					<p>
-						<strong>MENSAJE IMPORTANTE:</strong><br>
-						&iexcl;Enhorabuena! Gracias a que eres un buen cliente, te hemos pre-autorizado un cr&eacute;dito de $5,000. Ac&eacute;rcate a tu sucursal mas cercana o ll&aacute;manos al 01 800 36686.
+						<strong>Inversi&oacute;n Dond&eacute; ***2023</strong><br>
+						Monto invertido: $ 6,000.00
 					</p>
 				</div>
-
-				<h1 class="title-green">Notificaciones recientes</h1>
-				<div class="box-notifications">
-					<div class="row">
-						<div class="col-md-3 hidden-xs hidden-sm">
-							<div class="cell">
-								<div class="logo logo-inversion"></div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6 info-account">
-							<div class="cell">
-								<p>
-									<strong>Inversi&oacute;n Dond&eacute; ***2023</strong><br>
-									Monto invertido: $ 6,000.00
-								</p>
-							</div>
-						</div>
-						<div class="col-md-5 col-xs-6 info-account">
-							<div class="cell">
-								<p>Rendimientos: <span>$ 56.00</span></p>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3 hidden-xs hidden-sm">
-							<div class="cell">
-								<div class="logo logo-presta-plus"></div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6 info-account">
-							<div class="cell">
-								<p>
-									<strong>Presta Plus ***7867</strong><br>
-									Pr&oacute;ximo pago: 18/05/2015
-								</p>
-							</div>
-						</div>
-						<div class="col-md-5 col-xs-6 info-account">
-							<div class="cell">
-								<p>Pago m&iacute;nimo: <button class="btn btn-default">Pagar: <strong>$ 450.00</strong></button></p>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3 hidden-xs hidden-sm">
-							<div class="cell">
-								<div class="logo logo-credi-donde"></div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6 info-account">
-							<div class="cell">
-								<p>
-									<strong>Cr&eacute;dito Dond&eacute; ***1653</strong><br>
-									Pr&oacute;ximo pago: 18/05/2015
-								</p>
-							</div>
-						</div>
-						<div class="col-md-5 col-xs-6 info-account">
-							<div class="cell">
-								<p>Pago m&iacute;nimo: <button class="btn btn-default">Pagar: <strong>$ 12,500.00</strong></button></p>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3 hidden-xs hidden-sm">
-							<div class="cell">
-								<div class="logo logo-alcancia"></div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6 info-account">
-							<div class="cell">
-								<p>
-									<strong>Mi Alcanc&iacute;a Dond&eacute; ***2023</strong>
-								</p>
-							</div>
-						</div>
-						<div class="col-md-5 col-xs-6 info-account">
-							<div class="cell">
-								<p>Saldo disponible: <span>$ 12,500.00</span></p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-				
-				<div class="account-page">
-					<h1 class="title-account">
-						<span>Detalle de cuenta</span> Mi alcanc&iacute;a Dond&eacute; ***2023
-					</h1>
-					<div class="row detalles">
-						<div class="col-md-3 content-logo">
-							<div class="logo logo-alcancia"></div>
-						</div>
-						<div class="col-md-9">
-							<div class="saldos-cuenta">
-								<span class="text">Saldo disponible:</span>
-								<span class="amount">$ 5,320.00</span>
-							</div>
-							<div class="saldos-cuenta">
-								<span class="text">Beneficios generados:</span>
-								<span class="amount">$ 8.50</span>
-							</div>
-						</div>
-					</div>
-					<div class="row tablas-detalle">
-						<div class="col-md-6">
-							<table>
-								<tbody>
-									<tr>
-										<td>Saldo disponible:</td>
-										<td>$ 5,320.00</td>
-									</tr>
-									<tr>
-										<td>CLABE:</td>
-										<td>002001054185889151</td>
-									</tr>
-									<tr>
-										<td>D&iacute;a de corte:</td>
-										<td>16/05/2015</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="col-md-6">
-							<table>
-								<tbody>
-									<tr>
-										<td>Fecha &uacute;ltimo movimiento:</td>
-										<td>02/04/2015</td>
-									</tr>
-									<tr>
-										<td>Dep&oacute;sitos del d&iacute;a:</td>
-										<td>$ 0.00</td>
-									</tr>
-									<tr>
-										<td>Retiros del d&iacute;a:</td>
-										<td>$ 0.00</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<input type="text" class="form-control input-search" value="&Uacute;ltimos movimientos">
-						</div>
-					</div>
-					<div class="row filtro">
-						<div class="col-md-5">
-							Por fecha: 
-							<div class="btn-group" role="group" aria-label="...">
-								<button type="button" class="btn btn-success">10/02/2015</button>
-								<button type="button" class="btn btn-success">10/02/2015</button>
-							</div>
-						</div>
-						<div class="col-md-5">
-							Por monto: 
-							<div class="btn-group" role="group" aria-label="...">
-								<button type="button" class="btn btn-default">Desde</button>
-								<button type="button" class="btn btn-default">Hasta</button>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<button type="button" class="btn btn-success">Descargar</button>
-						</div>
-					</div>
-					<div class="table-responsive">
-						<table class="table table-striped">
-							<thead>
-								<tr>
-									<td>Fecha</td>
-									<td>Descripci&oacute;n</td>
-									<td>Importe</td>
-									<td>Saldo</td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Dep&oacute;sito</td>
-									<td>$1,500.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Compra comercial</td>
-									<td class="negativo">-$2,250.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>TRASPASO REF 0087500358 AUT.5</td>
-									<td>$350.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Compra</td>
-									<td class="negativo">-$2,250.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Compra Tel</td>
-									<td class="negativo">-$350.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Transferencia Recibida</td>
-									<td>$1,500.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Dep&oacute;sito</td>
-									<td>$2,250.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Compra comercial</td>
-									<td class="negativo">-$350.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Dep&oacute;sito</td>
-									<td>$350.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Pago recibido de BBV BANCOMER por orden<br>de  JUAN PEREZ 1234567 Clave de rastreo  Aut 236</td>
-									<td>$350.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Dep&oacute;sito</td>
-									<td>$1,500.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>Compra comercial</td>
-									<td class="negativo">-$2,250.00</td>
-									<td>$4,500.00</td>
-								</tr>
-								<tr>
-									<td>16/05/2015</td>
-									<td>TRASPASO REF 0087500358 AUT.5</td>
-									<td>$350.00</td>
-									<td>$4,500.00</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+			</div>
+			<div class="col-md-5 col-xs-6 info-account">
+				<div class="cell">
+					<p>Rendimientos: <span>$ 56.00</span></p>
 				</div>
 			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 hidden-xs hidden-sm">
+				<div class="cell">
+					<div class="logo logo-presta-plus"></div>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-6 info-account">
+				<div class="cell">
+					<p>
+						<strong>Presta Plus ***7867</strong><br>
+						Pr&oacute;ximo pago: 18/05/2015
+					</p>
+				</div>
+			</div>
+			<div class="col-md-5 col-xs-6 info-account">
+				<div class="cell">
+					<p>Pago m&iacute;nimo: <button class="btn btn-default">Pagar: <strong>$ 450.00</strong></button></p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 hidden-xs hidden-sm">
+				<div class="cell">
+					<div class="logo logo-credi-donde"></div>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-6 info-account">
+				<div class="cell">
+					<p>
+						<strong>Cr&eacute;dito Dond&eacute; ***1653</strong><br>
+						Pr&oacute;ximo pago: 18/05/2015
+					</p>
+				</div>
+			</div>
+			<div class="col-md-5 col-xs-6 info-account">
+				<div class="cell">
+					<p>Pago m&iacute;nimo: <button class="btn btn-default">Pagar: <strong>$ 12,500.00</strong></button></p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 hidden-xs hidden-sm">
+				<div class="cell">
+					<div class="logo logo-alcancia"></div>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-6 info-account">
+				<div class="cell">
+					<p>
+						<strong>Mi Alcanc&iacute;a Dond&eacute; ***2023</strong>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-5 col-xs-6 info-account">
+				<div class="cell">
+					<p>Saldo disponible: <span>$ 12,500.00</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="account-page">
+		<h1 class="title-account">
+			<span>Detalle de cuenta</span> Mi alcanc&iacute;a Dond&eacute; ***2023
+		</h1>
+		<div class="row detalles">
+			<div class="col-md-3 content-logo">
+				<div class="logo logo-alcancia"></div>
+			</div>
+			<div class="col-md-9">
+				<div class="saldos-cuenta">
+					<span class="text">Saldo disponible:</span>
+					<span class="amount">$ 5,320.00</span>
+				</div>
+				<div class="saldos-cuenta">
+					<span class="text">Beneficios generados:</span>
+					<span class="amount">$ 8.50</span>
+				</div>
+			</div>
+		</div>
+		<div class="row tablas-detalle">
+			<div class="col-md-6">
+				<table>
+					<tbody>
+						<tr>
+							<td>Saldo disponible:</td>
+							<td>$ 5,320.00</td>
+						</tr>
+						<tr>
+							<td>CLABE:</td>
+							<td>002001054185889151</td>
+						</tr>
+						<tr>
+							<td>D&iacute;a de corte:</td>
+							<td>16/05/2015</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<table>
+					<tbody>
+						<tr>
+							<td>Fecha &uacute;ltimo movimiento:</td>
+							<td>02/04/2015</td>
+						</tr>
+						<tr>
+							<td>Dep&oacute;sitos del d&iacute;a:</td>
+							<td>$ 0.00</td>
+						</tr>
+						<tr>
+							<td>Retiros del d&iacute;a:</td>
+							<td>$ 0.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<input type="text" class="form-control input-search" value="&Uacute;ltimos movimientos">
+			</div>
+		</div>
+		<div class="row filtro">
+			<div class="col-md-5">
+				Por fecha: 
+				<div class="btn-group" role="group" aria-label="...">
+					<button type="button" class="btn btn-success">10/02/2015</button>
+					<button type="button" class="btn btn-success">10/02/2015</button>
+				</div>
+			</div>
+			<div class="col-md-5">
+				Por monto: 
+				<div class="btn-group" role="group" aria-label="...">
+					<button type="button" class="btn btn-default">Desde</button>
+					<button type="button" class="btn btn-default">Hasta</button>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<button type="button" class="btn btn-success">Descargar</button>
+			</div>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>Fecha</td>
+						<td>Descripci&oacute;n</td>
+						<td>Importe</td>
+						<td>Saldo</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Dep&oacute;sito</td>
+						<td>$1,500.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Compra comercial</td>
+						<td class="negativo">-$2,250.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>TRASPASO REF 0087500358 AUT.5</td>
+						<td>$350.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Compra</td>
+						<td class="negativo">-$2,250.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Compra Tel</td>
+						<td class="negativo">-$350.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Transferencia Recibida</td>
+						<td>$1,500.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Dep&oacute;sito</td>
+						<td>$2,250.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Compra comercial</td>
+						<td class="negativo">-$350.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Dep&oacute;sito</td>
+						<td>$350.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Pago recibido de BBV BANCOMER por orden<br>de  JUAN PEREZ 1234567 Clave de rastreo  Aut 236</td>
+						<td>$350.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Dep&oacute;sito</td>
+						<td>$1,500.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>Compra comercial</td>
+						<td class="negativo">-$2,250.00</td>
+						<td>$4,500.00</td>
+					</tr>
+					<tr>
+						<td>16/05/2015</td>
+						<td>TRASPASO REF 0087500358 AUT.5</td>
+						<td>$350.00</td>
+						<td>$4,500.00</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
 
 
-<div class="footer">
-	<div class="container">
-		<div class="row">
-			<p class="col-md-6">&copy; 2015 Fundaci&oacute;n Dond&eacute; Bacno</p>
-			<p class="col-md-6 text-right">
-				<a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a> |
-				<a href="javascript:void(0);">Seguridad</a>
-			</p>
-		</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer ng-include="'views/partials/layout/main-footer.html'"></footer>
 	</div>
 </div>
