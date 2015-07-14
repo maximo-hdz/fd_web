@@ -1,13 +1,13 @@
 'use strict';
 
 /**
- * api initializer factory
+ * Accounts service.
  */
 angular.module('spaApp')
-.service('accountsService',['$http', '$rootScope', function ($http, $rootScope) {
+.service('accountsServiceFD',['$http', '$rootScope', function ($http, $rootScope) {
 
 	this.getAccounts = function () {
-		return $http.get($rootScope.restAPIBaseUrl+'/accounts');
+		return $http.get( $rootScope.restAPIBaseUrl+'/accounts' );
 	};
 
 	this.getAccountsDetail = function (accountId) {
@@ -15,6 +15,7 @@ angular.module('spaApp')
 	};
 
 	this.getTransactions = function(accountId, params) {
+		var options = '';
 		var optionsParams = [];
 		var search = '';
 		var searchParams = [];
