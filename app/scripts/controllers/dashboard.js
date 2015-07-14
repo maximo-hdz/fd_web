@@ -8,7 +8,6 @@ angular.module('spaApp')
 	$scope.client = 'Ricardo Montemayor Morales';
 	$scope.started = true;
 
-
       function closeModals() {
         if ($scope.warning) {
           $scope.warning.close();
