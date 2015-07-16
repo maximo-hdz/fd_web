@@ -44,8 +44,7 @@
     "grunt-connect-proxy": "~0.1.7",
     "node-zip": "~1.0.1",
     "grunt-war": "~0.2.6",
-    "grunt-zip": "~0.10.2",
-    "grunt-tomcat-deploy": "~0.1.3"
+    "grunt-zip": "~0.10.2"
   },
   "engines": {
     "node": ">=0.8.0"

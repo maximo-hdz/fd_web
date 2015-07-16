@@ -14,19 +14,20 @@
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		<div class="row">
+	<div class="container" ng-controller="LoginCtrl">
+
+		<div class="row" ng-show="CheckLogin">
 			<div class="col-md-4 col-md-offset-4">
-				<form class="form-signin" ng-controller="LoginCtrl" ng-submit="login(username,password)">
+				<form class="form-signin">
 					<div class="logo"></div>
-					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="username" required autofocus>
+					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" required autofocus>
 					<!-- <input type="password" class="form-control input_pass" placeholder="Ingresa tu contrase&ntilde;a" ng-model="password" required> -->
 					<div class="row">
 						<div class="col-md-6">
-							<button class="btn btn-success" type="submit">Sin token</button>
+							<button class="btn btn-success" ng-click="auth.with_token = 'N'; checkLogin();">Sin token</button>
 						</div>
 						<div class="col-md-6">
-							<button class="btn btn-success" type="submit">Con token</button>
+							<button class="btn btn-success" ng-click="auth.with_token = 'Y'; checkLogin();">Con token</button>
 						</div>
 					</div>
 					<div class="row">
@@ -39,15 +40,16 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" ng-hide="CheckLogin">
 			<div class="col-md-4 col-md-offset-4">
-				<form class="form-signin" ng-controller="LoginCtrl" ng-submit="login(username,password)">
+				<form class="form-signin">
 					<div class="logo"></div>
 					<!-- <input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="username" required autofocus> -->
-					<input type="password" class="form-control input_pass" placeholder="Ingresa tu contrase&ntilde;a" ng-model="password" required>
+					<span>Bienvenido {{auth.response.client_name}}</span>
+					<input type="password" class="form-control input_pass" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password" required>
 					<div class="row">
 						<div class="col-md-12">
-							<button class="btn btn-success" type="submit">Continuar</button>	
+							<button class="btn btn-success" ng-click="login()">Continuar</button>
 						</div>
 					</div>
 					<div class="row">
@@ -59,6 +61,7 @@
 				</form>
 			</div>
 		</div>
+
 	</div>
 	<div class="login_footer">
 		<div class="container">

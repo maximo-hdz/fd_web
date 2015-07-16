@@ -56,7 +56,7 @@ app.run(['api','$rootScope','$state', '$stateParams','$window' , function(api,$r
   $rootScope.$stateParams = $stateParams;
   $rootScope.$on("$stateChangeSuccess",  function(event, toState, toParams, fromState, fromParams) {
 
-      if(!$rootScope.session_token && toState.name != 'login'){
+/*      if(!$rootScope.session_token && toState.name != 'login'){
         $state.go('login');
       }
       else{
@@ -64,7 +64,7 @@ app.run(['api','$rootScope','$state', '$stateParams','$window' , function(api,$r
           $rootScope.previousState_name = fromState.name;
           $rootScope.previousState_params = fromParams;
         }
-      }
+      }*/
     });
   //back button function called from back button's ng-click="back()"
   $rootScope.back = function() {
