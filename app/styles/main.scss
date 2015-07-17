@@ -178,8 +178,14 @@ body{
 .margin0{
 	margin: 0!important;
 }
-
-
+/************** ICONS **************/
+.ico-check{
+	background: url("/images/ico-check.png") no-repeat;
+	background-size: contain;
+	width: 30px;
+	height: 30px;
+	display: block;
+}
 /************** COMPONENTES ANGULAR **************/
 .gridStyle {
 	overflow: hidden;
@@ -247,6 +253,14 @@ body{
 .btn-danger:hover{
 	background: #ff0000;
 }
+.btn-warning{
+	background: #e4a612;
+	width: 100%;
+	border: none;
+}
+.btn-warning:hover{
+	background: #f5cd21;
+}
 
 /************** ALERTS **************/
 .alert{
@@ -273,6 +287,7 @@ body{
 		}
 	}
 }
+
 /************** LOGIN **************/
 .login_back{
 	background: url("/images/bg-login.jpg") no-repeat;
@@ -364,6 +379,165 @@ body{
 		}
 	}
 	.login_footer {
+		background: #e9e9e0;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		color: #999999;
+		padding: 5px 0;
+		font-size: 11px;
+		p{
+			padding-top: 8px;
+			color: #999999;
+		}
+		a{
+			color: #999999;
+			font-size: 11px;
+			font-weight: normal;
+			@include anim_transicion_ease(0.3s);
+		}
+		a:hover {
+			color: #000000;
+			text-decoration: none!important;
+		}
+	}
+}
+
+/************** SIGNUP **************/
+.signup_content{
+	padding-top: 80px;
+	padding-bottom: 55px;
+	overflow: hidden;
+	.signup_header{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 999;
+		background: #FFFFFF; 
+		padding: 15px 0;
+		@include box_shadow(#CCCCCC);
+		.logo{
+			background: url("/images/logo2.png") no-repeat;
+			background-size: contain;
+			width: 175px;
+			height: 45px;
+		}
+		.btn-salir{
+			width: 150px;
+		}
+	}
+	h1{
+		color: #282828;
+		font-size: 18px;
+	}
+	.panel{
+		.panel-heading{
+			background: transparent;
+			color: #808080;
+			overflow: hidden;
+			padding: 15px 20px;
+			.ico-check{
+				width: 25px;
+				height: 25px;
+				float: right;
+			}
+		}
+		.panel-footer{
+			background: #f4f4f4;
+			color: #a3a3a3;
+			font-size: 11px;
+			a{
+				color: #b4b4b4;
+				text-decoration: underline;
+				@include anim_transicion_ease(0.3s);
+			}
+			a:hover{
+				color: #000000;
+			}
+		}
+		.panel-body{
+			padding: 15px 20px;
+			h2{
+				color: #369443;
+				font-size: 17px;
+				margin: 0;
+				padding: 0;
+				font-weight: normal;
+			}
+			p{
+				color: #000000;
+				font-size: 12px;
+				padding-top: 5px;
+			}
+			.row{
+				margin-bottom: 10px;
+			}
+			.divider{
+				height: 1px;
+				border-top: 1px solid #e9e9e9;
+				margin: 20px 0;
+			}
+			.form-control{
+				margin: 5px 0;
+			}
+			.btn{
+				height: 40px;
+			}
+			label{
+				font-weight: normal;
+				font-size: 12px;
+				margin-bottom: 10px;
+			}
+			.user{
+				text-align: center;
+				margin: 20px 0;
+			}
+			a{
+				color: #1959c9;
+				text-decoration: underline;
+				@include anim_transicion_ease(0.3s);
+			}
+			a:hover{
+				color: #7390d8;
+			}
+			.paso{
+				border-bottom: 1px solid #e9e9e9;
+				padding: 20px;
+				margin: 0 -20px;
+				h2{
+					overflow: hidden;
+					line-height: 20px;
+					.space{
+						padding-left: 18px;
+					}
+					.ico-check{
+						float: right;
+					}
+					.ico-check.uncheck{
+						background: url("/images/ico-check-disabled.png") no-repeat;
+						background-size: contain;
+						
+					}
+				}
+				.images{
+					img{
+						width: 100%;
+					}
+				}
+			}
+			.paso:first-child{
+				padding-top: 0;
+			}
+			.paso:last-child{
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+		}
+	}
+	.signup_footer{
+		border-top: 1px solid #d6d6ce;
 		background: #e9e9e0;
 		position: fixed;
 		bottom: 0;
@@ -1419,7 +1593,8 @@ body{
 @media screen and (max-width: 992px) {
 	.footer,
 	.login_header,
-	.login_footer{
+	.login_footer,
+	.signup_footer{
 		p{
 			padding: 5px 0!important;
 			margin: 0;
@@ -1470,6 +1645,17 @@ body{
 	}
 }
 @media screen and (max-width: 370px) {
+	.signup_content{
+		.signup_header{
+			.logo{
+				width: 150px;
+				height: 40px;
+			}
+			.btn-salir{
+				width: 120px;
+			}
+		}
+	}
 	.content{
 		.box-notifications{
 			.row{
