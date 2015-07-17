@@ -41,14 +41,13 @@ app.run(['api','$rootScope','$state', '$stateParams','$window' , function(api,$r
   api.init();
 
   $window.onbeforeunload = function(e) {
-    var message = "Te vas a salir de MFM , ¿estás seguro?";
+    var message = "Te vas a salir de Fundación Dondé , ¿estás seguro?";
     e = e || $window.event;
     e.preventDefault = true;
     e.cancelBubble = true;
     if($rootScope.session_token) {
-    e.returnValue = message;
-
-    return message;
+      e.returnValue = message;
+      return message;
     }
   }
 

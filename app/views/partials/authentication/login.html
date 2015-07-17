@@ -44,9 +44,10 @@
 			<div class="col-md-4 col-md-offset-4">
 				<form class="form-signin">
 					<div class="logo"></div>
-					<!-- <input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="username" required autofocus> -->
-					<span>Bienvenido {{auth.response.client_name}}</span>
+					<span>Bienvenido</span>
+					{{auth.response.anti_phishing_statement}}
 					<input type="password" class="form-control input_pass" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password" required>
+					<img alt="Embedded Image" src="data:image/png;base64,{{auth.response.image_content}}" />
 					<div class="row">
 						<div class="col-md-12">
 							<button class="btn btn-success" ng-click="login()">Continuar</button>
