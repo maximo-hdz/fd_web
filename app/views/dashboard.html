@@ -14,42 +14,28 @@
 			<li class="head" onclick="show_hide_menu('menu-tengo');">
 				<span class="arrow"></span>
 				<span class="title">LO QUE TENGO</span>
-				<span class="amount">$ 16,570.00</span>
+				<span class="amount">{{total.saving + total.investment | currency}}</span>
 			</li>
 			<li class="parent">
 				<span class="text">Mis cuentas de ahorro</span>
-				<span class="amount">$ 10,650.00</span>
+				<span class="amount">{{total.saving | currency}}</span>
 			</li>
 			<li class="child">
-				<a href="javascript:void(0);">
+				<a ng-repeat="account in accounts.saving">
 					<span class="arrow"></span>
-					<span class="text">Mi alcanc&iacute;a ***2023</span>
-					<span class="amount">$ 5,670.00</span>
-				</a>
-			</li>
-			<li class="child active">
-				<a href="javascript:void(0);">
-					<span class="arrow"></span>
-					<span class="text">Mi alcanc&iacute;a Dond&eacute; ***2023</span>
-					<span class="amount">$ 5,670.00</span>
+					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="amount">{{account.available_balance | currency}}</span>
 				</a>
 			</li>
 			<li class="parent">
 				<span class="text">Mis cuentas de inversi&oacute;n</span>
-				<span class="amount">$ 6,000.00</span>
+				<span class="amount">{{total.investment | currency}}</span>
 			</li>
-			<li class="child">
-				<a href="javascript:void(0);">
+			<li class="child active">
+				<a ng-repeat="account in accounts.investment">
 					<span class="arrow"></span>
-					<span class="text">Inversi&oacute;n Dond&eacute; ***2023</span>
-					<span class="amount">$ 3,000.00</span>
-				</a>
-			</li>
-			<li class="child">
-				<a href="javascript:void(0);">
-					<span class="arrow"></span>
-					<span class="text">Inversi&oacute;n Dond&eacute; ***2023</span>
-					<span class="amount">$ 3,000.00</span>
+					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="amount">{{account.amount_invested | currency}}</span>
 				</a>
 			</li>
 		</ul>
@@ -57,49 +43,28 @@
 			<li class="head" onclick="show_hide_menu('menu-debo');">
 				<span class="arrow"></span>
 				<span class="title">LO QUE DEBO</span>
-				<span class="amount">$ 3,570.00</span>
+				<span class="amount">{{total.loan + total.credit | currency}}</span>
 			</li>
 			<li class="parent">
 				<span class="text">Mis cr&eacute;ditos activos</span>
-				<span class="amount">$ 2,570.00</span>
+				<span class="amount">{{total.loan | currency}}</span>
 			</li>
 			<li class="child">
-				<a href="javascript:void(0);">
+				<a ng-repeat="account in accounts.loan">
 					<span class="arrow"></span>
-					<span class="text">CrediDond&eacute; ***7867</span>
-					<span class="amount red">$ 640.00</span>
-				</a>
-			</li>
-			<li class="child">
-				<a href="javascript:void(0);">
-					<span class="arrow"></span>
-					<span class="text">Presta Dond&eacute; Plus 180</span>
-					<span class="amount red">$ 640.00</span>
-				</a>
-			</li>
-			<li class="child">
-				<a href="javascript:void(0);">
-					<span class="arrow"></span>
-					<span class="text">CrediDond&eacute; ***7867</span>
-					<span class="amount red">$ 640.00</span>
-				</a>
-			</li>
-			<li class="child">
-				<a href="javascript:void(0);">
-					<span class="arrow"></span>
-					<span class="text">Presta Dond&eacute; Plus 180</span>
-					<span class="amount red">$ 640.00</span>
+					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="amount red">{{account.min_payment | currency}}</span>
 				</a>
 			</li>
 			<li class="parent">
 				<span class="text">Mis tarjetas de cr&eacute;dito</span>
-				<span class="amount">$ 1,000.00</span>
+				<span class="amount">{{accounts.credit | currency}}</span>
 			</li>
 			<li class="child">
-				<a href="javascript:void(0);">
+				<a ng-repeat="account in accounts.credit">
 					<span class="arrow"></span>
-					<span class="text">Cr&eacute;dito Dond&eacute; ***1653</span>
-					<span class="amount red">$ 1,000.00</span>
+					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="amount red">{{account.min_payment | currency}}</span>
 				</a>
 			</li>
 		</ul>
@@ -260,14 +225,14 @@
 		</div>
 		<div class="row filtro">
 			<div class="col-md-5">
-				Por fecha: 
+				Por fecha:
 				<div class="btn-group" role="group" aria-label="...">
 					<button type="button" class="btn btn-success">10/02/2015</button>
 					<button type="button" class="btn btn-success">10/02/2015</button>
 				</div>
 			</div>
 			<div class="col-md-5">
-				Por monto: 
+				Por monto:
 				<div class="btn-group" role="group" aria-label="...">
 					<button type="button" class="btn btn-default">Desde</button>
 					<button type="button" class="btn btn-default">Hasta</button>

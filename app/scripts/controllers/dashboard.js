@@ -8,13 +8,47 @@ angular.module('spaApp')
 	$scope.client = 'Ricardo Montemayor Morales';
 	$scope.started = true;
 
+	$scope.accounts = {};
+	$scope.total = {};
+
 	/**
 	 * Get accounts.
 	 */
 	accountsProviderFD.getAccounts().then(
 		function(data) {
-			$scope.accounts = data;
-			console.info( data );
+			$scope.accounts.saving = [];
+			$scope.total.saving = 0;
+			$scope.accounts.investment = [];
+			$scope.total.investment = 0;
+			$scope.accounts.credit = [];
+			$scope.total.credit = 0;
+			$scope.accounts.loan = [];
+			$scope.total.loan = 0;
+			console.log( JSON.stringify(data) );
+
+			for (var i = 0; i < data.length; i++) {
+				switch ( data[i].account_type ) {
+					case 'SAVING_ACCOUNT':
+						$scope.accounts.saving.push( data[i] );
+						$scope.total.saving += +data[i].available_balance;
+						break;
+					case 'INVESTMENT_ACCOUNT':
+						$scope.accounts.investment.push( data[i] );
+						$scope.total.investment += +data[i].amount_invested;
+						break;
+					case 'CREDIT_ACCOUNT':
+						$scope.accounts.credit.push( data[i] );
+						$scope.total.credit += +data[i].min_payment;
+						break;
+					case 'LOAN_ACCOUNT':
+						$scope.accounts.loan.push( data[i] );
+						$scope.total.loan += +data[i].min_payment;
+						break;
+					default:
+						break;
+				}
+			}
+			console.info( $scope.total );
 			// Let's call the accountDetial service
 			accountsProviderFD.getAccountDetail( $scope.accounts[0]._account_id ).then(
 				function(detail) {

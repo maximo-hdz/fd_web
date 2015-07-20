@@ -33,6 +33,16 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
     breadcrumb: {
       title: 'dashboard'
       }
+    }),
+
+    .state('dashboard.accounts', {
+      url : 'accounts',
+      views : {
+        'accountContent' : {
+          templateUrl : 'views/accounts.html',
+          controller : ''
+        }
+      }
     })
   }]);
 
