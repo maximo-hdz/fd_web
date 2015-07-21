@@ -11,8 +11,12 @@ angular.module('spaApp')
 	$scope.checkLogin = function(){
 		authorizeProviderFD.checkLogin($scope.auth.user_login, $scope.auth.with_token).then(
 			function(data) {
-				$scope.CheckLogin = false;
-				$scope.auth.response = data;
+				if(data.post_login_action === 'login'){
+					$scope.CheckLogin = false;
+					$scope.auth.response = data;
+				}else if(data.post_login_action === 'register'){
+					$location.path( '/register' );
+				}
 			},
 			function(error) {
 				$scope.status = error;
