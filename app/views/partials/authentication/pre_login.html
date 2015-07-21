@@ -1,0 +1,72 @@
+<div class="signup_content">
+	<div class="signup_header">
+		<div class="container">
+			<button class="btn btn-warning btn-salir pull-right">Salir</button>
+			<div class="logo"></div>
+		</div>
+	</div>
+
+	<div class="col-md-8 col-md-offset-2">
+
+
+		<!--div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<form class="form-signin">
+					<div class="logo"></div>
+					<span>Bienvenido</span>
+					{{auth.response.anti_phishing_statement}}
+					<input type="password" class="form-control input_pass" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password" required>
+					<img alt="Embedded Image" ng-src="data:image/png;base64,{{auth.response.image_content}}" />
+					<div class="row">
+						<div class="col-md-12">
+							<button class="btn btn-success" ng-click="login()">Continuar</button>
+						</div>
+					</div>
+					<div class="row">
+						<p class="text-center">
+							<a href="javascript:void(0);">&iquest;Olvidaste tu usuario?</a> |
+							<a href="javascript:void(0);">Cont&aacute;ctenos</a>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div-->
+
+		<h1>Acceso a Fundaci&oacute;n Dond&eacute; Banco</h1>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Por tu seguridad, comprueba que la imagen que se muestra a continuaci&oacute;n y el saludo corresponde con lo que seleccionaste en tu acceso a Fundaci&oacute;n Dond&eacute; Banco
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<h2 class="text-center">{{auth.response.anti_phishing_statement}}</h2>
+						<div class="user">
+							<img alt="..." ng-src="data:image/png;base64,{{auth.response.image_content}}" class="img-thumbnail"/>
+						</div>
+						<label class="checkbox">
+							<input type="checkbox"> 
+							Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>,<br>Fundaci&oacute;n Dond&eacute; Banco
+						</label>
+						<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password" required>
+						<button class="btn btn-success form-control" ng-click="login()">Acceder</button>
+					</div>
+				</div>
+			</div>
+			<div class="panel-footer text-center">
+				Si los datos no coinciden comun&iacute;cate a nuestro centro de atenci&oacute;n telef&oacute;nica: <a href="tel: 018003663386">01 800 3663386</a>
+			</div>
+		</div>
+
+	<div class="signup_footer">
+		<div class="container">
+			<div class="row">
+				<p class="col-md-6">&copy; 2015 Fundaci&oacute;n Dond&eacute; Bacno</p>
+				<p class="col-md-6 text-right">
+					<a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a> |
+					<a href="javascript:void(0);">Seguridad</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
