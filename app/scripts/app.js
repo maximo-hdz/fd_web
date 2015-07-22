@@ -26,22 +26,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
   $urlRouterProvider.otherwise("/login");
   $stateProvider
     .state('dashboard', {
-    abstract: true,
-    url: '/',
-    templateUrl: 'views/dashboard.html',
-    controller: 'DashboardCtrl',
-    breadcrumb: {
-      title: 'dashboard'
-      }
-    }),
-
-    .state('dashboard.accounts', {
-      url : 'accounts',
-      views : {
-        'accountContent' : {
-          templateUrl : 'views/accounts.html',
-          controller : ''
-        }
+      abstract: true,
+      url: '/',
+      templateUrl: 'views/dashboard.html',
+      controller: 'DashboardCtrl',
+      breadcrumb: {
+        title: 'dashboard'
       }
     })
   }]);

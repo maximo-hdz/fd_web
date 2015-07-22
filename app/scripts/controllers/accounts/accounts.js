@@ -4,50 +4,85 @@
  * The accounts controller. Gets accounts passing auth parameters
  */
 angular.module('spaApp')
-.controller('AccountsCtrl',[ '$scope','$http','$location','$rootScope','accountsProvider', function($scope,$http,$location,$rootScope,accountsProvider) {
-	$scope.client = 'Ricardo Montemayor Morales';
-	$rootScope.titulo = 'Saldos';
+.controller('AccountsCtrl',['$scope', '$location', 'accountsProviderFD', function($scope, $location, accountsProviderFD) {
 
-    accountsProvider.getBiometricAccounts().then(
-      function(data) {
- 			$scope.biometricAccounts = $rootScope.biometricAccounts;
-      }
-    );
+	$scope.accounts = {};
+	$scope.total = {};
 
-    accountsProvider.getCreditAccounts().then(
-      function(data) {
- 			$scope.creditAccounts = $rootScope.creditAccounts;
-      }
-    );
+	$scope.hideNotifications = false;
 
-    accountsProvider.getInvestmentAccounts().then(
-      function(data) {
- 			$scope.investmentAccounts = $rootScope.investmentAccounts;
-      }
-    );
+	/**
+	 * Get accounts.
+	 */
+	accountsProviderFD.getAccounts().then(
+		function(data) {
+			$scope.accounts.saving = [];
+			$scope.total.saving = 0;
+			$scope.accounts.investment = [];
+			$scope.total.investment = 0;
+			$scope.accounts.credit = [];
+			$scope.total.credit = 0;
+			$scope.accounts.loan = [];
+			$scope.total.loan = 0;
+			//console.log( JSON.stringify(data) );
 
-	/*Controller for module invertions   */
-	$scope.inversiones=function(){
-		$location.path('#investment' );
-	}
+			for (var i = 0; i < data.length; i++) {
+				switch ( data[i].account_type ) {
+					case 'SAVING_ACCOUNT':
+						$scope.accounts.saving.push( data[i] );
+						$scope.total.saving += +data[i].available_balance;
+						break;
+					case 'INVESTMENT_ACCOUNT':
+						$scope.accounts.investment.push( data[i] );
+						$scope.total.investment += +data[i].amount_invested;
+						break;
+					case 'LOAN_ACCOUNT':
+						$scope.accounts.loan.push( data[i] );
+						$scope.total.loan += +data[i].min_payment;
+						break;
+					case 'CREDIT_ACCOUNT':
+						$scope.accounts.credit.push( data[i] );
+						$scope.total.credit += +data[i].min_payment;
+						break;
+					default:
+						break;
+				}
+			}
+		},
+		function(error) {
+			// TODO: handle error
+			console.error( error );
+		}
+	);
 
-	/* Credit Account */
-	$scope.credit=function(account_id){
-		$location.path( account_id + '/credit/transactions');
-	}
+	/**
+	 *
+	 */
+	$scope.selectAccount = function(account) {
+		$scope.hideNotifications = true;
+		var accountId = account._account_id;
+		console.info( account );
+		var type = account.account_type;
 
-	/* Mapping for view detail credit operation liquidated */
-	$scope.detailCredit=function(account_id){
-		$location.path(account_id+ '#/detailCredit');
-	}
+		$scope.selectedAccountId = accountId;
+		$scope.selectedAccount = account;
 
-	/* Mapping for view detail operation pacted */
-	$scope.detailCreditPacted=function(account_id){
-		$location.path(account_id+ '#/detailCreditPacted');
-	}
-
-	$scope.detailCreditPactedOp=function(account_id){
-		$location.path( account_id + '#/detailCreditPactedOp');
-	}
+		switch (type) {
+			case 'SAVING_ACCOUNT':
+					$location.path('/accounts/'+ accountId +'/saving');
+					break;
+			case 'INVESTMENT_ACCOUNT':
+					$location.path('/accounts/'+ accountId +'/investment');
+					break;
+			case 'LOAN_ACCOUNT':
+					$location.path('/accounts/'+ accountId +'/loan');
+					break;
+			case 'CREDIT_ACCOUNT':
+					$location.path('/accounts/'+ accountId +'/credit');
+					break;
+			default:
+					break;
+		}
+	};
 
 }]);

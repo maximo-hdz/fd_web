@@ -2,60 +2,86 @@
 
 angular.module('accounts-route',['ui.router'])
 
-.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function ($stateProvider,$urlRouterProvider,$locationProvider,$httpProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
   $stateProvider
 
-  	//main view for show all accounts
-	.state('dashboard.accounts', {
-    url: 'accounts',
-    templateUrl: 'views/partials/accounts/accounts.html',
-    controller: 'AccountsCtrl',
-	    breadcrumb: {
-	      title: 'accounts'
-	    }
+    // main view to load all the accounts
+    .state('dashboard.accounts', {
+      url: 'accounts',
+      views: {
+          'accountContent': {
+            templateUrl: 'views/partials/accounts/accounts.html',
+            controller: 'AccountsCtrl',
+            breadcrumb: {
+      	      title: 'accounts'
+            }
+          }
+      }
     })
 
-  /*******************************************
-    Biometric Accounts
-   *******************************************/
-  .state('dashboard.biometric', {
-    url: 'accounts/biometric/:account_id/transactions',
-    templateUrl: 'views/partials/accounts/biometrics.html',
-    controller: 'BiometricCtrl',
-    breadcrumb: {
-      title: 'Biometrics'
-    }
-  })
-  .state('dashboard.biometric_detail', {
-    url: 'accounts/biometric/transaction/:transaction_id',
-    templateUrl: 'views/partials/accounts/biometric-detail.html',
-    controller : 'BiometricDetailCtrl' ,
-    breadcrumb: {
-      title: 'Detail'
-    }
-  })
+    /**
+     *
+     */
+    .state('dashboard.accounts.saving', {
+      url: '/:account_id/saving',
+      views: {
+        'detailSaving': {
+          templateUrl: 'views/partials/accounts/saving/saving.html',
+          controller: 'SavingDetailCtrl',
+          breadcrumb: {
+            title: 'saving'
+          }
+        }
+      }
+    })
 
-  /*******************************************
-      Investment Accounts
-  ********************************************/
-  //view for investment bank(menu initial)
-  .state('dashboard.investment',{
-    url: ':account_id/investment',
-    templateUrl: 'views/partials/accounts/investment.html',
-    controller: 'InvestmentCtrl',
-    breadcrumb: {
-      title: 'investment'
-    }
-  })
+    /**
+     *
+     */
+    .state('dashboard.accounts.investment', {
+      url: '/:account_id/investment',
+      views: {
+        'detailInvestment': {
+          templateUrl: 'views/partials/accounts/investment/investment.html',
+          controller : 'InvestmentDetailCtrl',
+          breadcrumb: {
+            title: 'investment'
+          }
+        }
+      }
+    })
 
-  .state('dashboard.investment_detail', { 
-    url: ':account_id/detailInvestment',   
-    templateUrl: 'views/partials/accounts/investment-detail.html',
-    controller: 'InvestmentDetailCtrl',
-    breadcrumb: {
-      title: 'Detail'
-    }
-   })
+    /**
+     *
+     */
+    .state('dashboard.accounts.loan', {
+      url: '/:account_id/loan',
+      views: {
+        'detailLoan': {
+          templateUrl: 'views/partials/accounts/loan/loan.html',
+          controller: 'LoanDetailCtrl',
+          breadcrumb: {
+            title: 'loan'
+          }
+        }
+      }
+    })
+
+    /**
+     *
+     */
+    .state('dashboard.accounts.credit', {
+      url: '/:account_id/credit',
+      views: {
+        'detailCredit': {
+          templateUrl: 'views/partials/accounts/credit/credit.html',
+          controller: 'CreditDetailCtrl',
+          breadcrumb: {
+            title: 'credit'
+          }
+        }
+      }
+    })
 
   /*********************************************
     Credit Accounts
