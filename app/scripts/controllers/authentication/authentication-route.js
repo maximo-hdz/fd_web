@@ -10,6 +10,6 @@ $stateProvider
 	.state('register', {
 		url: '/register',
 		templateUrl: 'views/partials/authentication/register.html',
-		controller: 'LoginCtrl'
+		controller: 'RegisterCtrl'
 	})
 }]);
