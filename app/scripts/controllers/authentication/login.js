@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('spaApp')
-
-.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api', '$http',
-	function($scope, $rootScope, $location, authorizeProviderFD, api, $http) {
+.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api', '$http', 'dataAuth',
+	function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth) {
 
 	$scope.CheckLogin = true;
 	$scope.auth;
@@ -15,6 +14,7 @@ angular.module('spaApp')
 					$scope.CheckLogin = false;
 					$scope.auth.response = data;
 				}else if(data.post_login_action === 'register'){
+					dataAuth.data = data;
 					$location.path( '/register' );
 				}
 			},
@@ -53,7 +53,6 @@ angular.module('spaApp')
 				$scope.status = error;
 			}
 		);
-
 	};
 
 }]);
