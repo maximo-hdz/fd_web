@@ -37,11 +37,16 @@ angular.module('spaApp')
 	}
 
 	$scope.signup = function(){
-
-		authorizeProviderFD.register($scope.data.response.user_login, $scope.dataRegister.new_password, dataAuth.response.with_token, 'N', $scope.dataRegister.image_id, $scope.dataRegister.question1.id, $scope.dataRegister.response1, $scope.dataRegister.question2.id, $scope.dataRegister.response2).then(
+		var new_condition_action = "N";
+		if(typeof $scope.dataRegister['new_condition_action'] !== 'undefined') {
+			if($scope.dataRegister['new_condition_action']){
+				new_condition_action = "Y";
+			}
+		}
+		authorizeProviderFD.register($scope.data.response.user_login, $scope.dataRegister.password, $scope.dataRegister.new_password, dataAuth.response.with_token, new_condition_action, $scope.dataRegister.image_id, $scope.dataRegister.question1.id, $scope.dataRegister.response1, $scope.dataRegister.question2.id, $scope.dataRegister.response2, $scope.dataRegister.saludo).then(
 			function(data) {
 				console.log('register succesful');
-				$location.path('/logout');
+				$location.path('/accounts');
 			},
 			function(error) {
 				$scope.status = error;
