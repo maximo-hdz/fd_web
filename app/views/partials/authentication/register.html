@@ -68,7 +68,7 @@
 										<div class="images row">
 											<div >
 												<label class="col-xs-2 text-center selected" ng-repeat="image in data.data.images">
-													<span ng-click="selectImage(image.id)" ng-class="{'selected' : image.id === registerData.selectedImage}" class="img-responsive">
+													<span ng-click="selectImage(image.id)" ng-class="{'selected' : image.id === dataRegister.image_id}" class="img-responsive">
 														<i></i><img alt="..." ng-src="data:image/png;base64,{{image.image_content}}">
 													</span>
 												</label>
@@ -107,19 +107,29 @@
 						<div class="paso">
 							<h2><span class="ico-check uncheck"></span>Paso 3 <span class="space">Preguntas secretas, t&eacuterminos y condiciones de uso</span></h2>
 
-							<div ng-repeat="question in data.data.questions">
 								<div class="row">
 									<div class="col-md-4 col-md-offset-1">
-										<p>*Pregunta {{$index}}</p>
+										<p>*Pregunta 1</p>
 									</div>
 									<div class="col-md-5">
-										<select class="form-control">
-											<option value="question.id">{{question.description}}</option>
+										<select class="form-control" ng-model="dataRegister.question1" ng-options="question.description for question in data.data.questions">
+											<option value="">Selecciona una pregunta</option>
 										</select>
-										<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="question.resp">
+										<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response1">
 									</div>
 								</div>
-							</div>
+
+								<div class="row">
+									<div class="col-md-4 col-md-offset-1">
+										<p>*Pregunta 2</p>
+									</div>
+									<div class="col-md-5">
+										<select class="form-control" ng-model="dataRegister.question2" ng-options="question.description for question in data.data.questions">
+											<option value="">Selecciona una pregunta</option>
+										</select>
+										<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response2">
+									</div>
+								</div>
 
 							<div class="row">
 								<div class="col-md-8 col-md-offset-1">

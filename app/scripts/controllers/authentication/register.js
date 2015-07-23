@@ -19,22 +19,12 @@ angular.module('spaApp')
 
 	$scope.selectImage = function(id){
 		$scope.dataRegister.image_id = id;
+		console.log('imagen seleccionada '+$scope.dataRegister.image_id )
 	}
 
 	$scope.signup = function(){
 
-		$scope.data.data.questions.forEach(function(question, index){
-			if(index === 0){
-				$scope.dataRegister.question1 = question.id;
-				$scope.dataRegister.response1 = question.resp;
-			}
-			if(index === 1){
-				$scope.dataRegister.question2 = question.id;
-				$scope.dataRegister.response2 = question.resp;
-			}
-		});
-
-		authorizeProviderFD.register($scope.data.response.user_login, $scope.data.response.password, dataAuth.response.with_token, 'N', $scope.dataRegister.image_id, $scope.dataRegister.question1, $scope.dataRegister.response1, $scope.dataRegister.question2, $scope.dataRegister.response2).then(
+		authorizeProviderFD.register($scope.data.response.user_login, $scope.dataRegister.password, dataAuth.response.with_token, 'N', $scope.dataRegister.image_id, $scope.dataRegister.question1.id, $scope.dataRegister.response1, $scope.dataRegister.question2.id, $scope.dataRegister.response2).then(
 			function(data) {
 				console.log('register succesful');
 				$location.path('/logout');
