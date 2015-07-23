@@ -29,7 +29,12 @@ angular.module('spaApp')
 	}
 
 	$scope.login = function(){
-
+		var new_condition_action = "N";
+		if(typeof $scope.auth['new_condition_action'] !== 'undefined') {
+			if($scope.auth['new_condition_action']){
+				new_condition_action = "Y";
+			}
+		}
 		$http({
 			url: $scope.restAPIBaseUrl + '/login',
 			method: 'POST',
@@ -37,7 +42,7 @@ angular.module('spaApp')
 				"user_login": $scope.auth.user_login,
 				"client_application_id" : "SPA",
 				"password": $scope.auth.password,
-				"new_condition_action": 'N',
+				"new_condition_action": new_condition_action,
 				"with_token" : $scope.auth.with_token,
 				"post_login_action" : "login"
 			})
