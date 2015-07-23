@@ -41,18 +41,26 @@
 
 		<div class="row" ng-hide="CheckLogin">
 
+			<div class="col-md-8 col-md-offset-2">
 
-			<h1>Acceso a Fundaci&oacute;n Dond&eacute; Banco</h1>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					Por tu seguridad, comprueba que la imagen que se muestra a continuaci&oacute;n y el saludo corresponde con lo que seleccionaste en tu acceso a Fundaci&oacute;n Dond&eacute; Banco
-				</div>
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3">
-							<h2 class="text-center">{{auth.response.anti_phishing_statement}}</h2>
-							<div class="user">
-								<img alt="..." ng-src="data:image/png;base64,{{auth.response.image_content}}" /class="img-thumbnail">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h1>Acceso a Fundaci&oacute;n Dond&eacute; Banco</h1>
+						Por tu seguridad, comprueba que la imagen que se muestra a continuaci&oacute;n y el saludo corresponde con lo que seleccionaste en tu acceso a Fundaci&oacute;n Dond&eacute; Banco
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<h2 class="text-center">{{auth.response.anti_phishing_statement}}</h2>
+								<div class="user">
+									<img alt="..." ng-src="data:image/png;base64,{{auth.response.image_content}}" /class="img-thumbnail">
+								</div>
+								<label class="checkbox">
+									<input type="checkbox">
+									Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>,<br>Fundaci&oacute;n Dond&eacute; Banco
+								</label>
+								<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password" required>
+								<button class="btn btn-success form-control" ng-click="login()">Acceder</button>
 							</div>
 							<div ng-show="auth.response.new_condition_action === 'Y'">
 								<label class="checkbox">
@@ -64,11 +72,12 @@
 							<button class="btn btn-success form-control" ng-click="login()">Acceder</button>
 						</div>
 					</div>
-				</div>
-				<div class="panel-footer text-center">
-					Si los datos no coinciden comun&iacute;cate a nuestro centro de atenci&oacute;n telef&oacute;nica: <a href="tel: 018003663386">01 800 3663386</a>
+					<div class="panel-footer text-center">
+						Si los datos no coinciden comun&iacute;cate a nuestro centro de atenci&oacute;n telef&oacute;nica: <a href="tel: 018003663386">01 800 3663386</a>
+					</div>
 				</div>
 			</div>
+			
 		</div>
 
 	</div>
