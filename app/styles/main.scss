@@ -561,9 +561,9 @@ input[type="number"]:focus{
 					}
 				}
 				.images{
-					label.selected:after{
+					label:after{
 						content: " ";
-						display: block;
+						display: none;
 						width: 41px;
 						height: 41px;
 						background: url("/images/registro-select.png") center center no-repeat;
@@ -571,6 +571,9 @@ input[type="number"]:focus{
 						position: absolute;
 						margin-top: -65px;
 						margin-left: 18px;
+					}
+					label.selected:after{
+						display: block;
 					}
 					img{
 						width: 100%;
