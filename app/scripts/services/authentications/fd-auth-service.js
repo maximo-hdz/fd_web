@@ -39,7 +39,7 @@ angular.module('spaApp')
 						"password": password,
 						"client_application_id":"SPA",
 						"new_condition_action": new_condition_action,
-						"with_token" : "N",
+						"with_token" : with_token,
 						"post_login_action" : "login_registro",
 						"image" : image,
 						"question1" : question1,
