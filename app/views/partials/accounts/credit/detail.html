@@ -1,0 +1,56 @@
+<h1 class="title-account">
+  <span>Detalle de cuenta</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
+</h1>
+<div class="row detalles">
+  <div class="col-md-3 content-logo">
+    <div class="logo logo-alcancia"></div>
+  </div>
+  <div class="col-md-9">
+    <div class="saldos-cuenta">
+      <span class="text">Saldo:</span>
+      <span class="amount">{{detail.balance | currency}}</span>
+    </div>
+    <div class="saldos-cuenta">
+      <span class="text">Cr&eacute;dito disponible:</span>
+      <span class="amount">{{detail.available_credit | currency}}</span>
+    </div>
+  </div>
+</div>
+<div class="row tablas-detalle">
+  <div class="col-md-6">
+    <table>
+      <tbody>
+        <tr>
+          <td>Pago m&iacute;nimo:</td>
+          <td>{{detail.min_payment | currency}}</td>
+        </tr>
+        <tr>
+          <td>Pago completo:</td>
+          <td>{{detail.total_payment | currency}}</td>
+        </tr>
+        <tr>
+          <td>D&iacute;a de corte:</td>
+          <td>{{detail.cut_date | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <table>
+      <tbody>
+        <tr>
+          <td>Fecha &uacute;ltimo pago:</td>
+          <td>{{detail.last_payment_date | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+        <tr>
+          <td>Fecha de Pago:</td>
+          <td>{{detail.payment_date < today ? 'Inmediato' : detail.payment_date | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+        <tr>
+          <td>L&iacute;mite:</td>
+          <td>{{detail.limit | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

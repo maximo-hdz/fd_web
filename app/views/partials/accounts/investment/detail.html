@@ -1,0 +1,48 @@
+<h1 class="title-account">
+  <span>Detalle de cuenta</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
+</h1>
+<div class="row detalles">
+  <div class="col-md-3 content-logo">
+    <div class="logo logo-alcancia"></div>
+  </div>
+  <div class="col-md-9">
+    <div class="saldos-cuenta">
+      <span class="text">Saldo:</span>
+      <span class="amount">{{selectedAccount.amount_invested | currency}}</span>
+    </div>
+    <div class="saldos-cuenta">
+      <span class="text">Saldo al vencimiento:</span>
+      <span class="amount">{{detail.end_balance | currency}}</span>
+    </div>
+  </div>
+</div>
+<div class="row tablas-detalle">
+  <div class="col-md-6">
+    <table>
+      <tbody>
+        <tr>
+          <td>Tasa convenida:</td>
+          <td>{{detail.performance}}%</td>
+        </tr>
+        <tr>
+          <td>Número de inversion:</td>
+          <td>{{detail.investment_number}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <table>
+      <tbody>
+        <tr>
+          <td>Fecha de apertura:</td>
+          <td>{{detail.opening_date | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+        <tr>
+          <td>Fecha de vencimiento:</td>
+          <td>{{detail.end_date | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

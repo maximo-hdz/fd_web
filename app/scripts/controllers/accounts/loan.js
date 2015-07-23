@@ -3,8 +3,8 @@
  *
  */
 angular.module('spaApp')
-.controller('InvestmentDetailCtrl', ['$scope', 'accountsProviderFD', function($scope, accountsProviderFD) {
-console.warn( $scope.selectedAccountId );
+.controller('LoanDetailCtrl', ['$scope', 'accountsProviderFD', function($scope, accountsProviderFD) {
+  console.warn( $scope.selectedAccountId );
 
   /**
    *

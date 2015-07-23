@@ -1,106 +1,72 @@
-<div class="col-md-9" data-ng-init="load_accounts()">
-    <div class="page_accounts">
-        <div class="title-page">
-            <span class="btn_back"></span>
-            Resumen de Cuentas
-        </div>
-        <div class="content_white">
-            <persiana titulo="Cuentas Biom&eacute;tricas" clase="biometricas">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                            <tr ng-repeat="biometricAccount in biometricAccounts.accounts" ng-click="biometrics(biometricAccount._account_id)">
-                                <td>{{biometricAccount.alias}}</td>
-                                <td>{{biometricAccount._account_id}}</td>
-                                <td>{{biometricAccount.balance.current | currency}}</td>
-                                <td>{{biometricAccount.currency}}</td>
-                            </tr>
-                        </tbody>
-                        <thead>
-                            <tr>
-                                <td>Alias</td>
-                                <td>No. Cuenta</td>
-                                <td>Saldo</td>
-                                <td>Divisa</td>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </persiana>
-            <persiana titulo="L&iacute;neas de Cr&eacute;dito" clase="credito">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
+<div class="col-md-4">
+  <div class="left-menu">
+    <ul class="menu menu-tengo">
+      <li class="head" onclick="show_hide_menu('menu-tengo');">
+        <span class="arrow"></span>
+        <span class="title">LO QUE TENGO</span>
+        <span class="amount">{{total.saving + total.investment | currency}}</span>
+      </li>
+      <li class="parent">
+        <span class="text">Mis cuentas de ahorro</span>
+        <span class="amount">{{total.saving | currency}}</span>
+      </li>
+      <li ng-repeat="account in accounts.saving" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
+        <a ng-click="selectAccount(account)">
+          <span class="arrow"></span>
+          <span class="text">{{account.account_name}} {{account.account_number}}</span>
+          <span class="amount">{{account.available_balance | currency}}</span>
+        </a>
+      </li>
+      <li class="parent">
+        <span class="text">Mis cuentas de inversi&oacute;n</span>
+        <span class="amount">{{total.investment | currency}}</span>
+      </li>
+      <li ng-repeat="account in accounts.investment" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
+        <a ng-click="selectAccount(account)">
+          <span class="arrow"></span>
+          <span class="text">{{account.account_name}} {{account.account_number}}</span>
+          <span class="amount">{{account.amount_invested | currency}}</span>
+        </a>
+      </li>
+    </ul>
 
-                            <tr ng-repeat="creditaccount in creditAccounts.accounts" ng-click="creditTransaction(creditaccount._account_id)">
-                                <td>{{creditaccount._account_id}}</td>
-                                <td>{{creditaccount.balance.current | currency}}</td>
-                                <td>{{creditaccount.currency}}</td>
-                                <td>{{creditaccount.balance.current | currency}}</td>
-                                <td>{{creditaccount.balance.current | currency}}</td>
-                            </tr>
-                        </tbody>
-                        <thead>
-                            <tr>
-                                <td>No. Cuenta</td>
-                                <td>Monto Autorizado</td>
-                                <td>Divisa</td>
-                                <td>Monto Dispuesto</td>
-                                <td>Monto Disponible</td>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </persiana>
-            <persiana titulo="Inversiones" clase="inversiones">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                            <tr ng-repeat="investmentAccount in investmentAccounts.accounts" ng-click="investment(investmentAccount._account_id)">
-                                <td>{{investmentAccount.currency}}</td>
-                                <td>{{investmentAccount.balance.current | currency}}</td>
-                                <td>{{investmentAccount.balance.current | currency}}</td>
-                                <td>{{investmentAccount.balance.current | currency}}</td>
-                                <td>{{investmentAccount.balance.current | currency}}</td>
-                                <td>{{investmentAccount.balance.current | currency}}</td>
-                            </tr>
-                        </tbody>
-                        <thead>
-                            <tr>
-                                <td>Divisa</td>
-                                <td>Capital global</td>
-                                <td>Inter&eacute;s generado</td>
-                                <td>Inter&eacute;s retirado</td>
-                                <td>Inter&eacute;s generado no retirado</td>
-                                <td>Inter&eacute;s por generar</td>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </persiana>
-            <div class="content_table abierto">
-                <div class="notificaciones">
-                    <p class="titulo">Notificaciones</p>
-                    <div class="row-fluid">
-                        <div class="col-md-6">
-                            <div class="head"><p>Pr&oacute;ximos Vencimientos</p></div>
-                            <ul>
-                                <li><a href="javascript:void(0);">Tel&eacute;fonos de M&eacute;xico 18/01/2013 $248.00</a></li>
-                                <li><a href="javascript:void(0);">Tel&eacute;fonos de M&eacute;xico 18/01/2013 $248.00</a></li>
-                                <li><a href="javascript:void(0);">Tel&eacute;fonos de M&eacute;xico 18/01/2013 $248.00</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="head"><p>Autorizaciones Pendientes</p></div>
-                            <ul>
-                                <li><a href="javascript:void(0);">Tel&eacute;fonos de M&eacute;xico 18/01/2013 $248.00</a></li>
-                                <li><a href="javascript:void(0);">Tel&eacute;fonos de M&eacute;xico 18/01/2013 $248.00</a></li>
-                                <li><a href="javascript:void(0);">Tel&eacute;fonos de M&eacute;xico 18/01/2013 $248.00</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <ul class="menu menu-debo">
+      <li class="head" onclick="show_hide_menu('menu-debo');">
+        <span class="arrow"></span>
+        <span class="title">LO QUE DEBO</span>
+        <span class="amount">{{total.loan + total.credit | currency}}</span>
+      </li>
+      <li class="parent">
+        <span class="text">Mis cr&eacute;ditos activos</span>
+        <span class="amount">{{total.loan | currency}}</span>
+      </li>
+      <li ng-repeat="account in accounts.loan" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
+        <a ng-click="selectAccount(account)">
+          <span class="arrow"></span>
+          <span class="text">{{account.account_name}} {{account.account_number}}</span>
+          <span class="amount red">{{account.min_payment | currency}}</span>
+        </a>
+      </li>
+      <li class="parent">
+        <span class="text">Mis tarjetas de cr&eacute;dito</span>
+        <span class="amount">{{total.credit | currency}}</span>
+      </li>
+      <li ng-repeat="account in accounts.credit" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
+        <a ng-click="selectAccount(account)">
+          <span class="arrow"></span>
+          <span class="text">{{account.account_name}} {{account.account_number}}</span>
+          <span class="amount red">{{account.min_payment | currency}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="col-md-8">
+  <div ng-include="'views/partials/accounts/notifications.html'" ng-hide="hideNotifications"></div>
+  <div ui-view='detailSaving' class="account-page"></div>
+  <div ui-view='detailInvestment' class="account-page"></div>
+  <div ui-view='detailLoan' class="account-page"></div>
+  <div ui-view='detailCredit' class="account-page"></div>
 </div>

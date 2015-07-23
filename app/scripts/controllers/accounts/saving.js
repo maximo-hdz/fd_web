@@ -3,17 +3,15 @@
  *
  */
 angular.module('spaApp')
-.controller('CreditDetailCtrl', ['$scope', 'accountsProviderFD', function($scope, accountsProviderFD) {
+.controller('SavingDetailCtrl', ['$scope', 'accountsProviderFD', function($scope, accountsProviderFD) {
   console.warn( $scope.selectedAccountId );
-
-	$scope.today = new Date().getTime();
 
   /**
    *
    */
   accountsProviderFD.getAccountDetail( $scope.selectedAccountId ).then(
     function(detail) {
-       console.info( detail );
+       //console.info( detail );
        $scope.detail = detail;
      },
      function(error) {
