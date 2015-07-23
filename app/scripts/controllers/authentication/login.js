@@ -15,7 +15,11 @@ angular.module('spaApp')
 					$scope.auth.response = data;
 				}else if(data.post_login_action === 'register'){
 					dataAuth.data = data;
+					dataAuth.response.user_login = $scope.auth.user_login;
+					dataAuth.response.with_token = $scope.auth.with_token;
 					$location.path( '/register' );
+				}else if(data.post_login_action === 'change_password'){
+					//TODO change password
 				}
 			},
 			function(error) {

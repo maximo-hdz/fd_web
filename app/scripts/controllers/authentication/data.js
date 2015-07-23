@@ -2,6 +2,7 @@
 
 angular.module("spaApp").factory("dataAuth", function() {
   return {
-    data: {}
+    data: {},
+    response: {}
   };
 });
