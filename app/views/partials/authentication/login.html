@@ -55,19 +55,16 @@
 								<div class="user">
 									<img alt="..." ng-src="data:image/png;base64,{{auth.response.image_content}}" /class="img-thumbnail">
 								</div>
-								<label class="checkbox">
-									<input type="checkbox">
-									Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>,<br>Fundaci&oacute;n Dond&eacute; Banco
-								</label>
+								<div ng-show="auth.response.new_condition_action === 'Y'">
+									<label class="checkbox">
+										<input type="checkbox">
+										Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>,<br>Fundaci&oacute;n Dond&eacute; Banco
+									</label>
+								</div>
 								<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password" required>
 								<button class="btn btn-success form-control" ng-click="login()">Acceder</button>
 							</div>
-							<div ng-show="auth.response.new_condition_action === 'Y'">
-								<label class="checkbox">
-									<input type="checkbox">
-									Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>,<br>Fundaci&oacute;n Dond&eacute; Banco
-								</label>
-							</div>
+							
 						</div>
 					</div>
 					<div class="panel-footer text-center">

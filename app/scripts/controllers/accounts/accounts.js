@@ -68,7 +68,7 @@ angular.module('spaApp')
 		$scope.selectedAccount = account;
 
 		switch (type) {
-			case 'SAVING_ACCOUNT':
+			case 'SAVINGS_ACCOUNT':
 					$location.path('/accounts/'+ accountId +'/saving');
 					break;
 			case 'INVESTMENT_ACCOUNT':
