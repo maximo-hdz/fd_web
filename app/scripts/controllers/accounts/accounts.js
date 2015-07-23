@@ -28,7 +28,7 @@ angular.module('spaApp')
 
 			for (var i = 0; i < data.length; i++) {
 				switch ( data[i].account_type ) {
-					case 'SAVING_ACCOUNT':
+					case 'SAVINGS_ACCOUNT':
 						$scope.accounts.saving.push( data[i] );
 						$scope.total.saving += +data[i].available_balance;
 						break;
@@ -45,7 +45,7 @@ angular.module('spaApp')
 						$scope.total.credit += +data[i].min_payment;
 						break;
 					default:
-						break;
+						bconsole.log("account_type "+data[i].account_type+" not supported");
 				}
 			}
 		},
