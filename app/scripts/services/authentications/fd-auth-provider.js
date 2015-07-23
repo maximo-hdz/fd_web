@@ -28,7 +28,8 @@ angular.module('spaApp')
       register: function(user_login, current_password, new_password, with_token, new_condition_action, image, question1, response1, question2, response2, anti_phishing_statement){
         var deferred = $q.defer();
         AuthorizeServiceFD.register(user_login, current_password, new_password, with_token, new_condition_action, image, question1, response1, question2, response2, anti_phishing_statement).success(function(data, status, headers){
-          deferred.resolve(data);
+          var result = {"data" : data, "headers" : headers};
+          deferred.resolve(result);
         }).error(function(data, status){
           deferred.reject(status);
         });
