@@ -20,7 +20,7 @@
 									<p>*Ingresa tu contrase&ntilde;a</p>
 								</div>
 								<div class="col-md-5">
-									<input type="password" class="form-control" required ng-model="register.password">
+									<input type="password" class="form-control" required ng-model="dataRegister.password">
 								</div>
 							</div>
 							<div class="row">
@@ -28,7 +28,7 @@
 									<p>*Nueva contrase&ntilde;a</p>
 								</div>
 								<div class="col-md-5">
-									<input type="password" class="form-control" required ng-model="register.new_password">
+									<input type="password" class="form-control" required ng-model="dataRegister.new_password">
 								</div>
 							</div>
 							<div class="row">
@@ -36,7 +36,7 @@
 									<p>*Confirma contrase&ntilde;a</p>
 								</div>
 								<div class="col-md-5">
-									<input type="password" class="form-control" required ng-model="register.confirm_password">
+									<input type="password" class="form-control" required ng-model="dataRegister.confirm_password">
 								</div>
 							</div>
 							<div class="row">
@@ -49,7 +49,7 @@
 							<h2><span class="ico-check uncheck"></span>Paso 2 <span class="space">Imagen y saludo antiphishing</span></h2>
 						</div>
 						<div class="paso">
-							<h2><span class="ico-check uncheck"></span>Paso 3 <span class="space">Preguntas secretas, t&eacutelrminos y condiciones de uso</span></h2>
+							<h2><span class="ico-check uncheck"></span>Paso 3 <span class="space">Preguntas secretas, t&eacuterminos y condiciones de uso</span></h2>
 						</div>
 					</div>
 
@@ -80,7 +80,7 @@
 									<p>*Ingresa tu saludo secreto</p>
 								</div>
 								<div class="col-md-5">
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" ng-model="dataRegister.saludo">
 								</div>
 							</div>
 
@@ -91,7 +91,7 @@
 							</div>
 						</div>
 						<div class="paso">
-							<h2><span class="ico-check uncheck"></span>Paso 3 <span class="space">Preguntas secretas, t&eacutelrminos y condiciones de uso</span></h2>
+							<h2><span class="ico-check uncheck"></span>Paso 3 <span class="space">Preguntas secretas, t&eacuterminos y condiciones de uso</span></h2>
 						</div>
 					</div>
 
@@ -114,7 +114,7 @@
 										<select class="form-control">
 											<option value="question.id">{{question.description}}</option>
 										</select>
-										<input type="text" class="form-control" placeholder="Escribe la resupuesta">
+										<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="question.resp">
 									</div>
 								</div>
 							</div>
@@ -131,7 +131,7 @@
 
 							<div class="row">
 								<div class="col-md-5 col-md-offset-5">
-									<button class="btn btn-success form-control" ng-click="logout();">Acceder a cuentas</button>
+									<button class="btn btn-success form-control" ng-click="signup();">Acceder a cuentas</button>
 								</div>
 							</div>
 						</div>
