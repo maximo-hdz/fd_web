@@ -306,7 +306,7 @@ htmlmin: {
     files: [{
       expand: true,
       cwd: '<%= yeoman.dist %>',
-    src: ['*.html','views/{,*/}*.html','views/{,*/*/}*.html'],
+    src: ['views/**/*.html'],
     dest: '<%= yeoman.dist %>'
   }]
 }
@@ -345,8 +345,7 @@ htmlmin: {
           '.htaccess',
           'PIE.htc' ,
           '*.html',
-          'views/{,*/}*.html',
-          'views/{,*/*/}*.html',
+          'views/**/*.html',
           'bower_components/**/*',
           'images/{,*/}*.{webp}',
           'fonts/*',
