@@ -76,7 +76,7 @@ angular.module('spaApp')
 			}
 		}
 		authorizeProviderFD.register($scope.data.response.user_login, $scope.dataRegister.password, $scope.dataRegister.new_password, dataAuth.response.with_token, new_condition_action, $scope.dataRegister.image_id, $scope.dataRegister.question1.id, $scope.dataRegister.response1, $scope.dataRegister.question2.id, $scope.dataRegister.response2, $scope.dataRegister.saludo).then(
-			function(data) {
+			function(result) {
 
 				console.log('register succesful');
 				$scope.CheckLogin = true;
