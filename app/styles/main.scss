@@ -171,7 +171,19 @@ body, html, #mainDiv {
 
 // }
 body{
-	background: #ebebeb;
+	background: #fafafa;
+}
+input{
+	-moz-box-shadow: none!important;
+	-webkit-box-shadow: none!important;
+	box-shadow: none!important;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="mail"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus{
+	border: 1px solid #007e57;
 }
 
 /* MARGINS */
@@ -233,6 +245,7 @@ body{
 	background: #FFFFFF;
 	border: 1px solid #009b4d!important;
 	padding: 8px 5px;
+
 }
 .btn-default:hover{
 	background: #FFFFFF;
@@ -275,6 +288,20 @@ body{
 }
 .alert-success{
 	background: #bcdbcb;
+	border: none;
+	.close{
+		background: url("/images/ico-close-green.png") center center no-repeat;
+		background-size: contain;
+		width: 15px;
+		height: 15px;
+		@include anim_transicion_ease(0.3s);
+		span{
+			display: none;
+		}
+	}
+}
+.alert-info{
+	background: #cee7fd;
 	border: none;
 	.close{
 		background: url("/images/ico-close-green.png") center center no-repeat;
@@ -379,6 +406,7 @@ body{
 		}
 	}
 	.login_footer {
+		border-top: 1px solid #d6d6ce;
 		background: #e9e9e0;
 		position: fixed;
 		bottom: 0;
@@ -387,6 +415,7 @@ body{
 		color: #999999;
 		padding: 5px 0;
 		font-size: 11px;
+		border-top: 1px solid #d6d6ce;
 		p{
 			padding-top: 8px;
 			color: #999999;
@@ -405,6 +434,7 @@ body{
 }
 
 /************** SIGNUP **************/
+.login_content,
 .signup_content{
 	padding-top: 80px;
 	padding-bottom: 55px;
@@ -442,6 +472,12 @@ body{
 				width: 25px;
 				height: 25px;
 				float: right;
+			}
+			h1{
+				color: #282828;
+				font-size: 18px;
+				margin-top: 0;
+				text-align: center;
 			}
 		}
 		.panel-footer{
@@ -493,6 +529,9 @@ body{
 			.user{
 				text-align: center;
 				margin: 20px 0;
+				img{
+					max-width: 150px;
+				}
 			}
 			a{
 				color: #1959c9;
@@ -524,6 +563,8 @@ body{
 				.images{
 					img{
 						width: 100%;
+						height: 85px;
+						@include border_radius(5px);
 					}
 				}
 			}
@@ -587,13 +628,13 @@ body{
 		}
 	}
 	.main-menu{
-		background: #007e57;
+		background: #fafafa;
 		.navbar-toggle{
 			float: left!important;
 			border: none;
 			margin: 12px 0 0 0!important;
 			.icon-bar{
-				background: #FFFFFF;
+				background: #007e57;
 				@include anim_transicion_ease(0.3s);
 			}
 		}
@@ -612,7 +653,7 @@ body{
 					@include anim_transicion_ease(0.3s);
 					background: url("/images/menu-selected.png") center 120px no-repeat;
 					a{
-						color: #FFFFFF;
+						color: #369443;
 						text-align: center;
 						max-width: 120px;
 						height: 60px;
@@ -633,7 +674,7 @@ body{
 				}
 			}
 			.logo{
-				background: url("/images/logo.png") no-repeat;
+				background: url("/images/logo-verde.png") no-repeat;
 				background-size: contain;
 				width: 180px;
 				height: 50px;
@@ -663,7 +704,7 @@ body{
 		}
 	}
 	.content-breadcrumb{
-		background: #009b4d;
+		background: #007e57;
 		ol.breadcrumb{
 			background: transparent;
 			margin: 0;
@@ -838,7 +879,7 @@ body{
 				}
 			}
 			li.parent{
-				background: #f4f4f4;
+				background: #e7f2db;
 				border-top: 1px solid #d9d9d9;
 				.text{
 					color: #727272;
@@ -1039,7 +1080,7 @@ body{
 				}
 			}
 			.saldos-cuenta{
-				background: #007e57;
+				background: #ffcf17;
 				height: 30px;
 				color: #FFFFFF;
 				margin-bottom: 10px;
@@ -1094,6 +1135,9 @@ body{
 			color: #6e6e6e;
 			.btn-group{
 				min-width: 150px;
+				.btn-default{
+					color: #009b4d;
+				}
 				.btn{
 					width: 50%;
 					font-size: 11px!important;
@@ -1563,7 +1607,8 @@ body{
 // }
 .footer {
 	width: auto;
-	background: #007e57;
+	background: #e9e9e0;
+	border-top: 1px solid #d1d1c9;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -1572,17 +1617,17 @@ body{
 	z-index: 999;
 	overflow: hidden;
 	p{
-		color: #FFFFFF;
+		color: #999999;
 		padding-top: 8px;
 	}
 	a{
 		@include anim_transicion_ease(0.3s);
-		color: #FFFFFF;
+		color: #999999;
 		font-size: 11px;
 		font-weight: normal;
 	}
 	a:hover{
-		color: #86bd4a!important;
+		color: #000000!important;
 		text-decoration: none!important;
 	}
 }
@@ -1618,6 +1663,7 @@ body{
 }
 @media screen and (max-width: 768px) {
 	.header{
+		@include box_shadow(#888888);
 		.main-menu{
 			#menu-options{
 				float: none!important;
