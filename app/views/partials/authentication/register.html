@@ -67,7 +67,7 @@
 									<ng-form name="registerImageForm" class="register-pass">
 										<div class="images row">
 											<div >
-												<label class="col-xs-2 text-center" ng-repeat="image in data.data.images">
+												<label class="col-xs-2 text-center selected" ng-repeat="image in data.data.images">
 													<span ng-click="selectImage(image.id)" ng-class="{'selected' : image.id === registerData.selectedImage}" class="img-responsive">
 														<i></i><img alt="..." ng-src="data:image/png;base64,{{image.image_content}}">
 													</span>
