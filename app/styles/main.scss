@@ -2,7 +2,7 @@
 /*@import 'sass-bootstrap/lib/bootstrap';*/
 
 /* VARIABLES */
-$logo_bg: "/images/logo.png";
+$logo_bg: "../images/logo.png";
 
 /* MIXINS */
 @mixin border_radius($radius: 10px) {
@@ -192,7 +192,7 @@ input[type="number"]:focus{
 }
 /************** ICONS **************/
 .ico-check{
-	background: url("/images/ico-check.png") no-repeat;
+	background: url("../images/ico-check.png") no-repeat;
 	background-size: contain;
 	width: 30px;
 	height: 30px;
@@ -290,7 +290,7 @@ input[type="number"]:focus{
 	background: #bcdbcb;
 	border: none;
 	.close{
-		background: url("/images/ico-close-green.png") center center no-repeat;
+		background: url("../images/ico-close-green.png") center center no-repeat;
 		background-size: contain;
 		width: 15px;
 		height: 15px;
@@ -304,7 +304,7 @@ input[type="number"]:focus{
 	background: #cee7fd;
 	border: none;
 	.close{
-		background: url("/images/ico-close-green.png") center center no-repeat;
+		background: url("../images/ico-close-green.png") center center no-repeat;
 		background-size: contain;
 		width: 15px;
 		height: 15px;
@@ -317,7 +317,7 @@ input[type="number"]:focus{
 
 /************** LOGIN **************/
 .login_back{
-	background: url("/images/bg-login.jpg") no-repeat;
+	background: url("../images/bg-login.jpg") no-repeat;
 	background-size: cover;
 	position: fixed;
 	top: 0;
@@ -329,7 +329,7 @@ input[type="number"]:focus{
 	padding-top: 90px;
 	.login_header{
 		background: #FFFFFF;
-		position: fixed; 
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -351,20 +351,20 @@ input[type="number"]:focus{
 		max-width: 360px;
 		padding: 20px;
 		margin: 0 auto 20px auto;
-		background: url("/images/bg-loginbox.png") no-repeat;
+		background: url("../images/bg-loginbox.png") no-repeat;
 		background-size: cover;
 
 		@include border_radius(10px);
 
 		.logo{
-			background: url("/images/logo-login.png") center center no-repeat;
+			background: url("../images/logo-login.png") center center no-repeat;
 			background-size: contain;
 			width: 100%;
 			height: 70px;
 			margin-bottom: 20px;
 		}
 		input{
-			background: url("/images/bg-input.png") repeat;
+			background: url("../images/bg-input.png") repeat;
 			border: none;
 			margin: 12px 0;
 			padding: 10px;
@@ -376,13 +376,13 @@ input[type="number"]:focus{
 			color: #ffffff!important;
 		}
 		input:-moz-placeholder {
-			color: #ffffff!important;  
+			color: #ffffff!important;
 		}
 		input::-moz-placeholder {
-			color: #ffffff!important;  
+			color: #ffffff!important;
 		}
-		input:-ms-input-placeholder {  
-			color: #ffffff!important;  
+		input:-ms-input-placeholder {
+			color: #ffffff!important;
 		}
 		input:focus{
 			@include anim_key( input_icon, 0.17s );
@@ -445,11 +445,11 @@ input[type="number"]:focus{
 		left: 0;
 		right: 0;
 		z-index: 999;
-		background: #FFFFFF; 
+		background: #FFFFFF;
 		padding: 15px 0;
 		@include box_shadow(#CCCCCC);
 		.logo{
-			background: url("/images/logo2.png") no-repeat;
+			background: url("../images/logo2.png") no-repeat;
 			background-size: contain;
 			width: 175px;
 			height: 45px;
@@ -555,9 +555,9 @@ input[type="number"]:focus{
 						float: right;
 					}
 					.ico-check.uncheck{
-						background: url("/images/ico-check-disabled.png") no-repeat;
+						background: url("../images/ico-check-disabled.png") no-repeat;
 						background-size: contain;
-						
+
 					}
 				}
 				.images{
@@ -651,7 +651,7 @@ input[type="number"]:focus{
 			.navbar-collapse{
 				li{
 					@include anim_transicion_ease(0.3s);
-					background: url("/images/menu-selected.png") center 120px no-repeat;
+					background: url("../images/menu-selected.png") center 120px no-repeat;
 					a{
 						color: #369443;
 						text-align: center;
@@ -663,18 +663,18 @@ input[type="number"]:focus{
 					}
 				}
 				li:hover{
-					background: url("/images/menu-selected.png") center bottom no-repeat;
+					background: url("../images/menu-selected.png") center bottom no-repeat;
 				}
 				li.active{
-					background: url("/images/menu-selected.png") center bottom no-repeat;
+					background: url("../images/menu-selected.png") center bottom no-repeat;
 					a{
-						background:transparent!important;	
+						background:transparent!important;
 					}
-					
+
 				}
 			}
 			.logo{
-				background: url("/images/logo-verde.png") no-repeat;
+				background: url("../images/logo-verde.png") no-repeat;
 				background-size: contain;
 				width: 180px;
 				height: 50px;
@@ -690,7 +690,7 @@ input[type="number"]:focus{
 			max-width: 150px;
 			float: right;
 			margin: 5px 30px 0 0;
-			
+
 			p{
 				color: #FFFFFF;
 				font-size: 12px;
@@ -715,7 +715,7 @@ input[type="number"]:focus{
 			li:before{
 				content: "";
 				display: block;
-				background: url("/images/arrow-white-right.png") no-repeat;
+				background: url("../images/arrow-white-right.png") no-repeat;
 				background-size: contain;
 				width: 10px;
 				height: 19px;
@@ -739,7 +739,7 @@ input[type="number"]:focus{
 			}
 		}
 	}
-	
+
 	// .user{
 	// 	text-align: center;
 	// 	font-size: 16px;
@@ -756,7 +756,7 @@ input[type="number"]:focus{
 	// 		position: relative;
 	// 		top: -2px;
 	// 		margin-right: 10px;
-	// 		background: url("/images/ico_salir.png") left center no-repeat;
+	// 		background: url("../images/ico_salir.png") left center no-repeat;
 	// 		width: 15px;
 	// 		height: 17px;
 	// 	}
@@ -765,7 +765,7 @@ input[type="number"]:focus{
 	// 	/*@include box_shadow(#FFFFFF);*/
 	// 	background: #FFFFFF;
 	// 	i{
-	// 		background: url("/images/ico_salir.png") right center no-repeat;
+	// 		background: url("../images/ico_salir.png") right center no-repeat;
 	// 	}
 	// }
 }
@@ -790,13 +790,13 @@ input[type="number"]:focus{
 // 		display: block;
 // 	}
 // 	span.fecha{
-// 		background: url("/images/ico_fecha.png") no-repeat;
+// 		background: url("../images/ico_fecha.png") no-repeat;
 // 		padding: 2px 0 0 20px;
 // 		height: 16px;
 // 		display: inline-block;
 // 	}
 // 	span.hora{
-// 		background: url("/images/ico_hora.png") no-repeat;
+// 		background: url("../images/ico_hora.png") no-repeat;
 // 		padding: 2px 0 0 20px;
 // 		height: 16px;
 // 		display: inline-block;
@@ -811,25 +811,25 @@ input[type="number"]:focus{
 }
 /* LOGOS */
 .logo-inversion{
-	background: url("/images/cta-inversion.png") no-repeat;
+	background: url("../images/cta-inversion.png") no-repeat;
 	background-size: contain;
 	width: 119px;
 	height: 36px;
 }
 .logo-presta-plus{
-	background: url("/images/cta-presta-plus.png") no-repeat;
+	background: url("../images/cta-presta-plus.png") no-repeat;
 	background-size: contain;
 	width: 83px;
 	height: 37px;
 }
 .logo-credi-donde{
-	background: url("/images/cta-credi-donde.png") no-repeat;
+	background: url("../images/cta-credi-donde.png") no-repeat;
 	background-size: contain;
 	width: 79px;
 	height: 40px;
 }
 .logo-alcancia{
-	background: url("/images/cta-alcancia.png") no-repeat;
+	background: url("../images/cta-alcancia.png") no-repeat;
 	background-size: contain;
 	width: 100px;
 	height: 36px;
@@ -861,7 +861,7 @@ input[type="number"]:focus{
 					font-weight: bold;
 				}
 				.arrow{
-					background: url("/images/arrow-white.png") no-repeat;
+					background: url("../images/arrow-white.png") no-repeat;
 					background-size: contain;
 					display: block;
 					float: left;
@@ -908,7 +908,7 @@ input[type="number"]:focus{
 						float: right;
 					}
 					.arrow{
-						background: url("/images/arrow-gray.png") no-repeat;
+						background: url("../images/arrow-gray.png") no-repeat;
 						background-size: contain;
 						display: block;
 						float: right;
@@ -932,7 +932,7 @@ input[type="number"]:focus{
 						color: #FFFFFF;
 					}
 					.arrow{
-						background: url("/images/arrow-white-right.png") no-repeat;
+						background: url("../images/arrow-white-right.png") no-repeat;
 						background-size: contain;
 						display: block;
 						float: right;
@@ -945,7 +945,7 @@ input[type="number"]:focus{
 				a:before{
 					content: "";
 					display: block;
-					background: url("/images/item-selected-left.png") no-repeat;
+					background: url("../images/item-selected-left.png") no-repeat;
 					background-size: contain;
 					width: 14px;
 					height: 61px;
@@ -956,7 +956,7 @@ input[type="number"]:focus{
 				a:after{
 					content: "";
 					display: block;
-					background: url("/images/item-selected-right.png") no-repeat;
+					background: url("../images/item-selected-right.png") no-repeat;
 					background-size: contain;
 					width: 14px;
 					height: 53px;
@@ -970,7 +970,7 @@ input[type="number"]:focus{
 		ul.menu-tengo{
 			li.head{
 				background: #009b4d;
-				
+
 			}
 			li.child{
 				.amount{
@@ -981,7 +981,7 @@ input[type="number"]:focus{
 		ul.menu-debo{
 			li.head{
 				background: #fb0035;
-				
+
 			}
 			li.child{
 				.amount{
@@ -999,7 +999,7 @@ input[type="number"]:focus{
 			border-bottom: 1px solid #dcdcdc;
 			.cell{
 				width: 100%;
-				min-height: 55px;	
+				min-height: 55px;
 				font-size: 12px;
 				padding: 10px 5px;
 				.logo{
@@ -1057,12 +1057,12 @@ input[type="number"]:focus{
 			tr:nth-child(odd){
 				td{
 					background: #fafafa;
-				}	
+				}
 			}
 			tr:nth-child(even){
 				td{
 					background: #FFFFFF;
-				}	
+				}
 			}
 		}
 		.negativo{
@@ -1087,7 +1087,7 @@ input[type="number"]:focus{
 				overflow: hidden;
 				@include border_radius(3px);
 				.text{
-					background: #86bd4a url("/images/detail-divider.png") right center no-repeat;
+					background: #86bd4a url("../images/detail-divider.png") right center no-repeat;
 					background-size: contain;
 					display: block;
 					float: left;
@@ -1109,7 +1109,7 @@ input[type="number"]:focus{
 					td{
 						color: #747474;
 						font-size: 12px;
-						padding: 1px 5px;		
+						padding: 1px 5px;
 					}
 					td:last-child{
 						text-align: right;
@@ -1118,11 +1118,11 @@ input[type="number"]:focus{
 				tr:last-child{
 					border-bottom: none;
 				}
-				
+
 			}
 		}
 		.input-search{
-			background: #FFFFFF url("/images/ico-search.png") 8px 7px no-repeat;
+			background: #FFFFFF url("../images/ico-search.png") 8px 7px no-repeat;
 			background-size: 15px;
 			margin-bottom: 10px;
 			padding-left: 30px;
@@ -1186,23 +1186,23 @@ input[type="number"]:focus{
 // 				top: 3px;
 // 			}
 // 			i.ico-saldos{
-// 				background-image: url("/images/menu_saldos.png");
+// 				background-image: url("../images/menu_saldos.png");
 // 			}
 // 			i.ico-conexion{
-// 				background-image: url("/images/menu_conexion.png");
+// 				background-image: url("../images/menu_conexion.png");
 // 			}
 // 			i.ico-autorizar{
-// 				background-image: url("/images/menu_autorizar.png");
+// 				background-image: url("../images/menu_autorizar.png");
 // 			}
 // 			i.ico-transferencias{
-// 				background-image: url("/images/menu_transferencias.png");
+// 				background-image: url("../images/menu_transferencias.png");
 // 			}
 // 			i.ico-administracion{
-// 				background-image: url("/images/menu_administracion.png");
+// 				background-image: url("../images/menu_administracion.png");
 // 			}
 // 			span.arrow{
 // 				@include anim_transicion_ease(0.4s);
-// 				background: url("/images/menu_h.png") right center no-repeat;
+// 				background: url("../images/menu_h.png") right center no-repeat;
 // 				background-size: 23px;
 // 				width: 23px;
 // 				height: 46px;
@@ -1278,12 +1278,12 @@ input[type="number"]:focus{
 // 			width: 16px;
 // 			height: 16px;
 // 			margin-top: 2px;
-// 			background: url("/images/ico_open_close.png") center center no-repeat;
+// 			background: url("../images/ico_open_close.png") center center no-repeat;
 // 			span{
 // 				display: block;
 // 				width: 16px;
 // 				height: 16px;
-// 				background: url("/images/ico_open_close.png") center center no-repeat;
+// 				background: url("../images/ico_open_close.png") center center no-repeat;
 // 				@include anim_transicion_ease(0.4s);
 // 			}
 // 		}
@@ -1459,16 +1459,16 @@ input[type="number"]:focus{
 // 		background-size: 142px;
 // 	}
 // 	i.llama-PC{
-// 		background-image: url("/images/ico_pc.png");
+// 		background-image: url("../images/ico_pc.png");
 // 	}
 // 	i.llama-oficina{
-// 		background-image: url("/images/ico_telofi.png");
+// 		background-image: url("../images/ico_telofi.png");
 // 	}
 // 	i.llama-movil{
-// 		background-image: url("/images/ico_movil.png");
+// 		background-image: url("../images/ico_movil.png");
 // 	}
 // 	i.llama-tel{
-// 		background-image: url("/images/ico_tel.png");
+// 		background-image: url("../images/ico_tel.png");
 // 		margin-top: 3px;
 // 	}
 // }
@@ -1514,7 +1514,7 @@ input[type="number"]:focus{
 //                 display: inline-block;
 //                 position: relative;
 //                 top: 5px;
-//                 background: url("/images/ico_ayuda.png") no-repeat;
+//                 background: url("../images/ico_ayuda.png") no-repeat;
 //                 background-size: 18px;
 //                 width: 18px;
 //                 height: 18px;
@@ -1524,7 +1524,7 @@ input[type="number"]:focus{
 //                 @include anim_transicion_ease(0.4s);
 //                 display: inline-block;
 //                 position: relative;
-//                 background: url("/images/arrow_top.png") no-repeat;
+//                 background: url("../images/arrow_top.png") no-repeat;
 //                 background-size: 8px;
 //                 width: 8px;
 //                 height: 7px;
@@ -1560,7 +1560,7 @@ input[type="number"]:focus{
 //                 resize: none;
 //             }
 //             .btn_send{
-//                 background: url("/images/arrow_right.png") center center no-repeat;
+//                 background: url("../images/arrow_right.png") center center no-repeat;
 //                 background-size: 14px;
 //                 height: 34px;
 //                 width: 34px;
@@ -1578,7 +1578,7 @@ input[type="number"]:focus{
 //                     display: inline-block;
 //                     position: relative;
 //                     top: 3px;
-//                     background: url("/images/arrow_top.png") no-repeat;
+//                     background: url("../images/arrow_top.png") no-repeat;
 //                     background-size: 8px;
 //                     width: 8px;
 //                     height: 7px;
@@ -1684,7 +1684,7 @@ input[type="number"]:focus{
 					margin: 5px auto!important;
 				}
 			}
-		} 
+		}
 	}
 	.content{
 		padding: 80px 0 65px 0;
