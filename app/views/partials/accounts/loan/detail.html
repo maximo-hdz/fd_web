@@ -7,12 +7,12 @@
   </div>
   <div class="col-md-9">
     <div class="saldos-cuenta">
-      <span class="text">Saldo de liquidaci&oacute;n:</span>
-      <span class="amount">{{detail.total_payment | currency}}</span>
+      <span class="text"></span>
+      <span class="amount"></span>
     </div>
     <div class="saldos-cuenta">
-      <span class="text">Tasa de interes:</span>
-      <span class="amount">{{detail.annual_rate}}%</span>
+      <span class="text"></span>
+      <span class="amount"></span>
     </div>
   </div>
 </div>
@@ -21,16 +21,28 @@
     <table>
       <tbody>
         <tr>
-          <td>Pago pendiente:</td>
-          <td>{{detail.pending_payment | currency}}</td>
+          <td>N&uacute;mero de cr&eacute;dito:</td>
+          <td></td>
         </tr>
         <tr>
-          <td>Moneda:</td>
-          <td>MXN</td>
+          <td>Producto:</td>
+          <td></td>
         </tr>
         <tr>
-          <td>Fecha l&iacute;mite de pago:</td>
-          <td>{{detail.limit_payment_date | date: 'dd/MM/yyyy'}}</td>
+          <td>Plazo:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tasa de interes:</td>
+          <td>{{detail.annual_rate}}%</td>
+        </tr>
+        <tr>
+          <td>Saldo del periodo:</td>
+          <td>{{detail.balance | currency}}</td>
+        </tr>
+        <tr>
+          <td>Saldo de liquidaci&oacute;n:</td>
+          <td>{{detail.balance | currency}}</td>
         </tr>
       </tbody>
     </table>
@@ -39,16 +51,28 @@
     <table>
       <tbody>
         <tr>
+          <td>D&iacute;a de corte:</td>
+          <td>{{detail.cut_date | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+        <tr>
           <td>Fecha &uacute;ltimo pago:</td>
           <td>{{detail.last_payment_date | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+        <tr>
+          <td>Pagos pendientes:</td>
+          <td>{{detail.pending_payment | currency}}</td>
         </tr>
         <tr>
           <td>&Uacute;ltimo pago pendiente:</td>
           <td>{{detail.last_pending_payment | currency}}</td>
         </tr>
         <tr>
-          <td>Saldo del periodo:</td>
-          <td>{{detail.balance | currency}}</td>
+          <td>Moneda:</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Fecha l&iacute;mite pago:</td>
+          <td>{{detail.limit_payment_date < today ? 'Inmediato' : detail.limit_payment_date | date: 'dd/MM/yyyy'}}</td>
         </tr>
       </tbody>
     </table>
