@@ -6,13 +6,23 @@
 angular.module('spaApp')
 .controller('AccountsCtrl',['$scope', '$location', 'accountsProviderFD', function($scope, $location, accountsProviderFD) {
 
+	// For searching purposes
+	var params = {};
+	params.numPage = 0;
+	params.size = 100;
+	// To make a comparison between today's date and the details dates
+	$scope.today = new Date().getTime();
+
+	/**
+	 * accounts contains all the received accounts and total contains the addition of each kind of balances
+	 */
 	$scope.accounts = {};
 	$scope.total = {};
-
+	// To hide the notifications in accounts
 	$scope.hideNotifications = false;
 
 	/**
-	 * Get accounts.
+	 * Receive the accounts from the middleware
 	 */
 	accountsProviderFD.getAccounts().then(
 		function(data) {
@@ -24,7 +34,6 @@ angular.module('spaApp')
 			$scope.total.credit = 0;
 			$scope.accounts.loan = [];
 			$scope.total.loan = 0;
-			//console.log( JSON.stringify(data) );
 
 			for (var i = 0; i < data.length; i++) {
 				switch ( data[i].account_type ) {
@@ -45,27 +54,35 @@ angular.module('spaApp')
 						$scope.total.credit += +data[i].min_payment;
 						break;
 					default:
-						bconsole.log("account_type "+data[i].account_type+" not supported");
+						console.log("account_type "+ data[i].account_type +" not supported");
 				}
 			}
 		},
 		function(error) {
-			// TODO: handle error
 			console.error( error );
+			window.alert( error.message );
 		}
 	);
 
 	/**
-	 *
+	 * Change the view according to the selected account
 	 */
 	$scope.selectAccount = function(account) {
+		// Hide the notifications
 		$scope.hideNotifications = true;
+
 		var accountId = account._account_id;
-		console.info( account );
 		var type = account.account_type;
 
+		// Both values are shared with the child controllers
 		$scope.selectedAccountId = accountId;
 		$scope.selectedAccount = account;
+		// Request account detail for all kinds of accounts
+		getAccountDetail();
+
+		// Request transactions (only for saving and credit accounts)
+		if (type === 'SAVINGS_ACCOUNT' || type === 'CREDIT_ACCOUNT')
+			$scope.getTransactions('12/06/2014', '14/07/2014');
 
 		switch (type) {
 			case 'SAVINGS_ACCOUNT':
@@ -83,6 +100,44 @@ angular.module('spaApp')
 			default:
 					break;
 		}
+	};
+
+	/**
+   * Request the account detail from the middleware
+   */
+	var getAccountDetail = function() {
+		accountsProviderFD.getAccountDetail( $scope.selectedAccountId ).then(
+	    function(detail) {
+	       console.info( detail );
+	       $scope.detail = detail;
+	     },
+	     function(error) {
+	       console.error( error );
+	       window.alert( error.message );
+	     }
+	  );
+	};
+
+	/**
+   * Request the transactions from the middleware
+   * @param startDate
+	 * @param endDate
+   */
+	$scope.getTransactions = function(startDate, endDate) {
+		// Complete params
+		params.date_start = startDate;
+		params.date_end = endDate;
+
+		accountsProviderFD.getTransactions( $scope.selectedAccountId, params ).then(
+	    function(transactions) {
+	      console.info( transactions );
+	      $scope.transactions = transactions;
+	    },
+	    function(error) {
+	      console.error( error );
+	      window.alert( error.message );
+	    }
+	  );
 	};
 
 }]);
