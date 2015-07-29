@@ -5,9 +5,9 @@ angular.module('spaApp')
 
     return {
 
-      checkLogin: function(user_login, with_token){
+      checkLogin: function(user_login){
         var deferred = $q.defer();
-        AuthorizeServiceFD.checkLogin(user_login, with_token).success(function(data, status, headers){
+        AuthorizeServiceFD.checkLogin(user_login).success(function(data, status, headers){
           deferred.resolve(data);
         }).error(function(data, status){
           deferred.reject(status);

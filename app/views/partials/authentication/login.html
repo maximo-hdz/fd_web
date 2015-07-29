@@ -22,16 +22,13 @@
 					<div class="logo"></div>
 					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" required autofocus>
 					<div class="row">
-						<div class="col-md-6">
-							<button class="btn btn-success" ng-click="auth.with_token = 'N'; checkLogin();">Sin token</button>
-						</div>
-						<div class="col-md-6">
-							<button class="btn btn-success" ng-click="auth.with_token = 'Y'; checkLogin();">Con token</button>
+						<div class="col-md-12">
+							<button class="btn btn-success" ng-click="checkLogin();">Ingresar</button>
 						</div>
 					</div>
 					<div class="row">
 						<p class="text-center">
-							<a href="javascript:void(0);">&iquest;Olvidaste tu usuario?</a> |
+							<a href="javascript:void(0);" ng-click="password();">&iquest;Olvidaste tu usuario?</a> |
 							<a href="javascript:void(0);">Cont&aacute;ctenos</a>
 						</p>
 					</div>

@@ -3,13 +3,12 @@
 angular.module('spaApp')
 	.service('AuthorizeServiceFD',['$http','$rootScope', function($http, $rootScope) {
 
-		this.checkLogin = function(user_login, with_token){
+		this.checkLogin = function(user_login){
 			return $http({
 					url: $rootScope.restAPIBaseUrl+'/checkLogin',
 					method: 'POST',
 					data: JSON.stringify({
 						'user_login': user_login,
-						'with_token': with_token,
 						'client_application_id': 'SPA'
 					})
 			});
