@@ -8,8 +8,9 @@ angular.module('spaApp')
 	$scope.auth;
 
 	$scope.checkLogin = function(){
-		authorizeProviderFD.checkLogin($scope.auth.user_login, $scope.auth.with_token).then(
+		authorizeProviderFD.checkLogin($scope.auth.user_login).then(
 			function(data) {
+				$scope.auth.with_token = data.role_id===1?'Y':'N';
 				if(data.post_login_action === 'login'){
 					$scope.CheckLogin = false;
 					$scope.auth.response = data;
@@ -48,14 +49,15 @@ angular.module('spaApp')
 			})
 		}).success(
 			function(data, status, headers) {
-				$scope.CheckLogin = true;
+				/*$scope.CheckLogin = true;
 				var token = headers('X-AUTH-TOKEN');
 				$rootScope.session_token = token;
 				$rootScope.last_access_date = data.last_access_date
 				$rootScope.last_access_media = data.last_client_application_id;
 				$rootScope.client_name = data.client_name;
 				api.init();
-				$location.path( '/accounts' );
+				$location.path( '/accounts' );*/
+				$location.path('/login');
 			}
 		).error(
 			function(errorObject, status) {
@@ -63,5 +65,9 @@ angular.module('spaApp')
 			}
 		);
 	};
+
+	$scope.password = function(){
+		$location.path( '/password' );
+	}
 
 }]);
