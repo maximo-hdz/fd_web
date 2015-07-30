@@ -85,6 +85,7 @@ angular.module('spaApp')
 				$rootScope.last_access_media = data.last_client_application_id;
 				$rootScope.client_name = data.client_name;
 				api.init();
+				$location.path( '/accounts' );
 			},
 			function(error) {
 				$scope.status = error;
