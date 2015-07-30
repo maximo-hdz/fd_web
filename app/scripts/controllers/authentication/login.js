@@ -49,15 +49,14 @@ angular.module('spaApp')
 			})
 		}).success(
 			function(data, status, headers) {
-				/*$scope.CheckLogin = true;
+				$scope.CheckLogin = true;
 				var token = headers('X-AUTH-TOKEN');
 				$rootScope.session_token = token;
 				$rootScope.last_access_date = data.last_access_date
 				$rootScope.last_access_media = data.last_client_application_id;
 				$rootScope.client_name = data.client_name;
 				api.init();
-				$location.path( '/accounts' );*/
-				$location.path('/login');
+				$location.path( '/accounts' );
 			}
 		).error(
 			function(errorObject, status) {
