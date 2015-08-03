@@ -5,12 +5,14 @@ angular.module('spaApp')
 	function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth) {
 
 	$scope.CheckLogin = true;
+	$scope.logining = false;
 	$scope.auth;
 
 	$scope.checkLogin = function(){
 		authorizeProviderFD.checkLogin($scope.auth.user_login).then(
 			function(data) {
 				$scope.auth.with_token = data.role_id===1?'Y':'N';
+				$scope.logining = true;
 				if(data.post_login_action === 'login'){
 					$scope.CheckLogin = false;
 					$scope.auth.response = data;

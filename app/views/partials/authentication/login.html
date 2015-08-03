@@ -23,7 +23,7 @@
 					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" required autofocus>
 					<div class="row">
 						<div class="col-md-12">
-							<button class="btn btn-success" ng-click="checkLogin();">Ingresar</button>
+							<button class="btn btn-success" ng-click="checkLogin();" ng-disabled="logining">Ingresar</button>
 						</div>
 					</div>
 					<div class="row">
