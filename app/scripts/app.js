@@ -19,7 +19,7 @@ var app = angular.module('spaApp', [
   ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', '$keepaliveProvider', '$idleProvider', 'uiGmapGoogleMapApiProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider ,$keepaliveProvider, $idleProvider, uiGmapGoogleMapApiProvider) {
-  $httpProvider.responseInterceptors.push('httpInterceptor');
+  $httpProvider.interceptors.push('httpInterceptor');
   $idleProvider.idleDuration(5);
   $idleProvider.warningDuration(5);
   $keepaliveProvider.interval(60);
