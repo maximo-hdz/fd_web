@@ -1,149 +1,33 @@
 'use strict';
-
 /**
-Navigation-bar  controller  for dashboard
-**/
+ *
+ */
 angular.module('spaApp')
-.controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', '$idle', '$keepalive', '$modal', 'accountsProviderFD', function($scope, $rootScope, $location, authorizeProviderFD, $idle, $keepalive, $modal, accountsProviderFD) {
-	$scope.client = 'Ricardo Montemayor Morales';
-	$scope.started = true;
+.controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'accountsProviderFD', '$window', 'timerService', function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD, $window, timerService) {
 
-	    function closeModals() {
-        if ($scope.warning) {
-          $scope.warning.close();
-          $scope.warning = null;
-        }
+	// Set first section
+	$scope.currentSection = 'accounts';
 
-        if ($scope.timedout) {
-          $scope.timedout.close();
-          $scope.timedout = null;
-        }
-      }
-
-      $scope.$on('$idleStart', function() {
-        closeModals();
-
-        $scope.warning = $modal.open({
-          templateUrl: 'warning-dialog.html',
-          windowClass: 'modal-danger'
-        });
-      });
-
-      $scope.$on('$idleEnd', function() {
-        closeModals();
-      });
-
-      $scope.$on('$idleTimeout', function() {
-		authorizeProviderFD.logout()
-        closeModals();
-        $location.path('/login');
-      });
-
-	//behavior stack accounts group
-	//TODO Do not use jQuery
-	$scope.show_hide_table=function(elemento, titulo ){
-		if( $(elemento).css('display') == 'block' ){
-			$(elemento).hide();
-			$(titulo).removeClass('abierto').addClass('cerrado');
-		}else{
-			$(elemento).show();
-			$(titulo).removeClass('cerrado').addClass('abierto');
-		}
-	};
-
-
-	$scope.logout=function(){
-		authorizeProviderFD.logout().then(
-			function(data){
-				$location.path('/logout');
-			},
-			function(error){
-				$scope.status = error;
-			}
-		);
-	}
-
-	/** Biometrics  **/
-	$scope.biometrics=function(account_id){
-		if(account_id!=undefined){
-		$location.path( "accounts/biometric/"+account_id+"/transactions");
-		}
-	}
-    $scope.sameAddBeneficiary=function(account_id){
-		$location.path(account_id + '#/sameAddBeneficiary');
-	}
-	/** Biometrics Detail  **/
-	$scope.detailMovement=function(account_id){
-		$location.path( account_id + '#/detailMovement');
-	}
-
-	/*Controller for module invertions   */
-	$scope.investment=function(account_id){
-		$location.path(account_id + '#/investment');
-	}
-	/*Detail investment view */
-	$scope.detailInvestment=function(account_id){
-		$location.path(account_id + '#/detailInvestment')
-	}
-
-	$scope.customize=function(){
-
-		$location.path('/administration/accounts/customize');
-		$( "#transactiont" ).removeClass( "active" );
-		$( "#valueDt" ).addClass( "active" );
-	}
-
-	$scope.ctas_menu=function(){
-		$location.path('/administration/accounts/');
-		$( "#transactiont" ).addClass( "active" );
-		$( "#valueDt" ).removeClass( "active" );
-	}
-
-	//behavior stack help
-	$scope.show_hide_help=function(elemento, link){
-		if( $(elemento).css('display') == 'block' ){
-			$(elemento).slideToggle('fast');
-			$(link).removeClass('abierto').addClass('cerrado').slideToggle('fast');
-		}else{
-			$(elemento).slideToggle('fast');
-			$(link).removeClass('cerrado').addClass('abierto').slideToggle('fast');
-		}
-	};
-
-/* Credit Transaction */
-	//TODO Do not use JQuery
-	$scope.creditTransaction=function(account_id){
-		$location.path( account_id + '/credit/transactions');
-		$( "#transaction" ).addClass( "active" );
-		$( "#valueDate" ).removeClass( "active" );
-		$( "#dueDate" ).removeClass( "active" );
-	}
-
-	/* Credit Due Date */
-	$scope.dueDate=function(account_id){
-		$location.path( account_id + '/credit/dueDate');
-		$( "#dueDate" ).addClass( "active" );
-		$( "#valueDate" ).removeClass( "active" );
-		$( "#transaction" ).removeClass( "active" );
-	}
-
-	/* Credit value Date */
-	$scope.valueDate=function(account_id){
-		$location.path( account_id + '/credit/valueDate');
-		$( "#valueDate" ).addClass( "active" );
-		$( "#dueDate" ).removeClass( "active" );
-		$( "#transaction" ).removeClass( "active" );
-	}
-
-	$scope.userdetail=function(account_){
-		alert('ad');
-	$location.path(  '#/administration/detail');
-
-	};
+	$scope.warning = {};
+	$scope.danger = {};
 
 	/**
-	Add class active for item selected
-	**/
+	 * Change current section accordiing to the received value.
+	 */
+	$scope.changeSection = function( section ) {
+    if ( $scope.currentSection === section )
+      return;
+    else if ( section === 'map' )
+      $location.path('map');
+    else
+      $('.main-menu .navbar-nav li a').each( function(index) {
+        if ( $(this).attr('id') === section ) {
+          $scope.currentSection = section;
+          $location.path( section );
+        }
+        $(this).css('cursor', 'pointer');
+      });
+  };
 
 	$scope.createBreadcrumb = function() {
 		var path;
@@ -167,5 +51,35 @@ angular.module('spaApp')
 		if ($location.path().substr(0, path.length) == path) {
 			return 'Administraci\u00F3n';
 		}
-	}
+	};
+
+	/**
+	 * Call the service to close the session.
+	 */
+	$scope.logout = function() {
+		authorizeProviderFD.logout().then(
+			function(data) {
+				timerService.stop();
+				$location.path('/logout');
+			},
+			function(error){
+				timerService.stop();
+				$scope.status = error;
+			}
+		);
+	};
+
+	$scope.$on('IdleTimeout', function() {
+    $scope.warning.show = true;
+		$scope.warning.message = 'Tu sesión esta por expirar.';
+  });
+
+  $scope.$on('WarningTimeout', function() {
+    $scope.logout();
+  });
+
+	$scope.$on('IdleReset', function() {
+    $scope.warning.show = false;
+  });
+
 }]);
