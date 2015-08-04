@@ -462,6 +462,32 @@ input[type="number"]:focus{
 		color: #282828;
 		font-size: 18px;
 	}
+	.tooltip-input{
+		position: absolute;
+		z-index: 9999;
+		width: 150px;
+		padding: 5px 10px;
+		background: #ffffff;
+		margin-left: 95%;
+		margin-top: -40px;
+		// border: 1px solid #cccccc;
+		@include box_shadow(#ababab);
+		@include border_radius(5px);
+		.arrow{
+			background: url("../images/arrow-tooltip-left.png") no-repeat;
+			background-size: contain;
+			width: 13px;
+			height: 19px;
+			position: absolute;
+			margin-left: -23px;
+			margin-top: 5px;
+		}
+		p{
+			padding: 0 0 5px 0;
+			margin: 0;
+			font-size: 10px!important;
+		}
+	}
 	.panel{
 		.panel-heading{
 			background: transparent;
@@ -1650,6 +1676,50 @@ input[type="number"]:focus{
 
 /************** RESPONSIVE **************/
 @media screen and (max-width: 992px) {
+	.login_content,
+	.signup_content{
+		padding-top: 80px;
+		padding-bottom: 55px;
+		overflow: hidden;
+		.signup_header{
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 999;
+			background: #FFFFFF;
+			padding: 15px 0;
+			@include box_shadow(#CCCCCC);
+			.logo{
+				background: url("../images/logo2.png") no-repeat;
+				background-size: contain;
+				width: 175px;
+				height: 45px;
+			}
+			.btn-salir{
+				width: 150px;
+			}
+		}
+		h1{
+			color: #282828;
+			font-size: 18px;
+		}
+		.tooltip-input{
+			position: relative;
+			width: auto;
+			margin-left: 0px;
+			margin-top: 0px;
+			top: 5px;
+			.arrow{
+				background: url("../images/arrow-tooltip.png") no-repeat;
+				background-size: contain;
+				width: 19px;
+				height: 13px;
+				margin-left: 10px;
+				margin-top: -17px;
+			}
+		}
+	}
 	.footer,
 	.login_header,
 	.login_footer,
