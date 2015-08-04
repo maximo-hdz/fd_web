@@ -69,4 +69,8 @@ angular.module('spaApp')
 		$location.path( '/password' );
 	}
 
+	$scope.map = function(){
+		$location.path( '/map' );
+	}
+
 }]);

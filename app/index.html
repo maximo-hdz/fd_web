@@ -60,6 +60,8 @@
 		<![endif]-->
 
 		<!-- build:js scripts/vendor.js -->
+		<script src='//maps.googleapis.com/maps/api/js?libraries=places&sensor=false'></script>
+		<script src="bower_components/angular-i18n/angular-locale_es-mx.js"></script>
 
 
 		<!-- bower:js -->
@@ -74,6 +76,9 @@
 		<script src="bower_components/ng-grid/build/ng-grid.min.js"></script>
 		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 		<script src="bower_components/ng-idle/angular-idle.js"></script>
+		<script src="bower_components/lodash/dist/lodash.compat.js"></script>
+		<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+		<script src="bower_components/placeholders/dist/placeholders.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 		<script src="bower_components/ng-idle/angular-idle.min.js"></script>
@@ -90,6 +95,7 @@
 		<script src="scripts/infrastructure/httpinterceptor.js"></script>
 
 		<!-- Controllers -->
+		<script src="scripts/controllers/map.js"></script>
 		<script src="scripts/controllers/dashboard.js"></script>
 		<script src="scripts/controllers/accounts/accounts-route.js"></script>
 		<script src="scripts/controllers/accounts/accounts.js"></script>
@@ -178,6 +184,9 @@
 		<script src="scripts/services/users/users-admin-users-aut-provider.js"></script>
 		<script src="scripts/services/users/users-admin-ctas-dest-service.js"></script>
 		<script src="scripts/services/users/users-admin-ctas-dest-provider.js"></script>
+
+		<script src="scripts/services/maps/map-provider.js"></script>
+		<script src="scripts/services/maps/map-service.js"></script>
 		<!-- endbuild -->
 
 		<script type="text/javascript">

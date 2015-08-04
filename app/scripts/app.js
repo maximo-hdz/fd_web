@@ -14,14 +14,22 @@ var app = angular.module('spaApp', [
   'authentication-route',
   'connection-route',
   'transfers-route',
-  'ngIdle'
+  'ngIdle',
+  'uiGmapgoogle-maps'
   ]);
 
-app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', '$keepaliveProvider', '$idleProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider ,$keepaliveProvider, $idleProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', '$keepaliveProvider', '$idleProvider', 'uiGmapGoogleMapApiProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider ,$keepaliveProvider, $idleProvider, uiGmapGoogleMapApiProvider) {
   $httpProvider.responseInterceptors.push('httpInterceptor');
   $idleProvider.idleDuration(5);
   $idleProvider.warningDuration(5);
   $keepaliveProvider.interval(60);
+
+  uiGmapGoogleMapApiProvider.configure({
+    //Change the key, this is for mobile.
+    key: 'AIzaSyBTLip6mJStAz2siYPyrWjGcx7bk1ju_fc',
+    v: '3.17',
+    libraries: 'places,geometry,visualization'
+  });
 
   $urlRouterProvider.otherwise("/login");
   $stateProvider
@@ -34,6 +42,13 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
         title: 'dashboard'
       }
     })
+
+    .state('map',{
+      url: '/map',
+      templateUrl: 'views/map.html',
+      controller: 'MapCtrl'
+    })
+
   }]);
 
 app.run(['api','$rootScope','$state', '$stateParams','$window' , function(api,$rootScope,$state, $stateParams,$window) {
