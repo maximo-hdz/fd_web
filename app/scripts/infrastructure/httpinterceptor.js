@@ -1,28 +1,36 @@
 'use strict';
 
-angular.module('spaApp').factory('httpInterceptor', ['$q', '$location', '$rootScope', function httpInterceptor ($q, $window, $location, $rootScope) {
-  return function (promise) {
-    var success = function (response) {
-      return response;
+angular.module('spaApp').factory('httpInterceptor', ['$q', '$location', '$rootScope', 'timerService',
+  function httpInterceptor ($q, $location, $rootScope, timerService) {
+
+    return {
+      request: function( request) {
+        return request;
+      },
+      response: function( response ) {
+        if($rootScope.session_token) {
+          timerService.reset();
+        }
+
+        return response;
+      },
+
+      responseError: function( response ) {
+        if (!response.status) {
+          console.warn("Response undefined");
+          timerService.stop();
+          $location.url('/login');
+        }
+
+        if (response.status === 503) {
+          $rootScope.session_token = null;
+          console.warn("Status 503");
+          timerService.stop();
+          $location.url('/login');
+        }
+
+        return $q.reject(response);
+      }
     };
 
-    var error = function (response) {
-      // TODO: Seems that in some time we don't get response.status
-
-      if (!response.status) {
-        console.log("Response undefined");
-        $location.url('/login');
-      }
-
-      if (response.status === 400 || response.status === 503) {
-        $rootScope.session_token = null;
-        console.log("Status 400 or 503");
-        $location.url('/login');
-      }
-
-      return $q.reject(response);
-    };
-
-    return promise.then(success, error);
-  };
 }]);

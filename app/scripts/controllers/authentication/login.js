@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api', '$http', 'dataAuth',
-	function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth) {
+.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api', '$http', 'dataAuth', 'timerService',
+	function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth, timerService) {
 
 	$scope.CheckLogin = true;
 	$scope.logining = false;
@@ -61,6 +61,7 @@ angular.module('spaApp')
 				$rootScope.last_access_media = data.last_client_application_id;
 				$rootScope.client_name = data.client_name;
 				api.init();
+				timerService.start();
 				$location.path( '/accounts' );
 			}
 		).error(

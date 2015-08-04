@@ -13,6 +13,8 @@ angular.module('spaApp')
 	// To make a comparison between today's date and the details dates
 	$scope.today = new Date().getTime();
 
+	$scope.danger = {};
+
 	/**
 	 * accounts contains all the received accounts and total contains the addition of each kind of balances
 	 */
@@ -36,6 +38,7 @@ angular.module('spaApp')
 			$scope.total.loan = 0;
 
 			for (var i = 0; i < data.length; i++) {
+				console.info( data[i] );
 				switch ( data[i].account_type ) {
 					case 'SAVINGS_ACCOUNT':
 						$scope.accounts.saving.push( data[i] );
@@ -60,7 +63,8 @@ angular.module('spaApp')
 		},
 		function(error) {
 			console.error( error );
-			window.alert( error.message );
+			$scope.danger.show = true;
+			$scope.danger.message = error;
 		}
 	);
 
@@ -112,8 +116,16 @@ angular.module('spaApp')
 	       $scope.detail = detail;
 	     },
 	     function(error) {
-	       console.error( error );
-	       window.alert( error.message );
+	       console.error( error.status );
+				 $scope.danger.show = true;
+
+				 switch (error.status) {
+				 	case 401:
+				 		$scope.danger.message = 'Tu sesión ha expirado.';
+				 		break;
+				 	default:
+				 		$scope.danger.message = error.response.message;
+				 };
 	     }
 	  );
 	};
@@ -134,8 +146,16 @@ angular.module('spaApp')
 	      $scope.transactions = transactions;
 	    },
 	    function(error) {
-	      console.error( error );
-	      window.alert( error.message );
+				console.error( error );
+				$scope.danger.show = true;
+
+				switch (error.status) {
+				 case 401:
+					 $scope.danger.message = 'Tu sesión ha expirado.';
+					 break;
+				 default:
+					 $scope.danger.message = error.response.message;
+				};
 	    }
 	  );
 	};
