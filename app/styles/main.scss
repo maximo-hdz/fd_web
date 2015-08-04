@@ -1802,3 +1802,10 @@ input[type="number"]:focus{
 	}
 }
 
+.angular-google-map-container{
+	position: absolute;
+	width: 100%;
+	top:49px;
+	bottom:94px;
+	z-index: 90;
+}
