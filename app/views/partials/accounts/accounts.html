@@ -63,6 +63,14 @@
 </div>
 
 <div class="col-md-8">
+  <div>
+    <alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
+      {{danger.message}}
+    </alert>
+    <alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+      {{warning.message}}
+    </alert>
+  </div>
   <div ng-include="'views/partials/accounts/notifications.html'" ng-hide="hideNotifications"></div>
   <div ui-view='detailSaving' class="account-page"></div>
   <div ui-view='detailInvestment' class="account-page"></div>
