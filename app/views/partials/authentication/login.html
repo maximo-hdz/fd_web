@@ -23,12 +23,12 @@
 					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" required autofocus>
 					<div class="row">
 						<div class="col-md-12">
-							<button class="btn btn-success" ng-click="checkLogin();">Ingresar</button>
+							<button class="btn btn-success" ng-click="checkLogin();" ng-disabled="logining">Ingresar</button>
 						</div>
 					</div>
 					<div class="row">
 						<p class="text-center">
-							<a href="javascript:void(0);" ng-click="password();">&iquest;Olvidaste tu usuario?</a> |
+							<a href="javascript:void(0);" ng-click="password();">&iquest;Olvidaste tu contraseña?</a> |
 							<a href="javascript:void(0);">Cont&aacute;ctenos</a>
 						</p>
 					</div>

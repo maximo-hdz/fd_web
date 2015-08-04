@@ -5,12 +5,14 @@ angular.module('spaApp')
 	function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth) {
 
 	$scope.CheckLogin = true;
+	$scope.logining = false;
 	$scope.auth;
 
 	$scope.checkLogin = function(){
 		authorizeProviderFD.checkLogin($scope.auth.user_login).then(
 			function(data) {
 				$scope.auth.with_token = data.role_id===1?'Y':'N';
+				$scope.logining = true;
 				if(data.post_login_action === 'login'){
 					$scope.CheckLogin = false;
 					$scope.auth.response = data;
@@ -20,7 +22,10 @@ angular.module('spaApp')
 					dataAuth.response.with_token = $scope.auth.with_token;
 					$location.path( '/register' );
 				}else if(data.post_login_action === 'change_password'){
-					//TODO change password
+					dataAuth.data = data;
+					dataAuth.response.user_login = $scope.auth.user_login;
+					dataAuth.response.with_token = $scope.auth.with_token;
+					$location.path( '/new' );
 				}
 			},
 			function(error) {

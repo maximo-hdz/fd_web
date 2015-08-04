@@ -17,4 +17,9 @@ $stateProvider
 		templateUrl: 'views/partials/authentication/password.html',
 		controller: 'PasswordCtrl'
 	})
+	.state('new', {
+		url: '/new',
+		templateUrl: 'views/partials/authentication/new.html',
+		controller: 'NewCtrl'
+	})
 }]);
