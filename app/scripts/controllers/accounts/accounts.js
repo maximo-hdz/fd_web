@@ -38,7 +38,6 @@ angular.module('spaApp')
 			$scope.total.loan = 0;
 
 			for (var i = 0; i < data.length; i++) {
-				console.info( data[i] );
 				switch ( data[i].account_type ) {
 					case 'SAVINGS_ACCOUNT':
 						$scope.accounts.saving.push( data[i] );
