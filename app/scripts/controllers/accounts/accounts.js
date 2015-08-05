@@ -63,7 +63,16 @@ angular.module('spaApp')
 		function(error) {
 			console.error( error );
 			$scope.danger.show = true;
-			$scope.danger.message = error;
+			switch (error.status) {
+			 case 401:
+				 $scope.danger.message = 'Tu sesión ha expirado.';
+				 break;
+			 case 503:
+				 $scope.danger.message = 'Error Técnico.';
+				 break;
+			 default:
+				 $scope.danger.message = error.response.message;
+			};
 		}
 	);
 
@@ -122,6 +131,9 @@ angular.module('spaApp')
 				 	case 401:
 				 		$scope.danger.message = 'Tu sesión ha expirado.';
 				 		break;
+					case 503:
+						$scope.danger.message = 'Error Técnico.';
+						break;
 				 	default:
 				 		$scope.danger.message = error.response.message;
 				 };
@@ -149,11 +161,14 @@ angular.module('spaApp')
 				$scope.danger.show = true;
 
 				switch (error.status) {
-				 case 401:
-					 $scope.danger.message = 'Tu sesión ha expirado.';
-					 break;
-				 default:
-					 $scope.danger.message = error.response.message;
+					case 401:
+						$scope.danger.message = 'Tu sesión ha expirado.';
+						break;
+					case 503:
+						$scope.danger.message = 'Error Técnico.';
+						break;
+					default:
+						$scope.danger.message = error.response.message;
 				};
 	    }
 	  );
