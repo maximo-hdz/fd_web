@@ -36,7 +36,7 @@
       <tr ng-repeat="transaction in transactions | filter:search">
         <td>{{transaction.date | date: 'dd/MM/yyyy'}}</td>
         <td>{{transaction.description}}</td>
-        <td>{{transaction.payments | currency}}</td>
+        <td>{{transaction.amount | currency}}</td>
         <td>{{transaction.purchases | currency}}</td>
       </tr>
     </tbody>
