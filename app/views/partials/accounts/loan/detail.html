@@ -1,80 +1,94 @@
 <h1 class="title-account">
-  <span>Detalle de cuenta</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
+	<span>Detalle de cuenta</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
 </h1>
 <div class="row detalles">
-  <div class="col-md-3 content-logo">
-    <div class="logo logo-alcancia"></div>
-  </div>
-  <div class="col-md-9">
-    <div class="saldos-cuenta">
-      <span class="text"></span>
-      <span class="amount"></span>
-    </div>
-    <div class="saldos-cuenta">
-      <span class="text"></span>
-      <span class="amount"></span>
-    </div>
-  </div>
+	<div class="col-md-3 content-logo">
+		<div class="logo logo-credi-donde"></div>
+	</div>
+	<div class="col-md-9">
+		<div class="pagos-prestamo">
+			<div class="row">
+				<div class="col-md-9">
+					<p class="title">Pr&oacute;ximo pago</p>
+					<p>Realiza tu pr&oacute;ximo pago antes del <strong>27/04/2015 por un monto de $ 450.00</strong></p>
+				</div>
+				<div class="col-md-3">
+					<button class="btn btn-warning">Pagar</button>
+				</div>
+			</div>
+		</div>
+		<div class="pagos-prestamo">
+			<div class="row">
+				<div class="col-md-9">
+					<p class="title">&iquest;Quieres cancelar tu prestamo?</p>
+					<p>Realiza el siguiente pago: <strong>27/04/2015 por un monto de $ 3,800.00</strong></p>
+				</div>
+				<div class="col-md-3">
+					<button class="btn btn-warning">Pagar</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="row tablas-detalle">
-  <div class="col-md-6">
-    <table>
-      <tbody>
-        <tr>
-          <td>N&uacute;mero de cr&eacute;dito:</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Producto:</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Plazo:</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Tasa de interes:</td>
-          <td>{{detail.annual_rate}}%</td>
-        </tr>
-        <tr>
-          <td>Saldo del periodo:</td>
-          <td>{{detail.balance | currency}}</td>
-        </tr>
-        <tr>
-          <td>Saldo de liquidaci&oacute;n:</td>
-          <td>{{detail.balance | currency}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-md-6">
-    <table>
-      <tbody>
-        <tr>
-          <td>D&iacute;a de corte:</td>
-          <td>{{detail.cut_date | date: 'dd/MM/yyyy'}}</td>
-        </tr>
-        <tr>
-          <td>Fecha &uacute;ltimo pago:</td>
-          <td>{{detail.last_payment_date | date: 'dd/MM/yyyy'}}</td>
-        </tr>
-        <tr>
-          <td>Pagos pendientes:</td>
-          <td>{{detail.pending_payment | currency}}</td>
-        </tr>
-        <tr>
-          <td>&Uacute;ltimo pago pendiente:</td>
-          <td>{{detail.last_pending_payment | currency}}</td>
-        </tr>
-        <tr>
-          <td>Moneda:</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Fecha l&iacute;mite pago:</td>
-          <td>{{detail.limit_payment_date < today ? 'Inmediato' : detail.limit_payment_date | date: 'dd/MM/yyyy'}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+	<div class="col-md-6">
+		<table>
+			<tbody>
+				<tr>
+					<td>N&uacute;mero de cr&eacute;dito:</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Producto:</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Plazo:</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Tasa de interes:</td>
+					<td>{{detail.annual_rate}}%</td>
+				</tr>
+				<tr>
+					<td>Saldo del periodo:</td>
+					<td>{{detail.balance | currency}}</td>
+				</tr>
+				<tr>
+					<td>Saldo de liquidaci&oacute;n:</td>
+					<td>{{detail.balance | currency}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-6">
+		<table>
+			<tbody>
+				<tr>
+					<td>D&iacute;a de corte:</td>
+					<td>{{detail.cut_date | date: 'dd/MM/yyyy'}}</td>
+				</tr>
+				<tr>
+					<td>Fecha &uacute;ltimo pago:</td>
+					<td>{{detail.last_payment_date | date: 'dd/MM/yyyy'}}</td>
+				</tr>
+				<tr>
+					<td>Pagos pendientes:</td>
+					<td>{{detail.pending_payment | currency}}</td>
+				</tr>
+				<tr>
+					<td>&Uacute;ltimo pago pendiente:</td>
+					<td>{{detail.last_pending_payment | currency}}</td>
+				</tr>
+				<tr>
+					<td>Moneda:</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Fecha l&iacute;mite pago:</td>
+					<td>{{detail.limit_payment_date < today ? 'Inmediato' : detail.limit_payment_date | date: 'dd/MM/yyyy'}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
