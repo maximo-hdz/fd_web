@@ -18,12 +18,12 @@
 
 		<div class="row" ng-show="CheckLogin">
 			<div class="col-md-4 col-md-offset-4">
-				<form class="form-signin">
+				<form class="form-signin" name="login1">
 					<div class="logo"></div>
-					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" required autofocus>
+					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" ng-required="true" autofocus>
 					<div class="row">
 						<div class="col-md-12">
-							<button class="btn btn-success" ng-click="checkLogin();" ng-disabled="logining">Ingresar</button>
+							<button class="btn btn-success" ng-click="checkLogin();" ng-disabled="login1.$invalid || logining">Ingresar</button>
 						</div>
 					</div>
 					<div class="row">
@@ -47,21 +47,22 @@
 					</div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-md-6 col-md-offset-3">
-								<h2 class="text-center">{{auth.response.anti_phishing_statement}}</h2>
-								<div class="user">
-									<img alt="..." ng-src="data:image/png;base64,{{auth.response.image_content}}" /class="img-thumbnail">
+							<form name="login2">
+								<div class="col-md-6 col-md-offset-3">
+									<h2 class="text-center">{{auth.response.anti_phishing_statement}}</h2>
+									<div class="user">
+										<img alt="..." ng-src="data:image/png;base64,{{auth.response.image_content}}" /class="img-thumbnail">
+									</div>
+									<div ng-show="auth.response.new_condition_action === 'Y'">
+										<label class="checkbox">
+											<input type="checkbox" ng-model="auth.new_condition_action" ng-required="auth.response.new_condition_action === 'Y'">
+											Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>,<br>Fundaci&oacute;n Dond&eacute; Banco
+										</label>
+									</div>
+									<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password"  ng-required="true">
+									<button class="btn btn-success form-control" ng-click="login()" ng-disabled="login2.$invalid || logining">Acceder</button>
 								</div>
-								<div ng-show="auth.response.new_condition_action === 'Y'">
-									<label class="checkbox">
-										<input type="checkbox" ng-model="auth.new_condition_action">
-										Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>,<br>Fundaci&oacute;n Dond&eacute; Banco
-									</label>
-								</div>
-								<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password" required>
-								<button class="btn btn-success form-control" ng-click="login()">Acceder</button>
-							</div>
-
+							</form>
 						</div>
 					</div>
 					<div class="panel-footer text-center">

@@ -6,6 +6,7 @@ angular.module('spaApp')
 
 	$scope.data = dataAuth;
 	$scope.pass = {};
+	$scope.changing_pass = false;
 
 	var new_condition_action = "N";
 	if(typeof $scope.data.response['new_condition_action'] !== 'undefined') {
@@ -31,8 +32,10 @@ angular.module('spaApp')
 			$window.alert('Las contraseñas no coinciden');
 			return;
 		}
+		$scope.changing_pass = true;
 		authorizeProviderFD.change_password(dataAuth.response.user_login, $scope.pass.password, new_condition_action, dataAuth.response.with_token).then(
 			function(result) {
+				$window.alert('Contraseñas cambiada exitosamente');
 				$scope.CheckLogin = true;
 				console.log(result)
 				$rootScope.session_token = result.headers('X-AUTH-TOKEN');
@@ -41,9 +44,11 @@ angular.module('spaApp')
 				$rootScope.last_access_media = data.last_client_application_id;
 				$rootScope.client_name = data.client_name;
 				api.init();
+				$scope.changing_pass = false;
 				$location.path( '/accounts' );
 			},
 			function(error) {
+				$scope.changing_pass = false;
 				$scope.status = error;
 			}
 		);

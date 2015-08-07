@@ -8,6 +8,7 @@ angular.module('spaApp')
 	$scope.selection = 0;
 	$scope.data = dataAuth;
 	$scope.dataRegister = {};
+	$scope.sending = false;
 
 	$scope.register = function(step){
 		//TODO Cambiar alerts por otra cosa
@@ -64,17 +65,13 @@ angular.module('spaApp')
 			$window.alert('Ingresa la respuesta a la pregunta 2');
 			return;
 		}
-		if(typeof $scope.dataRegister.terms == 'undefined' ){
-			$window.alert('Acepta los términos y condiciones');
-			return;
-		}
-
 		var new_condition_action = "N";
 		if(typeof $scope.dataRegister['new_condition_action'] !== 'undefined') {
 			if($scope.dataRegister['new_condition_action']){
 				new_condition_action = "Y";
 			}
 		}
+		$scope.sending = true;
 		authorizeProviderFD.register($scope.data.response.user_login, $scope.dataRegister.password, $scope.dataRegister.new_password, dataAuth.response.with_token, new_condition_action, $scope.dataRegister.image_id, $scope.dataRegister.question1.id, $scope.dataRegister.response1, $scope.dataRegister.question2.id, $scope.dataRegister.response2, $scope.dataRegister.saludo).then(
 			function(result) {
 				$window.alert('Registro Exitoso');
@@ -88,6 +85,7 @@ angular.module('spaApp')
 				$location.path( '/accounts' );
 			},
 			function(error) {
+				$scope.sending = false;
 				$scope.status = error;
 			}
 		);
