@@ -26,6 +26,17 @@ angular.module('spaApp')
         return deferred.promise;
       },
 
+      reset_password: function(user_login, password, new_condition_action, new_password, confirmation_password){
+        var deferred = $q.defer();
+        AuthorizeServiceFD.reset_password(user_login, password, new_condition_action, new_password, confirmation_password).success(function(data, status, headers){
+          var result = {"data" : data, "headers" : headers};
+          deferred.resolve(result);
+        }).error(function(data, status){
+          deferred.reject(status);
+        });
+        return deferred.promise;
+      },
+
       register: function(user_login, current_password, new_password, with_token, new_condition_action, image, question1, response1, question2, response2, anti_phishing_statement){
         var deferred = $q.defer();
         AuthorizeServiceFD.register(user_login, current_password, new_password, with_token, new_condition_action, image, question1, response1, question2, response2, anti_phishing_statement).success(function(data, status, headers){
