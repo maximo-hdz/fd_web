@@ -6,18 +6,22 @@ angular.module('spaApp')
 
 	$scope.pass = {};
 	$scope.selection = 0;
+	$scope.sending = false;
 
 	$scope.forgetPassword = function(){
 		if(typeof $scope.pass.user_login == 'undefined' ){
 			$window.alert('Ingresa tu usuario');
 			return;
 		}
+		$scope.sending = true;
 		authorizeProviderFD.forgetPassword($scope.pass.user_login).then(
 			function(data) {
+				$scope.sending = false;
 				$scope.selection = 1;
 				$scope.pass.response = data;
 			},
 			function(error) {
+				$scope.sending = false;
 				$scope.status = error;
 			}
 		);
@@ -48,11 +52,14 @@ angular.module('spaApp')
 			$window.alert('Ingresa tu fecha de nacimiento');
 			return;
 		}
+		$scope.sending = true;
 		authorizeProviderFD.forgetPasswordConfirmation($scope.pass.user_login, $scope.pass.first_question_id.id, $scope.pass.first_response, $scope.pass.second_question_id.id, $scope.pass.second_response, $scope.pass.birth_date).then(
 			function(data) {
+				$scope.sending = false;
 				$scope.selection = 2;
 			},
 			function(error) {
+				$scope.sending = false;
 				$scope.status = error;
 			}
 		);

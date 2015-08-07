@@ -11,28 +11,30 @@
 			<div class="panel-body">
 				<h2>Ingresa una nueva contrase&ntilde;a</h2>
 				<div class="divider"></div>
-				<div class="row">
-					<div class="col-md-4 col-md-offset-1">
-						<p>*Nueva contrase&ntilde;a</p>
+				<form name="form_new">
+					<div class="row">
+						<div class="col-md-4 col-md-offset-1">
+							<p>*Nueva contrase&ntilde;a</p>
+						</div>
+						<div class="col-md-5">
+							<input type="password" class="form-control" placeholder="Ingresa una contrase&ntilde;a" ng-model="pass.password" ng-required="true">
+						</div>
 					</div>
-					<div class="col-md-5">
-						<input type="password" class="form-control" placeholder="Ingresa una contrase&ntilde;a" ng-model="pass.password">
+					<div class="row">
+						<div class="col-md-4 col-md-offset-1">
+							<p>*Confirma contrase&ntilde;a</p>
+						</div>
+						<div class="col-md-5">
+							<input type="password" class="form-control" placeholder="Confirma la contrase&ntilde;a" ng-model="pass.confirm" ng-required="true">
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 col-md-offset-1">
-						<p>*Confirma contrase&ntilde;a</p>
+					<div class="divider"></div>
+					<div class="row">
+						<div class="col-md-5 col-md-offset-5">
+							<button class="btn btn-success form-control" ng-click="change_password()" ng-disabled="form_new.$invalid || changing_pass">Acceder</button>
+						</div>
 					</div>
-					<div class="col-md-5">
-						<input type="password" class="form-control" placeholder="Confirma la contrase&ntilde;a" ng-model="pass.confirm">
-					</div>
-				</div>
-				<div class="divider"></div>
-				<div class="row">
-					<div class="col-md-5 col-md-offset-5">
-						<button class="btn btn-success form-control" ng-click="change_password()">Acceder</button>
-					</div>
-				</div>
+				</form>
 			</div>
 			<div class="panel-footer">*Campos necesarios</div>
 		</div>

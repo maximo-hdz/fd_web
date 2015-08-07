@@ -9,10 +9,11 @@ angular.module('spaApp')
 	$scope.auth;
 
 	$scope.checkLogin = function(){
+		$scope.logining = true;
 		authorizeProviderFD.checkLogin($scope.auth.user_login).then(
 			function(data) {
+				$scope.logining = false;
 				$scope.auth.with_token = data.role_id===1?'Y':'N';
-				$scope.logining = true;
 				if(data.post_login_action === 'login'){
 					$scope.CheckLogin = false;
 					$scope.auth.response = data;
@@ -29,6 +30,7 @@ angular.module('spaApp')
 				}
 			},
 			function(error) {
+				$scope.logining = false;
 				$scope.status = error;
 			}
 		);
@@ -41,6 +43,7 @@ angular.module('spaApp')
 				new_condition_action = "Y";
 			}
 		}
+		$scope.logining = true;
 		$http({
 			url: $scope.restAPIBaseUrl + '/login',
 			method: 'POST',
@@ -62,10 +65,12 @@ angular.module('spaApp')
 				$rootScope.client_name = data.client_name;
 				api.init();
 				timerService.start();
+				$scope.logining = false;
 				$location.path( '/accounts' );
 			}
 		).error(
 			function(errorObject, status) {
+				$scope.logining = false;
 				$scope.status = error;
 			}
 		);
