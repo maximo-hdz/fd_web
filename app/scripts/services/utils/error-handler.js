@@ -19,10 +19,11 @@ angular.module('spaApp')
     $scope.$broadcast('displayError', error);
   };
 
-  this.resetError = function() {
-    error.message = '';
-    error.display = false;
-    $scope.$broadcast('displayError', error);
+  /**
+   * Reset error every time a function is called.
+   */
+  this.reset = function() {
+    $scope.$broadcast('clearError');
   };
 
 }]);

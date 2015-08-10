@@ -84,9 +84,13 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
   });
 
 	$scope.$on('displayError', function(event, error) {
-  	console.info( error );
 		$scope.danger.show = true;
 		$scope.danger.message = error.message;
   });
+
+	$scope.$on('clearError', function(event) {
+		$scope.danger.show = false;
+		$scope.danger.message = '';
+	});
 
 }]);

@@ -21,6 +21,8 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 	$scope.total = {};
 	// To hide the notifications in accounts
 	$scope.hideNotifications = false;
+	// Clear error
+	errorHandler.reset();
 
 	/**
 	 * Receive the accounts from the middleware
@@ -69,6 +71,7 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 	 * Change the view according to the selected account
 	 */
 	$scope.selectAccount = function(account) {
+		errorHandler.reset();
 		// Hide the notifications
 		$scope.hideNotifications = true;
 
@@ -107,6 +110,7 @@ function($scope, $location, accountsProviderFD, errorHandler) {
    * Request the account detail from the middleware
    */
 	var getAccountDetail = function() {
+		errorHandler.reset();
 		accountsProviderFD.getAccountDetail( $scope.selectedAccountId ).then(
 	    function(detail) {
 	       console.info( detail );
