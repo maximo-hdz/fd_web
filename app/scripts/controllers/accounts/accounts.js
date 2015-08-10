@@ -4,7 +4,8 @@
  * The accounts controller. Gets accounts passing auth parameters
  */
 angular.module('spaApp')
-.controller('AccountsCtrl',['$scope', '$location', 'accountsProviderFD', function($scope, $location, accountsProviderFD) {
+.controller('AccountsCtrl',['$scope', '$location', 'accountsProviderFD', 'errorHandler',
+function($scope, $location, accountsProviderFD, errorHandler) {
 
 	// For searching purposes
 	var params = {};
@@ -12,8 +13,6 @@ angular.module('spaApp')
 	params.size = 100;
 	// To make a comparison between today's date and the details dates
 	$scope.today = new Date().getTime();
-
-	$scope.danger = {};
 
 	/**
 	 * accounts contains all the received accounts and total contains the addition of each kind of balances
@@ -62,17 +61,7 @@ angular.module('spaApp')
 		},
 		function(error) {
 			console.error( error );
-			$scope.danger.show = true;
-			switch (error.status) {
-			 case 401:
-				 $scope.danger.message = 'Tu sesión ha expirado.';
-				 break;
-			 case 503:
-				 $scope.danger.message = 'Error Técnico.';
-				 break;
-			 default:
-				 $scope.danger.message = error.response.message;
-			};
+			errorHandler.setError( error.status );
 		}
 	);
 
@@ -124,19 +113,8 @@ angular.module('spaApp')
 	       $scope.detail = detail;
 	     },
 	     function(error) {
-	       console.error( error.status );
-				 $scope.danger.show = true;
-
-				 switch (error.status) {
-				 	case 401:
-				 		$scope.danger.message = 'Tu sesión ha expirado.';
-				 		break;
-					case 503:
-						$scope.danger.message = 'Error Técnico.';
-						break;
-				 	default:
-				 		$scope.danger.message = error.response.message;
-				 };
+				 console.error( error );
+				 errorHandler.setError( error.status );
 	     }
 	  );
 	};
@@ -158,18 +136,7 @@ angular.module('spaApp')
 	    },
 	    function(error) {
 				console.error( error );
-				$scope.danger.show = true;
-
-				switch (error.status) {
-					case 401:
-						$scope.danger.message = 'Tu sesión ha expirado.';
-						break;
-					case 503:
-						$scope.danger.message = 'Error Técnico.';
-						break;
-					default:
-						$scope.danger.message = error.response.message;
-				};
+				errorHandler.setError( error.status );
 	    }
 	  );
 	};
