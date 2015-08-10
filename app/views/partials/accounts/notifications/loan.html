@@ -1,0 +1,19 @@
+<!-- Partial for loan notifications in the accounts dashboard -->
+<div class="col-md-3 hidden-xs hidden-sm">
+  <div class="cell">
+    <div class="logo logo-presta-plus"></div>
+  </div>
+</div>
+<div class="col-md-4 col-xs-6 info-account">
+  <div class="cell">
+    <p>
+      <strong>{{notification.account_name}} ***{{notification.account_number}}</strong><br>
+      Pr&oacute;ximo pago: Inmediato
+    </p>
+  </div>
+</div>
+<div class="col-md-5 col-xs-6 info-account">
+  <div class="cell">
+    <p>Pago m&iacute;nimo: <button class="btn btn-default">Pagar: <strong>{{notification.min_payment | currency}}</strong></button></p>
+  </div>
+</div>

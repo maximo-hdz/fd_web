@@ -2,89 +2,26 @@
 	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	<p>
 		<strong>MENSAJE IMPORTANTE:</strong><br>
-		&iexcl;Enhorabuena! Gracias a que eres un buen cliente, te hemos pre-autorizado un cr&eacute;dito de $5,000. Ac&eacute;rcate a tu sucursal mas cercana o ll&aacute;manos al 01 800 36686.
+		{{core_notification.text_message}}
 	</p>
 </div>
 
 <h1 class="title-green">Notificaciones recientes</h1>
 <div class="box-notifications">
-	<div class="row">
-		<div class="col-md-3 hidden-xs hidden-sm">
-			<div class="cell">
-				<div class="logo logo-inversion"></div>
-			</div>
-		</div>
-		<div class="col-md-4 col-xs-6 info-account">
-			<div class="cell">
-				<p>
-					<strong>Inversi&oacute;n Dond&eacute; ***2023</strong><br>
-					Monto invertido: $ 6,000.00
-				</p>
-			</div>
-		</div>
-		<div class="col-md-5 col-xs-6 info-account">
-			<div class="cell">
-				<p>Rendimientos: <span>$ 56.00</span></p>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3 hidden-xs hidden-sm">
-			<div class="cell">
-				<div class="logo logo-presta-plus"></div>
-			</div>
-		</div>
-		<div class="col-md-4 col-xs-6 info-account">
-			<div class="cell">
-				<p>
-					<strong>Presta Plus ***7867</strong><br>
-					Pr&oacute;ximo pago: 18/05/2015
-				</p>
-			</div>
-		</div>
-		<div class="col-md-5 col-xs-6 info-account">
-			<div class="cell">
-				<p>Pago m&iacute;nimo: <button class="btn btn-default">Pagar: <strong>$ 450.00</strong></button></p>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3 hidden-xs hidden-sm">
-			<div class="cell">
-				<div class="logo logo-credi-donde"></div>
-			</div>
-		</div>
-		<div class="col-md-4 col-xs-6 info-account">
-			<div class="cell">
-				<p>
-					<strong>Cr&eacute;dito Dond&eacute; ***1653</strong><br>
-					Pr&oacute;ximo pago: 18/05/2015
-				</p>
-			</div>
-		</div>
-		<div class="col-md-5 col-xs-6 info-account">
-			<div class="cell">
-				<p>Pago m&iacute;nimo: <button class="btn btn-default">Pagar: <strong>$ 12,500.00</strong></button></p>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3 hidden-xs hidden-sm">
-			<div class="cell">
-				<div class="logo logo-alcancia"></div>
-			</div>
-		</div>
-		<div class="col-md-4 col-xs-6 info-account">
-			<div class="cell">
-				<p>
-					<strong>Mi Alcanc&iacute;a Dond&eacute; ***2023</strong>
-				</p>
-			</div>
-		</div>
-		<div class="col-md-5 col-xs-6 info-account">
-			<div class="cell">
-				<p>Saldo disponible: <span>$ 12,500.00</span></p>
-			</div>
-		</div>
+	<div class="row" ng-repeat="notification in notifications" ng-switch="notification.account_type">
+
+		<article ng-switch-when="LOAN_ACCOUNT">
+			<ng-include src="'/views/partials/accounts/notifications/loan.html'"></ng-include>
+		</article>
+		<article ng-switch-when="CREDIT_ACCOUNT">
+			<ng-include src="'/views/partials/accounts/notifications/credit.html'"></ng-include>
+		</article>
+		<article ng-switch-when="SAVINGS_ACCOUNT">
+			<ng-include src="'/views/partials/accounts/notifications/saving.html'"></ng-include>
+		</article>
+		<article ng-switch-when="INVESTMENT_ACCOUNT">
+			<ng-include src="'/views/partials/accounts/notifications/investment.html'"></ng-include>
+		</article>
+
 	</div>
 </div>
