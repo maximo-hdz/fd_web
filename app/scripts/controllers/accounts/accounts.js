@@ -13,6 +13,8 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 	params.size = 100;
 	// To make a comparison between today's date and the details dates
 	$scope.today = new Date().getTime();
+	// To separate the first four accounts
+	$scope.notifications = [];
 
 	/**
 	 * accounts contains all the received accounts and total contains the addition of each kind of balances
@@ -39,6 +41,9 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 			$scope.total.loan = 0;
 
 			for (var i = 0; i < data.length; i++) {
+				// Take the first four accounts for notifications
+				if ( i < 4 )
+					evaluateDate( data[i] );
 				switch ( data[i].account_type ) {
 					case 'SAVINGS_ACCOUNT':
 						$scope.accounts.saving.push( data[i] );
@@ -66,6 +71,30 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 			errorHandler.setError( error.status );
 		}
 	);
+
+	/**
+	 * Evaluate payment_date or cut_date to determine if the the account should be displayed in notifications
+	 * @param account
+	 */
+	var evaluateDate = function(account) {
+		//console.error(account);
+		switch (account.account_type) {
+			case 'LOAN_ACCOUNT':
+			case 'CREDIT_ACCOUNT':
+				if ( account.payment_date < $scope.today ) {
+					$scope.notifications.push( account );
+				}
+				break;
+			case 'SAVINGS_ACCOUNT':
+			case 'INVESTMENT_ACCOUNT':
+				if ( account.cut_date < $scope.today ) {
+					$scope.notifications.push( account );
+				}
+				break;
+			default:
+				console.log("account_type "+ data[i].account_type +" not supported");
+		}
+	};
 
 	/**
 	 * Change the view according to the selected account
