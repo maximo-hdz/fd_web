@@ -3,7 +3,8 @@
  *
  */
 angular.module('spaApp')
-.controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'accountsProviderFD', '$window', 'timerService', function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD, $window, timerService) {
+.controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'accountsProviderFD', '$window', 'timerService', 'errorHandler',
+function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD, $window, timerService, errorHandler) {
 
 	// Set first section
 	$scope.currentSection = 'accounts';
@@ -81,5 +82,24 @@ angular.module('spaApp')
 	$scope.$on('IdleReset', function() {
     $scope.warning.show = false;
   });
+
+	/**
+	 * eventListener to display errors
+	 * @param event
+	 * @param error
+	 */
+	$scope.$on('displayError', function(event, error) {
+		$scope.danger.show = true;
+		$scope.danger.message = error.message;
+  });
+
+	/**
+	 * eventListener to clear errors
+	 * @param event
+	 */
+	$scope.$on('clearError', function(event) {
+		$scope.danger.show = false;
+		$scope.danger.message = '';
+	});
 
 }]);

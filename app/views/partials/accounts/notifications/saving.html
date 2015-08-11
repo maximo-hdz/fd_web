@@ -1,0 +1,18 @@
+<!-- Partial for saving notifications in the accounts dashboard -->
+<div class="col-md-3 hidden-xs hidden-sm">
+  <div class="cell">
+    <div class="logo logo-alcancia"></div>
+  </div>
+</div>
+<div class="col-md-4 col-xs-6 info-account">
+  <div class="cell">
+    <p>
+      <strong>{{notification.account_name}} ***{{notification.account_number}}</strong>
+    </p>
+  </div>
+</div>
+<div class="col-md-5 col-xs-6 info-account">
+  <div class="cell">
+    <p>Saldo disponible: <span>{{notification.available_balance | currency}}</span></p>
+  </div>
+</div>

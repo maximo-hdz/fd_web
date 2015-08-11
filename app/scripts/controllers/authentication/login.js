@@ -63,6 +63,7 @@ angular.module('spaApp')
 				$rootScope.last_access_date = data.last_access_date
 				$rootScope.last_access_media = data.last_client_application_id;
 				$rootScope.client_name = data.client_name;
+				$rootScope.core_notification = data.core_notification;
 				api.init();
 				timerService.start();
 				$scope.logining = false;

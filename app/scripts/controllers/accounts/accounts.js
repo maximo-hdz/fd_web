@@ -4,7 +4,8 @@
  * The accounts controller. Gets accounts passing auth parameters
  */
 angular.module('spaApp')
-.controller('AccountsCtrl',['$scope', '$location', 'accountsProviderFD', function($scope, $location, accountsProviderFD) {
+.controller('AccountsCtrl',['$scope', '$location', 'accountsProviderFD', 'errorHandler',
+function($scope, $location, accountsProviderFD, errorHandler) {
 
 	// For searching purposes
 	var params = {};
@@ -12,8 +13,8 @@ angular.module('spaApp')
 	params.size = 100;
 	// To make a comparison between today's date and the details dates
 	$scope.today = new Date().getTime();
-
-	$scope.danger = {};
+	// To separate the first four accounts
+	$scope.notifications = [];
 
 	/**
 	 * accounts contains all the received accounts and total contains the addition of each kind of balances
@@ -22,6 +23,8 @@ angular.module('spaApp')
 	$scope.total = {};
 	// To hide the notifications in accounts
 	$scope.hideNotifications = false;
+	// Clear error
+	errorHandler.reset();
 
 	/**
 	 * Receive the accounts from the middleware
@@ -38,6 +41,9 @@ angular.module('spaApp')
 			$scope.total.loan = 0;
 
 			for (var i = 0; i < data.length; i++) {
+				// Take the first four accounts for notifications
+				if ( i < 4 )
+					evaluateDate( data[i] );
 				switch ( data[i].account_type ) {
 					case 'SAVINGS_ACCOUNT':
 						$scope.accounts.saving.push( data[i] );
@@ -62,24 +68,39 @@ angular.module('spaApp')
 		},
 		function(error) {
 			console.error( error );
-			$scope.danger.show = true;
-			switch (error.status) {
-			 case 401:
-				 $scope.danger.message = 'Tu sesión ha expirado.';
-				 break;
-			 case 503:
-				 $scope.danger.message = 'Error Técnico.';
-				 break;
-			 default:
-				 $scope.danger.message = error.response.message;
-			};
+			errorHandler.setError( error.status );
 		}
 	);
+
+	/**
+	 * Evaluate payment_date or cut_date to determine if the the account should be displayed in notifications
+	 * @param account
+	 */
+	var evaluateDate = function(account) {
+		//console.error(account);
+		switch (account.account_type) {
+			case 'LOAN_ACCOUNT':
+			case 'CREDIT_ACCOUNT':
+				if ( account.payment_date < $scope.today ) {
+					$scope.notifications.push( account );
+				}
+				break;
+			case 'SAVINGS_ACCOUNT':
+			case 'INVESTMENT_ACCOUNT':
+				if ( account.cut_date < $scope.today ) {
+					$scope.notifications.push( account );
+				}
+				break;
+			default:
+				console.log("account_type "+ data[i].account_type +" not supported");
+		}
+	};
 
 	/**
 	 * Change the view according to the selected account
 	 */
 	$scope.selectAccount = function(account) {
+		errorHandler.reset();
 		// Hide the notifications
 		$scope.hideNotifications = true;
 
@@ -118,25 +139,15 @@ angular.module('spaApp')
    * Request the account detail from the middleware
    */
 	var getAccountDetail = function() {
+		errorHandler.reset();
 		accountsProviderFD.getAccountDetail( $scope.selectedAccountId ).then(
 	    function(detail) {
 	       console.info( detail );
 	       $scope.detail = detail;
 	     },
 	     function(error) {
-	       console.error( error.status );
-				 $scope.danger.show = true;
-
-				 switch (error.status) {
-				 	case 401:
-				 		$scope.danger.message = 'Tu sesión ha expirado.';
-				 		break;
-					case 503:
-						$scope.danger.message = 'Error Técnico.';
-						break;
-				 	default:
-				 		$scope.danger.message = error.response.message;
-				 };
+				 console.error( error );
+				 errorHandler.setError( error.status );
 	     }
 	  );
 	};
@@ -158,18 +169,7 @@ angular.module('spaApp')
 	    },
 	    function(error) {
 				console.error( error );
-				$scope.danger.show = true;
-
-				switch (error.status) {
-					case 401:
-						$scope.danger.message = 'Tu sesión ha expirado.';
-						break;
-					case 503:
-						$scope.danger.message = 'Error Técnico.';
-						break;
-					default:
-						$scope.danger.message = error.response.message;
-				};
+				errorHandler.setError( error.status );
 	    }
 	  );
 	};
