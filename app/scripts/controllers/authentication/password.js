@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('PasswordCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', '$window',
-	function($scope, $rootScope, $location, authorizeProviderFD, $window) {
+.controller('PasswordCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', '$window', 'errorHandler',
+	function($scope, $rootScope, $location, authorizeProviderFD, $window, errorHandler) {
 
 	$scope.pass = {};
 	$scope.selection = 0;
 	$scope.sending = false;
+	$scope.warning = {};
+	$scope.danger = {};
 
 	$scope.forgetPassword = function(){
 		if(typeof $scope.pass.user_login == 'undefined' ){
@@ -22,7 +24,7 @@ angular.module('spaApp')
 			},
 			function(error) {
 				$scope.sending = false;
-				$scope.status = error;
+				errorHandler.setError(error.status);
 			}
 		);
 	}
@@ -60,7 +62,7 @@ angular.module('spaApp')
 			},
 			function(error) {
 				$scope.sending = false;
-				$scope.status = error;
+				errorHandler.setError(error.status);
 			}
 		);
 	}
@@ -68,5 +70,15 @@ angular.module('spaApp')
 	$scope.logout = function(){
 		$location.path('/logout');
 	}
+
+	$scope.$on('displayError', function(event, error) {
+		$scope.danger.show = true;
+		$scope.danger.message = error.message;
+	});
+
+	$scope.$on('clearError', function(event) {
+		$scope.danger.show = false;
+		$scope.danger.message = '';
+	});
 
 }]);
