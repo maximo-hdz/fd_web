@@ -33,21 +33,13 @@ angular.module('spaApp')
 			return;
 		}
 		$scope.changing_pass = true;
-		authorizeProviderFD.change_password(dataAuth.response.user_login, $scope.pass.password, new_condition_action, dataAuth.response.with_token).then(
+		authorizeProviderFD.reset_password(dataAuth.response.user_login, $scope.pass.old, new_condition_action, $scope.pass.password, $scope.pass.confirm).then(
 			function(result) {
 				$window.alert('Contraseñas cambiada exitosamente');
-				$scope.CheckLogin = true;
-				console.log(result)
-				$rootScope.session_token = result.headers('X-AUTH-TOKEN');
-				var data = result.data;
-				$rootScope.last_access_date = data.last_access_date
-				$rootScope.last_access_media = data.last_client_application_id;
-				$rootScope.client_name = data.client_name;
-				api.init();
-				$scope.changing_pass = false;
-				$location.path( '/accounts' );
+				$location.path( '/login' );
 			},
 			function(error) {
+				$window.alert('Error al cambiar la contraseña, inténtelo más tarde');
 				$scope.changing_pass = false;
 				$scope.status = error;
 			}

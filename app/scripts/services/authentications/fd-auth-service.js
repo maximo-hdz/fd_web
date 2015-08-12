@@ -14,21 +14,6 @@ angular.module('spaApp')
 			});
 		}
 
-		this.change_password = function(user_login, password, new_condition_action, with_token){
-			return $http({
-					url: $rootScope.restAPIBaseUrl+'/login',
-					method: 'POST',
-					data: JSON.stringify({
-						"user_login": user_login,
-						"password": password,
-						"client_application_id":"SPA",
-						"new_condition_action": new_condition_action,
-						"with_token" : with_token,
-						"post_login_action" : "change_password"
-					})
-			});
-		}
-
 		this.reset_password = function(user_login, password, new_condition_action, new_password, confirmation_password){
 			return $http({
 					url: $rootScope.restAPIBaseUrl+'/userInformation/password',
