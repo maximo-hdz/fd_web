@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api', '$http', 'dataAuth', 'timerService',
-	function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth, timerService) {
+.controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api', '$http', 'dataAuth', 'timerService', 'errorHandler',
+	function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth, timerService, errorHandler) {
 
 	$scope.CheckLogin = true;
 	$scope.logining = false;
 	$scope.auth;
+	$scope.warning = {};
+	$scope.danger = {};
 
 	$scope.checkLogin = function(){
 		$scope.logining = true;
@@ -31,7 +33,7 @@ angular.module('spaApp')
 			},
 			function(error) {
 				$scope.logining = false;
-				$scope.status = error;
+				errorHandler.setError(error.status);
 			}
 		);
 	}
@@ -66,13 +68,13 @@ angular.module('spaApp')
 				$rootScope.core_notification = data.core_notification;
 				api.init();
 				timerService.start();
-				$scope.logining = false;
 				$location.path( '/accounts' );
+				$scope.logining = false;
 			}
 		).error(
-			function(errorObject, status) {
+			function(error, status) {
 				$scope.logining = false;
-				$scope.status = error;
+				errorHandler.setError(error.status);
 			}
 		);
 	};
@@ -84,5 +86,15 @@ angular.module('spaApp')
 	$scope.map = function(){
 		$location.path( '/map' );
 	}
+
+	$scope.$on('displayError', function(event, error) {
+		$scope.danger.show = true;
+		$scope.danger.message = error.message;
+	});
+
+	$scope.$on('clearError', function(event) {
+		$scope.danger.show = false;
+		$scope.danger.message = '';
+	});
 
 }]);

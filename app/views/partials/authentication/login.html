@@ -21,6 +21,14 @@
 				<form class="form-signin" name="login1">
 					<div class="logo"></div>
 					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" ng-required="true" autofocus>
+					<div>
+						<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
+							{{danger.message}}
+						</alert>
+						<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+							{{warning.message}}
+						</alert>
+					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<button class="btn btn-success" ng-click="checkLogin();" ng-disabled="login1.$invalid || logining">Ingresar</button>
@@ -58,6 +66,14 @@
 											<input type="checkbox" ng-model="auth.new_condition_action" ng-required="auth.response.new_condition_action === 'Y'">
 											Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>,<br>Fundaci&oacute;n Dond&eacute; Banco
 										</label>
+									</div>
+									<div>
+										<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
+											{{danger.message}}
+										</alert>
+										<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+											{{warning.message}}
+										</alert>
 									</div>
 									<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password"  ng-required="true">
 									<button class="btn btn-success form-control" ng-click="login()" ng-disabled="login2.$invalid || logining">Acceder</button>
