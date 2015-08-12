@@ -2,13 +2,15 @@
 
 angular.module('spaApp')
 
-.controller('RegisterCtrl',['$scope', '$rootScope', 'authorizeProviderFD', 'dataAuth', '$location', '$window', 'api',
-	function($scope, $rootScope, authorizeProviderFD, dataAuth, $location, $window, api) {
+.controller('RegisterCtrl',['$scope', '$rootScope', 'authorizeProviderFD', 'dataAuth', '$location', '$window', 'api', 'errorHandler',
+	function($scope, $rootScope, authorizeProviderFD, dataAuth, $location, $window, api, errorHandler) {
 
 	$scope.selection = 0;
 	$scope.data = dataAuth;
 	$scope.dataRegister = {};
 	$scope.sending = false;
+	$scope.warning = {};
+	$scope.danger = {};
 
 	$scope.register = function(step){
 		//TODO Cambiar alerts por otra cosa
@@ -86,9 +88,19 @@ angular.module('spaApp')
 			},
 			function(error) {
 				$scope.sending = false;
-				$scope.status = error;
+				errorHandler.setError(error.status);
 			}
 		);
 	}
+
+	$scope.$on('displayError', function(event, error) {
+		$scope.danger.show = true;
+		$scope.danger.message = error.message;
+	});
+
+	$scope.$on('clearError', function(event) {
+		$scope.danger.show = false;
+		$scope.danger.message = '';
+	});
 
 }]);

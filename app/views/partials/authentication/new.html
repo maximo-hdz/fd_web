@@ -37,6 +37,14 @@
 						</div>
 					</div>
 					<div class="divider"></div>
+					<div>
+						<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
+							{{danger.message}}
+						</alert>
+						<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+							{{warning.message}}
+						</alert>
+					</div>
 					<div class="row">
 						<div class="col-md-5 col-md-offset-5">
 							<button class="btn btn-success form-control" ng-click="change_password()" ng-disabled="form_new.$invalid || changing_pass">Acceder</button>

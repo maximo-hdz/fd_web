@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('NewCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'dataAuth', '$window', 'api',
-	function($scope, $rootScope, $location, authorizeProviderFD, dataAuth, $window, api) {
+.controller('NewCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'dataAuth', '$window', 'api', 'errorHandler',
+	function($scope, $rootScope, $location, authorizeProviderFD, dataAuth, $window, api, errorHandler) {
 
 	$scope.data = dataAuth;
 	$scope.pass = {};
 	$scope.changing_pass = false;
+	$scope.warning = {};
+	$scope.danger = {};
 
 	var new_condition_action = "N";
 	if(typeof $scope.data.response['new_condition_action'] !== 'undefined') {
@@ -39,11 +41,20 @@ angular.module('spaApp')
 				$location.path( '/login' );
 			},
 			function(error) {
-				$window.alert('Error al cambiar la contraseña, inténtelo más tarde');
+				errorHandler.setError(error.status);
 				$scope.changing_pass = false;
-				$scope.status = error;
 			}
 		);
 	}
+
+	$scope.$on('displayError', function(event, error) {
+		$scope.danger.show = true;
+		$scope.danger.message = error.message;
+	});
+
+	$scope.$on('clearError', function(event) {
+		$scope.danger.show = false;
+		$scope.danger.message = '';
+	});
 
 }]);
