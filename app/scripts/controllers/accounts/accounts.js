@@ -15,6 +15,8 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 	$scope.today = new Date().getTime();
 	// To separate the first four accounts
 	$scope.notifications = [];
+	// To contain the start and end dates
+	$scope.searchParams = {};
 
 	/**
 	 * accounts contains all the received accounts and total contains the addition of each kind of balances
@@ -115,7 +117,7 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 
 		// Request transactions (only for saving and credit accounts)
 		if (type === 'SAVINGS_ACCOUNT' || type === 'CREDIT_ACCOUNT')
-			$scope.getTransactions('12/06/2014', '14/07/2014');
+			$scope.getTransactions();
 
 		switch (type) {
 			case 'SAVINGS_ACCOUNT':
@@ -153,14 +155,47 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 	};
 
 	/**
+	 * Search transactions using the datepicker values
+	 */
+	$scope.searchTransactions = function() {
+    var todaysDate = new Date();
+    var dd = todaysDate.getDate();      // day
+    var mm = todaysDate.getMonth()+1;   // month (January is 0!)
+    var yy = todaysDate.getFullYear();  // year
+    dd = dd < 10 ? '0' + dd : dd;
+    mm = mm < 10 ? '0' + mm : mm;
+    todaysDate = yy+mm+dd;
+
+    if ($scope.searchParams.startDate !== undefined)
+      	// startDate pass from String to Int
+        var startDate = parseInt($scope.searchParams.startDate.split("/").reverse().join(""));
+    if ($scope.searchParams.endDate !== undefined)
+        // endDate pass from String to Int
+        var endDate = parseInt($scope.searchParams.endDate.split("/").reverse().join(""));
+
+    if( $scope.searchParams.startDate && $scope.searchParams.endDate ) {
+        if (startDate > todaysDate || endDate > todaysDate)
+					console.error( 'Búsqueda no realizada: Fecha Inicial y/o Fecha Final NO pueden ser posteriores a la Fecha de Hoy' );
+        else if (startDate > endDate)
+					console.error( 'Búsqueda no realizada: Fecha Inicial debe ser anterior a la Fecha Final' );
+        else
+            $scope.getTransactions($scope.searchParams.startDate, $scope.searchParams.endDate);
+    } else if( $scope.searchParams.startDate === null && $scope.searchParams.endDate === null) {
+			params.date_end = null;
+			params.date_start = null;
+			$scope.getTransactions();
+		}
+  };
+
+	/**
    * Request the transactions from the middleware
-   * @param startDate
-	 * @param endDate
    */
-	$scope.getTransactions = function(startDate, endDate) {
+	$scope.getTransactions = function() {
 		// Complete params
-		params.date_start = startDate;
-		params.date_end = endDate;
+		params.date_start = $scope.searchParams.startDate;
+		params.date_end = $scope.searchParams.endDate;
+
+		$scope.transactions = null;
 
 		accountsProviderFD.getTransactions( $scope.selectedAccountId, params ).then(
 	    function(transactions) {

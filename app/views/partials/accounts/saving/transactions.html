@@ -11,15 +11,15 @@
 			<button type="button" class="btn btn-success">10/02/2015</button>
 		</div> -->
 		<div class="input-group">
-			<input type="text"class="date date-from" value="10/02/2015">
-			<input type="text"class="date date-to" value="10/02/2015">
+			<input type="text" class="date date-from" ng-model="searchParams.startDate" ng-change="searchTransactions()" fddatepicker>
+			<input type="text" class="date date-to" ng-model="searchParams.endDate" ng-change="searchTransactions()" fddatepicker>
 		</div><!-- /input-group -->
-		
+
 	</div>
 	<div class="col-md-5">
 		<p class="label">Por monto:</p>
 		<div class="btn-group" role="group">
-			
+
 			<button type="button" class="btn btn-default">Desde</button>
 			<button type="button" class="btn btn-default">Hasta</button>
 		</div>

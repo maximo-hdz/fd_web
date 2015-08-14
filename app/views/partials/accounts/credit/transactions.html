@@ -7,8 +7,8 @@
   <div class="col-md-5">
     Por fecha:
     <div class="btn-group" role="group" aria-label="...">
-      <button type="button" class="btn btn-success">10/02/2015</button>
-      <button type="button" class="btn btn-success">10/02/2015</button>
+      <input type="text" class="btn btn-success" ng-model="searchParams.startDate" ng-change="searchTransactions()" fddatepicker>
+      <input type="text" class="btn btn-success" ng-model="searchParams.endDate" ng-change="searchTransactions()" fddatepicker>
     </div>
   </div>
   <div class="col-md-5">
