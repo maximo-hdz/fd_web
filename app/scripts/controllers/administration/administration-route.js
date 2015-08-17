@@ -12,12 +12,11 @@ angular.module('administration-route', ['ui.router'])
       views: {
         'adminContent': {
           templateUrl: 'views/partials/administration/admin_front.html',
-          controller: 'UsersAdministrationCtrl',
-          breadcrumb: {
-            title: 'Administration'
-          }
+          controller: 'UsersAdministrationCtrl'
         }
-      }
+      },
+        displayName: 'Administración',
+        path: 'Administración'
     })
 
     // This is the section example
@@ -26,12 +25,10 @@ angular.module('administration-route', ['ui.router'])
       views: {
         'example': {
           templateUrl: 'views/partials/administration/example.html',
-          controller: '',
-          breadcrumb: {
-            title: 'Example'
-          }
+          controller: ''
         }
-      }
+      },
+        displayName: 'Example',
+        path: 'Administración'
     })
-
 }]);

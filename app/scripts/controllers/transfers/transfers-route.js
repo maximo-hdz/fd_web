@@ -13,12 +13,10 @@ angular.module('transfers-route', ['ui.router'])
       views: {
         'transfersContent': {
           templateUrl: 'views/partials/transfers/transfers.html',
-          controller: 'TransfersCtrl',
-          breadcrumb: {
-            title: 'Transfers'
-          }
+          controller: 'TransfersCtrl'
         }
-      }
+      },
+        displayName: 'Transferencias'
     })
 
     // This is the section example
@@ -27,12 +25,11 @@ angular.module('transfers-route', ['ui.router'])
       views: {
         'example': {
           templateUrl: 'views/partials/transfers/example.html',
-          controller: '',
-          breadcrumb: {
-            title: 'Example'
+          controller: ''
           }
-        }
-      }
+        },
+        displayName: 'Ejemplo',
+        path: 'Transferencias'     
     })
 
 }]);

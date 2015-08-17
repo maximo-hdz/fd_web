@@ -15,7 +15,8 @@ var app = angular.module('spaApp', [
   'connection-route',
   'transfers-route',
   'ngIdle',
-  'uiGmapgoogle-maps'
+  'uiGmapgoogle-maps',
+  'angularUtils.directives.uiBreadcrumbs'
   ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', '$keepaliveProvider', '$idleProvider', 'uiGmapGoogleMapApiProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider ,$keepaliveProvider, $idleProvider, uiGmapGoogleMapApiProvider) {

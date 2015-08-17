@@ -12,12 +12,12 @@ angular.module('accounts-route', ['ui.router'])
       views: {
         'accountContent': {
           templateUrl: 'views/partials/accounts/accounts.html',
-          controller: 'AccountsCtrl',
-          breadcrumb: {
-            title: 'accounts'
-          }
+          controller: 'AccountsCtrl'
         }
-      }
+      },
+      displayName: 'Cuentas',
+      path: 'Cuenta'
+
     })
 
     /**
@@ -28,12 +28,11 @@ angular.module('accounts-route', ['ui.router'])
       views: {
         'detailSaving': {
           templateUrl: 'views/partials/accounts/saving/saving.html',
-          controller: 'SavingDetailCtrl',
-          breadcrumb: {
-            title: 'saving'
-          }
+          controller: 'SavingDetailCtrl'
         }
-      }
+      },
+      displayName: 'Ahorro',
+      path: 'Cuenta'
     })
 
     /**
@@ -44,12 +43,11 @@ angular.module('accounts-route', ['ui.router'])
       views: {
         'detailInvestment': {
           templateUrl: 'views/partials/accounts/investment/investment.html',
-          controller : 'InvestmentDetailCtrl',
-          breadcrumb: {
-            title: 'investment'
-          }
+          controller : 'InvestmentDetailCtrl'
         }
-      }
+      },
+        displayName: 'Inversiones',
+        path: 'Cuenta'
     })
 
     /**
@@ -60,12 +58,11 @@ angular.module('accounts-route', ['ui.router'])
       views: {
         'detailLoan': {
           templateUrl: 'views/partials/accounts/loan/loan.html',
-          controller: 'LoanDetailCtrl',
-          breadcrumb: {
-            title: 'loan'
-          }
+          controller: 'LoanDetailCtrl'
         }
-      }
+      },
+      displayName: 'Prestamos',
+      path: 'Cuenta'
     })
 
     /**
@@ -76,12 +73,11 @@ angular.module('accounts-route', ['ui.router'])
       views: {
         'detailCredit': {
           templateUrl: 'views/partials/accounts/credit/credit.html',
-          controller: 'CreditDetailCtrl',
-          breadcrumb: {
-            title: 'credit'
-          }
+          controller: 'CreditDetailCtrl'
         }
-      }
+      },
+       displayName: 'Creditos',
+        path: 'Cuenta'
     })
 
 }]);
