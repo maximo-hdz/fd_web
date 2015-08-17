@@ -43,27 +43,29 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 		if(Object.keys($scope.details).length==0){
 			if($scope.estado!=undefined){
 				$scope.showBranches = true;
-				/*mapProvider.getBranches({'lat':$scope.estado.lat,'lng':$scope.estado.lon}).then(
+				mapProvider.getBranches({'lat':$scope.estado.lat,'lng':$scope.estado.lon}).then(
 					function(data) {
+						console.log(data);
 						$scope.map.branches = $rootScope.branches;
 					},
 					function(errorObject) {
 			            var status = errorObject.status;
 			            var msg = status;
 			        }
-				);*/
+				);
 			}
 		}else{
 			$scope.showBranches = true;
-			/*mapProvider.getBranches({'lat':$scope.details.geometry.location.k,'lng':$scope.details.geometry.location.D}).then(
+			mapProvider.getBranches({'lat':$scope.details.geometry.location.k,'lng':$scope.details.geometry.location.D}).then(
 				function(data) {
+					console.log(data);
 					$scope.map.branches = $rootScope.branches;
 				},
 				function(errorObject) {
 		            var status = errorObject.status;
 		            var msg = status;
 		        }
-			);*/
+			);
 		}
 	}
 
@@ -71,16 +73,17 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 		$scope.showBranches = true;
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position){
-				/*mapProvider.getBranches({'lat':position.coords.latitude,'lng':position.coords.longitude}).then(
+				mapProvider.getBranches({'lat':position.coords.latitude,'lng':position.coords.longitude}).then(
 					function(data) {
 						$scope.map.branches = $rootScope.branches;
 						$scope.showBranches = true;
+						console.log(data);
 					},
 					function(errorObject) {
 			            var status = errorObject.status;
 			            var msg = status;
 			        }
-				);*/
+				);
 			}, function() {
 				handleNoGeolocation(true);
 			});
@@ -136,15 +139,16 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 	}
 
 	//this function fetch all the bank's branches at the beginning
-	/*mapProvider.getBranches({}).then(
+	mapProvider.getBranches({}).then(
 		function(data) {
+			console.log(data);
 			$scope.map.branches = $rootScope.branches;
 		},
 		function(errorObject) {
             var status = errorObject.status;
             var msg = status;
         }
-	);*/
+	);
 
 	$scope.selectedBranch = function(branch){
 		$scope.map.center.latitude = branch.coordinates.lat;
