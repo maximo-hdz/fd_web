@@ -2,13 +2,23 @@
 
 angular.module('spaApp')
 .controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api', '$http', 'dataAuth', 'timerService', 'errorHandler',
-	function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth, timerService, errorHandler) {
+function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth, timerService, errorHandler) {
 
 	$scope.CheckLogin = true;
 	$scope.logining = false;
 	$scope.auth;
 	$scope.warning = {};
 	$scope.danger = {};
+	$scope.invite = {};
+
+	// Mobile OS evaluation
+	if ( (/iPhone|iPod|iPad/).test(navigator.userAgent) ) {
+		$scope.invite.show = true;
+		$scope.invite.message = 'Descarga la aplicación Móvil desde la <a href="https://itunes.apple.com" target="_blank">App Store</a>';
+	} else if ( (/Android/).test(navigator.userAgent) ) {
+		$scope.invite.show = true;
+		$scope.invite.message = 'Descarga la aplicación Móvil desde <a href="https://play.google.com/store" target="_blank">Google Play</a>';
+	}
 
 	$scope.checkLogin = function(){
 		$scope.logining = true;
