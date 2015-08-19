@@ -1287,6 +1287,77 @@ input[type="number"]:focus{
 				input:first-child{
 					border-right: 1px solid #369443
 				}
+				.ui-datepicker-trigger{
+					display: none;
+				}
+			}
+		}
+	}
+}
+.ui-datepicker{
+	background: #FFFFFF;
+	width: 200px;
+	border: 1px solid #c3c3c3;
+	.ui-datepicker-header{
+		background: #009b4d;
+		padding: 10px;
+		.ui-datepicker-title{
+			text-align: center;
+			color: #FFFFFF;
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: bold;
+		}
+		.ui-datepicker-prev{
+			float: left;
+			color: #FFFFFF;
+			font-size: 11px;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		.ui-datepicker-next{
+			float: right;
+			color: #FFFFFF;
+			font-size: 11px;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+	.ui-datepicker-calendar{
+		width: 100%;
+		thead{
+			th{
+				background: #009b4d;
+				text-align: center;
+				color: #FFFFFF;
+				font-size: 12px;
+			}
+		}
+		tbody{
+			td{
+				text-align: center;
+				border: 1px solid #EAEAEA;
+				border-left: none;
+				a{
+					color: #000000;
+					font-size: 11px;
+					display: block;
+					width: 100%;
+					padding: 3px 0;
+					text-decoration: none;
+				}
+				a.ui-state-active{
+					color: #009b4d;
+					background: #facc3a;
+				}
+			}
+			td:last-child{
+				border-right: none;
+			}
+			tr:last-child{
+				td{
+					border-bottom: none;
+				}
 			}
 		}
 	}
