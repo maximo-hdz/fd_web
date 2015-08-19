@@ -20,8 +20,8 @@
 										<p>*Ingresa tu contrase&ntilde;a</p>
 									</div>
 									<div class="col-md-5">
-										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.password">
-										<div class="tooltip-input">
+										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.password" placeholder="Contraseña actual" ng-focus="old=true" ng-blur="old=false">
+										<div class="tooltip-input" ng-show="old">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
@@ -32,8 +32,8 @@
 										<p>*Nueva contrase&ntilde;a</p>
 									</div>
 									<div class="col-md-5">
-										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.new_password">
-										<div class="tooltip-input">
+										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.new_password" placeholder="Nueva contraseña" maxlength="12" ng-focus="new=true" ng-blur="new=false">
+										<div class="tooltip-input" ng-show="new">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
@@ -44,8 +44,8 @@
 										<p>*Confirma contrase&ntilde;a</p>
 									</div>
 									<div class="col-md-5">
-										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.confirm_password">
-										<div class="tooltip-input">
+										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.confirm_password" placeholder="Confirma tu contraseña" maxlength="12" ng-focus="confirm=true" ng-blur="confirm=false">
+										<div class="tooltip-input" ng-show="confirm">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
@@ -95,8 +95,8 @@
 										<p>*Ingresa tu saludo secreto</p>
 									</div>
 									<div class="col-md-5">
-										<input type="text" class="form-control" ng-model="dataRegister.saludo" ng-required="true">
-										<div class="tooltip-input">
+										<input type="text" class="form-control" ng-model="dataRegister.saludo" ng-required="true" placeholder="Saludo secreto" ng-focus="saludo=true" ng-blur="saludo=false">
+										<div class="tooltip-input" ng-show="saludo">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
@@ -130,15 +130,15 @@
 											<p>*Pregunta 1</p>
 										</div>
 										<div class="col-md-5">
-											<select class="form-control" ng-model="dataRegister.question1" ng-options="question.description for question in data.data.questions" ng-required="true">
+											<select class="form-control" ng-model="dataRegister.question1" ng-options="question.description for question in data.data.questions" ng-required="true" ng-focus="p1=true" ng-blur="p1=false">
 												<option value="">Selecciona una pregunta</option>
 											</select>
-											<div class="tooltip-input">
+											<div class="tooltip-input" ng-show="p1">
 												<div class="arrow"></div>
 												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 											</div>
-											<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response1" ng-required="true">
-											<div class="tooltip-input">
+											<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response1" ng-required="true" ng-focus="r1=true" ng-blur="r1=false">
+											<div class="tooltip-input" ng-show="r1">
 												<div class="arrow"></div>
 												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 											</div>
@@ -150,15 +150,15 @@
 											<p>*Pregunta 2</p>
 										</div>
 										<div class="col-md-5">
-											<select class="form-control" ng-model="dataRegister.question2" ng-options="question.description for question in data.data.questions" ng-required="true">
+											<select class="form-control" ng-model="dataRegister.question2" ng-options="question.description for question in data.data.questions" ng-required="true" ng-focus="p2=true" ng-blur="p2=false">
 												<option value="">Selecciona una pregunta</option>
 											</select>
-											<div class="tooltip-input">
+											<div class="tooltip-input" ng-show="p2">
 												<div class="arrow"></div>
 												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 											</div>
-											<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response2" ng-required="true">
-											<div class="tooltip-input">
+											<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response2" ng-required="true" ng-focus="r2=true" ng-blur="r2=false">
+											<div class="tooltip-input" ng-show="r2">
 												<div class="arrow"></div>
 												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 											</div>
