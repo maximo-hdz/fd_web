@@ -11,10 +11,6 @@ angular.module('spaApp')
 	$scope.danger = {};
 
 	$scope.forgetPassword = function(){
-		if(typeof $scope.pass.user_login == 'undefined' ){
-			$window.alert('Ingresa tu usuario');
-			return;
-		}
 		$scope.sending = true;
 		authorizeProviderFD.forgetPassword($scope.pass.user_login).then(
 			function(data) {
@@ -30,28 +26,8 @@ angular.module('spaApp')
 	}
 
 	$scope.forgetPasswordConfirmation = function(){
-		if(typeof $scope.pass.first_question_id == 'undefined'){
-			$window.alert('Selecciona la pregunta 1');
-			return;
-		}
-		if(typeof $scope.pass.first_response == 'undefined'){
-			$window.alert('Ingresa la respuesta a la pregunta 1');
-			return;
-		}
 		if($scope.pass.second_question_id === $scope.pass.first_question_id ){
 			$window.alert('Selecciona dos preguntas distintas');
-			return;
-		}
-		if(typeof $scope.pass.second_question_id == 'undefined'){
-			$window.alert('Selecciona la pregunta 2');
-			return;
-		}
-		if(typeof $scope.pass.second_response == 'undefined'){
-			$window.alert('Ingresa la respuesta a la pregunta 2');
-			return;
-		}
-		if(typeof $scope.pass.birth_date == 'undefined' ){
-			$window.alert('Ingresa tu fecha de nacimiento');
 			return;
 		}
 		$scope.sending = true;

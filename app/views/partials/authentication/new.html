@@ -17,7 +17,11 @@
 							<p>*Ingresa tu contrase&ntilde;a</p>
 						</div>
 						<div class="col-md-5">
-							<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="pass.old" ng-required="true">
+							<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="pass.old" ng-required="true" ng-focus="ant=true" ng-blur="ant=false">
+							<div class="tooltip-input" ng-show="ant">
+								<div class="arrow"></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -25,7 +29,11 @@
 							<p>*Nueva contrase&ntilde;a</p>
 						</div>
 						<div class="col-md-5">
-							<input type="password" class="form-control" placeholder="Ingresa una nueva contrase&ntilde;a" ng-model="pass.password" ng-required="true">
+							<input type="password" class="form-control" placeholder="Ingresa una nueva contrase&ntilde;a" ng-model="pass.password" ng-required="true" maxlength="12" ng-focus="new=true" ng-blur="new=false">
+							<div class="tooltip-input" ng-show="new">
+								<div class="arrow"></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -33,7 +41,11 @@
 							<p>*Confirma contrase&ntilde;a</p>
 						</div>
 						<div class="col-md-5">
-							<input type="password" class="form-control" placeholder="Confirma la contrase&ntilde;a nueva" ng-model="pass.confirm" ng-required="true">
+							<input type="password" class="form-control" placeholder="Confirma la contrase&ntilde;a nueva" ng-model="pass.confirm" ng-required="true" maxlength="12" ng-focus="con=true" ng-blur="con=false">
+							<div class="tooltip-input" ng-show="con">
+								<div class="arrow"></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
 						</div>
 					</div>
 					<div class="divider"></div>
