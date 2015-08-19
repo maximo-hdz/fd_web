@@ -22,12 +22,8 @@ angular.module('spaApp')
 	}
 
 	$scope.change_password = function(){
-		if(typeof $scope.pass.password == 'undefined'){
-			$window.alert('Introduce tu contraseña');
-			return;
-		}
-		if(typeof $scope.pass.confirm == 'undefined'){
-			$window.alert('Confirma la contraseña');
+		if($scope.pass.password <= 7 ){
+			$window.alert('La nueva contraseña debe tener al menos 8 caracteres');
 			return;
 		}
 		if($scope.pass.confirm != $scope.pass.password ){
