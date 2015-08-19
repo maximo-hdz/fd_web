@@ -13,10 +13,9 @@ angular.module('spaApp')
 	$scope.danger = {};
 
 	$scope.register = function(step){
-		//TODO Cambiar alerts por otra cosa
 		if(step === 1){
-			if(typeof $scope.dataRegister.password == 'undefined' || typeof $scope.dataRegister.new_password == 'undefined' || typeof $scope.dataRegister.confirm_password == 'undefined' ){
-				$window.alert('Favor de llenar todos los campos');
+			if($scope.dataRegister.new_password.length <= 7 ){
+				$window.alert('La nueva contraseña debe tener al menos 8 caracteres');
 				return;
 			}
 			if($scope.dataRegister.new_password !== $scope.dataRegister.confirm_password){
@@ -25,10 +24,6 @@ angular.module('spaApp')
 			}
 			$scope.selection = step;
 		}else{
-			if(typeof $scope.dataRegister.saludo == 'undefined'){
-				$window.alert('Ingresa tu saludo secreto');
-				return;
-			}
 			if(typeof $scope.dataRegister.image_id == 'undefined'){
 				$window.alert('Selecciona una imagen');
 				return;
@@ -46,25 +41,8 @@ angular.module('spaApp')
 	}
 
 	$scope.signup = function(){
-
-		if(typeof $scope.dataRegister.question1 == 'undefined'){
-			$window.alert('Selecciona la pregunta 1');
-			return;
-		}
-		if(typeof $scope.dataRegister.response1 == 'undefined'){
-			$window.alert('Ingresa la respuesta a la pregunta 1');
-			return;
-		}
 		if($scope.dataRegister.question2 === $scope.dataRegister.question1 ){
 			$window.alert('Selecciona dos preguntas distintas');
-			return;
-		}
-		if(typeof $scope.dataRegister.question2 == 'undefined'){
-			$window.alert('Selecciona la pregunta 2');
-			return;
-		}
-		if(typeof $scope.dataRegister.response2 == 'undefined'){
-			$window.alert('Ingresa la respuesta a la pregunta 2');
 			return;
 		}
 		var new_condition_action = "N";
