@@ -77,7 +77,7 @@
 											{{warning.message}}
 										</alert>
 									</div>
-									<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password"  ng-required="true">
+									<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="auth.password" ng-required="true" autofocus ng-minlength="8" maxlength="12" onkeypress="return validate(event)">
 									<button class="btn btn-success form-control" ng-click="login()" ng-disabled="login2.$invalid || logining">Acceder</button>
 								</div>
 							</form>
