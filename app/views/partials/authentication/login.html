@@ -20,7 +20,7 @@
 			<div class="col-md-4 col-md-offset-4">
 				<form class="form-signin" name="login1">
 					<div class="logo"></div>
-					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" ng-required="true" autofocus ng-minlength="5" maxlength="10" onkeypress="return validate(event)">
+					<input type="text" class="form-control input_user" placeholder="Ingresa tu usuario"  ng-model="auth.user_login" ng-required="true" autofocus ng-minlength="5" maxlength="12" onkeypress="return validate(event)">
 					<div>
 						<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
 							{{danger.message}}
