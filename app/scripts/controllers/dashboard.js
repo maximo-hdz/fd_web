@@ -6,6 +6,11 @@ angular.module('spaApp')
 .controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'accountsProviderFD', '$window', 'timerService', 'errorHandler',
 function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD, $window, timerService, errorHandler) {
 
+	// If there is no session, take the user to the login view
+	if ( !$rootScope.session_token ) {
+		$location.path('login');
+	}
+
 	// Set first section
 	$scope.currentSection = 'accounts';
 
