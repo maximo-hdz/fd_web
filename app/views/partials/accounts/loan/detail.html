@@ -85,8 +85,8 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td>Fecha l&iacute;mite pago:</td>
-					<td>{{detail.limit_payment_date < today ? 'Inmediato' : detail.limit_payment_date | date: 'dd/MM/yyyy'}}</td>
+					<td>Fecha Limite pago:</td>
+					<td>{{detail.limit_payment_date &#x0003C; today ? 'Inmediato' : detail.limite_payment_date | date: 'dd/MM/yyyy'}}</td>
 				</tr>
 			</tbody>
 		</table>
