@@ -1,79 +1,80 @@
 <div class="col-md-4">
-  <div class="left-menu">
-    <ul class="menu menu-tengo">
-      <li class="head" onclick="show_hide_menu('menu-tengo');">
-        <span class="arrow"></span>
-        <span class="title">LO QUE TENGO</span>
-        <span class="amount">{{total.saving + total.investment | currency}}</span>
-      </li>
-      <li class="parent">
-        <span class="text">Mis cuentas de ahorro</span>
-        <span class="amount">{{total.saving | currency}}</span>
-      </li>
-      <li ng-repeat="account in accounts.saving" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
-        <a ng-click="selectAccount(account)">
-          <span class="arrow"></span>
-          <span class="text">{{account.account_name}} {{account.account_number}}</span>
-          <span class="amount">{{account.available_balance | currency}}</span>
-        </a>
-      </li>
-      <li class="parent">
-        <span class="text">Mis cuentas de inversi&oacute;n</span>
-        <span class="amount">{{total.investment | currency}}</span>
-      </li>
-      <li ng-repeat="account in accounts.investment" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
-        <a ng-click="selectAccount(account)">
-          <span class="arrow"></span>
-          <span class="text">{{account.account_name}} {{account.account_number}}</span>
-          <span class="amount">{{account.amount_invested | currency}}</span>
-        </a>
-      </li>
-    </ul>
+	<div class="left-menu">
+		<ul class="menu menu-tengo">
+			<li class="head" onclick="show_hide_menu('menu-tengo');">
+				<span class="arrow"></span>
+				<span class="title">LO QUE TENGO</span>
+				<span class="amount">{{total.saving + total.investment | currency}}</span>
+			</li>
+			<li class="parent">
+				<span class="text">Mis cuentas de ahorro</span>
+				<span class="amount">{{total.saving | currency}}</span>
+			</li>
+			<li ng-repeat="account in accounts.saving" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
+				<a ng-click="selectAccount(account)">
+					<span class="arrow"></span>
+					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="amount">{{account.available_balance | currency}}</span>
+				</a>
+			</li>
+			<li class="parent">
+				<span class="text">Mis cuentas de inversi&oacute;n</span>
+				<span class="amount">{{total.investment | currency}}</span>
+			</li>
+			<li ng-repeat="account in accounts.investment" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
+				<a ng-click="selectAccount(account)">
+					<span class="arrow"></span>
+					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="amount">{{account.amount_invested | currency}}</span>
+				</a>
+			</li>
+		</ul>
 
-    <ul class="menu menu-debo">
-      <li class="head" onclick="show_hide_menu('menu-debo');">
-        <span class="arrow"></span>
-        <span class="title">LO QUE DEBO</span>
-        <span class="amount">{{total.loan + total.credit | currency}}</span>
-      </li>
-      <li class="parent">
-        <span class="text">Mis cr&eacute;ditos activos</span>
-        <span class="amount">{{total.loan | currency}}</span>
-      </li>
-      <li ng-repeat="account in accounts.loan" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
-        <a ng-click="selectAccount(account)">
-          <span class="arrow"></span>
-          <span class="text">{{account.account_name}} {{account.account_number}}</span>
-          <span class="amount red">{{account.min_payment | currency}}</span>
-        </a>
-      </li>
-      <li class="parent">
-        <span class="text">Mis tarjetas de cr&eacute;dito</span>
-        <span class="amount">{{total.credit | currency}}</span>
-      </li>
-      <li ng-repeat="account in accounts.credit" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
-        <a ng-click="selectAccount(account)">
-          <span class="arrow"></span>
-          <span class="text">{{account.account_name}} {{account.account_number}}</span>
-          <span class="amount red">{{account.min_payment | currency}}</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+		<ul class="menu menu-debo">
+			<li class="head" onclick="show_hide_menu('menu-debo');">
+				<span class="arrow"></span>
+				<span class="title">LO QUE DEBO</span>
+				<span class="amount">{{total.loan + total.credit | currency}}</span>
+			</li>
+			<li class="parent">
+				<span class="text">Mis cr&eacute;ditos activos</span>
+				<span class="amount">{{total.loan | currency}}</span>
+			</li>
+			<li ng-repeat="account in accounts.loan" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
+				<a ng-click="selectAccount(account)">
+					<span class="arrow"></span>
+					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="amount red">{{account.min_payment | currency}}</span>
+				</a>
+			</li>
+			<li class="parent">
+				<span class="text">Mis tarjetas de cr&eacute;dito</span>
+				<span class="amount">{{total.credit | currency}}</span>
+			</li>
+			<li ng-repeat="account in accounts.credit" ng-class="selectedAccountId === account._account_id ? 'child active' : 'child'" style="cursor:pointer;">
+				<a ng-click="selectAccount(account)">
+					<span class="arrow"></span>
+					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="amount red">{{account.min_payment | currency}}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 </div>
 
 <div class="col-md-8">
-  <div>
-    <alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
-      {{danger.message}}
-    </alert>
-    <alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
-      {{warning.message}}
-    </alert>
-  </div>
-  <div ng-include="'views/partials/accounts/notifications.html'" ng-hide="hideNotifications"></div>
-  <div ui-view='detailSaving' class="account-page"></div>
-  <div ui-view='detailInvestment' class="account-page"></div>
-  <div ui-view='detailLoan' class="account-page"></div>
-  <div ui-view='detailCredit' class="account-page"></div>
+	<div class="loading"></div>
+	<div>
+		<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
+			{{danger.message}}
+		</alert>
+		<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+			{{warning.message}}
+		</alert>
+	</div>
+	<div ng-include="'views/partials/accounts/notifications.html'" ng-hide="hideNotifications"></div>
+	<div ui-view='detailSaving' class="account-page"></div>
+	<div ui-view='detailInvestment' class="account-page"></div>
+	<div ui-view='detailLoan' class="account-page"></div>
+	<div ui-view='detailCredit' class="account-page"></div>
 </div>
