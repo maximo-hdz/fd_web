@@ -11,11 +11,10 @@ angular.module('spaApp')
    * According to the received error status code, get the message and broadcast the event to display the error in the view.
    * @param status
    */
-  this.setError = function( status ) {
-    console.info( status );
-    error.message = errorMessages.get( status );
+  this.setError = function(status) {
+    error.message = errorMessages.get(status);
     error.display = true;
-    console.warn( error );
+    console.warn(error);
     $scope.$broadcast('displayError', error);
   };
 
