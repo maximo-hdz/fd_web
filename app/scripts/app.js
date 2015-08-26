@@ -52,9 +52,13 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
 
   }]);
 
-app.run(['api','$rootScope','$state', '$stateParams','$window' , function(api,$rootScope,$state, $stateParams,$window) {
+app.run(['api', '$rootScope', '$state', '$stateParams', '$window', function(api, $rootScope, $state, $stateParams, $window) {
   api.config();
   api.init();
+
+  $rootScope.requestStack = new Array();
+  // To display the loader in the login and register views
+  $rootScope.showBGLoader = true;
 
   $window.onbeforeunload = function(e) {
     var message = "Te vas a salir de Fundación Dondé , ¿estás seguro?";

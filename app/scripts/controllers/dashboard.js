@@ -42,11 +42,14 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
 		authorizeProviderFD.logout().then(
 			function(data) {
 				timerService.stop();
-				$location.path('/logout');
+				$rootScope.session_token = null;
++				$location.path('/login');
 			},
 			function(error){
 				timerService.stop();
+				$rootScope.session_token = null;
 				$scope.status = error;
+				$location.path('/login');
 			}
 		);
 	};

@@ -4,8 +4,8 @@
  * The accounts controller. Gets accounts passing auth parameters
  */
 angular.module('spaApp')
-.controller('AccountsCtrl',['$scope', '$location', 'accountsProviderFD', 'errorHandler',
-function($scope, $location, accountsProviderFD, errorHandler) {
+.controller('AccountsCtrl',['$scope', '$rootScope', '$location', 'accountsProviderFD', 'errorHandler',
+function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 
 	// For searching purposes
 	var params = {};
@@ -41,6 +41,8 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 			$scope.total.credit = 0;
 			$scope.accounts.loan = [];
 			$scope.total.loan = 0;
+			// To stop displaying the big
+			delete $rootScope.showBGLoader;
 
 			for (var i = 0; i < data.length; i++) {
 				// Take the first four accounts for notifications
@@ -70,6 +72,8 @@ function($scope, $location, accountsProviderFD, errorHandler) {
 		},
 		function(error) {
 			console.error( error );
+			// To stop displaying the big loader
+			delete $rootScope.showBGLoader;
 			errorHandler.setError( error.status );
 		}
 	);
