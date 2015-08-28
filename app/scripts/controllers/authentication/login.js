@@ -43,7 +43,7 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 			},
 			function(error) {
 				$scope.logining = false;
-				errorHandler.setError(error.status);
+				errorHandler.setError(error);
 			}
 		);
 	}
@@ -82,9 +82,10 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 				$scope.logining = false;
 			}
 		).error(
-			function(error, status) {
+			function(data, status) {
 				$scope.logining = false;
-				errorHandler.setError(error.status);
+				var result = {"data" : data, "status" : status};
+				errorHandler.setError(result);
 			}
 		);
 	};

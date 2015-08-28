@@ -10,7 +10,8 @@ angular.module('spaApp')
         AuthorizeServiceFD.checkLogin(user_login).success(function(data, status, headers){
           deferred.resolve(data);
         }).error(function(data, status){
-          deferred.reject(status);
+          var result = {"data" : data, "status" : status};
+          deferred.reject(result);
         });
         return deferred.promise;
       },
@@ -21,7 +22,8 @@ angular.module('spaApp')
           var result = {"data" : data, "headers" : headers};
           deferred.resolve(result);
         }).error(function(data, status){
-          deferred.reject(status);
+          var result = {"data" : data, "status" : status};
+          deferred.reject(result);
         });
         return deferred.promise;
       },
@@ -32,7 +34,8 @@ angular.module('spaApp')
           var result = {"data" : data, "headers" : headers};
           deferred.resolve(result);
         }).error(function(data, status){
-          deferred.reject(status);
+          var result = {"data" : data, "status" : status};
+          deferred.reject(result);
         });
         return deferred.promise;
       },
@@ -42,7 +45,8 @@ angular.module('spaApp')
         AuthorizeServiceFD.forgetPassword(user_login).success(function(data, status, headers){
           deferred.resolve(data);
         }).error(function(data, status){
-          deferred.reject(status);
+          var result = {"data" : data, "status" : status};
+          deferred.reject(result);
         });
         return deferred.promise;
       },
@@ -52,7 +56,8 @@ angular.module('spaApp')
         AuthorizeServiceFD.forgetPasswordConfirmation(user_login, first_question_id, first_response, second_question_id, second_response, birth_date).success(function(data, status, headers){
           deferred.resolve(data);
         }).error(function(data, status){
-          deferred.reject(status);
+          var result = {"data" : data, "status" : status};
+          deferred.reject(result);
         });
         return deferred.promise;
       },
@@ -62,7 +67,8 @@ angular.module('spaApp')
         AuthorizeServiceFD.logout().success(function(data, status, headers){
           deferred.resolve(data);
         }).error(function(data, status){
-          deferred.reject(status);
+          var result = {"data" : data, "status" : status};
+          deferred.reject(result);
         });
         return deferred.promise;
       }
