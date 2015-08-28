@@ -340,26 +340,48 @@ input[type="number"]:focus{
 		}
 	}
 }
-.loading{
+@mixin loading($bg-size, $w-h, $margin) {
 	background: url("../images/loader.png") no-repeat;
-	background-size: 30px;
-	width: 30px;
-	height: 30px;
+	background-size: $bg-size;
+	width: $w-h;
+	height: $w-h;
 	display: block;
 	clear: both;
-	margin: 20px auto;
+	margin: $margin auto;
 	-webkit-animation-name: spin;
-    -webkit-animation-duration: 700ms;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-name: spin;
-    -moz-animation-duration: 700ms;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -ms-animation-name: spin;
-    -ms-animation-duration: 700ms;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
+  -webkit-animation-duration: 700ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 700ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 700ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+}
+.loading {
+	@include loading(30px, 30px, 20px);
+}
+body.showLoader::after{
+	content: "";
+	color: white;
+	display: block;
+	position: fixed;
+	z-index: 990;
+	width: 100%;
+	height: 100%;
+	left:0;
+	top:0;
+	background: rgba(255,255,255,0.8);
+	cursor: not-allowed;
+}
+.loader {
+	@include loading( 80px, 100%, 0 );
+	background: url("../images/loader.png") no-repeat center center;
+	position: fixed;
+	z-index: 999;
 }
 .maps{
 	.maps_header{
@@ -465,9 +487,9 @@ input[type="number"]:focus{
 			}
 			.campo-input-search{
 				width: 45%!important;
-				
+
 				.input-search{
-					margin: 0 10px 0 10px;	
+					margin: 0 10px 0 10px;
 				}
 			}
 			.select-map{
@@ -874,7 +896,7 @@ input[type="number"]:focus{
 							border: 2px solid #369443;
 						}
 					}
-					
+
 					img{
 						width: 100%;
 						height: 85px;
@@ -2231,9 +2253,9 @@ input[type="number"]:focus{
 				}
 				.campo-input-search{
 					width: 100%!important;
-					
+
 					.input-search{
-						margin: 10px 0 5px 0;	
+						margin: 10px 0 5px 0;
 					}
 				}
 				.select-map{
@@ -2316,5 +2338,3 @@ input[type="number"]:focus{
 		}
 	}
 }
-
-

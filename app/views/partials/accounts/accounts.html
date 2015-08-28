@@ -62,8 +62,11 @@
 	</div>
 </div>
 
-<div class="col-md-8">
+<div class="col-md-8" ng-show="requestStack.length > 0">
 	<div class="loading"></div>
+</div>
+
+<div class="col-md-8" ng-hide="requestStack.length > 0">
 	<div>
 		<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
 			{{danger.message}}

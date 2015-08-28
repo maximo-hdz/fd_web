@@ -5,17 +5,21 @@ angular.module('spaApp').factory('httpInterceptor', ['$q', '$location', '$rootSc
 
     return {
       request: function( request) {
+        $rootScope.requestStack.push(1);
         return request;
       },
       response: function( response ) {
         if($rootScope.session_token) {
           timerService.reset();
         }
+        $rootScope.requestStack.pop();
 
         return response;
       },
 
       responseError: function( response ) {
+        $rootScope.requestStack.pop();
+        
         if (!response.status) {
           console.warn("Response undefined");
           timerService.stop();
