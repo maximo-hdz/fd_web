@@ -6,10 +6,6 @@
 <div class="row filtro">
 	<div class="col-md-5">
 		<p class="label">Por fecha:</p>
-		<!-- <div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-success">10/02/2015</button>
-			<button type="button" class="btn btn-success">10/02/2015</button>
-		</div> -->
 		<div class="input-group">
 			<input type="text" class="date date-from" ng-model="searchParams.startDate" ng-change="searchTransactions()" fddatepicker placeholder="00/00/0000">
 			<input type="text" class="date date-to" ng-model="searchParams.endDate" ng-change="searchTransactions()" fddatepicker placeholder="00/00/0000">
@@ -50,23 +46,3 @@
 		</tbody>
 	</table>
 </div>
-<script>
-	// $(function() {
-	// 	$( "#from" ).datepicker({
-	// 		defaultDate: "+1w",
-	// 		changeMonth: true,
-	// 		numberOfMonths: 3,
-	// 		onClose: function( selectedDate ) {
-	// 			$( "#to" ).datepicker( "option", "minDate", selectedDate );
-	// 		}
-	// 	});
-	// 	$( "#to" ).datepicker({
-	// 		defaultDate: "+1w",
-	// 		changeMonth: true,
-	// 		numberOfMonths: 3,
-	// 		onClose: function( selectedDate ) {
-	// 			$( "#from" ).datepicker( "option", "maxDate", selectedDate );
-	// 		}
-	// 	});
-	// });
-</script>
