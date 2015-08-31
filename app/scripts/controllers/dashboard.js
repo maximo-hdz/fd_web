@@ -39,11 +39,12 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
 	 * Call the service to close the session.
 	 */
 	$scope.logout = function() {
+		$rootScope.showBGLoader = true;
 		authorizeProviderFD.logout().then(
 			function(data) {
 				timerService.stop();
 				$rootScope.session_token = null;
-+				$location.path('/login');
+				$location.path('/login');
 			},
 			function(error){
 				timerService.stop();
