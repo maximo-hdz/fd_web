@@ -31,7 +31,7 @@ angular.module('spaApp')
 			return;
 		}
 		$scope.sending = true;
-		authorizeProviderFD.forgetPasswordConfirmation($scope.pass.user_login, $scope.pass.first_question_id.id, $scope.pass.first_response, $scope.pass.second_question_id.id, $scope.pass.second_response, $scope.pass.birth_date).then(
+		authorizeProviderFD.forgetPasswordConfirmation($scope.pass.user_login, $scope.pass.first_question_id.id, $scope.pass.first_response, $scope.pass.second_question_id.id, $scope.pass.second_response, 				$scope.pass.birth_date.split('/')[2]+'-'+$scope.pass.birth_date.split('/')[0]+'-'+$scope.pass.birth_date.split('/')[1]).then(
 			function(data) {
 				$scope.sending = false;
 				$scope.selection = 2;
