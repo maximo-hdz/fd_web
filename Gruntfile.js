@@ -426,7 +426,7 @@ src: '{,*/}*.css'
   });
 
 grunt.loadNpmTasks('grunt-war');
-grunt.loadNpmTasks('grunt-tomcat-deploy');
+//grunt.loadNpmTasks('grunt-tomcat-deploy');
 
 grunt.registerTask('serve', function (target) {
   if (target === 'dist') {
