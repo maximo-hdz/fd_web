@@ -11,24 +11,23 @@ angular.module('administration-route', ['ui.router'])
       url: 'administration',
       views: {
         'adminContent': {
-          templateUrl: 'views/partials/administration/admin_front.html',
-          controller: 'UsersAdministrationCtrl'
+          templateUrl: 'views/partials/administration/administration.html',
+          controller: 'AdministrationCtrl'
         }
       },
         displayName: 'Administración',
         path: 'Administración'
     })
 
-    // This is the section example
-    .state('dashboard.administration.example', {
-      url: '/example',
+    .state('dashboard.administration.useractivity', {
+      url: '/useractivity',
       views: {
-        'example': {
-          templateUrl: 'views/partials/administration/example.html',
+        'userActivity': {
+          templateUrl: 'views/partials/administration/user-activity.html',
           controller: ''
         }
       },
-        displayName: 'Example',
+        displayName: 'Bitácora',
         path: 'Administración'
     })
 }]);
