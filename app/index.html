@@ -56,24 +56,24 @@
 			ga('create', 'UA-XXXXX-X');
 			ga('send', 'pageview');
 		</script>
-        <script>
-            function validate(e){
-               key = e.keyCode || e.which;
-               tecla = String.fromCharCode(key).toLowerCase();
-               letras = "abcdefghijklmnñopqrstuvwxyz1234567890";
-               especiales = "8-37-39-46";
-               tecla_especial = false
-               for(var i in especiales){
-                    if(key == especiales[i]){
-                        tecla_especial = true;
-                        break;
-                    }
+    <script>
+        function validate(e){
+           key = e.keyCode || e.which;
+           tecla = String.fromCharCode(key).toLowerCase();
+           letras = "abcdefghijklmnñopqrstuvwxyz1234567890";
+           especiales = "8-37-39-46";
+           tecla_especial = false
+           for(var i in especiales){
+                if(key == especiales[i]){
+                    tecla_especial = true;
+                    break;
                 }
-                if(letras.indexOf(tecla)==-1 && !tecla_especial){
-                    return false;
-                }
-            };
-        </script>
+            }
+            if(letras.indexOf(tecla)==-1 && !tecla_especial){
+                return false;
+            }
+        };
+    </script>
 
 		<!--[if lt IE 9]>
 			<script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -121,10 +121,6 @@
 		<script src="scripts/controllers/accounts/accounts-route.js"></script>
 		<script src="scripts/controllers/accounts/accounts.js"></script>
 		<script src="scripts/controllers/accounts/saving.js"></script>
-		<script src="scripts/controllers/accounts/credit-detail-agreement.js"></script>
-		<script src="scripts/controllers/accounts/credit-duedate.js"></script>
-		<script src="scripts/controllers/accounts/credit-transactions.js"></script>
-		<script src="scripts/controllers/accounts/credit-valuedate.js"></script>
 		<script src="scripts/controllers/accounts/credit.js"></script>
 		<script src="scripts/controllers/accounts/investment.js"></script>
 		<script src="scripts/controllers/accounts/loan.js"></script>
@@ -220,14 +216,35 @@
 		<!-- endbuild -->
 
 		<script type="text/javascript">
-			function show_hide_menu( menu ){
-				$('.'+menu).find('.child').toggle("fast");
-				if( $('.'+menu).find('.head').hasClass('open') ){
-					$('.'+menu).find('.head').removeClass('open')
-				}else{
-					$('.'+menu).find('.head').addClass('open')
+			var collapse = [];
+			// Show and hide category accounts
+			var showHideCat = function( menu, e ) {
+				var item = menu + ' .' + e;
+				$('.'+ item).toggle("fast");
+				if ( collapse.indexOf( item ) < 0 )
+					collapse.push( item );
+				else
+					collapse.splice( collapse.indexOf( item ), 1);
+			}
+			// Show and hide main categories
+			var showHideMenu = function( menu ) {
+				if ( collapse.length > 0 ) {
+					var erase = [];
+
+					$.each( collapse, function( key, value ) {
+						if ( value.search( menu ) != -1 ) {
+							$('.'+value).toggle("fast");
+							erase.push( value );
+						}
+					});
+
+					for (var i = 0; i < erase.length; i++) {
+						collapse.splice( collapse.indexOf(erase[i]), 1);
+					}
 				}
-			};
+
+				$('.'+menu).find('.parent').toggle("fast");
+			}
 		</script>
 	</body>
 </html>
