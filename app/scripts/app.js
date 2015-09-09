@@ -43,11 +43,38 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpP
         title: 'dashboard'
       }
     })
-
     .state('map',{
       url: '/map',
       templateUrl: 'views/map.html',
       controller: 'MapCtrl'
+    })
+    .state('aclarations',{
+      url: '/aclarations',
+      templateUrl: 'views/static/aclarations.html'
+    })
+    .state('contact',{
+      url: '/contact',
+      templateUrl: 'views/static/contact.html'
+    })
+    .state('contracts',{
+      url: '/contracts',
+      templateUrl: 'views/static/contracts.html'
+    })
+    .state('privacy',{
+      url: '/privacy',
+      templateUrl: 'views/static/privacy.html'
+    })
+    .state('report',{
+      url: '/report',
+      templateUrl: 'views/static/report.html'
+    })
+    .state('security',{
+      url: '/security',
+      templateUrl: 'views/static/security.html'
+    })
+    .state('terms',{
+      url: '/terms',
+      templateUrl: 'views/static/terms.html'
     })
 
   }]);

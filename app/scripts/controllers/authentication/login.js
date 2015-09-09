@@ -94,10 +94,6 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 		$location.path( '/password' );
 	}
 
-	$scope.map = function(){
-		$location.path( '/map' );
-	}
-
 	$scope.$on('displayError', function(event, error) {
 		$scope.danger.show = true;
 		$scope.danger.message = error.message;
