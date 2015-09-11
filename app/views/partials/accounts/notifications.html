@@ -11,16 +11,16 @@
 	<div class="row" ng-repeat="notification in notifications" ng-switch="notification.account_type">
 
 		<article ng-switch-when="LOAN_ACCOUNT">
-			<ng-include src="'/views/partials/accounts/notifications/loan.html'"></ng-include>
+			<ng-include src="'views/partials/accounts/notifications/loan.html'"></ng-include>
 		</article>
 		<article ng-switch-when="CREDIT_ACCOUNT">
-			<ng-include src="'/views/partials/accounts/notifications/credit.html'"></ng-include>
+			<ng-include src="'views/partials/accounts/notifications/credit.html'"></ng-include>
 		</article>
 		<article ng-switch-when="SAVINGS_ACCOUNT">
-			<ng-include src="'/views/partials/accounts/notifications/saving.html'"></ng-include>
+			<ng-include src="'views/partials/accounts/notifications/saving.html'"></ng-include>
 		</article>
 		<article ng-switch-when="INVESTMENT_ACCOUNT">
-			<ng-include src="'/views/partials/accounts/notifications/investment.html'"></ng-include>
+			<ng-include src="'views/partials/accounts/notifications/investment.html'"></ng-include>
 		</article>
 
 	</div>
