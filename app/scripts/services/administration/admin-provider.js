@@ -4,10 +4,10 @@ angular.module('spaApp').factory('adminProvider',['adminService', '$q', function
 
   return {
 
-    getUserActivity: function() {
+    getUserActivity: function(page, size) {
       var deferred = $q.defer();
 
-      adminService.getUserActivity().success(function(data){
+      adminService.getUserActivity(page, size).success(function(data){
         deferred.resolve(data);
       }).error(function(data, status) {
         return deferred.reject('Error getting user activity');
@@ -17,5 +17,5 @@ angular.module('spaApp').factory('adminProvider',['adminService', '$q', function
     }
 
   };//end return
-  
+
 }]);
