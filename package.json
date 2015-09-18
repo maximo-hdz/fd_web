@@ -27,7 +27,6 @@
     "grunt-ngmin": "~0.0.2",
     "grunt-rev": "~0.1.0",
     "grunt-svgmin": "~0.2.0",
-    "grunt-tpl-compiler": "^0.1.5",
     "grunt-usemin": "~2.0.0",
     "grunt-war": "~0.2.6",
     "grunt-zip": "~0.10.2",
