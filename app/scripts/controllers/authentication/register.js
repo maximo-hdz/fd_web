@@ -11,11 +11,13 @@ angular.module('spaApp')
 	$scope.sending = false;
 	$scope.warning = {};
 	$scope.danger = {};
+	$scope.warning.show = false;
+	$scope.danger.show = false;
 
 	$scope.saltar = function(step){
-
-		if(step == $scope.selection)
+		if(step == $scope.selection){
 			return;
+		}
 
 		if($scope.selection == 0){
 			if($scope.register1.$invalid){
