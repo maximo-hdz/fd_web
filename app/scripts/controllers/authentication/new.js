@@ -22,14 +22,19 @@ angular.module('spaApp')
 	}
 
 	$scope.change_password = function(){
-		if($scope.pass.password <= 7 ){
-			$window.alert('La nueva contraseña debe tener al menos 8 caracteres');
-			return;
-		}
 		if($scope.pass.confirm != $scope.pass.password ){
-			$window.alert('Las contraseñas no coinciden');
+			$scope.warning.show = true;
+			$scope.warning.message = 'Las contraseñas no coinciden';
 			return;
 		}
+
+		if($scope.pass.password.length <= 7){
+			$scope.warning.show = true;
+			$scope.warning.message = 'La nueva contraseña debe tener al menos 8 caracteres';
+			return;
+		}
+
+		$scope.warning.show = false;
 		$scope.changing_pass = true;
 		authorizeProviderFD.reset_password(dataAuth.response.user_login, $scope.pass.old, new_condition_action, $scope.pass.password, $scope.pass.confirm).then(
 			function(result) {
