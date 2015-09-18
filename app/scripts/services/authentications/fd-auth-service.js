@@ -14,21 +14,6 @@ angular.module('spaApp')
 			});
 		}
 
-		this.reset_password = function(user_login, password, new_condition_action, new_password, confirmation_password){
-			return $http({
-					url: $rootScope.restAPIBaseUrl+'/userInformation/password',
-					method: 'POST',
-					data: JSON.stringify({
-						"user_login": user_login,
-						"password": password,
-						"client_application_id":"SPA",
-						"new_condition_action": new_condition_action,
-						"new_password" : new_password,
-						"confirmation_password" : confirmation_password
-					})
-			});
-		}
-
 		this.register = function(user_login, current_password, new_password, with_token, new_condition_action, image, question1, response1, question2, response2, anti_phishing_statement){
 			return $http({
 					url: $rootScope.restAPIBaseUrl+'/login',
