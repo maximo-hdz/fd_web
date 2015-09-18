@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('spaApp')
-.controller('NewCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'dataAuth', '$window', 'api', 'errorHandler',
-	function($scope, $rootScope, $location, authorizeProviderFD, dataAuth, $window, api, errorHandler) {
+.controller('NewCtrl',['$scope', '$rootScope', '$location', 'dataAuth', '$window', 'api', 'errorHandler', '$http',
+	function($scope, $rootScope, $location, dataAuth, $window, api, errorHandler, $http) {
 
 	$scope.data = dataAuth;
 	$scope.pass = {};
@@ -36,16 +36,29 @@ angular.module('spaApp')
 
 		$scope.warning.show = false;
 		$scope.changing_pass = true;
-		authorizeProviderFD.reset_password(dataAuth.response.user_login, $scope.pass.old, new_condition_action, $scope.pass.password, $scope.pass.confirm).then(
-			function(result) {
+
+
+		$http({
+			url: $rootScope.restAPIBaseUrl+'/userInformation/password',
+			method: 'POST',
+			header: {'X-BANK-TOKEN':5},
+			data: JSON.stringify({
+				"user_login": dataAuth.response.user_login,
+				"password": $scope.pass.old,
+				"client_application_id":"SPA",
+				"new_condition_action": new_condition_action,
+				"new_password" : $scope.pass.password,
+				"confirmation_password" : $scope.pass.confirm
+			})
+		}).success(function(result){
 				$window.alert('Contraseñas cambiada exitosamente');
 				$location.path( '/login' );
-			},
-			function(error) {
+		})
+		.error(function(error){
 				errorHandler.setError(error.status);
 				$scope.changing_pass = false;
-			}
-		);
+		});
+
 	}
 
 	$scope.$on('displayError', function(event, error) {
