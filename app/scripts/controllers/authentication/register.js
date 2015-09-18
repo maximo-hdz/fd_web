@@ -12,24 +12,53 @@ angular.module('spaApp')
 	$scope.warning = {};
 	$scope.danger = {};
 
-	$scope.register = function(step){
-		if(step === 1){
+	$scope.saltar = function(step){
+
+		if(step == $scope.selection)
+			return;
+
+		if($scope.selection == 0){
+			if($scope.register1.$invalid){
+				$scope.warning.show = true;
+				$scope.warning.message = 'Favor de llenar los campos requeridos';
+				return;
+			}
 			if($scope.dataRegister.new_password.length <= 7 ){
-				$window.alert('La nueva contraseña debe tener al menos 8 caracteres');
+				$scope.warning.show = true;
+				$scope.warning.message = 'La nueva contraseña debe tener al menos 8 caracteres';
 				return;
 			}
 			if($scope.dataRegister.new_password !== $scope.dataRegister.confirm_password){
-				$window.alert('Las contraseñas no coinciden');
+				$scope.warning.show = true;
+				$scope.warning.message = 'Las contraseñas no coinciden';
 				return;
 			}
+			$scope.warning.show = false;
 			$scope.selection = step;
-		}else{
-			if(typeof $scope.dataRegister.image_id == 'undefined'){
-				$window.alert('Selecciona una imagen');
-				return;
-			}
-			$scope.selection = step;
+			return;
 		}
+
+		if($scope.selection == 1){
+			if($scope.register2.$invalid){
+				$scope.warning.show = true;
+				$scope.warning.message = 'Favor de llenar los campos requeridos';
+				return;
+			}
+			if(typeof $scope.dataRegister.image_id == 'undefined'){
+				$scope.warning.show = true;
+				$scope.warning.message = 'Selecciona una imagen';
+				return;
+			}
+			$scope.warning.show = false;
+			$scope.selection = step;
+			return;
+		}
+
+		if($scope.selection == 2){
+			$scope.selection = step;
+			return;
+		}
+
 	}
 
 	$scope.logout = function(){
@@ -42,7 +71,8 @@ angular.module('spaApp')
 
 	$scope.signup = function(){
 		if($scope.dataRegister.question2 === $scope.dataRegister.question1 ){
-			$window.alert('Selecciona dos preguntas distintas');
+			$scope.warning.show = true;
+			$scope.warning.message = 'Selecciona dos preguntas distintas';
 			return;
 		}
 		var new_condition_action = "N";

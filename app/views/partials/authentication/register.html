@@ -9,12 +9,13 @@
 		<h1>Registro</h1>
 		<div class="panel panel-default">
 			<div class="panel-heading">Por tu seguridad, cambie su contrase&ntilde;a y establezca las m&aacute;ximas medidas de seguridad</div>
-				<div ng-switch on="selection">
-					<form name="register1">
-						<div class="panel-body animate-switch" ng-switch-when="0">
-							<div class="paso">
-								<h2><span class="ico-check uncheck"></span>Paso 1 <span class="space">Cambio de Contrase&ntilde;a</span></h2>
-								<br><br>
+				<div class="panel-body animate-switch">
+					<div class="paso">
+						<form name="register1">
+							<div ng-click="saltar(0)">
+								<h2><span ng-class="register1.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>Paso 1 <span class="space">Cambio de Contrase&ntilde;a</span></h2>
+							</div>
+							<div ng-show="selection==0">
 								<div class="row">
 									<div class="col-md-4 col-md-offset-1">
 										<p>*Ingresa tu contrase&ntilde;a</p>
@@ -51,27 +52,25 @@
 										</div>
 									</div>
 								</div>
+								<div>
+									<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+										{{warning.message}}
+									</alert>
+								</div>
 								<div class="row">
 									<div class="col-md-5 col-md-offset-5">
-										<button class="btn btn-success form-control" ng-click="register(1);" ng-disabled="register1.$invalid" >Cambiar contrase&ntilde;a y continuar</button>
+										<button class="btn btn-success form-control" ng-click="saltar(1);" ng-disabled="register1.$invalid" >Cambiar contrase&ntilde;a y continuar</button>
 									</div>
 								</div>
 							</div>
-							<div class="paso">
-								<h2><span class="ico-check uncheck"></span>Paso 2 <span class="space">Imagen y saludo antiphishing</span></h2>
+						</form>
+					</div>
+					<div class="paso">
+						<form name="register2">
+							<div ng-click="saltar(1)">
+								<h2><span ng-class="register2.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>Paso 2 <span class="space">Imagen y saludo antiphishing</span></h2>
 							</div>
-							<div class="paso">
-								<h2><span class="ico-check uncheck"></span>Paso 3 <span class="space">Preguntas secretas, t&eacuterminos y condiciones de uso</span></h2>
-							</div>
-						</div>
-					</form>
-					<form name="register2">
-						<div class="panel-body animate-switch" ng-switch-when="1">
-							<div class="paso">
-								<h2><span class="ico-check"></span>Paso 1 <span class="space">Cambio de Contrase&ntilde;a</span></h2>
-							</div>
-							<div class="paso">
-								<h2><span class="ico-check uncheck"></span>Paso 2 <span class="space">Imagen y saludo antiphishing</span></h2>
+							<div ng-show="selection==1">
 								<div class="row">
 									<div class="col-md-9 col-md-offset-1">
 										<p>*Selecciona una imagen</p>
@@ -102,69 +101,63 @@
 										</div>
 									</div>
 								</div>
-
+								<div>
+									<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+										{{warning.message}}
+									</alert>
+								</div>
 								<div class="row">
 									<div class="col-md-5 col-md-offset-5">
-										<button class="btn btn-success form-control" ng-click="register(2);" ng-disabled="register2.$invalid">Continuar</button>
+										<button class="btn btn-success form-control" ng-click="saltar(2);" ng-disabled="register2.$invalid">Continuar</button>
 									</div>
 								</div>
 							</div>
-							<div class="paso">
-								<h2><span class="ico-check uncheck"></span>Paso 3 <span class="space">Preguntas secretas, t&eacuterminos y condiciones de uso</span></h2>
+						</form>
+					</div>
+					<div class="paso">
+						<form name="register3">
+							<div ng-click="saltar(2)">
+								<h2><span ng-class="register3.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>Paso 3 <span class="space">Preguntas secretas, t&eacuterminos y condiciones de uso</span></h2>
 							</div>
-						</div>
-					</form>
-					<form name="register3">
-						<div class="panel-body animate-switch" ng-switch-when="2">
-							<div class="paso">
-								<h2><span class="ico-check"></span>Paso 1 <span class="space">Cambio de Contrase&ntilde;a</span></h2>
-							</div>
-							<div class="paso">
-								<h2><span class="ico-check"></span>Paso 2 <span class="space">Imagen y saludo antiphishing</span></h2>
-							</div>
-							<div class="paso">
-								<h2><span class="ico-check uncheck"></span>Paso 3 <span class="space">Preguntas secretas, t&eacuterminos y condiciones de uso</span></h2>
-
-									<div class="row">
-										<div class="col-md-4 col-md-offset-1">
-											<p>*Pregunta 1</p>
+							<div ng-show="selection==2">
+								<div class="row">
+									<div class="col-md-4 col-md-offset-1">
+										<p>*Pregunta 1</p>
+									</div>
+									<div class="col-md-5">
+										<select class="form-control" ng-model="dataRegister.question1" ng-options="question.description for question in data.data.questions" ng-required="true" ng-focus="p1=true" ng-blur="p1=false">
+											<option value="">Selecciona una pregunta</option>
+										</select>
+										<div class="tooltip-input" ng-show="p1">
+											<div class="arrow"></div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
-										<div class="col-md-5">
-											<select class="form-control" ng-model="dataRegister.question1" ng-options="question.description for question in data.data.questions" ng-required="true" ng-focus="p1=true" ng-blur="p1=false">
-												<option value="">Selecciona una pregunta</option>
-											</select>
-											<div class="tooltip-input" ng-show="p1">
-												<div class="arrow"></div>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
-											<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response1" ng-required="true" ng-focus="r1=true" ng-blur="r1=false">
-											<div class="tooltip-input" ng-show="r1">
-												<div class="arrow"></div>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
+										<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response1" ng-required="true" ng-focus="r1=true" ng-blur="r1=false">
+										<div class="tooltip-input" ng-show="r1">
+											<div class="arrow"></div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
 									</div>
-
-									<div class="row">
-										<div class="col-md-4 col-md-offset-1">
-											<p>*Pregunta 2</p>
+								</div>
+								<div class="row">
+									<div class="col-md-4 col-md-offset-1">
+										<p>*Pregunta 2</p>
+									</div>
+									<div class="col-md-5">
+										<select class="form-control" ng-model="dataRegister.question2" ng-options="question.description for question in data.data.questions" ng-required="true" ng-focus="p2=true" ng-blur="p2=false">
+											<option value="">Selecciona una pregunta</option>
+										</select>
+										<div class="tooltip-input" ng-show="p2">
+											<div class="arrow"></div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
-										<div class="col-md-5">
-											<select class="form-control" ng-model="dataRegister.question2" ng-options="question.description for question in data.data.questions" ng-required="true" ng-focus="p2=true" ng-blur="p2=false">
-												<option value="">Selecciona una pregunta</option>
-											</select>
-											<div class="tooltip-input" ng-show="p2">
-												<div class="arrow"></div>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
-											<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response2" ng-required="true" ng-focus="r2=true" ng-blur="r2=false">
-											<div class="tooltip-input" ng-show="r2">
-												<div class="arrow"></div>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
+										<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response2" ng-required="true" ng-focus="r2=true" ng-blur="r2=false">
+										<div class="tooltip-input" ng-show="r2">
+											<div class="arrow"></div>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
 									</div>
-
+								</div>
 								<div class="row">
 									<div class="col-md-8 col-md-offset-1">
 										<label class="checkbox">
@@ -184,12 +177,12 @@
 								</div>
 								<div class="row">
 									<div class="col-md-5 col-md-offset-5">
-										<button class="btn btn-success form-control" ng-click="signup();" ng-disabled="register3.$invalid || sending" >Acceder a cuentas</button>
+										<button class="btn btn-success form-control" ng-click="signup();" ng-disabled="register1.$invalid || register2.$invalid || register3.$invalid || sending" >Acceder a cuentas</button>
 									</div>
 								</div>
 							</div>
-						</div>
-					</form>
+						</form>
+					</div>
 				</div>
 			<div class="panel-footer">*Campos necesarios</div>
 		</div>
@@ -198,8 +191,8 @@
 			<div class="row">
 				<p class="col-md-6">&copy; 2015 Fundaci&oacute;n Dond&eacute; Banco</p>
 				<p class="col-md-6 text-right">
-					<a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a> |
-					<a href="javascript:void(0);">Seguridad</a>
+					<a href="#/terms">T&eacute;rminos y Condiciones de Uso</a> |
+					<a href="#/security">Seguridad</a>
 				</p>
 			</div>
 		</div>
