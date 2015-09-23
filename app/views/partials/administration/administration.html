@@ -1,3 +1,79 @@
 <div class="col-md-4">
-  <div ng-include="'views/partials/administration/user-activity.html'" class="account-page"></div>
+	<div class="left-menu">
+		<ul class="menu menu-configuracion">
+			<li class="head" onclick="showHideMenu('menu-configuracion', undefined);">
+				<span class="arrow"></span>
+				<span class="title">CONFIGURACI&Oacute;N</span>
+			</li>
+			<li ng-class="'child active'" style="cursor:pointer;">
+				<a>
+					<span class="arrow"></span>
+					<span class="text">Cambio de contrase&ntilde;a</span>
+				</a>
+			</li>
+			<li ng-class="'child'" style="cursor:pointer;">
+				<a>
+					<span class="arrow"></span>
+					<span class="text">Token</span>
+				</a>
+			</li>
+		</ul>
+
+		<ul class="menu menu-informacion">
+			<li class="head" onclick="showHideMenu('menu-informacion', undefined);">
+				<span class="arrow"></span>
+				<span class="title">M&Aacute;S INFORMACI&Oacute;N</span>
+			</li>
+			<li ng-class="'child active'" style="cursor:pointer;">
+				<a>
+					<span class="arrow"></span>
+					<span class="text">Aclaraciones</span>
+				</a>
+			</li>
+			<li ng-class="'child'" style="cursor:pointer;">
+				<a>
+					<span class="arrow"></span>
+					<span class="text">Aviso de privacidad</span>
+				</a>
+			</li>
+			<li ng-class="'child'" style="cursor:pointer;">
+				<a>
+					<span class="arrow"></span>
+					<span class="text">Reportes por robo y/o p&eacute;rdida</span>
+				</a>
+			</li>
+			<li ng-class="'child'" style="cursor:pointer;">
+				<a>
+					<span class="arrow"></span>
+					<span class="text">T&eacute;rminos y condiciones</span>
+				</a>
+			</li>
+			<li ng-class="'child'" style="cursor:pointer;">
+				<a>
+					<span class="arrow"></span>
+					<span class="text">Seguridad</span>
+				</a>
+			</li>
+
+		</ul>
+
+
+	</div>
 </div>
+
+<div class="col-md-8" ng-show="requestStack.length > 0 && showBGLoader === undefined">
+	<div class="loading"></div>
+</div>
+
+<div class="col-md-8" ng-hide="requestStack.length > 0">
+	<div>
+	<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
+		{{danger.message}}
+	</alert>
+	<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+		{{warning.message}}
+	</alert>
+	</div>
+	<div ng-include="'views/partials/administration/user-activity.html'" class="account-page"></div>
+</div>
+
