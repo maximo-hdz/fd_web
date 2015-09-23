@@ -6,6 +6,7 @@
 
 This assumes that you have [node.js](http://nodejs.org),[npm](https://npmjs.org/) and [yeoman](http://yeoman.io/) installed.
 
+You could need [Sass](http://sass-lang.com/) and [Compass](http://compass-style.org/), both can be installed like Gems of [Ruby](https://www.ruby-lang.org/es/).   
 
 ## Getting Started
 
@@ -27,4 +28,20 @@ Running project using :
 
 ```shell
 grunt serve
+```
+
+## Troubleshooting
+
+If you found the following error when run *grunt serve*
+
+```shell
+> TypeError: Cannot read property 'prototype' of undefined
+```
+
+You need to reinstall a component, follow the next commands
+
+```shell
+rm -rf node_modules/grunt-connect-proxy
+npm install eventemitter3@0.1.6
+npm install grunt-connect-proxy
 ```
