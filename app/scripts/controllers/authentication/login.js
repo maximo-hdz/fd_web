@@ -41,9 +41,10 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 					$location.path( '/new' );
 				}
 			},
-			function(error) {
+			function(error, status) {
 				$scope.logining = false;
-				errorHandler.setError(error);
+				var result = {"data" : error, "status" : status};
+				errorHandler.setError(result);
 			}
 		);
 	}
