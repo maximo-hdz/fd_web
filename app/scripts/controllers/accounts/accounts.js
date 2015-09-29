@@ -179,9 +179,9 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 
     if( $scope.searchParams.startDate && $scope.searchParams.endDate ) {
         if (startDate > todaysDate || endDate > todaysDate)
-					console.error( 'Búsqueda no realizada: Fecha Inicial y/o Fecha Final NO pueden ser posteriores a la Fecha de Hoy' );
+					errorHandler.setError( {status : 601} );
         else if (startDate > endDate)
-					console.error( 'Búsqueda no realizada: Fecha Inicial debe ser anterior a la Fecha Final' );
+					errorHandler.setError( {status: 603} );
         else
             $scope.getTransactions($scope.searchParams.startDate, $scope.searchParams.endDate);
     } else if( $scope.searchParams.startDate === null && $scope.searchParams.endDate === null) {

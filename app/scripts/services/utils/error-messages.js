@@ -12,8 +12,6 @@ angular.module('spaApp')
     var message = 'Error en el servicio, intente más tarde';
 
     switch (status.status) {
-
-
       case 401:
         message = 'La sesión no es válida o no se ha podido genera una sesión para el usuario';
         break;
@@ -43,6 +41,12 @@ angular.module('spaApp')
         break;
       case 504:
         message = 'Tiempo agotado, vuelva a ingresar';
+        break;
+      case 601:
+        message = 'Búsqueda no realizada: Fecha Inicial y/o Fecha Final NO pueden ser posteriores a la Fecha de Hoy';
+        break;
+      case 603:
+        message = 'Búsqueda no realizada: Fecha Inicial debe ser anterior a la Fecha Final';
         break;
       default:
         message = 'Problema desconocido, por favor intente más tarde';
