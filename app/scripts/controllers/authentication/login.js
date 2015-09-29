@@ -43,8 +43,7 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 			},
 			function(error, status) {
 				$scope.logining = false;
-				var result = {"data" : error, "status" : status};
-				errorHandler.setError(result);
+				errorHandler.setError(error);
 			}
 		);
 	}
