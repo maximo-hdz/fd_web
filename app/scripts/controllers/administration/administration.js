@@ -3,56 +3,38 @@
 angular.module('spaApp').controller('AdministrationCtrl', ['$scope', 'adminProvider', function ($scope, adminProvider) {
 
   $scope.page=0
-  $scope.status=true;
-  $scope.indexStatus=false;
   var size = 10;
-
-  $scope.activity=function(option) {
-
-  adminProvider.getUserActivity($scope.page, size).then(
-
-    function(data) {
-        $scope.userActivity = data.user_activity;
-
-        if(option=='ant'&& $scope.page != 0 ){
-          $scope.page--;
-          $scope.indexStatus=false;
-        }
-
-        if (option=='ant' && $scope.page == 0){
-          $scope.indexStatus=false;
-          $scope.status=true;
-        }
-
-        if(option=='next'){
-          $scope.status=false;
-          $scope.page++;
-        }
-
-        if(option=='next' && $scope.userActivity.length-1){
-          $scope.indexStatus=true;
-        }
-    },
-    function(error) {
-        $scope.status=true;
-        $scope.indexStatus=true;
-    }
-   );
-  };
+  $scope.disableAnt=true;
+  $scope.disableSig=true;
 
   adminProvider.getUserActivity($scope.page, size).then(
     function(data) {
         $scope.userActivity = data.user_activity;
+        $scope.disableSig = data.user_activity.length < size ? true : false;
     },
     function(error) {
-        $scope.status=true;
-        $scope.indexStatus=true;
+        $scope.disableAnt = true;
+        $scope.disableSig = true;
     }
   );
 
+  $scope.activity = function(option) {
+    $scope.page = option == 'ant' ? $scope.page - 1 : $scope.page + 1 ;
+    adminProvider.getUserActivity($scope.page, size).then(
+      function(data) {
+          $scope.userActivity = data.user_activity;
+          $scope.disableAnt = $scope.page == 0 ? true : false;
+          $scope.disableSig = data.user_activity.length < size ? true : false;
+      },
+      function(error) {
+        $scope.disableAnt = true;
+        $scope.disableSig = true;
+      }
+     );
+  };
+
   $scope.mapUserActivity = function(activity) {
     var activityName = activity;
-
     var userActions = {
      'checkLogin': 'Pre Login',
      'authenticateUser': 'Login',
@@ -72,21 +54,18 @@ angular.module('spaApp').controller('AdministrationCtrl', ['$scope', 'adminProvi
      'updateCommunicationInfo': 'Cambio de Medio de Comunicación',
      'updateDigitalBankServicesState': 'Cambio de Status en Banca Digital'
    };
-
    if(userActions[activity]) {
      activityName = userActions[activity];
    }
-  //console.log("Size "+ activityName);
    return activityName;
  };
 
- $scope.mapActivityStatus = function(activityStatus) {
-     var statuses = {
-       true : 'exitoso',
-       false: 'fallo'
-     };
-
-   return statuses[activityStatus];
+  $scope.mapActivityStatus = function(activityStatus) {
+      var statuses = {
+        true : 'exitoso',
+        false: 'fallo'
+      };
+    return statuses[activityStatus];
   };
 
 }]);

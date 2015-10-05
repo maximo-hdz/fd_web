@@ -17,8 +17,8 @@
         </tr>
         <tr>
           <td>
-            <button ng-click='activity("ant")' ng-model="button" ng-disabled='status' >Atras </button>
-            <button ng-click='activity("next")' ng-model="button" ng-disabled='indexStatus'>Siguiente</button>
+            <button ng-click='activity("ant")' ng-model="button" ng-disabled='disableAnt'>Anterior</button> {{page+1}}
+            <button ng-click='activity("sig")' ng-model="button" ng-disabled='disableSig'>Siguiente</button>
         </td>
        </tr>
       </tbody>
