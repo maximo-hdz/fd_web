@@ -3,6 +3,12 @@
 
 /* VARIABLES */
 $logo_bg: "../images/logo.png";
+$green_picnic: #8EC63F;
+$green_picnic_20: #DDEBD1;
+$green_tabasco: #00A850;
+$green_espana: #018A5E;
+$orange_noviembre: #FDB813;
+$yellow_costa: #FFD200;
 
 /* MIXINS */
 @mixin border_radius($radius: 10px) {
@@ -198,7 +204,7 @@ input[type="password"]:focus,
 input[type="mail"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus{
-	border: 1px solid #007e57;
+	border: 1px solid $green_espana;
 }
 
 /* MARGINS */
@@ -268,7 +274,7 @@ input[type="number"]:focus{
 }
 .btn-default{
 	background: #FFFFFF;
-	border: 1px solid #009b4d!important;
+	border: 1px solid $green_tabasco!important;
 	padding: 8px 5px;
 
 }
@@ -276,12 +282,12 @@ input[type="number"]:focus{
 	background: #FFFFFF;
 }
 .btn-success{
-	background: #007e57;
+	background: $green_espana;
 	width: 100%;
 	border: none;
 }
 .btn-success:hover{
-	background: #86bd4a;
+	background: $green_picnic;
 }
 .btn-danger{
 	background: #e90636;
@@ -292,12 +298,12 @@ input[type="number"]:focus{
 	background: #ff0000;
 }
 .btn-warning{
-	background: #e4a612;
+	background: $orange_noviembre;
 	width: 100%;
 	border: none;
 }
 .btn-warning:hover{
-	background: #f5cd21;
+	background: $yellow_costa;
 }
 
 /************** ALERTS **************/
@@ -308,8 +314,8 @@ input[type="number"]:focus{
 	p{
 		color: #727272!important;
 		font-size: 12px;
-
 	}
+	border-radius: 5px !important;
 }
 .alert-success{
 	background: #bcdbcb;
@@ -393,9 +399,9 @@ body.showLoader::after{
 		p{
 			padding-top: 10px;
 			font-size: 12px;
-			color: #13795e;
+			color: $green_espana;
 			a{
-				color: #13795e;
+				color: $green_espana;
 				@include anim_transicion_ease(0.3s);
 			}
 			a:hover{
@@ -405,7 +411,7 @@ body.showLoader::after{
 		}
 	}
 	.title{
-		background: #007e57;
+		background: $green_espana;
 		position: fixed;
 		top: 37px;
 		left: 0;
@@ -426,7 +432,7 @@ body.showLoader::after{
 		// bottom: 0;
 		z-index: 9999;
 		.busqueda-content{
-			background: #007e57;
+			background: $green_espana;
 			padding: 0 10px;
 			margin: 0 50px;
 			@include border_radius(5px);
@@ -437,7 +443,7 @@ body.showLoader::after{
 				border: none;
 				padding: 9px;
 				margin: 10px 0;
-				@include border_radius(3px);
+				@include border_radius(5px);
 			}
 			.select-map{
 				select{
@@ -470,7 +476,7 @@ body.showLoader::after{
 			margin: 0!important;
 		}
 		.busqueda-inputs{
-			background: #007e57;
+			background: $green_espana;
 			padding: 10px!important;
 			.btn-cerca{
 				width: 20%!important;
@@ -514,7 +520,7 @@ body.showLoader::after{
 					cursor: pointer;
 					font-size: 11px;
 					float: right;
-					color: #13795e;
+					color: $green_espana;
 					position: relative;
 					top: -15px;
 					@include anim_transicion_ease(0.3s);
@@ -574,7 +580,7 @@ body.showLoader::after{
 			margin: 0 0 3px 0;
 		}
 		a{
-			color: #13795e;
+			color: $green_espana;
 			@include anim_transicion_ease(0.3s);
 		}
 		a:hover{
@@ -622,9 +628,9 @@ body.showLoader::after{
 		p{
 			padding-top: 10px;
 			font-size: 12px;
-			color: #13795e;
+			color: $green_espana;
 			a{
-				color: #13795e;
+				color: $green_espana;
 				@include anim_transicion_ease(0.3s);
 			}
 			a:hover{
@@ -656,7 +662,7 @@ body.showLoader::after{
 			padding: 10px;
 			color: #FFFFFF;
 			height: 40px;
-			@include border_radius( 3px );
+			@include border_radius( 5px );
 		}
 		input::-webkit-input-placeholder {
 			color: #ffffff!important;
@@ -808,7 +814,7 @@ body.showLoader::after{
 		.panel-body{
 			padding: 15px 20px;
 			h2{
-				color: #369443;
+				color: $green_tabasco;
 				font-size: 17px;
 				margin: 0;
 				padding: 0;
@@ -893,7 +899,7 @@ body.showLoader::after{
 							border: 2px solid #FFFFFF;
 						}
 						span.selected{
-							border: 2px solid #369443;
+							border: 2px solid $green_tabasco;
 						}
 					}
 
@@ -970,14 +976,14 @@ body.showLoader::after{
 			border: none;
 			margin: 12px 0 0 0!important;
 			.icon-bar{
-				background: #007e57;
+				background: $green_espana;
 				@include anim_transicion_ease(0.3s);
 			}
 		}
 		.navbar-toggle:hover{
 			background: transparent;
 			.icon-bar{
-				background: #86bd4a;
+				background: $green_picnic;
 			}
 		}
 		.navbar{
@@ -989,7 +995,7 @@ body.showLoader::after{
 					@include anim_transicion_ease(0.3s);
 					background: url("../images/menu-selected.png") center 120px no-repeat;
 					a{
-						color: #369443;
+						color: $green_tabasco;
 						text-align: center;
 						max-width: 120px;
 						height: 60px;
@@ -1029,7 +1035,7 @@ body.showLoader::after{
 			margin: 5px 30px 0 0;
 
 			p{
-				color: #369443;
+				color: $green_tabasco;
 				font-size: 12px;
 				margin: 0;
 				span{
@@ -1042,7 +1048,7 @@ body.showLoader::after{
 		}
 	}
 	.content-breadcrumb{
-		background: #007e57;
+		background: $green_espana;
 		ol.breadcrumb{
 			background: transparent;
 			margin: 0;
@@ -1071,7 +1077,7 @@ body.showLoader::after{
 				font-size: 12px;
 			}
 			a:hover{
-				color: #86bd4a;
+				color: $green_picnic;
 				text-decoration: none;
 				@include anim_transicion_ease(0.3s);
 			}
@@ -1144,7 +1150,7 @@ body.showLoader::after{
 
 /* TITLES */
 .title-green{
-	color: #009b4d;
+	color: $green_tabasco;
 	font-size: 20px;
 }
 /* LOGOS */
@@ -1217,7 +1223,7 @@ body.showLoader::after{
 				}
 			}
 			li.parent{
-				background: #e7f2db;
+				background: $green_picnic_20;
 				border-top: 1px solid #d9d9d9;
 				display: none;
 				.text{
@@ -1267,7 +1273,7 @@ body.showLoader::after{
 			}
 			li.child.active{
 				a{
-					background: #86bd4a;
+					background: $green_picnic;
 					color: #FFFFFF;
 					font-size: 14px;
 					.text,
@@ -1337,7 +1343,7 @@ body.showLoader::after{
 		}
 		ul.menu-tengo{
 			li.head{
-				background: #009b4d;
+				background: $green_tabasco;
 
 			}
 			li.child{
@@ -1348,7 +1354,7 @@ body.showLoader::after{
 		}
 		ul.menu-debo{
 			li.head{
-				background: #fb0035;
+				background: $orange_noviembre;
 
 			}
 			li.child{
@@ -1392,7 +1398,7 @@ body.showLoader::after{
 		}
 	}
 	.title-account{
-		color: #009b4d;
+		color: $green_tabasco;
 		font-size: 22px;
 		border-bottom: 1px solid #c2c2c2;
 		padding-bottom: 10px;
@@ -1442,20 +1448,20 @@ body.showLoader::after{
 			margin-bottom: 20px;
 			.content-logo{
 				background: #FFFFFF;
-				@include border_radius(3px);
+				@include border_radius(5px);
 				.logo{
 					margin: 20px auto;
 				}
 			}
 			.saldos-cuenta{
-				background: #ffcf17;
+				background: $yellow_costa;
 				height: 30px;
 				color: #FFFFFF;
 				margin-bottom: 10px;
 				overflow: hidden;
-				@include border_radius(3px);
+				@include border_radius(5px);
 				.text{
-					background: #86bd4a url("../images/detail-divider.png") right center no-repeat;
+					background: $green_picnic url("../images/detail-divider.png") right center no-repeat;
 					background-size: contain;
 					display: block;
 					float: left;
@@ -1468,12 +1474,12 @@ body.showLoader::after{
 				}
 			}
 			.pagos-prestamo{
-				background: #86bd4a;
+				background: $green_picnic;
 				clear: both;
 				overflow: hidden;
 				margin-bottom: 10px;
 				padding: 10px;
-				@include border_radius(3px);
+				@include border_radius(5px);
 				p{
 					color: #FFFFFF;
 					font-size: 12px;
@@ -1534,7 +1540,7 @@ body.showLoader::after{
 			.btn-group{
 				min-width: 150px;
 				.btn-default{
-					color: #009b4d;
+					color: $green_tabasco;
 				}
 				.btn{
 					width: 50%;
@@ -1558,7 +1564,7 @@ body.showLoader::after{
 			.input-group{
 				min-width: 150px;
 				max-width: 200px;
-				border: 1px solid #369443;
+				border: 1px solid $green_tabasco;
 				overflow: hidden;
 				@include border_radius(5px);
 				margin-bottom: 10px;
@@ -1566,12 +1572,12 @@ body.showLoader::after{
 					width: 50%;
 					text-align: center;
 					border: none;
-					color: #369443;
+					color: $green_tabasco;
 					padding: 9px 0;
 					font-size: 11px;
 				}
 				input:first-child{
-					border-right: 1px solid #369443
+					border-right: 1px solid $green_tabasco
 				}
 				.ui-datepicker-trigger{
 					display: none;
@@ -1585,7 +1591,7 @@ body.showLoader::after{
 	width: 200px;
 	border: 1px solid #c3c3c3;
 	.ui-datepicker-header{
-		background: #009b4d;
+		background: $green_tabasco;
 		padding: 10px;
 		.ui-datepicker-title{
 			text-align: center;
@@ -1613,7 +1619,7 @@ body.showLoader::after{
 		width: 100%;
 		thead{
 			th{
-				background: #009b4d;
+				background: $green_tabasco;
 				text-align: center;
 				color: #FFFFFF;
 				font-size: 12px;
@@ -1633,7 +1639,7 @@ body.showLoader::after{
 					text-decoration: none;
 				}
 				a.ui-state-active{
-					color: #009b4d;
+					color: $green_tabasco;
 					background: #facc3a;
 				}
 			}
@@ -2238,7 +2244,7 @@ body.showLoader::after{
 				margin: 0!important;
 			}
 			.busqueda-inputs{
-				background: #007e57;
+				background: $green_espana;
 				padding: 10px!important;
 				.btn-cerca{
 					width: 100%!important;
