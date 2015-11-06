@@ -17,7 +17,6 @@ angular.module('accounts-route', ['ui.router'])
       },
       displayName: 'Cuentas',
       path: 'Cuenta'
-
     })
 
     /**

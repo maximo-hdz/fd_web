@@ -22,18 +22,6 @@
 		<!-- build:css({.tmp,app}) styles/main.css -->
 		<link rel="stylesheet" href="styles/main.css">
 		<!-- endbuild -->
-		<style>
-			.breadcrumbs {
-			  list-style-type: none;
-			}
-			.breadcrumbs li {
-			  float: left;
-			}
-			.breadcrumbs .fa {
-			  line-height: inherit;
-			  margin-right: 10px;
-			}
-		</style>
 		<link id="linkApiRoot" href="/SBD"/>
 	</head>
 	<body ng-app="spaApp" ng-class="{'showLoader' : requestStack.length > 0 && showBGLoader}">
@@ -107,11 +95,7 @@
 		<script src="scripts/services/utils/timer.js"></script>
 		<script src="scripts/filters/filters.js"></script>
 		<script src="scripts/filters/uiBreadcrumbs.js"></script>
-		<script src="scripts/services/services.js"></script>
-		<script src="scripts/directives/bar-navigation.js"></script>
-		<script src="scripts/directives/persiana.js"></script>
-		<script src="scripts/directives/connection.js"></script>
-		<script src="scripts/directives/administration.js"></script>
+		<script src="scripts/services/utils/breadcrumbs.js"></script>
 		<script src="scripts/infrastructure/httpinterceptor.js"></script>
 
 		<!-- Controllers -->
