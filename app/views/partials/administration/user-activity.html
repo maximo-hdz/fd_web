@@ -19,7 +19,7 @@
   </div>
 </div>
 <div class="pagination">
-      <div ng-click='activity("ant")' ng-class="disableAnt ? 'disabled' : ''"><</div>
-      <div class="active">{{page+1}}/{{totalPages}}</div>
-      <div ng-click='activity("sig")' ng-class="disableSig ? 'disabled' : ''">></div>
+      <button ng-click='activity("ant")' ng-class="disableAnt ? 'disabled' : ''">Anterior</button>
+      <span>{{page+1}}/{{totalPages}}</span>
+      <button ng-click='activity("sig")' ng-class="disableSig ? 'disabled' : ''">Siguiente</button>
 </div>
