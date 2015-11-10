@@ -10,13 +10,13 @@ angular.module('spaApp').controller('AdministrationCtrl', ['$scope', 'adminProvi
   $scope.disableSig = false;
 
   $scope.activity = function(option) {
-    if($scope.disableSig && $scope.disableAnt){
+    if(($scope.disableSig && option == 'sig' ) || ($scope.disableAnt && option == 'ant')){
       return;
     }
     $scope.page = option == 'ant' ? $scope.page-1 : $scope.page+1 ;
     adminProvider.getUserActivity($scope.page, $scope.size).then(
       function(data) {
-        $scope.userActivities = data.user_activity;
+        $scope.userActivities = data.user_activities;
         $scope.totalPages = Math.ceil(data.total_items / $scope.size );
         $scope.disableAnt = $scope.page == 0 ? true : false;
         $scope.disableSig = $scope.page+1 == $scope.totalPages ? true : false;
