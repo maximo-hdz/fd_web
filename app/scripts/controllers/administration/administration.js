@@ -2,36 +2,32 @@
 
 angular.module('spaApp').controller('AdministrationCtrl', ['$scope', 'adminProvider', function ($scope, adminProvider) {
 
-  $scope.page=0
-  var size = 10;
-  $scope.disableAnt=true;
-  $scope.disableSig=true;
-
-  adminProvider.getUserActivity($scope.page, size).then(
-    function(data) {
-        $scope.userActivity = data.user_activity;
-        $scope.disableSig = data.user_activity.length < size ? true : false;
-    },
-    function(error) {
-        $scope.disableAnt = true;
-        $scope.disableSig = true;
-    }
-  );
+  $scope.page = -1;
+  $scope.size = 10;
+  $scope.totalItems = 0;
+  $scope.totalPages = 0;
+  $scope.disableAnt = false;
+  $scope.disableSig = false;
 
   $scope.activity = function(option) {
-    $scope.page = option == 'ant' ? $scope.page - 1 : $scope.page + 1 ;
-    adminProvider.getUserActivity($scope.page, size).then(
+    if($scope.disableSig && $scope.disableAnt){
+      return;
+    }
+    $scope.page = option == 'ant' ? $scope.page-1 : $scope.page+1 ;
+    adminProvider.getUserActivity($scope.page, $scope.size).then(
       function(data) {
-          $scope.userActivity = data.user_activity;
-          $scope.disableAnt = $scope.page == 0 ? true : false;
-          $scope.disableSig = data.user_activity.length < size ? true : false;
+        $scope.userActivities = data.user_activity;
+        $scope.totalPages = Math.ceil(data.total_items / $scope.size );
+        $scope.disableAnt = $scope.page == 0 ? true : false;
+        $scope.disableSig = $scope.page+1 == $scope.totalPages ? true : false;
       },
       function(error) {
         $scope.disableAnt = true;
         $scope.disableSig = true;
       }
-     );
+    );
   };
+  $scope.activity('sig');
 
   $scope.mapUserActivity = function(activity) {
     var activityName = activity;
