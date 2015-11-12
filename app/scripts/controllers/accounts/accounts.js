@@ -15,8 +15,6 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 	$scope.today = new Date().getTime();
 	// To separate the first four accounts
 	$scope.notifications = [];
-	// To contain the start and end dates
-	$scope.searchParams = {};
 
 	/**
 	 * accounts contains all the received accounts and total contains the addition of each kind of balances
@@ -116,6 +114,8 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 		// Both values are shared with the child controllers
 		$scope.selectedAccountId = accountId;
 		$scope.selectedAccount = account;
+		// Contain the start and end dates (for searching purposes)
+		$scope.searchParams = {};
 		// Request account detail for all kinds of accounts
 		getAccountDetail();
 
@@ -166,9 +166,10 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
     var dd = todaysDate.getDate();      // day
     var mm = todaysDate.getMonth()+1;   // month (January is 0!)
     var yy = todaysDate.getFullYear();  // year
+
     dd = dd < 10 ? '0' + dd : dd;
     mm = mm < 10 ? '0' + mm : mm;
-    todaysDate = yy+mm+dd;
+    todaysDate = yy.toString() + mm.toString() + dd.toString();
 
     if ($scope.searchParams.startDate !== undefined)
       	// startDate pass from String to Int
