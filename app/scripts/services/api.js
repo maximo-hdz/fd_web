@@ -17,7 +17,7 @@ angular.module('spaApp').factory('api', ['$http', '$rootScope', '$window', funct
       $rootScope.isAuthenticated = false;
       $http.defaults.headers.common['X-BANK-TOKEN'] = 5;
       $http.defaults.headers.common['X-AUTH-TOKEN'] = token || $rootScope.session_token;
-	  $http.defaults.headers.common['X-CLIENT-TYPE'] = 'WEB';
+      $http.defaults.headers.common['X-CLIENT-TYPE'] = 'WEB';
       $http.defaults.headers.common['X-CLIENT-VERSION'] = '0.1.HASH';
 
     },
