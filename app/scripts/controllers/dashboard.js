@@ -3,8 +3,8 @@
  *
  */
 angular.module('spaApp')
-.controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'accountsProviderFD', '$window', 'timerService', 'errorHandler',
-function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD, $window, timerService, errorHandler) {
+.controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'accountsProviderFD', '$window', 'timerService',
+function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD, $window, timerService) {
 
 	// If there is no session, take the user to the login view
 	if ( !$rootScope.session_token ) {
@@ -21,19 +21,21 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
 	 * Change current section accordiing to the received value.
 	 */
 	$scope.changeSection = function( section ) {
-    if ( $scope.currentSection === section )
-      return;
-    else if ( section === 'map' )
-      $location.path('map');
-    else
-      $('.main-menu .navbar-nav li a').each( function(index) {
-        if ( $(this).attr('id') === section ) {
-          $scope.currentSection = section;
-          $location.path( section );
-        }
-        $(this).css('cursor', 'pointer');
-      });
-  };
+		if ( $scope.currentSection === section ){
+			return;
+		} else if ( section === 'map' ){
+			$location.path('map');
+		}else{
+			//don't use jquery
+			$('.main-menu .navbar-nav li a').each( function() {
+				if ( $(this).attr('id') === section ) {
+					$scope.currentSection = section;
+					$location.path( section );
+				}
+				$(this).css('cursor', 'pointer');
+			});
+		}
+	};
 
 	/**
 	 * Call the service to close the session.
@@ -41,7 +43,7 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
 	$scope.logout = function() {
 		$rootScope.showBGLoader = true;
 		authorizeProviderFD.logout().then(
-			function(data) {
+			function() {
 				timerService.stop();
 				$rootScope.session_token = null;
 				$location.path('/login');
@@ -56,17 +58,17 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
 	};
 
 	$scope.$on('IdleTimeout', function() {
-    $scope.warning.show = true;
+		$scope.warning.show = true;
 		$scope.warning.message = 'Tu sesión esta por expirar.';
-  });
+	});
 
-  $scope.$on('WarningTimeout', function() {
-    $scope.logout();
-  });
+	$scope.$on('WarningTimeout', function() {
+		$scope.logout();
+	});
 
 	$scope.$on('IdleReset', function() {
-    $scope.warning.show = false;
-  });
+		$scope.warning.show = false;
+	});
 
 	/**
 	 * eventListener to display errors
@@ -76,7 +78,7 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
 	$scope.$on('displayError', function(event, error) {
 		$scope.danger.show = true;
 		$scope.danger.message = error.message;
-  });
+	});
 
 	/**
 	 * eventListener to clear errors

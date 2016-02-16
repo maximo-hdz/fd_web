@@ -2,7 +2,7 @@
 
 angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProvider', 'uiGmapGoogleMapApi', '$location', function ($scope,  $rootScope, mapProvider, uiGmapGoogleMapApi, $location) {
 
-	$scope.conSesion = $rootScope.session_token == null || $rootScope.session_token == undefined || $rootScope.session_token == '' ? false : true;
+	$scope.conSesion = $rootScope.session_token === null || $rootScope.session_token === undefined || $rootScope.session_token === '' ? false : true;
 	$scope.details = {};
 	$scope.estados = [	{'id':'df','name':'Distrito Federal','lat':19.3200988,'lon':-99.1521845,'zoom':10},
 						{'id':'ags','name':'Aguascalientes','lat':21.8890872,'lon':-102.2919885,'zoom':12},
@@ -40,8 +40,8 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 
 	//search branches
 	$scope.search = function(){
-		if(Object.keys($scope.details).length==0){
-			if($scope.estado!=undefined){
+		if(Object.keys($scope.details).length === 0){
+			if($scope.estado !== undefined){
 				$scope.showBranches = true;
 				mapProvider.getBranches({'lat':$scope.estado.lat,'lng':$scope.estado.lon}).then(
 					function(data) {
@@ -49,9 +49,9 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 						$scope.map.branches = $rootScope.branches;
 					},
 					function(errorObject) {
-			            var status = errorObject.status;
-			            var msg = status;
-			        }
+						var status = errorObject.status;
+						var msg = status;
+					}
 				);
 			}
 		}else{
@@ -62,12 +62,12 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 					$scope.map.branches = $rootScope.branches;
 				},
 				function(errorObject) {
-		            var status = errorObject.status;
-		            var msg = status;
-		        }
+					var status = errorObject.status;
+					var msg = status;
+				}
 			);
 		}
-	}
+	};
 
 	$scope.searchNearMe = function(){
 		$scope.showBranches = true;
@@ -80,9 +80,9 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 						console.log(data);
 					},
 					function(errorObject) {
-			            var status = errorObject.status;
-			            var msg = status;
-			        }
+						var status = errorObject.status;
+						var msg = status;
+					}
 				);
 			}, function() {
 				handleNoGeolocation(true);
@@ -90,18 +90,18 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 		} else {
 			handleNoGeolocation(false);
 		}
-	}
+	};
 
 	//Center defined by default
 	$scope.map = { center: { latitude: 19.432602, longitude: -99.13320499999998 }, zoom: 15, bounds: {}};
-    $scope.marker = {
-      id: 0,
-      coords: {
-        latitude: 19.432602,
-        longitude: -99.13320499999998
-      },
-      options: { draggable: false }
-    };
+	$scope.marker = {
+		id: 0,
+		coords: {
+			latitude: 19.432602,
+			longitude: -99.13320499999998
+		},
+		options: { draggable: false }
+	};
 	$scope.map.branches = {};
 	var geocoder = new google.maps.Geocoder();
 
@@ -109,17 +109,17 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			$scope.map.center = {
-									latitude: position.coords.latitude,
-									longitude: position.coords.longitude
-								};
-		    $scope.marker = {
-		      id: 1,
-		      coords: {
-		        latitude: position.coords.latitude,
-		        longitude: position.coords.longitude
-		      },
-		      options: { draggable: false }
-		    };
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude
+			};
+			$scope.marker = {
+				id: 1,
+				coords: {
+					latitude: position.coords.latitude,
+					longitude: position.coords.longitude
+				},
+				options: { draggable: false }
+			};
 
 		}, function() {
 			handleNoGeolocation(true);
@@ -145,27 +145,27 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 			$scope.map.branches = $rootScope.branches;
 		},
 		function(errorObject) {
-            var status = errorObject.status;
-            var msg = status;
-        }
+			var status = errorObject.status;
+			var msg = status;
+		}
 	);
 
 	$scope.selectedBranch = function(branch){
 		$scope.map.center.latitude = branch.coordinates.lat;
 		$scope.map.center.longitude = branch.coordinates.lng;
-	    $scope.marker = {
-	      id: branch.id,
-	      coords: {
-	        latitude: branch.coordinates.lat,
-	        longitude: branch.coordinates.lng
-	      },
-	      options: { draggable: false }
-	    };
+		$scope.marker = {
+			id: branch.id,
+			coords: {
+				latitude: branch.coordinates.lat,
+				longitude: branch.coordinates.lng
+			},
+			options: { draggable: false }
+		};
 
 	};
 
 	$scope.comoLlegar = function(branch){
 		window.open('https://www.google.com.mx/maps/dir//'+branch.description.address.street.replace('#','No.')+'%20'+branch.description.address.street2+'%20'+branch.description.address.city);
-	}
+	};
 
 }]);
