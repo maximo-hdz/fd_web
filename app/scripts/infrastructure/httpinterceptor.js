@@ -21,14 +21,14 @@ angular.module('spaApp').factory('httpInterceptor', ['$q', '$location', '$rootSc
         $rootScope.requestStack.pop();
         
         if (!response.status) {
-          console.warn("Response undefined");
+          console.warn('Response undefined');
           timerService.stop();
           $location.url('/login');
         }
 
         if ( response.status === 401 ) {
           $rootScope.session_token = null;
-          console.warn("Status 401");
+          console.warn('Status 401');
           timerService.stop();
           $location.url('/login');
         }
@@ -37,4 +37,4 @@ angular.module('spaApp').factory('httpInterceptor', ['$q', '$location', '$rootSc
       }
     };
 
-}]);
+  }]);
