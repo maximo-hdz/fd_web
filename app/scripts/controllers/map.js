@@ -45,7 +45,6 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 				$scope.showBranches = true;
 				mapProvider.getBranches({'lat':$scope.estado.lat,'lng':$scope.estado.lon}).then(
 					function(data) {
-						console.log(data);
 						$scope.map.branches = $rootScope.branches;
 					},
 					function(errorObject) {
@@ -58,7 +57,6 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 			$scope.showBranches = true;
 			mapProvider.getBranches({'lat':$scope.details.geometry.location.k,'lng':$scope.details.geometry.location.D}).then(
 				function(data) {
-					console.log(data);
 					$scope.map.branches = $rootScope.branches;
 				},
 				function(errorObject) {
@@ -77,7 +75,6 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 					function(data) {
 						$scope.map.branches = $rootScope.branches;
 						$scope.showBranches = true;
-						console.log(data);
 					},
 					function(errorObject) {
 						var status = errorObject.status;
@@ -130,10 +127,8 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 
 	function handleNoGeolocation(errorFlag) {
 		if (errorFlag) {
-			//console.log('Error: The Geolocation service failed.');
 			var content = 'Error: The Geolocation service failed.';
 		} else {
-			//console.log('Error: Your browser does not support geolocation.');
 			var content = 'Error: Your browser does not support geolocation.';
 		}
 	}
@@ -141,7 +136,6 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 	//this function fetch all the bank's branches at the beginning
 	mapProvider.getBranches({}).then(
 		function(data) {
-			console.log(data);
 			$scope.map.branches = $rootScope.branches;
 		},
 		function(errorObject) {
