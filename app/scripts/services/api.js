@@ -10,7 +10,7 @@ angular.module('spaApp').factory('api', ['$http', '$rootScope', '$window', funct
     init: function (token) {
       if($window.x_session_token) {
         $rootScope.session_token = $window.x_session_token;
-        $rootScope.last_access_date = $window.last_access_date
+        $rootScope.last_access_date = $window.last_access_date;
         $rootScope.last_access_media = $window.last_client_application_id;
         $rootScope.client_name = $window.client_name;
       }
@@ -18,11 +18,11 @@ angular.module('spaApp').factory('api', ['$http', '$rootScope', '$window', funct
       $http.defaults.headers.common['X-BANK-TOKEN'] = 5;
       $http.defaults.headers.common['X-AUTH-TOKEN'] = token || $rootScope.session_token;
       $http.defaults.headers.common['X-CLIENT-TYPE'] = 'WEB';
-      $http.defaults.headers.common['X-CLIENT-VERSION'] = '0.1.HASH';
+      $http.defaults.headers.common['X-CLIENT-VERSION'] = '0.1.HASHVERSION';
 
     },
     config: function(){
-      $rootScope.restAPIBaseUrl = $("#linkApiRoot").attr("href");
+      $rootScope.restAPIBaseUrl = $('#linkApiRoot').attr('href');
       //$rootScope.restAPIBaseUrl = "http://localhost:18080/SBD";
       //$rootScope.restAPIBaseUrl = 'http://192.168.0.10:80/SBD';
       $rootScope.useMocks = false;

@@ -3,7 +3,7 @@
 angular.module('spaApp').factory('mapProvider', ['$rootScope', 'mapService', '$q', function ($rootScope, mapService, $q) {
 
 	return {
-	    getBranches: function(params){
+		getBranches: function(params){
 			var deferred = $q.defer();
 			mapService.getBranches(params).success(function(data, status, headers) {
 				var branches = [];
@@ -15,10 +15,10 @@ angular.module('spaApp').factory('mapProvider', ['$rootScope', 'mapService', '$q
 				deferred.resolve(branches);
 			}).error(function(data, status) {
 				var result = {'response' : data, 'status': status};
-		        return deferred.reject(result);
+				return deferred.reject(result);
 			});
 			return deferred.promise;
-	    },
+		},
 
 	};
 

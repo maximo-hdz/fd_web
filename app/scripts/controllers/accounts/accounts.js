@@ -15,10 +15,7 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 	$scope.today = new Date().getTime();
 	// To separate the first four accounts
 	$scope.notifications = [];
-
-	/**
-	 * accounts contains all the received accounts and total contains the addition of each kind of balances
-	 */
+	//accounts contains all the received accounts and total contains the addition of each kind of balances
 	$scope.accounts = {};
 	$scope.total = {};
 	// To hide the notifications in accounts
@@ -44,8 +41,9 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 
 			for (var i = 0; i < data.length; i++) {
 				// Take the first four accounts for notifications
-				if ( i < 4 )
+				if ( i < 4 ){
 					evaluateDate( data[i] );
+				}
 				switch ( data[i].account_type ) {
 					case 'SAVINGS_ACCOUNT':
 						$scope.accounts.saving.push( data[i] );
@@ -64,12 +62,12 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 						$scope.total.credit += +data[i].min_payment;
 						break;
 					default:
-						console.log("account_type "+ data[i].account_type +" not supported");
+						//console.log("account_type "+ data[i].account_type +" not supported");
+						break;
 				}
 			}
 		},
 		function(error) {
-			console.error( error );
 			// To stop displaying the big loader
 			delete $rootScope.showBGLoader;
 			errorHandler.setError( error.status );
@@ -96,7 +94,8 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 				}
 				break;
 			default:
-				console.log("account_type "+ data[i].account_type +" not supported");
+				//console.log("account_type "+ data[i].account_type +" not supported");
+				break;
 		}
 	};
 
@@ -105,7 +104,6 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 	 */
 	$scope.selectAccount = function(account) {
 		errorHandler.reset();
-		// Hide the notifications
 		$scope.hideNotifications = true;
 
 		var accountId = account._account_id;
@@ -142,59 +140,59 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 	};
 
 	/**
-   * Request the account detail from the middleware
-   */
+	* Request the account detail from the middleware
+	*/
 	var getAccountDetail = function() {
 		errorHandler.reset();
 		accountsProviderFD.getAccountDetail( $scope.selectedAccountId ).then(
-	    function(detail) {
-	       console.info( detail );
-	       $scope.detail = detail;
-	     },
-	     function(error) {
-				 console.error( error );
-				 errorHandler.setError( error.status );
-	     }
-	  );
+			function(detail) {
+				console.info( detail );
+				$scope.detail = detail;
+			},
+			function(error) {
+					 console.error( error );
+					 errorHandler.setError( error.status );
+			}
+		);
 	};
 
 	/**
 	 * Search transactions using the datepicker values
 	 */
 	$scope.searchTransactions = function() {
-    var todaysDate = new Date();
-    var dd = todaysDate.getDate();      // day
-    var mm = todaysDate.getMonth()+1;   // month (January is 0!)
-    var yy = todaysDate.getFullYear();  // year
+		var todaysDate = new Date();
+		var dd = todaysDate.getDate();      // day
+		var mm = todaysDate.getMonth()+1;   // month (January is 0!)
+		var yy = todaysDate.getFullYear();  // year
 
-    dd = dd < 10 ? '0' + dd : dd;
-    mm = mm < 10 ? '0' + mm : mm;
-    todaysDate = yy.toString() + mm.toString() + dd.toString();
+		dd = dd < 10 ? '0' + dd : dd;
+		mm = mm < 10 ? '0' + mm : mm;
+		todaysDate = yy.toString() + mm.toString() + dd.toString();
 
-    if ($scope.searchParams.startDate !== undefined)
-      	// startDate pass from String to Int
-        var startDate = parseInt($scope.searchParams.startDate.split("/").reverse().join(""));
-    if ($scope.searchParams.endDate !== undefined)
-        // endDate pass from String to Int
-        var endDate = parseInt($scope.searchParams.endDate.split("/").reverse().join(""));
+		if ($scope.searchParams.startDate !== undefined)
+			// startDate pass from String to Int
+		var startDate = parseInt($scope.searchParams.startDate.split("/").reverse().join(""));
+		if ($scope.searchParams.endDate !== undefined)
+			// endDate pass from String to Int
+		var endDate = parseInt($scope.searchParams.endDate.split("/").reverse().join(""));
 
-    if( $scope.searchParams.startDate && $scope.searchParams.endDate ) {
-        if (startDate > todaysDate || endDate > todaysDate)
-					errorHandler.setError( {status : 601} );
-        else if (startDate > endDate)
-					errorHandler.setError( {status: 603} );
-        else
-            $scope.getTransactions($scope.searchParams.startDate, $scope.searchParams.endDate);
-    } else if( $scope.searchParams.startDate === null && $scope.searchParams.endDate === null) {
-			params.date_end = null;
-			params.date_start = null;
-			$scope.getTransactions();
+		if( $scope.searchParams.startDate && $scope.searchParams.endDate ) {
+			if (startDate > todaysDate || endDate > todaysDate)
+						errorHandler.setError( {status : 601} );
+			else if (startDate > endDate)
+						errorHandler.setError( {status: 603} );
+			else
+				$scope.getTransactions($scope.searchParams.startDate, $scope.searchParams.endDate);
+		} else if( $scope.searchParams.startDate === null && $scope.searchParams.endDate === null) {
+				params.date_end = null;
+				params.date_start = null;
+				$scope.getTransactions();
 		}
-  };
+	};
 
 	/**
-   * Request the transactions from the middleware
-   */
+	* Request the transactions from the middleware
+	*/
 	$scope.getTransactions = function() {
 		// Complete params
 		params.date_start = $scope.searchParams.startDate;
@@ -203,15 +201,15 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 		$scope.transactions = null;
 
 		accountsProviderFD.getTransactions( $scope.selectedAccountId, params ).then(
-	    function(transactions) {
-	      console.info( transactions );
-	      $scope.transactions = transactions;
-	    },
-	    function(error) {
-				console.error( error );
-				errorHandler.setError( error.status );
-	    }
-	  );
+			function(transactions) {
+				console.info( transactions );
+				$scope.transactions = transactions;
+			},
+			function(error) {
+					console.error( error );
+					errorHandler.setError( error.status );
+			}
+		);
 	};
 
 }]);
