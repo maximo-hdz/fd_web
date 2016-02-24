@@ -1,13 +1,7 @@
 'use strict';
 
 var app = angular.module('spaApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
   'ui.router',
-  'ui.bootstrap',
-  'ngGrid',
-  'ngIdle',
   'accounts-route',
   'administration-route',
   'authentication-route',
