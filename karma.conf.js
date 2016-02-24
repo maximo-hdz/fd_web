@@ -12,16 +12,16 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'app/bower_components/angular/angular.js',
+      'app/bower_components/jquery/jquery.min.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/angular-resource/angular-resource.js',
-      'app/bower_components/angular-cookies/angular-cookies.js',
-      'app/bower_components/angular-sanitize/angular-sanitize.js',
-      'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular-scenario/angular-scenario.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'app/bower_components/ng-idle/angular-idle.js',
+      'app/bower_components/angular-google-maps/dist/angular-google-maps.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
-    ],
+      'test/spec/controllers/accounts/test-account.js'
+      ],
 
     // list of files / patterns to exclude
     exclude: [],
@@ -51,6 +51,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: true
   });
 };

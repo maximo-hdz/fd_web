@@ -1,17 +1,16 @@
 'use strict';
 
-describe('Controller: AccountsTestAccountCtrl', function () {
+describe('Controller: AccountsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('spaApp'));
 
-  var AccountsTestAccountCtrl,
-    scope;
+  var AccountsTestAccountCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AccountsTestAccountCtrl = $controller('AccountsTestAccountCtrl', {
+    AccountsTestAccountCtrl = $controller('AccountsCtrl', {
       $scope: scope
     });
   }));
