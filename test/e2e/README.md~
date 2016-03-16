@@ -29,7 +29,6 @@ Now start up a server with:
 webdriver-manager start
 ```
 
-Note: Change de value of "lognUrl" in the fd_login.spec.js file for your own port of grunt
 To run the test use:
 
 ```shell
