@@ -1,0 +1,36 @@
+#End-to-End test with Protractor
+
+=========
+
+##Prerequisites
+
+This assumes that you have [node.js](http://nodejs.org), [npm](https://npmjs.org/), [Java Development Kit](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and [Protractor](https://angular.github.io/protractor/) installed.
+
+Protractor uses the [Jasmine](http://jasmine.github.io/) test framework for its testing interface.
+
+## Getting Started
+
+Install Protractor globally with:
+
+```shell
+npm install -g protractor
+```
+
+Then download the necessary binaries with:
+
+```shell
+npm install
+bower install
+```
+
+Now start up a server with:
+
+```shell
+webdriver-manager start
+```
+
+Before run the test, change the port which use grunt in "local" (make it change in the fd_login.spec.js file):
+
+```shell
+protractor conf.js
+```
