@@ -2,6 +2,7 @@
 * Module: Login - Logout       *
 * Protractor 3.1.1             *
 * Jasmine 2.4                  *
+* node 5.6.0                   *
 * * * * * * * * * * * * * * * */
 
 describe ("Test module login - logout", function() {
@@ -53,6 +54,7 @@ describe ("Test module login - logout", function() {
       input_user.sendKeys("abcdefghijkl");
         expect(btn_ingresar.isEnabled()).toBe(true);
     });
+
   });
 
   describe ("when the user enters the password", function() {
@@ -88,16 +90,24 @@ describe ("Test module login - logout", function() {
       });
     });
 
-    it("not allow typing rare characters like |°¬!#$%&/()=?¿¡+*~@·½{}[\],¸´¨-_:.;<>", function() {
-      function specialPass(cadena){
-        input_pass.sendKeys(cadena);
+    it("not allow typing rare characters like |°¬!#$%&/()", function() {
+      input_pass.sendKeys("|°¬!#$%&/()");
         expect(btn_acceder.isEnabled()).toBe(false);
-        input_pass.clear();
-      };
-      specialPass("|°¬!#$%&/()=");
-      specialPass("?¿¡+*~@·½{}[");
-      specialPass("\],¸´¨-_:.;");
-      specialPass("<>");
+    });
+
+    it("not allow typing rare characters like ?¿¡+*~@·½{}", function() {
+      input_pass.sendKeys("?¿¡+*~@·½{}");
+        expect(btn_acceder.isEnabled()).toBe(false);
+    });
+
+    it("not allow typing rare characters like \],¸´¨-_:.;", function() {
+      input_pass.sendKeys("\],¸´¨-_:.;");
+        expect(btn_acceder.isEnabled()).toBe(false);
+    });
+
+    it("not allow typing rare characters like <>=[", function() {
+      input_pass.sendKeys("<>=[");
+        expect(btn_acceder.isEnabled()).toBe(false);
     });
 
   });
@@ -111,15 +121,89 @@ describe ("Test module login - logout", function() {
       btn_ingresar.click();
       input_pass = element(by.model("auth.password"));
       btn_acceder = element(by.buttonText("Acceder"));
-      input_pass.sendKeys("contrasenia");
-      btn_acceder.click();
     });
 
-    it ("[can]", function() {
+    afterEach(function() {
       element(by.buttonText("Cerrar sesión")).click();
         expect(browser.getCurrentUrl()).toContain("login");
     });
 
+    it ("check that it's the correct page for accounts", function() {
+      input_pass.sendKeys("contrasenia");
+        expect(btn_acceder.isEnabled()).toBe(true);
+      btn_acceder.click();
+        expect(browser.getCurrentUrl()).toContain("accounts");
+    });
+  });
+
+  describe ("when the user uses AAAAAAAA", function() {
+    beforeEach(function() {
+      input_user.sendKeys("AAAAAAAA");
+      btn_ingresar.click();
+    });
+
+    it (", check that the checkbox appears", function() {
+      expect(element(by.model("auth.new_condition_action")).isDisplayed()).toBe(true);
+    });
+
+    it (", check that the link for terms is presents", function() {
+      expect(element(by.linkText("Términos y Condiciones de Uso")).isDisplayed()).toBe(true);
+    });
+
+    it (", check that the link for terms redirects", function() {
+      var linkMul = element(by.linkText("Términos y Condiciones de Uso"));
+      linkMul.click();
+        expect(browser.getCurrentUrl()).not.toContain("login");
+    });
+
+    describe ("and if the checkbox is", function() {
+      var input_pass;
+      var btn_acceder;
+
+      beforeEach(function() {
+        input_pass = element(by.model("auth.password"));
+        btn_acceder = element(by.buttonText("Acceder"));
+      });
+
+      afterEach(function() {
+        element(by.model("auth.new_condition_action")).click();
+        input_pass.clear();
+      });
+
+      it ("clicked, the user should be able to access the page", function() {
+        element(by.model("auth.new_condition_action")).click();
+        input_pass.sendKeys("contrasenia");
+          expect(btn_acceder.isEnabled()).toBe(true);
+      });
+
+      it ("no clicked, the user should not be able to access the page", function() {
+        input_pass.sendKeys("contrasenia");
+          expect(btn_acceder.isEnabled()).toBe(false);
+      });
+    });
+
+  });
+
+  describe ("when the user uses BBBBBBBB", function() {
+    beforeEach(function() {
+      input_user.sendKeys("BBBBBBBB");
+      btn_ingresar.click();
+    });
+
+    it("check that it's the correct page for register", function() {
+      expect(browser.getCurrentUrl()).toContain("register");
+    });
+  });
+
+  describe ("when the user uses CCCCCCCC", function() {
+    beforeEach(function() {
+      input_user.sendKeys("CCCCCCCC");
+      btn_ingresar.click();
+    });
+
+    it("check that it's the correct page for register", function() {
+      expect(browser.getCurrentUrl()).toContain("new");
+    });
   });
 
 });
