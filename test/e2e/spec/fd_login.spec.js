@@ -6,7 +6,7 @@
 * * * * * * * * * * * * * * * */
 
 describe ("Test module login - logout", function() {
-  var lognUrl = "http://127.0.0.1:9005/#/login";//Change Port
+  var lognUrl = browser.params.url;
   var input_user = element(by.model("auth.user_login"));
   var btn_ingresar = element(by.buttonText("Ingresar"));
 

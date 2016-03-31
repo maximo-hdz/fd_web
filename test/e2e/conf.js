@@ -34,5 +34,8 @@ exports.config = {
     var width = 1024;
     var height = 600;
     browser.driver.manage().window().setSize(width, height);
+  },
+  params: {
+    url: 'http://127.0.0.1:9000/#/login'//Change Port
   }
 };

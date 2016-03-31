@@ -29,7 +29,7 @@ Now start up a server with:
 webdriver-manager start
 ```
 
-Before run the test, change the port which use grunt in "local" (make it change in the fd_login.spec.js file):
+Before run the test, change the port which use grunt in "local" (make it change in the conf.js file):
 
 ```shell
 protractor conf.js
