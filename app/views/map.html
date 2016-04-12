@@ -3,12 +3,12 @@
 		<div class="container">
 			<div class="row">
 				<p class="col-md-6">
-					<a href="#">Regresar</a>
+					<a href="#">{{"map.Regresar" | translate}}</a>
 				</p>
 				<p class="col-md-6 text-right">
-					<a href="#/aclarations">Aclaraciones</a> |
-					<a href="#/privacy">Aviso de privacidad</a> |
-					<a href="javascript:void(0);">Sucursales</a>
+					<a href="#/aclarations">{{"login.Aclaraciones" | translate}}</a> |
+					<a href="#/privacy">{{"login.Aviso de privacidad" | translate}}</a> |
+					<a href="javascript:void(0);">{{"login.Sucursales" | translate}}</a>
 				</p>
 			</div>
 		</div>
@@ -16,8 +16,11 @@
 	<div class="title">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<h1>Sucursales y M&oacute;dulos de atenci&oacute;n</h1>
+				<div class="col-md-6">
+					<h1>{{"map.SucursalesModulos" | translate}}</h1>
+				</div>
+				<div class="col-md-6" style="background-color: white; padding: 7px;">
+					<div ng-translate-language-select></div>
 				</div>
 			</div>
 		</div>
@@ -31,13 +34,13 @@
 							<div class="busqueda-content">
 								<div class="row busqueda-inputs">
 									<div class="col-md-2 btn-cerca">
-										<button ng-click="searchNearMe()" class="btn btn-warning">Cerca de m&iacute;</button>
+										<button ng-click="searchNearMe()" class="btn btn-warning">{{"map.CercaDeMi" | translate}}</button>
 									</div>
 									<div class="col-md-9 inputs-buscar">
 										<div class="mapinputs">
 											<div class="row">
 												<div class="col-md-8 campo-input-search">
-													<input class="form-control input-search" type="text" id="Autocomplete" ng-autocomplete="result" details="details" options="options" placeholder="Buscar por dirección" size="28"/>
+													<input class="form-control input-search" type="text" id="Autocomplete" ng-autocomplete="result" details="details" options="options" placeholder="{{'map.BuscarDireccion' | translate}}" size="28"/>
 												</div>
 												<div class="col-md-4 select-map">
 													<select class="form-control" ng-model="estado" ng-options="estado.name for estado in estados"></select>
@@ -46,7 +49,7 @@
 										</div>
 									</div>
 									<div class="col-md-1 btn-buscar">
-										<button class="btn btn-warning" ng-click="search()">Buscar</button>
+										<button class="btn btn-warning" ng-click="search()">{{"map.Buscar" | translate}}</button>
 									</div>
 								</div>
 								<div class="sucursal-modulo">
@@ -65,16 +68,16 @@
 														{{branch.description.address.zipCode}}
 														{{branch.description.address.city}}
 													</span>
-													<span><a ng-click="comoLlegar(branch)"><i></i>¿C&oacute;mo llegar?</a></span>
+													<span><a ng-click="comoLlegar(branch)"><i></i>{{"map.ComoLlegar" | translate}}</a></span>
 												</div>
 												<div class="telyhorario">
-													<span><strong>Tel&eacute;fono: </strong> {{branch.description.phone_number}}</span>
-													<span><strong>Horario de Atenci&oacute;n: </strong>LUN-VIE: {{branch.description.openingHours.SEM}} <br>SAB: {{branch.description.openingHours.SAB}} </span>
+													<span><strong>{{"map.Telefono" | translate}}: </strong> {{branch.description.phone_number}}</span>
+													<span><strong>{{"map.HorarioAtencion" | translate}: </strong>{{"map.LunVie" | translate}}: {{branch.description.openingHours.SEM}} <br>{{"map.Sab" | translate}}: {{branch.description.openingHours.SAB}} </span>
 												</div>
 												<div class="otrosdatos">
-													<span class="abierto">Abierto S&aacute;bados</span>
-													<span class="divisas">Cambio de divisas</span>
-													<span class="cita">Atienden con cita</span>
+													<span class="abierto">{{"map.AbiertoSab" | translate}}</span>
+													<span class="divisas">{{"map.CambioDivisas" | translate}}</span>
+													<span class="cita">{{"map.AtiendenCita" | translate}}</span>
 												</div>
 											</div>
 										</div>
@@ -90,16 +93,16 @@
 														{{branch.description.address.zipCode}}
 														{{branch.description.address.city}}
 													</span>
-													<span><a ng-click="comoLlegar(branch)"><i></i>¿C&oacute;mo llegar?</a></span>
+													<span><a ng-click="comoLlegar(branch)"><i></i>{{"map.ComoLlegar" | translate}}</a></span>
 												</div>
 												<div class="telyhorario">
-													<span><strong>Tel&eacute;fono: </strong> {{branch.description.phone_number}}</span>
-													<span><strong>Horario de Atenci&oacute;n: </strong>LUN-VIE: {{branch.description.openingHours.SEM}} <br>SAB: {{branch.description.openingHours.SAB}} </span>
+													<span><strong>{{"map.Telefono" | translate}}: </strong> {{branch.description.phone_number}}</span>
+													<span><strong>{{"map.HorarioAtencion" | translate}}: </strong>{{"map.LunVie" | translate}}: {{branch.description.openingHours.SEM}} <br>{{"map.Sab" | translate}}: {{branch.description.openingHours.SAB}} </span>
 												</div>
 												<div class="otrosdatos">
-													<span class="abierto">Abierto S&aacute;bados</span>
-													<span class="divisas">Cambio de divisas</span>
-													<span class="cita">Atienden con cita</span>
+													<span class="abierto">{{"map.AbiertoSab" | translate}}</span>
+													<span class="divisas">{{"map.CambioDivisas" | translate}}</span>
+													<span class="cita">{{"map.AtiendenCita" | translate}}</span>
 												</div>
 											</div>
 										</div>
@@ -118,19 +121,19 @@
 				<div class="map-footer hidden-xs hidden-sm">
 					<div class="container">
 						<div class="col-md-4 phones">
-							<p><span>Atenci&oacute;n al cliente:</span> <a href="tel:018008003224">01 800 800 3224</a></p>
-							<p><span>&Aacute;rea Metropolitana:</span> <a href="tel:5591777999">(55) 9177 7999</a></p>
-							<p><span>Tel&eacute;fono UNE:</span> <a href="tel:018008308632">01 800 830 8632</a></p>
+							<p><span>{{"map.AtencionCliente" | translate}}:</span> <a href="tel:018008003224">01 800 800 3224</a></p>
+							<p><span>{{"map.AreaMetropolitana" | translate}}:</span> <a href="tel:5591777999">(55) 9177 7999</a></p>
+							<p><span>{{"map.TelefonoUne" | translate}}:</span> <a href="tel:018008308632">01 800 830 8632</a></p>
 						</div>
 						<div class="col-md-4 border">
-							<h5>¿Necesitas ayuda?</h5>
-							<p><a href="#">¿C&oacute;mo activar tu ubicaci&oacute;n?</a></p>
-							<p><a href="#">Preguntas Frecuentes</a></p>
+							<h5>{{"map.NecesitasAyuda" | translate}}</h5>
+							<p><a href="#">{{"map.ComoActivarUbicacion" | translate}}</a></p>
+							<p><a href="#">{{"map.PreguntasFrecuentes" | translate}}</a></p>
 						</div>
 						<div class="col-md-4 border">
-							<h5>Horarios de Atenci&oacute;n:</h5>
-							<p>Sucursales: L-V 9:00 - 16:00</p>
-							<p>M&oacute;dulos de Atenci&oacute;n: L-V 9:00 - 16:00</p>
+							<h5>{{"map.HorarioAtencion" | translate}}:</h5>
+							<p>{{"map.Sucursales" | translate}}: {{"map.LV" | translate}} 9:00 - 16:00</p>
+							<p>{{"map.ModulosAtencion" | translate}}: {{"map.LV" | translate}} 9:00 - 16:00</p>
 						</div>
 					</div>
 				</div>

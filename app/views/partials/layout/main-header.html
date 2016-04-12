@@ -1,12 +1,17 @@
 <div class="account_back">
 	<div class="header">
+		<div class="row" style="margin-bottom: -5px; background-color: white;">
+			<div class="col-xs-12">
+				<div ng-translate-language-select></div>
+			</div>
+		</div>
 		<div class="top-menu hidden-xs">
 			<div class="container">
-				<a href="#/aclarations">Aclaraciones</a> |
-				<a href="#/privacy">Aviso de privacidad</a> |
-				<a href="#/report">Reportes por robo y/o p&eacute;rdida</a> |
-				<a href="#/contracts">Contratos</a> |
-				<a href="#/map">Sucursales</a>
+				<a href="#/aclarations">{{"main-header.Aclaraciones" | translate}}</a> |
+				<a href="#/privacy">{{"main-header.AvisoPrivacidad" | translate}}</a> |
+				<a href="#/report">{{"main-header.Reportes" | translate}}</a> |
+				<a href="#/contracts">{{"main-header.Contratos" | translate}}</a> |
+				<a href="#/map">{{"main-header.Sucursales" | translate}}</a>
 			</div>
 		</div>
 		<div class="main-menu">
@@ -25,30 +30,30 @@
 						<div class="collapse navbar-collapse pull-left" id="menu-options">
 							<ul class="nav navbar-nav">
 								<li ng-click="changeSection('accounts')" ng-class="{'active' : currentSection == 'accounts'}">
-									<a id="accounts">Mis productos</a>
+									<a id="accounts">{{"main-header.MisProductos" | translate}}</a>
 								</li>
 								<li ng-click="changeSection('transfers')" ng-class="{'active' : currentSection == 'transfers'}" style="display:none;">
-									<a id="transfers">Pagos y Transferencias</a>
+									<a id="transfers">{{"main-header.PagosTransferencias" | translate}}</a>
 								</li>
 								<!--li ng-click="changeSection('administration')" ng-class="{'active' : currentSection == 'administration'}">
 									<a id="administration">Administracion</a>
 								</li-->
 								<li ng-click="changeSection('map')" class="visible-xs-block hidden-sm hidden-md hidden-lg">
-									<a>Sucursales</a>
+									<a>{{"main-header.Sucursales" | translate}}</a>
 								</li>
 								<li class="visible-xs-block hidden-sm hidden-md hidden-lg">
-									<a>Reporte por robo o p&eacute;rdida</a>
+									<a>{{"main-header.Reportes" | translate}}</a>
 								</li>
 								<li class="visible-xs-block hidden-sm hidden-md hidden-lg">
-									<a ng-click="logout()">Cerrar sesi&oacute;n</a>
+									<a ng-click="logout()">{{"main-header.Cerrar" | translate}}</a>
 								</li>
 							</ul>
 						</div>
-						<button class="btn btn-warning btn-salir pull-right hidden-xs" ng-click="logout();">Cerrar sesi&oacute;n</button>
+						<button class="btn btn-warning btn-salir pull-right hidden-xs" ng-click="logout();">{{"main-header.Cerrar" | translate}}</button>
 						<div class="user hidden-sm hidden-xs">
 							<p>
 								{{client_name}}
-								<span>&Uacute;ltimo acceso: {{last_access_date | date: 'dd/MM/yyyy h:mm:ss a'}}</span>
+								<span>{{"main-header.UltimoAcceso" | translate}}: {{last_access_date | date: 'dd/MM/yyyy h:mm:ss a'}}</span>
 							</p>
 						</div>
 					</div>
