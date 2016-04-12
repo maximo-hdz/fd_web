@@ -10,7 +10,7 @@
   "login.Olvidar contrasenia": "Forgot my password",
   "login.Contacto": "Contact us",
   "login.Acceso": "Access to Fundación Dondé Banco",
-  "login.Razones de ...": "For security reasons, check that the image and the handshake correspond to what you selected.",
+  "login.Razones de ...": "For security reasons, check that the image and the handshake correspond to your configuration.",
   "login.Contrasenia": "Password",
   "login.Ingresar": "Sign in",
   "login.Reportar datos": "If the data doesn't match the information you reported, contact us:",
@@ -39,8 +39,8 @@
 
   "new.Cambio Contrasenia": "Enter a new password",
 
-  "password.OlvidasteContrasenia": "¿Olvidaste tu contraseña?",
-  "password.ParaCrearNuevaContrasenia": "Para crear una nueva contraseña, ingresa los siguientes datos",
+  "password.OlvidasteContrasenia": "Did you forget your password?",
+  "password.ParaCrearNuevaContrasenia": "To create a new password, enter the following data.",
   "password.Usuario": "User",
   "password.InTuUsuario": "Enter your user",
   "password.ConfirmarDatos": "Confirm data",
