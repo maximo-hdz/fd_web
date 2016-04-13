@@ -3,11 +3,11 @@
 		<ul class="menu menu-tengo">
 			<li class="head" onclick="showHideMenu('menu-tengo', undefined);">
 				<span class="arrow"></span>
-				<span class="title">LO QUE TENGO</span>
+				<span class="title">{{"accounts.LoQueTengo" | translate}}</span>
 				<span class="amount">{{total.saving + total.investment | currency}}</span>
 			</li>
 			<li class="parent" onclick="showHideCat('menu-tengo', 'parent ~ .savings');">
-				<span class="text">Mis cuentas de ahorro</span>
+				<span class="text">{{"accounts.MisCuentasAhorro" | translate}}</span>
 				<span class="amount">{{total.saving | currency}}</span>
 			</li>
 			<li ng-repeat="account in accounts.saving" ng-class="selectedAccountId === account._account_id ? 'child active savings' : 'child savings'" style="cursor:pointer;">
@@ -18,7 +18,7 @@
 				</a>
 			</li>
 			<li class="parent" onclick="showHideCat('menu-tengo', 'parent ~ .investment');">
-				<span class="text">Mis cuentas de inversi&oacute;n</span>
+				<span class="text">{{"accounts.MisCuentasInversion" | translate}}</span>
 				<span class="amount">{{total.investment | currency}}</span>
 			</li>
 			<li ng-repeat="account in accounts.investment" ng-class="selectedAccountId === account._account_id ? 'child active investment' : 'child investment'" style="cursor:pointer;">
@@ -33,11 +33,11 @@
 		<ul class="menu menu-debo">
 			<li class="head" onclick="showHideMenu('menu-debo', undefined);">
 				<span class="arrow"></span>
-				<span class="title">LO QUE DEBO</span>
+				<span class="title">{{"accounts.LoQueDebo" | translate}}</span>
 				<span class="amount">{{total.loan + total.credit | currency}}</span>
 			</li>
 			<li class="parent" onclick="showHideCat('menu-debo', 'parent ~ .loan');">
-				<span class="text">Mis cr&eacute;ditos activos</span>
+				<span class="text">{{"accounts.MisCreditosActivos" | translate}}</span>
 				<span class="amount">{{total.loan | currency}}</span>
 			</li>
 			<li ng-repeat="account in accounts.loan" ng-class="selectedAccountId === account._account_id ? 'child active loan' : 'child loan'" style="cursor:pointer;">
@@ -48,7 +48,7 @@
 				</a>
 			</li>
 			<li class="parent" onclick="showHideCat('menu-debo', 'parent ~ .credit');">
-				<span class="text">Mis tarjetas de cr&eacute;dito</span>
+				<span class="text">{{"accounts.MisTarjetsCredito" | translate}}</span>
 				<span class="amount">{{total.credit | currency}}</span>
 			</li>
 			<li ng-repeat="account in accounts.credit" ng-class="selectedAccountId === account._account_id ? 'child active credit' : 'child credit'" style="cursor:pointer;">

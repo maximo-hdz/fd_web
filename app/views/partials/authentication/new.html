@@ -1,23 +1,28 @@
 <div class="signup_content">
 	<div class="signup_header">
 		<div class="container">
-			<button class="btn btn-warning btn-salir pull-right" ng-click="logout()">Salir</button>
+			<div class="row" style="margin-top: -10px;">
+				<div class="col-xs-12">
+					<div ng-translate-language-select></div>
+				</div>
+			</div>
+			<button class="btn btn-warning btn-salir pull-right" ng-click="logout()">{{"register.Salir" | translate}}</button>
 			<div class="logo"></div>
 		</div>
-	</div>	
+	</div>
 	<div class="col-md-8 col-md-offset-2">
-		<h1>Cambio de contraseña</h1>
+		<h1>{{"register.Cambio contrasenia" | translate}}</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<h2>Ingresa una nueva contrase&ntilde;a</h2>
+				<h2>{{"new.Cambio Contrasenia" | translate}}</h2>
 				<div class="divider"></div>
 				<form name="form_new">
 					<div class="row">
 						<div class="col-md-4 col-md-offset-1">
-							<p>*Ingresa tu contrase&ntilde;a</p>
+							<p>*{{"register.InContrasenia" | translate}}</p>
 						</div>
 						<div class="col-md-5">
-							<input type="password" class="form-control" placeholder="Ingresa tu contrase&ntilde;a" ng-model="pass.old" ng-required="true" ng-focus="ant=true" ng-blur="ant=false">
+							<input type="password" class="form-control" placeholder="{{'register.InContrasenia' | translate}}" ng-model="pass.old" ng-required="true" ng-focus="ant=true" ng-blur="ant=false">
 							<div class="tooltip-input" ng-show="ant">
 								<div class="arrow"></div>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -26,10 +31,10 @@
 					</div>
 					<div class="row">
 						<div class="col-md-4 col-md-offset-1">
-							<p>*Nueva contrase&ntilde;a</p>
+							<p>*{{"register.NuevaContrasenia" | translate}}</p>
 						</div>
 						<div class="col-md-5">
-							<input type="password" class="form-control" placeholder="Ingresa una nueva contrase&ntilde;a" ng-model="pass.password" ng-required="true" maxlength="12" ng-focus="new=true" ng-blur="new=false">
+							<input type="password" class="form-control" placeholder="{{'register.NuevaContrasenia' | translate}}" ng-model="pass.password" ng-required="true" maxlength="12" ng-focus="new=true" ng-blur="new=false">
 							<div class="tooltip-input" ng-show="new">
 								<div class="arrow"></div>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -38,10 +43,10 @@
 					</div>
 					<div class="row">
 						<div class="col-md-4 col-md-offset-1">
-							<p>*Confirma contrase&ntilde;a</p>
+							<p>*{{"register.ConfContrasenia" | translate}}</p>
 						</div>
 						<div class="col-md-5">
-							<input type="password" class="form-control" placeholder="Confirma la contrase&ntilde;a nueva" ng-model="pass.confirm" ng-required="true" maxlength="12" ng-focus="con=true" ng-blur="con=false">
+							<input type="password" class="form-control" placeholder="{{'register.ConfContrasenia' | translate}}" ng-model="pass.confirm" ng-required="true" maxlength="12" ng-focus="con=true" ng-blur="con=false">
 							<div class="tooltip-input" ng-show="con">
 								<div class="arrow"></div>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -59,20 +64,20 @@
 					</div>
 					<div class="row">
 						<div class="col-md-5 col-md-offset-5">
-							<button class="btn btn-success form-control" ng-click="change_password()" ng-disabled="form_new.$invalid || changing_pass">Acceder</button>
+							<button class="btn btn-success form-control" ng-click="change_password()" ng-disabled="form_new.$invalid || changing_pass">{{"login.Ingresar" | translate}}</button>
 						</div>
 					</div>
 				</form>
 			</div>
-			<div class="panel-footer">*Campos necesarios</div>
+			<div class="panel-footer">*{{"register.CamposNecesarios" | translate}}</div>
 		</div>
 		<div class="signup_footer">
 			<div class="container">
 				<div class="row">
 					<p class="col-md-6">&copy; 2015 Fundaci&oacute;n Dond&eacute; Banco</p>
 					<p class="col-md-6 text-right">
-						<a href="#/terms">T&eacute;rminos y Condiciones de Uso</a> |
-						<a href="#/security">Seguridad</a>
+						<a href="#/terms">{{"login.Terminos" | translate}}</a> |
+						<a href="#/security">{{"login.Seguridad" | translate}}</a>
 					</p>
 				</div>
 			</div>

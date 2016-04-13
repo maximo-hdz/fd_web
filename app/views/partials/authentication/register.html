@@ -1,27 +1,32 @@
 <div class="signup_content">
 	<div class="signup_header">
 		<div class="container">
-			<button class="btn btn-warning btn-salir pull-right" ng-click="logout()">Salir</button>
+			<div class="row" style="margin-top: -10px;">
+				<div class="col-xs-12">
+					<div ng-translate-language-select></div>
+				</div>
+			</div>
+			<button class="btn btn-warning btn-salir pull-right" ng-click="logout()">{{"register.Salir" | translate}}</button>
 			<div class="logo"></div>
 		</div>
 	</div>
 	<div class="col-md-8 col-md-offset-2">
-		<h1>Registro</h1>
+		<h1>{{"register.Registro" | translate}}</h1>
 		<div class="panel panel-default">
-			<div class="panel-heading">Por tu seguridad, cambie su contrase&ntilde;a y establezca las m&aacute;ximas medidas de seguridad</div>
+			<div class="panel-heading">{{"register.Cambiar contrasenia" | translate}}</div>
 				<div class="panel-body animate-switch">
 					<div class="paso">
 						<form name="register1">
 							<div ng-click="saltar(0)">
-								<h2><span ng-class="register1.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>Paso 1 <span class="space">Cambio de Contrase&ntilde;a</span></h2>
+								<h2><span ng-class="register1.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>{{"register.Paso" | translate}} 1 <span class="space">{{"register.Cambio contrasenia" | translate}}</span></h2>
 							</div>
 							<div ng-show="selection==0">
 								<div class="row">
 									<div class="col-md-4 col-md-offset-1">
-										<p>*Ingresa tu contrase&ntilde;a</p>
+										<p>*{{"register.InContrasenia" | translate}}</p>
 									</div>
 									<div class="col-md-5">
-										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.password" placeholder="Contraseña actual" ng-focus="old=true" ng-blur="old=false">
+										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.password" placeholder="{{'register.Contrasenia actual' | translate}}" ng-focus="old=true" ng-blur="old=false">
 										<div class="tooltip-input" ng-show="old">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -30,10 +35,10 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4 col-md-offset-1">
-										<p>*Nueva contrase&ntilde;a</p>
+										<p>*{{"register.NuevaContrasenia" | translate}}</p>
 									</div>
 									<div class="col-md-5">
-										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.new_password" placeholder="Nueva contraseña" maxlength="12" ng-focus="new=true" ng-blur="new=false">
+										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.new_password" placeholder="{{'register.NuevaContrasenia' | translate}}" maxlength="12" ng-focus="new=true" ng-blur="new=false">
 										<div class="tooltip-input" ng-show="new">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -42,10 +47,10 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4 col-md-offset-1">
-										<p>*Confirma contrase&ntilde;a</p>
+										<p>*{{"register.ConfContrasenia" | translate}}</p>
 									</div>
 									<div class="col-md-5">
-										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.confirm_password" placeholder="Confirma tu contraseña" maxlength="12" ng-focus="confirm=true" ng-blur="confirm=false">
+										<input type="password" class="form-control" ng-required="true" ng-model="dataRegister.confirm_password" placeholder="{{'register.ConfContrasenia' | translate}}" maxlength="12" ng-focus="confirm=true" ng-blur="confirm=false">
 										<div class="tooltip-input" ng-show="confirm">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -59,7 +64,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-5 col-md-offset-5">
-										<button class="btn btn-success form-control" ng-click="saltar(1);" ng-disabled="register1.$invalid" >Cambiar contrase&ntilde;a y continuar</button>
+										<button class="btn btn-success form-control" ng-click="saltar(1);" ng-disabled="register1.$invalid" >{{"register.Cambiar y Continuar" | translate}}</button>
 									</div>
 								</div>
 							</div>
@@ -68,12 +73,12 @@
 					<div class="paso">
 						<form name="register2">
 							<div ng-click="saltar(1)">
-								<h2><span ng-class="register2.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>Paso 2 <span class="space">Imagen y saludo antiphishing</span></h2>
+								<h2><span ng-class="register2.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>{{"register.Paso" | translate}} 2 <span class="space">{{"register.Imagen y Saludo" | translate}}</span></h2>
 							</div>
 							<div ng-show="selection==1">
 								<div class="row">
 									<div class="col-md-9 col-md-offset-1">
-										<p>*Selecciona una imagen</p>
+										<p>*{{"register.SeleccionarImg" | translate}}</p>
 									</div>
 									<div class="col-md-9 col-md-offset-2">
 										<ng-form name="registerImageForm" class="register-pass">
@@ -91,10 +96,10 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4 col-md-offset-1">
-										<p>*Ingresa tu saludo secreto</p>
+										<p>*{{"register.InSaludoSecreto" | translate}}</p>
 									</div>
 									<div class="col-md-5">
-										<input type="text" class="form-control" ng-model="dataRegister.saludo" ng-required="true" placeholder="Saludo secreto" ng-focus="saludo=true" ng-blur="saludo=false">
+										<input type="text" class="form-control" ng-model="dataRegister.saludo" ng-required="true" placeholder="{{'register.SaludoSecreto' | translate}}" ng-focus="saludo=true" ng-blur="saludo=false">
 										<div class="tooltip-input" ng-show="saludo">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -108,7 +113,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-5 col-md-offset-5">
-										<button class="btn btn-success form-control" ng-click="saltar(2);" ng-disabled="register2.$invalid">Continuar</button>
+										<button class="btn btn-success form-control" ng-click="saltar(2);" ng-disabled="register2.$invalid">{{"login.Continuar" | translate}}</button>
 									</div>
 								</div>
 							</div>
@@ -117,22 +122,22 @@
 					<div class="paso">
 						<form name="register3">
 							<div ng-click="saltar(2)">
-								<h2><span ng-class="register3.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>Paso 3 <span class="space">Preguntas secretas, t&eacuterminos y condiciones de uso</span></h2>
+								<h2><span ng-class="register3.$invalid ?  'ico-check uncheck' : 'ico-check'"></span>{{"register.Paso" | translate}} 3 <span class="space">{{"register.PreguntasSecretas" | translate}}</span></h2>
 							</div>
 							<div ng-show="selection==2">
 								<div class="row">
 									<div class="col-md-4 col-md-offset-1">
-										<p>*Pregunta 1</p>
+										<p>*{{"register.Pregunta" | translate}} 1</p>
 									</div>
 									<div class="col-md-5">
 										<select class="form-control" ng-model="dataRegister.question1" ng-options="question.description for question in data.data.questions" ng-required="true" ng-focus="p1=true" ng-blur="p1=false">
-											<option value="">Selecciona una pregunta</option>
+											<option value="">{{"register.SeleccionarPregunta" | translate}}</option>
 										</select>
 										<div class="tooltip-input" ng-show="p1">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
-										<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response1" ng-required="true" ng-focus="r1=true" ng-blur="r1=false">
+										<input type="text" class="form-control" placeholder="{{'register.EscribeRespuesta' | translate}}" ng-model="dataRegister.response1" ng-required="true" ng-focus="r1=true" ng-blur="r1=false">
 										<div class="tooltip-input" ng-show="r1">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -141,17 +146,17 @@
 								</div>
 								<div class="row">
 									<div class="col-md-4 col-md-offset-1">
-										<p>*Pregunta 2</p>
+										<p>*{{"register.Pregunta" | translate}} 2</p>
 									</div>
 									<div class="col-md-5">
 										<select class="form-control" ng-model="dataRegister.question2" ng-options="question.description for question in data.data.questions" ng-required="true" ng-focus="p2=true" ng-blur="p2=false">
-											<option value="">Selecciona una pregunta</option>
+											<option value="">{{"register.SeleccionarPregunta" | translate}}</option>
 										</select>
 										<div class="tooltip-input" ng-show="p2">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 										</div>
-										<input type="text" class="form-control" placeholder="Escribe la resupuesta" ng-model="dataRegister.response2" ng-required="true" ng-focus="r2=true" ng-blur="r2=false">
+										<input type="text" class="form-control" placeholder="{{'register.EscribeRespuesta' | translate}}" ng-model="dataRegister.response2" ng-required="true" ng-focus="r2=true" ng-blur="r2=false">
 										<div class="tooltip-input" ng-show="r2">
 											<div class="arrow"></div>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -162,7 +167,7 @@
 									<div class="col-md-8 col-md-offset-1">
 										<label class="checkbox">
 											<input type="checkbox" ng-model="dataRegister.new_condition_action" ng-required="true">
-											Acepto <a href="javascript:void(0);">T&eacute;rminos y Condiciones de Uso</a>, Fundaci&oacute;n Dond&eacute; Banco
+											{{"login.Acepto" | translate}} <a href="javascript:void(0);">{{"login.Terminos" | translate}}</a>, Fundaci&oacute;n Dond&eacute; Banco
 										</label>
 									</div>
 								</div>
@@ -177,22 +182,22 @@
 								</div>
 								<div class="row">
 									<div class="col-md-5 col-md-offset-5">
-										<button class="btn btn-success form-control" ng-click="signup();" ng-disabled="register1.$invalid || register2.$invalid || register3.$invalid || sending" >Acceder a cuentas</button>
+										<button class="btn btn-success form-control" ng-click="signup();" ng-disabled="register1.$invalid || register2.$invalid || register3.$invalid || sending" >{{"register.AccederCuentas" | translate}}</button>
 									</div>
 								</div>
 							</div>
 						</form>
 					</div>
 				</div>
-			<div class="panel-footer">*Campos necesarios</div>
+			<div class="panel-footer">*{{"register.CamposNecesarios" | translate}}</div>
 		</div>
 		<div class="signup_footer">
 			<div class="container">
 				<div class="row">
 					<p class="col-md-6">&copy; 2015 Fundaci&oacute;n Dond&eacute; Banco</p>
 					<p class="col-md-6 text-right">
-						<a href="#/terms">T&eacute;rminos y Condiciones de Uso</a> |
-						<a href="#/security">Seguridad</a>
+						<a href="#/terms">{{"login.Terminos" | translate}}</a> |
+						<a href="#/security">{{"login.Seguridad"}}</a>
 					</p>
 				</div>
 			</div>

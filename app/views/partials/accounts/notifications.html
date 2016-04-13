@@ -1,12 +1,12 @@
 <div class="alert alert-info alert-dismissible" role="alert">
 	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	<p>
-		<strong>MENSAJE IMPORTANTE:</strong><br>
+		<strong>{{"notifications.MensajeImp" | translate}}:</strong><br>
 		{{core_notification.text_message}}
 	</p>
 </div>
 
-<h1 class="title-green">Notificaciones recientes</h1>
+<h1 class="title-green">{{"notifications.NotificacionesRecientes" | translate}}</h1>
 <div class="box-notifications">
 	<div class="row" ng-repeat="notification in notifications" ng-switch="notification.account_type">
 
