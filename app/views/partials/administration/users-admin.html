@@ -4,7 +4,7 @@
 			<div class="col-md-1">
 			<a href="/#/administration" class="btn btn-default btn-large btn-block button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
 			</div>
-				Administraci&oacute;n de Usuarios
+				{{"admin_front.AdminUsuarios" | translate}}
 		</div>
 		<br />
 		<div class="col-md-12">
@@ -13,41 +13,41 @@
             		<div class="gridStyle" ng-grid="gridOptions"></div><!--end gridStyle-->
         		</div><!-- end table-responsive-->
         		<!-- end row-->
-				
-				
+
+
 				<div class="row">
 					<div class="col-md-3">
 						<div class="span2">
-						<a type="button" href="/#/administration/users/alerts" class="btn btn-default btn-large btn-block">Configurar Alertas</a>	
-						</div><!-- end span2-->	
-					</div>
-					<div class="col-md-3">
-						<div class="span2">
-						<a type="button" href="/#/administration/users/privileges" class="btn btn-default btn-large btn-block">Cuentas y Permisos</a>	
+						<a type="button" href="/#/administration/users/alerts" class="btn btn-default btn-large btn-block">{{"administration.ConfigurarAlertas" | translate}}</a>
 						</div><!-- end span2-->
 					</div>
 					<div class="col-md-3">
-							<a type="button" href="" class="btn btn-default btn-large btn-block">Modificar Usuario</a>
+						<div class="span2">
+						<a type="button" href="/#/administration/users/privileges" class="btn btn-default btn-large btn-block">{{"user-activity.CuentasPermisos" | translate}}</a>
+						</div><!-- end span2-->
+					</div>
+					<div class="col-md-3">
+							<a type="button" href="" class="btn btn-default btn-large btn-block">{{"users-admin.ModificarUsuario" | translate}}</a>
 						</div>
 					<div class="col-md-3">
 						<div class="span2">
-						<a type="boutton" href="" class="btn btn-default btn-large btn-block">Eliminar</a>	
+						<a type="boutton" href="" class="btn btn-default btn-large btn-block">{{"users-admin.Eliminar" | translate}}</a>
 						</div><!-- end span2-->
 					</div>
 				</div>
-				
+
 
 			</div><!--end well-->
 				<div class="row">
 					<div class="col-md-7 pull-right">
-						
+
 						<div class="col-md-6 pull right">
-					
-							<a type="boutton" href="/#/administration/users/add" class="btn btn-default btn-large button_mfm btn-block glyphicon glyphicon-plus" style="height:36px">&nbsp;Agregar Usuario</a>
-						
+
+							<a type="boutton" href="/#/administration/users/add" class="btn btn-default btn-large button_mfm btn-block glyphicon glyphicon-plus" style="height:36px">&nbsp;{{"users-admin.AgregarUsuario" | translate}}</a>
+
 						</div>
 						<div class="col-md-6 pull-right">
-						<a type="button" href="/#/administration/users/autorize" class="btn btn-default btn-large button_mfm btn-block" >Guardar</a>
+						<a type="button" href="/#/administration/users/autorize" class="btn btn-default btn-large button_mfm btn-block" >{{"addmoduser.Guardar" | translate}}</a>
 						</div>
 
 					</div>
@@ -58,7 +58,7 @@
 				</div>
 				<div class="row">
 					<!-- end col-md-9-->
-				
+
 				</div>
 		</div><!-- end col-12-->
 	</div><!--end bicCallout-->
