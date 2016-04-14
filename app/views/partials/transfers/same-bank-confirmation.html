@@ -1,23 +1,23 @@
 <div class="col-md-9">
   	<div class="row">
-    	
+
       		<div class="col-md-1">
        			 <a type="button" href="/#/transfer/same-bank-transfer" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
       		</div>
-      		<span style="color:#FFFFFF;"><font size="5">Pago Mismo Banco</font></span>
-    	
+      		<span style="color:#FFFFFF;"><font size="5">{{"same-bank-confirmation.PagoMismoBanco" | translate}}</font></span>
+
     	<br></br>
     <div class="col-md-12">
     	<div class="well">
     		<div class="row">
 				<div class="col-md-3">
-					<span class="pull-right">Cuenta de Retiro</span>
+					<span class="pull-right">{{"biometric-detail.CuentaRetiro" | translate}}</span>
 				</div>
 			<div class="col-md-3">
 				<input value="{{depositAccount}}" disabled></input>
 			</div>
 			<div class="col-md-3">
-				<span class="pull-right">Cuenta de Dep&oacute;sito</span>
+				<span class="pull-right">{{"biometric-detail.CuentaDeposito" | translate}}</span>
 			</div>
 			<div class="col-md-3">
 				<input disabled></input>
@@ -26,13 +26,13 @@
 
     		<div class="row">
 				<div class="col-md-3">
-					<span class="pull-right">Alias</span>
+					<span class="pull-right">{{"customize.Alias" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{alias}}" disabled></input>
 				</div>
 				<div class="col-md-3">
-					<span class="pull-right">Alias</span>
+					<span class="pull-right">{{"customize.Alias" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{alias}}" disabled></input>
@@ -41,13 +41,13 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<span class="pull-right">Divisa</span>
+					<span class="pull-right">{{"credit.Divisa" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{coin}}" disabled></input>
 				</div>
 				<div class="col-md-3">
-					<span class="pull-right">Divisa</span>
+					<span class="pull-right">{{"credit.Divisa" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{coin}}" disabled></input>
@@ -56,13 +56,13 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<span class="pull-right">Titular</span>
+					<span class="pull-right">{{"interbank-confirm.Titular" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{mainName}}" disabled></input>
 				</div>
 				<div class="col-md-3">
-					<span class="pull-right">Titular Beneficiario</span>
+					<span class="pull-right">{{"add-beneficiary-moral.TitularBene" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{mainNameRecipient}}" disabled></input>
@@ -73,13 +73,13 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<span class="pull-right">Importe</span>
+					<span class="pull-right">{{"saving.transactions.Importe" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{amount}}" disabled></input>
 				</div>
 				<div class="col-md-3">
-					<span class="pull-right">Concepto de Pago</span>
+					<span class="pull-right">{{"interBank.ConceptoPago" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{paymentConcept}}" disabled></input>
@@ -88,13 +88,13 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<span class="pull-right">Fecha de Creaci&oacute;n</span>
+					<span class="pull-right">{{"interbank-confirm.FechaCreacion" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{date}}" disabled></input>
 				</div>
 				<div class="col-md-3">
-					<span class="pull-right">Referencia Num&eacute;rica</span>
+					<span class="pull-right">{{"interBank.ReferenciaNumerica" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{numericReference}}" disabled></input>
@@ -103,7 +103,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<span class="pull-right">Fecha de Aplicaci&oacute;n</span>
+					<span class="pull-right">{{"interBank.FechaAplicacion" | translate}}</span>
 				</div>
 				<div class="col-md-3">
 					<input value="{{dateApplied}}" disabled></input>
@@ -117,15 +117,15 @@
 					<div ng-switch-when="true">
 						<div class="row">
 				<div class="col-md-3">
-					<span class="pull-right">Autorizar:</span>
+					<span class="pull-right">{{"credit-detail-agreement.Autorizar" | translate}}:</span>
 				</div>
 				<div class="col-md-3">
 					<select name="" id="">
-     					<option value="">Nombre de Persona Autorizada</option>
+     					<option value="">{{"authorize_changes.NombreAutorizada" | translate}}</option>
     				</select>
 				</div>
 				<div class="col-md-3">
-					<span class="pull-right">Medio:</span>
+					<span class="pull-right">{{"authorize_changes.Medio" | translate}}:</span>
 				</div>
 				<div class="col-md-3">
 					<select name="" id="">
@@ -143,12 +143,12 @@
     		<div ng-switch on="x">
 					<div ng-switch-when="true">
 						<div class="col-md-3 pull-right">
-							<a type="button" href="/#/transfer/same-bank-transfer-confirmation" class="btn btn-large button_mfm" ng-click="switch()">Autorizar</a>
+							<a type="button" href="/#/transfer/same-bank-transfer-confirmation" class="btn btn-large button_mfm" ng-click="switch()">{{"credit-detail-agreement.Autorizar" | translate}}</a>
 						</div>
 					</div>
       				<div ng-switch-default>
 						<div class="col-md-3 pull-right">
-							<a type="button" class="btn btn-large button_mfm" ng-click="switch()">Imprimir</a>
+							<a type="button" class="btn btn-large button_mfm" ng-click="switch()">{{"biometric-detail.Imprimir" | translate}}</a>
 						</div>
       				</div>
 			</div>

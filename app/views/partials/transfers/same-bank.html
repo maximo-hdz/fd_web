@@ -1,11 +1,11 @@
 <div class="col-md-9">
   <div class="row">
-    
+
       <div class="col-md-1">
         <a type="button" href="/#/transfer" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
       </div>
-      <span style="color:#FFFFFF;"><font size="5">Pago Mismo Banco</font></span>
-    
+      <span style="color:#FFFFFF;"><font size="5">{{"same-bank-confirmation.PagoMismoBanco" | translate}}</font></span>
+
     <br></br>
 <div class="col-md-12">
 	<div class="well">
@@ -16,21 +16,21 @@
 				</div>
 			</div><!--end col-md-6-->
 			<div class="col-md-3">
-				B&uacute;squeda de Cuenta
-			</div>	
+				{{"international.BusquedaCuenta" | translate}}
+			</div>
 			<div class="col-md-3">
 				<input value="{{same.searchAccount}}" disabled></input>
 			</div>
 		</div><!--end row 1-->
 		<div class="row">
 			<div class="col-md-3">
-				Cuenta de Retiro
+				{{"biometric-detail.CuentaRetiro" | translate}}
 			</div>
 			<div class="col-md-3">
 				<input value="{{same.accountRemoval}}" disabled></input>
 			</div>
 			<div class="col-md-3">
-				Cuenta de Dep&oacute;sito
+				{{"biometric-detail.CuentaDeposito" | translate}}
 			</div>
 			<div class="col-md-3">
 				<select>
@@ -40,50 +40,50 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3">
-				Alias
+				{{"customize.Alias" | translate}}
 			</div>
 			<div class="col-md-3">
 				<select name="" id="">
-     					<option value="">Alias Cuenta</option>
-     					<option value="">Segundo Alias</option>
+     					<option value="">{{"add-beneficiary-confirm.AliasCuenta" | translate}}</option>
+     					<option value="">{{"interBank.SegundoAlias" | translate}}</option>
     			</select>
 			</div>
 			<div class="col-md-3">
-				Alias
+				{{"customize.Alias" | translate}}
 			</div>
 			<div class="col-md-3">
 				<select name="" id="">
-     					<option value="">Alias Cuenta</option>
-    					<option value="">Segundo Alias</option>
+     					<option value="">{{"add-beneficiary-confirm.AliasCuenta" | translate}}</option>
+    					<option value="">{{"interBank.SegundoAlias" | translate}}</option>
     			</select>
 			</div>
 		</div>
 		<div class="row">
 				<div class="col-md-3">
-					Divisa
+					{{"credit.Divisa" | translate}}
 				</div>
 				<div class="col-md-3">
-					<input value="{{same.coin}}" disabled></input>							
+					<input value="{{same.coin}}" disabled></input>
 				</div>
 		<div class="row">
 			<div class="col-md-3">
-				Divisa
+				{{"credit.Divisa" | translate}}
 			</div>
 			<div class="col-md-3">
 				<input value="{{same.coin}}" disabled></input>
 			</div>
 		</div>
-		<hr>			
+		<hr>
 			<div class="row">
 			<div class="col-md-3">
-				Importe
+				{{"saving.transactions.Importe" | translate}}
 			</div>
 			<div class="col-md-3">
 
 				<input value="{{same.import | currency:same.currencySymbol}}" disabled></input>
 			</div>
 			<div class="col-md-3">
-				Concepto de Pago
+				{{"interBank.ConceptoPago" | translate}}
 			</div>
 			<div class="col-md-3">
 				<input value="{{same.paymentConcept}}" disabled></input>
@@ -91,13 +91,13 @@
 		</div>
 		<div class="row">
 			<div class="col-md-3">
-				Fecha de Aplicaci&oacute;n
+				{{"interBank.FechaAplicacion" | translate}}
 			</div>
 			<div class="col-md-3">
 				<input value="{{same.dateApply}}" disabled></input>
 			</div>
 			<div class="col-md-3">
-				Referencia Num&eacute;rica
+				{{"interBank.ReferenciaNumerica" | translate}}
 			</div>
 			<div class="col-md-3">
 				<input value="{{same.numberReference}}" disabled></input>
@@ -107,10 +107,10 @@
 	</div><!-- end well-->
 		<div class="row">
 			<div class="col-md-3">
-				<a type="button" href="/#/transfer/sameAddBeneficiary" class="btn btn-large button_mfm">Agregar Beneficiario</a>
+				<a type="button" href="/#/transfer/sameAddBeneficiary" class="btn btn-large button_mfm">{{"interBank.AgregarBeneficiario" | translate}}</a>
 			</div>
 			<div class="col-md-3 pull-right">
-				<a type="button" href="/#/transfer/same-bank-transfer-confirmation" class="btn btn-large button_mfm">Aceptar</a>
+				<a type="button" href="/#/transfer/same-bank-transfer-confirmation" class="btn btn-large button_mfm">{{"password.Aceptar" | translate}}</a>
 			</div>
 		</div>
 </div><!-- end col-md-12-->
