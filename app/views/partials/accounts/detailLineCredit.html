@@ -6,7 +6,7 @@
 			<div class="col-md-1">
 				<a type="button" href="/#/6234543/credit/transactions" class="btn btn-default btn-large btn-block">&lt;</a>
 			</div>
-			<span style="color:#FFFFFF;"><font size="5">L&iacute;nea de Cr&eacute;dito - Detalle de la Operaci&oacute;n</font></span>
+			<span style="color:#FFFFFF;"><font size="5">{{"credit-detail-agreement.LineaCreditoDetalle" | translate}}</font></span>
 		</div>
 		<br></br>
 	<div class="row" id="bigCallout">
@@ -14,10 +14,10 @@
 			<div class="well">
 		<div class="content_table">
 <div class="col-md-6">
-<h3>&nbsp;Operaci&oacute;n # {{operacion}}</h3>
+<h3>&nbsp;{{"credit-detail-agreement.Operacion" | translate}} # {{operacion}}</h3>
 </div>
 <div class="col-md-6 " style="background-color:#3ab54a; color:white">
-<h3>Liquidada</h3>
+<h3>{{"credit-detail-operation.Liquidada" | translate}}</h3>
 </div>
 </div>
 
@@ -25,19 +25,19 @@
 
 <div class="content_table">
 						<div class="col-md-6">
-								<div class="col-md-6"> No operaci&oacute;n  </div> <div class="col-md-6"> <input disabled="disabled" ng-model="noOperacion"  type="text"/></div>
-								<div class="col-md-6"> Monto a enviar </div> <div class="col-md-6"><input type="text"  ng-model="montoEnviar"   disabled="disabled"  size="20"/></div>
-								<div class="col-md-6">  Monto a cobrar   </div> <div class="col-md-6"><input type="text"  ng-model="montoEnviar"  disabled="disabled"   size="20"/></div>
-									<div class="col-md-6"> Fecha de operaci&oacute;n  </div> <div class="col-md-6"><input type="text"  ng-model="date"   disabled="disabled"   size="20"/></div> 
+								<div class="col-md-6"> {{"credit-detail-agreement.NoOperacion" | translate}}  </div> <div class="col-md-6"> <input disabled="disabled" ng-model="noOperacion"  type="text"/></div>
+								<div class="col-md-6"> {{"credit-detail-agreement.MontoEnviar" | translate}} </div> <div class="col-md-6"><input type="text"  ng-model="montoEnviar"   disabled="disabled"  size="20"/></div>
+								<div class="col-md-6"> {{"credit-detail-agreement.MontoCobrar" | translate}}   </div> <div class="col-md-6"><input type="text"  ng-model="montoEnviar"  disabled="disabled"   size="20"/></div>
+									<div class="col-md-6"> {{"credit-detail-agreement.FechaOperacion" | translate}}  </div> <div class="col-md-6"><input type="text"  ng-model="date"   disabled="disabled"   size="20"/></div>
 						</div>
 						<div class="col-md-6">
-								<div class="col-md-6">Fecha valor  </div> <div class="col-md-6"><input type="text" ng-model="date"   disabled="disabled"  size="20"/></div>
-								<div class="col-md-6">Fecha Vencimiento  </div> <div class="col-md-6"><input type="text" ng-model="date"   disabled="disabled"    size="20"/></div>
-								<div class="col-md-6">Plazo  </div> <div class="col-md-6"> <input type="text" ng-model="noOperacion"  disabled="disabled"   size="20"/></div>
-								<div class="col-md-6">T.C. Pactado  </div> <div class="col-md-6"> <input type="text" ng-model="tc"    disabled="disabled"    size="20"/></div>
-								<div class="col-md-6">Producto      </div> <div class="col-md-6"> <input type="text"    ng-model="producto" disabled="disabled" size="20"/></div>
+								<div class="col-md-6">{{"credit-detail-agreement.FechaValor" | translate}}  </div> <div class="col-md-6"><input type="text" ng-model="date"   disabled="disabled"  size="20"/></div>
+								<div class="col-md-6">{{"credit-detail-agreement.FechaVencimiento" | translate}}  </div> <div class="col-md-6"><input type="text" ng-model="date"   disabled="disabled"    size="20"/></div>
+								<div class="col-md-6">{{"investment.detail.Plazo" | translate}}  </div> <div class="col-md-6"> <input type="text" ng-model="noOperacion"  disabled="disabled"   size="20"/></div>
+								<div class="col-md-6">{{"credit-detail-agreement.TCPactado" | translate}}  </div> <div class="col-md-6"> <input type="text" ng-model="tc"    disabled="disabled"    size="20"/></div>
+								<div class="col-md-6">{{"loan.detail.Producto" | translate}}      </div> <div class="col-md-6"> <input type="text"    ng-model="producto" disabled="disabled" size="20"/></div>
 						</div>
-						
+
 		</div>
 
 
@@ -52,8 +52,8 @@
 								<br /><br />-->
 								<div class="gridStyle" ng-grid="gridOptions"></div>
 				</div>
-				
-			
+
+
 	</div>
 </div>
 <!--/div-->
@@ -62,13 +62,13 @@
 </div><!-- end bigCallout-->
 <div class="col-md-12">
 <div class="col-md-3 pull-left">
-<a class= "btn btn-default btn-block" ng-click="changeFoo()"><span class="glyphicon glyphicon-download-alt"></span> Descargar</a>
+<a class= "btn btn-default btn-block" ng-click="changeFoo()"><span class="glyphicon glyphicon-download-alt"></span> {{"biometric-detail.Descargar" | translate}}</a>
 </div><!-- end col-md-3-->
 <div class="col-md-3">
-<a class="btn btn-default btn-block" ng-click="changeFoo()"><span class="glyphicon glyphicon-arrow-right"></span> Enviar</a>
+<a class="btn btn-default btn-block" ng-click="changeFoo()"><span class="glyphicon glyphicon-arrow-right"></span> {{"biometric-detail.Enviar" | translate}}</a>
 </div><!-- end col-md-3-->
 <div class="col-md-3 pull-right">
-<a class="btn btn-default btn-block" ng-click="changeFoo()"><span class="glyphicon glyphicon-print"></span>  Imprimir</a>
+<a class="btn btn-default btn-block" ng-click="changeFoo()"><span class="glyphicon glyphicon-print"></span>  {{"biometric-detail.Imprimir" | translate}}</a>
 </div><!-- end col-md-3-->
 </div><!-- end col-md-12-->
 </div><!--Main div-->

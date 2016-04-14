@@ -3,7 +3,7 @@
       <div class="col-md-1">
         <a type="button" ng-click="back()" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
       </div>
-      <span style="color:#FFFFFF;"><font size="5">L&iacute;nea de Cr&eacute;dito - Detalle de la Operaci&oacute;n</font></span>
+      <span style="color:#FFFFFF;"><font size="5">{{"credit-detail-agreement.LineaCreditoDetalle" | translate}}</font></span>
     </div>
     <br>
 
@@ -11,44 +11,44 @@
     <div class="col-md-12">
     <div class="well">
     <div class="col-md-6">
-              Operaci&oacute;n #{{operacion}}
+              {{"credit-detail-agreement.Operacion" | translate}} #{{operacion}}
     </div>
 
     <div class="col-md-6 " style="background-color:#0000FF; color:white">
-<h3>Pactada</h3>
+<h3>{{"credit-detail-agreement.Pactada" | translate}}</h3>
 </div>
 <br></br><br></br>
 
     <div class="row">
       <div class="row">
           <div class="col-md-6">
-            <div class="col-md-6"> No operaci&oacute;n  </div> <div class="col-md-6"> <input disabled="disabled" ng-model="balance.operation_number"  type="text"/></div>
-            <div class="col-md-6"> Monto a enviar </div> <div class="col-md-6"><input type="text"  ng-model="balance.mount_to_send"   disabled="disabled"  size="20"/></div>
-            <div class="col-md-6">  Monto a cobrar   </div> <div class="col-md-6"><input type="text"  ng-model="balance.mount_to_cash"  disabled="disabled"   size="20"/></div>
-             <div class="col-md-6"> Fecha de operaci&oacute;n  </div> <div class="col-md-6"><input type="text"  ng-model="balance.operation_date"   disabled="disabled"   size="20"/></div>
+            <div class="col-md-6"> {{"credit-detail-agreement.NoOperacion" | translate}}  </div> <div class="col-md-6"> <input disabled="disabled" ng-model="balance.operation_number"  type="text"/></div>
+            <div class="col-md-6"> {{"credit-detail-agreement.MontoEnviar" | translate}} </div> <div class="col-md-6"><input type="text"  ng-model="balance.mount_to_send"   disabled="disabled"  size="20"/></div>
+            <div class="col-md-6">  {{"credit-detail-agreement.MontoCobrar" | translate}}   </div> <div class="col-md-6"><input type="text"  ng-model="balance.mount_to_cash"  disabled="disabled"   size="20"/></div>
+             <div class="col-md-6"> {{"credit-detail-agreement.Fecha de operación" | translate}}  </div> <div class="col-md-6"><input type="text"  ng-model="balance.operation_date"   disabled="disabled"   size="20"/></div>
           </div>
           <div class="col-md-6">
-            <div class="col-md-6">Fecha valor  </div> <div class="col-md-6"><input type="text" ng-model="balance.value_date"   disabled="disabled"  size="20"/></div>
-            <div class="col-md-6">Fecha Vencimiento  </div> <div class="col-md-6"><input type="text" ng-model="balance.due_date"   disabled="disabled"    size="20"/></div>
-            <div class="col-md-6">Plazo  </div> <div class="col-md-6"> <input type="text" ng-model="balance.deadline"  disabled="disabled"   size="20"/></div>
-            <div class="col-md-6">T.C. Pactado  </div> <div class="col-md-6"> <input type="text" ng-model="balance.tc"    disabled="disabled"    size="20"/></div>
-            <div class="col-md-6">Producto      </div> <div class="col-md-6"> <input type="text"    ng-model="balance.product" disabled="disabled" size="20"/></div>
+            <div class="col-md-6">{{"credit-detail-agreement.FechaValor" | translate}}  </div> <div class="col-md-6"><input type="text" ng-model="balance.value_date"   disabled="disabled"  size="20"/></div>
+            <div class="col-md-6">{{"credit-detail-agreement.FechaVencimiento" | translate}}  </div> <div class="col-md-6"><input type="text" ng-model="balance.due_date"   disabled="disabled"    size="20"/></div>
+            <div class="col-md-6">{{"investment.detail.Plazo" | translate}}  </div> <div class="col-md-6"> <input type="text" ng-model="balance.deadline"  disabled="disabled"   size="20"/></div>
+            <div class="col-md-6">{{"credit-detail-agreement.TCPactado" | translate}}  </div> <div class="col-md-6"> <input type="text" ng-model="balance.tc"    disabled="disabled"    size="20"/></div>
+            <div class="col-md-6">{{"loan.detail.Producto" | translate}}      </div> <div class="col-md-6"> <input type="text"    ng-model="balance.product" disabled="disabled" size="20"/></div>
           </div>
       </div>
    </div>
 
-   <span class="text">Beneficiarios
+   <span class="text">{{"credit-detail-agreement.Beneficiarios" | translate}}
       <div>
           <div class="gridStyle" ng-grid="gridOptions"></div>
       </div>
    </span>
    <div class="row">
-   <div class="col-md-6">Autoriza:
+   <div class="col-md-6">{{"credit-detail-agreement.Autoriza" | translate}}:
         <select ng-model="authorized" ng-options="m.name for m in authorized">
-          <option value="">Authorizer</option>
+          <option value="">{{"credit-detail-agreement.Authorizer" | translate}}</option>
         </select>
     </div>
-    <div class="col-md-6">M&eacute;todo:
+    <div class="col-md-6">{{"credit-detail-agreement.Metodo" | translate}}:
       <select ng-model="metodo" ng-options="m.name for m in metodo">
         <option value=""> 554343434</option>
       </select>
@@ -57,9 +57,8 @@
 
  </div><!-- end well-->
 <div class="row">
-     <div><button type="button" class="btn btn-large button_mfm pull-right"> Autorizar </button></div>
+     <div><button type="button" class="btn btn-large button_mfm pull-right"> {{"credit-detail-agreement.Autorizar" | translate}} </button></div>
    </div><!-- end button-->
 </div><!-- end col-md-12-->
 </div>
 </div>
-

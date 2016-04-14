@@ -1,35 +1,35 @@
 <div class="row">
   <div class="col-md-12">
-    <input ng-model="search" type="text" class="form-control input-search" placeholder="&Uacute;ltimos movimientos">
+    <input ng-model="search" type="text" class="form-control input-search" placeholder="{{'transactions.UltimosMovimientos' | translate}}">
   </div>
 </div>
 <div class="row filtro">
   <div class="col-md-5">
-    <p class="label">Por fecha:</p>
+    <p class="label">{{"transactions.PorFecha" | translate}}:</p>
     <div class="input-group">
       <input type="text" class="date date-from" ng-model="searchParams.startDate" ng-change="searchTransactions()" fddatepicker placeholder="00/00/0000">
       <input type="text" class="date date-to" ng-model="searchParams.endDate" ng-change="searchTransactions()" fddatepicker placeholder="00/00/0000">
     </div>
   </div>
   <div class="col-md-5">
-    Por monto:
+    {{"transactions.PorMonto" | translate}}:
     <div class="btn-group" role="group" aria-label="...">
-      <button type="button" class="btn btn-default">Desde</button>
-      <button type="button" class="btn btn-default">Hasta</button>
+      <button type="button" class="btn btn-default">{{"transactions.Desde" | translate}}</button>
+      <button type="button" class="btn btn-default">{{"transactions.Hasta" | translate}}</button>
     </div>
   </div>
   <div class="col-md-2">
-    <button type="button" class="btn btn-success">Descargar</button>
+    <button type="button" class="btn btn-success">{{"transactions.Descargas" | translate}}</button>
   </div>
 </div>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr>
-        <td>Fecha</td>
-        <td>Descripci&oacute;n</td>
-        <td>Pagos&sol;Dep&oacute;sitos</td>
-        <td>Compras</td>
+        <td>{{"transactions.Fecha" | translate}}</td>
+        <td>{{"transactions.Descripcion" | translate}}</td>
+        <td>{{"transactions.PagosDepositos" | translate}}</td>
+        <td>{{"transactions.Compras" | translate}}</td>
       </tr>
     </thead>
     <tbody>

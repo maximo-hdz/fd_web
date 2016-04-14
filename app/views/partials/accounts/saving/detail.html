@@ -1,5 +1,5 @@
 <h1 class="title-account">
-  <span>Detalle de cuenta</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
+  <span>{{"detail.DetalleCuenta" | translate}}</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
 </h1>
 <div class="row detalles">
   <div class="col-md-3 content-logo">
@@ -7,11 +7,11 @@
   </div>
   <div class="col-md-9">
     <div class="saldos-cuenta">
-      <span class="text">Saldo disponible:</span>
+      <span class="text">{{"saving.detail.SaldoDisponible" | translate}}:</span>
       <span class="amount">{{detail.available_balance | currency}}</span>
     </div>
     <div class="saldos-cuenta">
-      <span class="text">Beneficios generados:</span>
+      <span class="text">{{"saving.detail.BeneficiosGenerados" | translate}}:</span>
       <span class="amount">$ 8.50</span>
     </div>
   </div>
@@ -21,15 +21,15 @@
     <table>
       <tbody>
         <tr>
-          <td>Saldo disponible:</td>
+          <td>{{"saving.detail.SaldoDisponible" | translate}}:</td>
           <td>{{detail.available_balance | currency}}</td>
         </tr>
         <tr>
-          <td>CLABE:</td>
+          <td>{{"saving.detail.Clabe" | translate}}:</td>
           <td>{{detail.clabe_account}}</td>
         </tr>
         <tr>
-          <td>D&iacute;a de corte:</td>
+          <td>{{"detail.DiaCorte" | translate}}:</td>
           <td>{{detail.cut_date | date: 'dd/MM/yyyy'}}</td>
         </tr>
       </tbody>
@@ -39,15 +39,15 @@
     <table>
       <tbody>
         <tr>
-          <td>Fecha &uacute;ltimo movimiento:</td>
+          <td>{{"saving.detail.FechaUltimoMovimiento" | translate}}:</td>
           <td>{{detail.last_mov_date | date: 'dd/MM/yyyy'}}</td>
         </tr>
         <tr>
-          <td>Dep&oacute;sitos del d&iacute;a:</td>
+          <td>{{"saving.detail.DepositosDia" | translate}}:</td>
           <td>{{detail.total_deposit_day | currency}}</td>
         </tr>
         <tr>
-          <td>Retiros del d&iacute;a:</td>
+          <td>{{"saving.detail.RetirosDia" | translate}}:</td>
           <td>{{detail.withdrawal_day | currency}}</td>
         </tr>
       </tbody>

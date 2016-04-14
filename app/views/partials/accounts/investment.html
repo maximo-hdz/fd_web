@@ -3,39 +3,39 @@
     <div class="col-md-1">
       <a type="button" href="/#/accounts" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
     </div>
-    <span style="color: #FFFFFF;"><font size="5">Inversiones</font></span>
+    <span style="color: #FFFFFF;"><font size="5">{{"investment.Inversiones" | translate}}</font></span>
   </div>
 
   <div class="col-md-12 notificaciones">
     <div class="well">
           <div class="row">
               <div class="col-md-3 pull-right">
-                  Divisa <select ng-model="tipoDivisa" ng-options="c.name for c in moneda"></select>              
-              </div>            
+                  {{"credit.Divisa" | translate}} <select ng-model="tipoDivisa" ng-options="c.name for c in moneda"></select>
+              </div>
           </div>
-    <div> Total Global Pesos (MXN)  {{mxn.global}} Capital Total ${{mxn.capTotal}}</div>
+    <div> {{"investment.TotalGlobal" | translate}}  {{mxn.global}} {{"investment.CapitalTotal" | translate}} ${{mxn.capTotal}}</div>
 
 
         <div class="row">
           <div class="col-md-3">
-            Inter&eacute;s Generado
+            {{"investment.interesGenerado" | translate}}
             <p>{{invertions.interesGenerado}}</p>
           </div>
           <div class="col-md-2">
-            Inter&eacute;s Retirado
+            {{"investment.InteresRetirado" | translate}}
             <p>{{invertions.interesRetirado}}</p>
           </div>
           <div class="col-md-4">
-            Inter&eacute;s Generado No Retirado
+            {{"investment.interesGeneadoNoRetirado" | translate}}
             <p>{{invertions.interesGeneadoNoRetirado}}</p>
           </div>
           <div class="col-md-3">
-            Inter&eacute;s Por Generar
+            {{"investment.InteresPorGenerar" | translate}}
             <p>{{invertions.InteresPorGenerar}}</p>
           </div>
         </div>
 
-        Inversiones Pesos
+        {{"investment.InversionesPesos" | translate}}
          <div class="table-responsive">
            <div class="gridStyle" ng-grid="gridOptions" with="200%"></div>
          </div>

@@ -3,7 +3,7 @@
 	    <div class="col-md-1">
 	      <a type="button" href="/#/accounts/investment" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
 	    </div>
-     	<span style="color: #FFFFFF;"><font size="5">Inversiones - alias /#cta - Detalle</font></span>
+     	<span style="color: #FFFFFF;"><font size="5">{{"investment-detail.InversionesAliasCta" | translate}}</font></span>
  	 </div>
 
 	<div class="well">
@@ -11,13 +11,13 @@
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-6">
-						<span class="pull-right"> Nombre </span>
+						<span class="pull-right"> {{"investment-detail.Nombre" | translate}} </span>
 					</div>
 					<div class="col-md-2">
-						<span>Capital Inicial</span>
+						<span>{{"investment-detail.CapitalInicial" | translate}}</span>
 					</div>
 					<div class="col-md-2">
-						<span>Divisa</span>
+						<span>{{"credit.Divisa" | translate}}</span>
 					</div>
 				</div><!-- end row-->
 				<div class="row">
@@ -36,16 +36,16 @@
 				<div class="col-md-6"></div>
 
 					<div class="col-md-2">
-						<span class="pull-left"> Banco Destino </span>
+						<span class="pull-left"> {{"investment-detail.BancoDestino" | translate}} </span>
 					</div>
 
 					<div class="col-md-3">
-						<span class="pull-left">Cuenta Destino</span>
+						<span class="pull-left">{{"investment-detail.cuentaDestino" | translate}}</span>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<span class="pull-right">Pago de interes</span>
+						<span class="pull-right">{{"investment-detail.PagoInteres" | translate}}</span>
 					</div>
 					<div class="col-md-2">
 						<span class="pull-left">{{detail.bancoDestino}}</span>
@@ -60,14 +60,14 @@
 						<span class="pull-right"> DD/MM/YYYY - DD/MM/YYYY </span>
 					</div>
 					<div class="cold-md-6">
-						<span class="pull-left">Tasa: {{detail.tasa}}</span>
+						<span class="pull-left">{{"investment-detail.Tasa" | translate}}: {{detail.tasa}}</span>
 					</div>
 				</div>
 			<hr>
 			</div>	<!-- End col-md-12  -->
 		</div>
 
-		<span>Rendimiento del Pagaré Privado al 30 de Septiembre del 2013 </span>
+		<span>{{"investment-detail.RendimientoPagare" | translate}} </span>
 
 	<div class="row">
 
@@ -76,7 +76,7 @@
 		    <div class="gridStyle" ng-grid="gridOptions"></div>
 		</div>
 		<div class="col-md-4 pull-right">
-                  Enviar a: <select ng-model="enviar" ng-options="c.name for c in mail"></select>
+                  {{"biometric-detail.EnviarA" | translate}}: <select ng-model="enviar" ng-options="c.name for c in mail"></select>
         </div>
 	</div>
 	</div><!-- End well-->
@@ -84,15 +84,15 @@
 		<div class="row">
 			<div class="col-md-10">
 				<a type="button" class="btn btn-large button_mfm">
-					<span class="glyphicon glyphicon-download-alt"> Descargar</span>
+					<span class="glyphicon glyphicon-download-alt"> {{"biometric-detail.Descargar" | translate}}</span>
 				</a>
 				<a type="button" class="btn btn-large button_mfm">
-					<span class="glyphicon glyphicon-print"> Imprimir</span>
+					<span class="glyphicon glyphicon-print"> {{"biometric-detail.Imprimir" | translate}}</span>
 				</a>
 			</div>
 			<div class="col-md-2">
 				<a type="button" class="btn btn-large button_mfm">
-					<span class="glyphicon glyphicon-arrow-right"> Enviar</span>
+					<span class="glyphicon glyphicon-arrow-right"> {{"biometric-detail.Enviar" | translate}}</span>
 				</a>
 			</div>
 		</div>

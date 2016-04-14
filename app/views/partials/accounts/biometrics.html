@@ -4,33 +4,33 @@
       <div class="col-md-1">
         <a type="button" href="/#/accounts" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
       </div>
-    Cuentas biom&eacute;tricas - Cuenta {{accountNumber}}
+    {{"biometrics.CuentasBiometricasCuenta" | translate}} {{accountNumber}}
   </div>
   <div class="well">
       <div>
-        <span class="text">Detalle</span>
+        <span class="text">{{"biometrics.Detalle" | translate}}</span>
         <select ng-init="seleccion=seleccionTMP"
         ng-click="biometrics(seleccion._account_id)"
         ng-model="seleccion"
         ng-options="c as c.name for c in biometricAccounts.accounts">
       </select>
       <p>
-        <span class="text">Saldo<span> {{amount | currency:"MXN $ "}}</span></span>
+        <span class="text">{{"biometrics.Saldo" | translate}}<span> {{amount | currency:"MXN $ "}}</span></span>
       </p>
       <div class="row">
         <div class="col-md-12">
           <p>
-            <span class="text">Movimientos del</span>
+            <span class="text">{{"biometrics.MovimientosDel" | translate}}</span>
               <input type="text" class="" datepicker-popup="{{format}}" ng-model="dateFrom" is-open="openedfrom" min="minDate" max="'2015-06-22'" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span>
                 <button  ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
-              <span class="text">al</span>
+              <span class="text">{{"biometrics.Al" | translate}}</span>
               <input type="text" class="" datepicker-popup="{{format}}" ng-model="dateTo" is-open="openedto" min="minDate" max="'2015-06-22'"  date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span>
                 <button  ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
-              <button  class="conexion_btn:active pull-right" value="Historial">Historial </button>
+              <button  class="conexion_btn:active pull-right" value="Historial">{{"biometrics.Historial" | translate}} </button>
           </p>
         </div>
       </div>
@@ -40,6 +40,6 @@
     </div>
   </div>
   <div class="col-md-2 pull-right">
-    <button type="button" class="btn btn-large button_mfm"> <span class="glyphicon glyphicon-download-alt">Descargar</span></button>
+    <button type="button" class="btn btn-large button_mfm"> <span class="glyphicon glyphicon-download-alt">{{"biometric-detail.Descargar" | translate}}</span></button>
   </div>
 </div>
