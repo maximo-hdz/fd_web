@@ -3,9 +3,9 @@
     <table class="details">
       <thead>
         <tr>
-          <th scope="col">Fecha y hora</th>
-          <th scope="col">Descripci&oacute;n</th>
-          <th scope="col">Status</th>
+          <th scope="col">{{"user-activity.FechaHora" | translate}}</th>
+          <th scope="col">{{"transactions.Descripcion" | translate}}</th>
+          <th scope="col">{{"detail.Estatus" | translate}}</th>
         </tr>
       </thead>
       <tbody>
@@ -19,7 +19,7 @@
   </div>
 </div>
 <div class="pagination">
-      <button ng-click='activity("ant")' ng-class="disableAnt ? 'disabled' : ''">Anterior</button>
+      <button ng-click='activity("ant")' ng-class="disableAnt ? 'disabled' : ''">{{"user-activity.Anterior" | translate}}</button>
       <span>{{page+1}}/{{totalPages}}</span>
-      <button ng-click='activity("sig")' ng-class="disableSig ? 'disabled' : ''">Siguiente</button>
+      <button ng-click='activity("sig")' ng-class="disableSig ? 'disabled' : ''">{{"user-activity.Siguiente" | translate}}</button>
 </div>

@@ -1,27 +1,26 @@
 
 <div class="col-md-9" data-ng-init="load_conection()">
 			<div class="page_conection">
-		
 
-		
+
+
 				<div class="title-page">
 					<div class="col-md-1">
 	        			<a class="btn btn-default btn-large btn-block button_mfm" ng-href="#administration"><span class="glyphicon glyphicon-chevron-left"></span></a>
 	        		</div>
-	        		Administraci&oacute;n - Cuentas
+	        		{{"accounts-admin.AdministracionCuentas" | translate}}
 	    		</div>
 	    		<br />
 	    		<div class="col-md-12">
 	    			<div class="col-md-6">
-	    				<a class="btn btn-default btn-large btn-block button_mfm" href="#" ng-click="ctas_menu()" ng-href="#/administration/accounts/">Alta y modificaci&oacute;n de Cuentas Destino</a>
+	    				<a class="btn btn-default btn-large btn-block button_mfm" href="#" ng-click="ctas_menu()" ng-href="#/administration/accounts/">{{"accounts-admin.AltaCuentasDestino" | translate}}</a>
 	    			</div>
 	    			<div class="col-md-6">
-	    				<a class="btn btn-default btn-large btn-block button_mfm" href="#"  ng-click="customize()" ng-href="#/administration/accounts/customize">Personalizar Cuentas Origen</a>
+	    				<a class="btn btn-default btn-large btn-block button_mfm" href="#"  ng-click="customize()" ng-href="#/administration/accounts/customize">{{"accounts-admin.PersonalizarOrigen" | translate}}</a>
 	    			</div>
 	    		</div>
 	    		<br><br><br/>
 	    	</div>
 				<div ui-view></div>
-			
+
 		</div>
-	

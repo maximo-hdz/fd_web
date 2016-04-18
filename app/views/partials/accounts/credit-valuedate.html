@@ -1,17 +1,17 @@
 	<div class="content_table">
   <p>
-  Estatus <select><option>todas</option></select>
-    <span class="text">Movimientos del</span>
+  {{"detail.Estatus" | translate}} <select><option>{{"credit-valuedate.todas" | translate}}</option></select>
+    <span class="text">{{"biometrics.MovimientosDel" | translate}}</span>
       <input type="text" class="" datepicker-popup="{{format}}" ng-model="dateFrom" is-open="openedfrom" min="minDate" max="'2015-06-22'" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
       <span>
         <button  ng-click="openFrom($event)"><i class="glyphicon glyphicon-calendar"></i></button>
       </span>
-      <span class="text">al</span>
+      <span class="text">{{"biometrics.Al" | translate}}</span>
       <input type="text" class="" datepicker-popup="{{format}}" ng-model="dateTo" is-open="openedto" min="minDate" max="'2015-06-22'"  date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
       <span>
         <button  ng-click="openTo($event)"><i class="glyphicon glyphicon-calendar"></i></button>
       </span>
-      <button  class="conexion_btn:active pull-right" value="Historial">Historial </button>
+      <button  class="conexion_btn:active pull-right" value="Historial">{{"biometrics.Historial" | translate}} </button>
   </p>
 	<div class="table-responsive">
         <div class="gridStyle" ng-grid="gridOptions"></div>

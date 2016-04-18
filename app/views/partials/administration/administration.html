@@ -3,12 +3,12 @@
 		<ul class="menu menu-configuracion">
 			<li class="head" onclick="showHideMenu('menu-configuracion', undefined);">
 				<span class="arrow"></span>
-				<span class="title">CONFIGURACI&Oacute;N</span>
+				<span class="title">{{"administration.Configuracion" | translate}}</span>
 			</li>
 			<li ng-class="'child active'" style="cursor:pointer;">
 				<a>
 					<span class="arrow"></span>
-					<span class="text">Cambio de contrase&ntilde;a</span>
+					<span class="text">{{"administration.CambioContrasenia" | translate}}</span>
 				</a>
 			</li>
 			<li ng-class="'child'" style="cursor:pointer;">
@@ -22,36 +22,36 @@
 		<ul class="menu menu-informacion">
 			<li class="head" onclick="showHideMenu('menu-informacion', undefined);">
 				<span class="arrow"></span>
-				<span class="title">M&Aacute;S INFORMACI&Oacute;N</span>
+				<span class="title">{{"administration.MasInformacion" | translate}}</span>
 			</li>
 			<li ng-class="'child active'" style="cursor:pointer;">
 				<a>
 					<span class="arrow"></span>
-					<span class="text">Aclaraciones</span>
+					<span class="text">{{"login.Aclaraciones" | translate}}</span>
 				</a>
 			</li>
 			<li ng-class="'child'" style="cursor:pointer;">
 				<a>
 					<span class="arrow"></span>
-					<span class="text">Aviso de privacidad</span>
+					<span class="text">{{"login.Aviso de privacidad" | translate}}</span>
 				</a>
 			</li>
 			<li ng-class="'child'" style="cursor:pointer;">
 				<a>
 					<span class="arrow"></span>
-					<span class="text">Reportes por robo y/o p&eacute;rdida</span>
+					<span class="text">{{"main-header.Reportes" | translate}}</span>
 				</a>
 			</li>
 			<li ng-class="'child'" style="cursor:pointer;">
 				<a>
 					<span class="arrow"></span>
-					<span class="text">T&eacute;rminos y condiciones</span>
+					<span class="text">{{"login.Terminos" | translate}}</span>
 				</a>
 			</li>
 			<li ng-class="'child'" style="cursor:pointer;">
 				<a>
 					<span class="arrow"></span>
-					<span class="text">Seguridad</span>
+					<span class="text">{{"login.Seguridad" | translate}}</span>
 				</a>
 			</li>
 
@@ -76,4 +76,3 @@
 	</div>
 	<div ng-include="'views/partials/administration/user-activity.html'" class="account-page"></div>
 </div>
-

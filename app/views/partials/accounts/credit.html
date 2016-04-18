@@ -3,7 +3,7 @@
 		<div class="col-md-1">
 			<a type="button" href="/#/accounts" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
 		</div>
-		<span style="color:#FFFFFF;"><font size="5">L&iacute;nea de Cr&eacute;dito</font></span>
+		<span style="color:#FFFFFF;"><font size="5">{{"credit.LineaCredito" | translate}}</font></span>
 	</div>
 	<br>
 	<div class="row" id="bigCallout">
@@ -12,47 +12,47 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div class="row">
-						<div class="col-md-6"><span>Divisa</span></div>
+						<div class="col-md-6"><span>{{"credit.Divisa" | translate}}</span></div>
 						<div class="col-md-6"><input type="text" readonly="true" value="{{credit.currency}}"/></div>
 					</div>
 					<div class="row">
-						<div class="col-md-6"><span>Monto Autorizado</span></div>
+						<div class="col-md-6"><span>{{"credit.MontoAutorizado" | translate}}</span></div>
 						<div class="col-md-6"><input type="text" readonly="true" value="{{credit.authorizeAmount}}"/></div>
 					</div>
 					<div class="row">
-						<div class="col-md-6"><span>Monto Dispuesto</span></div>
+						<div class="col-md-6"><span>{{"credit.MontoDispuesto" | translate}}</span></div>
 						<div class="col-md-6"><input type="text" readonly="true" value="{{credit.dispossedAmount}}"/></div>
 					</div>
 					<div class="row">
-						<div class="col-md-6"><span>Monto Disponible</span></div>
+						<div class="col-md-6"><span>{{"credit.MontoDisponible" | translate}}</span></div>
 						<div class="col-md-6"><input type="text" readonly="true" value="{{credit.undispossedAmount}}"/></div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="row">
-						<div class="col-md-6"><span>Disposiciones Abiertas</span></div>
+						<div class="col-md-6"><span>{{"credit.DisposicionesAbiertas" | translate}}</span></div>
 						<div class="col-md-6"><input type="text" readonly="true" value="{{credit.openDispositions}}"/></div>
 					</div>
 					<div class="row">
-						<div class="col-md-6"><span>Fecha de expiraci&oacute;n</span></div>
+						<div class="col-md-6"><span>{{"credit.FechaExpiracion" | translate}}</span></div>
 						<div class="col-md-6"><input type="text" readonly="true" value="{{credit.dueDate}}"/></div>
 					</div>
 					<div class="row">
-						<div class="col-md-6"><span>Disposiciones Atrasadas</span></div>
+						<div class="col-md-6"><span>{{"credit.DisposicionesAtrasadas" | translate}}</span></div>
 						<div class="col-md-6"><input type="text" readonly="true" value="{{credit.lateDispositions}}"/></div>
 					</div>
 				</div>
 			</div>
 				<ul class="nav nav-tabs">
-					<li id="transaction" class="active col-md-4"><a href="#" ng-click="creditTransaction(account_id)" ng-href="#/{{account_id}}/credit/transactions">Movimientos</a></li>
-					<li id="dueDate" class="col-md-4"><a href="#" ng-click="dueDate(account_id)" ng-href="#/{{account_id}}/credit/dueDate">Por Fecha de Vencimiento</a></li>
-					<li id="valueDate" class="col-md-4"><a href="#" ng-click="valueDate(account_id)" ng-href="#/{{account_id}}/credit/valueDate">Por Fecha Valor</a></li>
+					<li id="transaction" class="active col-md-4"><a href="#" ng-click="creditTransaction(account_id)" ng-href="#/{{account_id}}/credit/transactions">{{"credit.Movimientos" | translate}}</a></li>
+					<li id="dueDate" class="col-md-4"><a href="#" ng-click="dueDate(account_id)" ng-href="#/{{account_id}}/credit/dueDate">{{"credit.PorFechaVencimiento" | translate}}</a></li>
+					<li id="valueDate" class="col-md-4"><a href="#" ng-click="valueDate(account_id)" ng-href="#/{{account_id}}/credit/valueDate">{{"credit.PorFechaValor" | translate}}</a></li>
 				</ul>
 				<div ui-view></div>
 			</div>
 		</div>
 	</div><!--end bigCallout-->
 	<a type="button" class="btn btn-large button_mfm pull-right">
-		<span class="glyphicon glyphicon-download-alt"></span> Descargar
+		<span class="glyphicon glyphicon-download-alt"></span> {{"biometric-detail.Descargar" | translate}}
 	</a>
 </div>

@@ -1,29 +1,29 @@
 <div class="col-md-9  row-fluid">
-   <div class="row" id="bigCallout">   
-   
-        <div class="col-md-1">            
+   <div class="row" id="bigCallout">
+
+        <div class="col-md-1">
             <a type="button" href="/#/transfer/sameAddBeneficiary" class="btn btn-large button_mfm"><span class="glyphicon glyphicon-chevron-left"></span></a>
         </div>
-            <span style="color:#FFFFFF;"><font size="5">Alta Mismo Banco</font></span>
-    
+            <span style="color:#FFFFFF;"><font size="5">{{"same-add-beneficiary.AltaMismoBanco" | translate}}</font></span>
+
     <br></br>
     <div class="col-md-12">
-        <div class="well">           
+        <div class="well">
              <div class="row">
                 <div class="row">
-                     
+
                      <div class="col-md-6">
 
-                        <div class="col-md-6">Titular Beneficiario    </div> <div><input value="{{confirmation.holder}}"  /></div>
-                        <div class="col-md-6">Cuenta del Beneficiario </div> <div><input value="{{confirmation.accountBeneficiary}}"  disabled/></div>
-                        <div class="col-md-6">Correo Electr&oacute;nico      </div> <div><input value="{{confirmation.mail}}"  disabled/></div>
-                        <div class="col-md-6">Divisa                  </div> <div><input value="{{confirmation.coin}}"  disabled/></div>
+                        <div class="col-md-6">{{"add-beneficiary-moral.TitularBene" | translate}}    </div> <div><input value="{{confirmation.holder}}"  /></div>
+                        <div class="col-md-6">{{"add-beneficiary-confirm.CuentaBeneficiario" | translate}} </div> <div><input value="{{confirmation.accountBeneficiary}}"  disabled/></div>
+                        <div class="col-md-6">{{"addmoduser.CorreoElectronico" | translate}}      </div> <div><input value="{{confirmation.mail}}"  disabled/></div>
+                        <div class="col-md-6">{{"credit.Divisa" | translate}}                  </div> <div><input value="{{confirmation.coin}}"  disabled/></div>
 
-                     </div>               
+                     </div>
                      <div class="col-md-6">
-                        <div class="col-md-6">Alias de la Cuenta</div> <div>   <input value="{{confirmation.accountAlias}}"  disabled/></div>
-                        <div class="col-md-6">L&iacute;mite de Pago Diario</div><div> <input value="{{confirmation.dayLimitPay | currency: confirmation.currencySymbol}}"  disabled/></div>
-                        <div class="col-md-6">L&iacute;mite de Pago Mensual</div><div> <input value="{{confirmation.dayLimitMonthly | currency: confirmation.currencySymbol}}" disabled/></div>
+                        <div class="col-md-6">{{"add-beneficiary-confirm.AliasCuenta" | translate}}</div> <div>   <input value="{{confirmation.accountAlias}}"  disabled/></div>
+                        <div class="col-md-6">{{"add-beneficiary-confirm.LimitePagoDiario" | translate}}</div><div> <input value="{{confirmation.dayLimitPay | currency: confirmation.currencySymbol}}"  disabled/></div>
+                        <div class="col-md-6">{{"add-beneficiary-confirm.LimitePagoMensual" | translate}}</div><div> <input value="{{confirmation.dayLimitMonthly | currency: confirmation.currencySymbol}}" disabled/></div>
 
                      </div>
                 </div><!--End row middle -->
@@ -34,15 +34,15 @@
                     <div ng-switch on="x">
                         <div ng-switch-when="true">
                             <div class="col-md-2">
-                                <span class="pull-right">Autoriza:</span>
+                                <span class="pull-right">{{"credit-detail-agreement.Autoriza" | translate}}:</span>
                             </div>
                             <div class="col-md-4">
                                 <select>
-                                    <option>Nombre de Persona Autorizada</option>
+                                    <option>{{"authorize_changes.NombreAutorizada" | translate}}</option>
                                 </select>
                             </div>
                             <div class="col-md-2">
-                                <span class="pull-right">Medio:</span>
+                                <span class="pull-right">{{"authorize_changes.Medio" | translate}}:</span>
                             </div>
                             <div class="col-md-4">
                                 <select>
@@ -50,26 +50,25 @@
                                 </select>
                             </div>
                         </div>
-                    
+
                     <div ng-switch-default>
                         <div class="col-md-6"></div>
                         <div class="col-md-3">
-                            <p class="pull-right"> Enviar a: </p>
+                            <p class="pull-right"> {{"biometric-detail.EnviarA" | translate}}: </p>
                         </div>
                         <div class="col-md-3">
                             <select name="" id="">
                                 <option value="">ejemplo@anzen.mx</option>
-                            </select>  
-                        </div>  
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div><!-- End row main -->
         </div><!--End well-->
         <div class="cold-md-12">
-            <a type="button" href="" class="btn btn-large button_mfm  pull-right" ng-click="switch()"> <span class="glyphicon glyphicon-ok"></span> Autorizar </a>	
+            <a type="button" href="" class="btn btn-large button_mfm  pull-right" ng-click="switch()"> <span class="glyphicon glyphicon-ok"></span> {{"credit-detail-agreement.Autorizar" | translate}} </a>
         </div>
     </div><!--End md-12-->
    </div><!--End bigCallout-->
 </div><!--End div main-->
-

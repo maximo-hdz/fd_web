@@ -5,7 +5,7 @@
 				class="btn btn-large button_mfm"><span
 				class="glyphicon glyphicon-chevron-left"></span></a>
 		</div>
-		Cuentas biom&eacute;tricas - Detalle Movimiento {{detailmov}}
+		{{"biometric-detail.CuentaBiometricaDetalle" | translate}} {{detailmov}}
 	</div>
 	<div class="well">
 		<div class="">
@@ -13,7 +13,7 @@
 				<div class="col-md-6">
 					<div class ="row">
 						<div class="col-md-5">
-							<span class="text pull-right">Cuenta de Retiro</span>
+							<span class="text pull-right">{{"biometric-detail.CuentaRetiro" | translate}}</span>
 						</div>
 						<div class="col-md-6">
 							<input readonly ng-model="detail.accountFrom"/>
@@ -25,7 +25,7 @@
 
 					<div class ="row">
 						<div class="col-md-5">
-							<span class="text pull-right">Cuenta de Dep&oacute;sito</span>
+							<span class="text pull-right">{{"biometric-detail.CuentaDeposito" | translate}}</span>
 						</div>
 						<div class="col-md-6">
 							<input readonly ng-model="detail.accountTo"/>
@@ -37,7 +37,7 @@
 
 					<div class ="row">
 						<div class="col-md-5">
-							<span class="text pull-right" >Beneficiario</span>
+							<span class="text pull-right" >{{"biometric-detail.Beneficiario" | translate}}</span>
 						</div>
 						<div class="col-md-6">
 							<input readonly ng-model="detail.beneficiary"/>
@@ -56,7 +56,7 @@
 				<div class="col-md-6">
 					<div class="row">
 						<div class="col-md-5">
-							<span class="text pull-right">Importe</span>
+							<span class="text pull-right">{{"biometric-detail.Importe" | translate}}</span>
 						</div>
 						<div class="col-md-5">
 							<input readonly ng-model="detail.amount"/>
@@ -67,7 +67,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-5">
-							<span class="text pull-right">Fecha</span>
+							<span class="text pull-right">{{"biometric-detail.Fecha" | translate}}</span>
 						</div>
 						<div class="col-md-6">
 							<input readonly ng-model="detail.date" />
@@ -75,7 +75,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-5">
-							<span class="text pull-right">Referencia</span>
+							<span class="text pull-right">{{"biometric-detail.Referencia" | translate}}</span>
 						</div>
 						<div class="col-md-6">
 							<input readonly ng-model="detail.reference"/>
@@ -91,10 +91,10 @@
 				</div>
 			</div><br />
 			<div class="row pull-right" style="">
-				<span class="text" >Enviar a&nbsp;&nbsp;</span>
+				<span class="text" >{{"biometric-detail.EnviarA" | translate}}&nbsp;&nbsp;</span>
 				<select ngModel="string" name="string" required	ngRequired="string" ngOptions="comprehension_expression">
 				<option selected>amigo@mail.com</option>
-				<option>otro</option>
+				<option>{{"biometric-detail.Otro" | translate}}</option>
 				</select>
 			</div>
 			<br />
@@ -102,19 +102,17 @@
 	</div>
 	<div class="col-md-12">
 		<div  class="col-md-3 pull-left" align="left">
-			<button type="button" class="btn btn-default btn-large button_mfm btn-block"> <span class="glyphicon glyphicon-download-alt">Descargar</span></button>
-			
+			<button type="button" class="btn btn-default btn-large button_mfm btn-block"> <span class="glyphicon glyphicon-download-alt">{{"biometric-detail.Descargar" | translate}}</span></button>
+
 		</div>
 		<div class="col-md-3">
-			
-			<button type="button" class="btn btn-default btn-large button_mfm btn-block"> <span class="glyphicon  glyphicon-print">Imprimir</span></button>
-			
+
+			<button type="button" class="btn btn-default btn-large button_mfm btn-block"> <span class="glyphicon  glyphicon-print">{{"biometric-detail.Imprimir" | translate}}</span></button>
+
 			</div>
 		<div class="col-md-3  pull-right" align="right">
 
-    	<button type="button" class="btn btn-default btn-large button_mfm btn-block"> <span class="glyphicon glyphicon-arrow-right">Enviar</span></button>
+    	<button type="button" class="btn btn-default btn-large button_mfm btn-block"> <span class="glyphicon glyphicon-arrow-right">{{"biometric-detail.Enviar" | translate}}</span></button>
   		</div>
   </div>
 </div>
-
-

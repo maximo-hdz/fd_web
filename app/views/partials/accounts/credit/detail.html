@@ -1,5 +1,5 @@
 <h1 class="title-account">
-  <span>Detalle de cuenta</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
+  <span>{{"detail.DetalleCuenta" | translate}}</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
 </h1>
 <div class="row detalles">
   <div class="col-md-3 content-logo">
@@ -7,11 +7,11 @@
   </div>
   <div class="col-md-9">
     <div class="saldos-cuenta">
-      <span class="text">Cr&eacute;dito disponible:</span>
+      <span class="text">{{"detail.CreditoDisponible" | translate}}:</span>
       <span class="amount">{{detail.available_credit | currency}}</span>
     </div>
     <div class="saldos-cuenta">
-      <span class="text">Saldo total:</span>
+      <span class="text">{{"detail.SaldoTotal" | translate}}:</span>
       <span class="amount">{{detail.balance | currency}}</span>
     </div>
   </div>
@@ -21,15 +21,15 @@
     <table>
       <tbody>
         <tr>
-          <td>Estatus:</td>
+          <td>{{"detail.Estatus" | translate}}:</td>
           <td>{{detail.state}}</td>
         </tr>
         <tr>
-          <td>D&iacute;a de corte:</td>
+          <td>{{"DiaCorte" | translate}}:</td>
           <td>{{detail.cut_date | date: 'dd/MM/yyyy'}}</td>
         </tr>
         <tr>
-          <td>Fecha &uacute;ltimo pago:</td>
+          <td>{{"detail.FechaUltimoPago" | translate}}:</td>
           <td>{{detail.last_payment_date | date: 'dd/MM/yyyy'}}</td>
         </tr>
       </tbody>
@@ -39,15 +39,15 @@
     <table>
       <tbody>
         <tr>
-          <td>L&iacute;mite de cr&eacute;dito:</td>
+          <td>{{"detail.LimiteCredito" | translate}}:</td>
           <td>{{detail.limit | currency}}</td>
         </tr>
         <tr>
-          <td>Saldo del &uacute;ltimo periodo:</td>
+          <td>{{"detail.SaldoUltimoPeriodo" | translate}}:</td>
           <td>{{detail.last_period_balance | currency}}</td>
         </tr>
         <tr>
-          <td>Pagos y depositos:</td>
+          <td>{{"detail.PagoDeposito" | translate}}:</td>
           <td>{{detail.payments | currency}}</td>
         </tr>
       </tbody>

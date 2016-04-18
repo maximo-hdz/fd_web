@@ -1,11 +1,11 @@
 <div class="row">
 	<div class="col-md-12">
-		<input ng-model="search" type="text" class="form-control input-search" placeholder="&Uacute;ltimos movimientos">
+		<input ng-model="search" type="text" class="form-control input-search" placeholder="{{'transactions.UltimosMovimientos' | translate}}">
 	</div>
 </div>
 <div class="row filtro">
 	<div class="col-md-5">
-		<p class="label">Por fecha:</p>
+		<p class="label">{{"transactions.PorFecha" | translate}}:</p>
 		<div class="input-group">
 			<input type="text" class="date date-from" ng-model="searchParams.startDate" ng-change="searchTransactions()" fddatepicker placeholder="00/00/0000">
 			<input type="text" class="date date-to" ng-model="searchParams.endDate" ng-change="searchTransactions()" fddatepicker placeholder="00/00/0000">
@@ -13,15 +13,15 @@
 
 	</div>
 	<div class="col-md-5">
-		<p class="label">Por monto:</p>
+		<p class="label">{{"transactions.PorMonto" | translate}}:</p>
 		<div class="btn-group" role="group">
 
-			<button type="button" class="btn btn-default">Desde</button>
-			<button type="button" class="btn btn-default">Hasta</button>
+			<button type="button" class="btn btn-default">{{"transactions.Desde" | translate}}</button>
+			<button type="button" class="btn btn-default">{{"transactions.Hasta" | translate}}</button>
 		</div>
 	</div>
 	<div class="col-md-2">
-		<button type="button" class="btn btn-success">Descargar</button>
+		<button type="button" class="btn btn-success">{{"transactions.Descargas" | translate}}</button>
 	</div>
 </div>
 
@@ -30,10 +30,10 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<td>Fecha</td>
-				<td>Descripci&oacute;n</td>
-				<td>Importe</td>
-				<td>Saldo</td>
+				<td>{{"transactions.Fecha" | translate}}</td>
+				<td>{{"transactions.Descripcion" | translate}}</td>
+				<td>{{"saving.transactions.Importe" | translate}}</td>
+				<td>{{"investment.detail.Saldo" | translate}}</td>
 			</tr>
 		</thead>
 		<tbody>
