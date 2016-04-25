@@ -1,18 +1,21 @@
 <!-- Partial for saving notifications in the accounts dashboard -->
-<div class="col-md-3 hidden-xs hidden-sm">
-  <div class="cell">
-    <div class="logo logo-alcancia"></div>
+<ng-switch on="notification.account_name">
+  <div class="col-md-3 hidden-xs hidden-sm">
+    <div class="cell">
+      <div class="logo logo-alcancia"></div>
+    </div>
   </div>
-</div>
-<div class="col-md-4 col-xs-6 info-account">
-  <div class="cell">
-    <p>
-      <strong>{{notification.account_name}} ***{{notification.account_number}}</strong>
-    </p>
+  <div class="col-md-4 col-xs-6 info-account">
+    <div class="cell">
+      <p>
+        <strong ng-switch-when="CUENTA BÁSICA PARA EL PÚBLICO EN GENERAL">{{"title.account_name.CuentaBasicaGeneral" | translate}} ***{{notification.account_number}}</strong>
+        <strong ng-switch-when="Cuenta de ahorro">{{"title.account_name.CuentaAhorro" | translate}} ***{{notification.account_number}}</strong>
+      </p>
+    </div>
   </div>
-</div>
-<div class="col-md-5 col-xs-6 info-account">
-  <div class="cell">
-    <p>{{"saving.SaldoDisponible" | translate}}: <span>{{notification.available_balance | currency}}</span></p>
+  <div class="col-md-5 col-xs-6 info-account">
+    <div class="cell">
+      <p >{{"saving.SaldoDisponible" | translate}}: <span>{{notification.available_balance | currency}}</span></p>
+    </div>
   </div>
-</div>
+</ng-switch>

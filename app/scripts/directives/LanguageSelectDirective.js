@@ -5,15 +5,14 @@ angular.module('spaApp') .directive('ngTranslateLanguageSelect', function (Local
     restrict: 'A',
     replace: true,
     template: ''+
-    '<div class="language-select" ng-if="visible">'+
-        '<label>'+
-            '{{"directives.language-select.Language" | translate}}:'+
-            '<select ng-model="currentLocaleDisplayName"'+
-                'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames"'+
-                'ng-change="changeLanguage(currentLocaleDisplayName)">'+
-            '</select>'+
-        '</label>'+
-    '</div>'+
+      '<div ng-if="visible">'+
+      '{{"directives.language-select.Language" | translate}}&nbsp;'+
+      '<select class="form-control" style="width: 100px; height: 20px; margin: 0; padding: 0; display: inline;" ng-model="currentLocaleDisplayName"'+
+        'ng-init="localesDisplayName = options[0]"'+
+        'ng-change="changeLanguage(currentLocaleDisplayName)"'+
+        'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames">'+
+      '</select>'+
+      '</div>'+
     '',
     controller: function ($scope) {
       $scope.currentLocaleDisplayName = LocaleService.getLocaleDisplayName();

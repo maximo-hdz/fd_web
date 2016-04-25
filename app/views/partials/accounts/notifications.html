@@ -9,7 +9,6 @@
 <h1 class="title-green">{{"notifications.NotificacionesRecientes" | translate}}</h1>
 <div class="box-notifications">
 	<div class="row" ng-repeat="notification in notifications" ng-switch="notification.account_type">
-
 		<article ng-switch-when="LOAN_ACCOUNT">
 			<ng-include src="'views/partials/accounts/notifications/loan.html'"></ng-include>
 		</article>
@@ -22,6 +21,5 @@
 		<article ng-switch-when="INVESTMENT_ACCOUNT">
 			<ng-include src="'views/partials/accounts/notifications/investment.html'"></ng-include>
 		</article>
-
 	</div>
 </div>

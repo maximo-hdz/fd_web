@@ -10,7 +10,7 @@
       </thead>
       <tbody>
       <tr ng-repeat="activity in userActivities">
-        <td>{{activity.date | date:'dd/MM/yy HH:mm' }} hrs.</td>
+        <td>{{activity.date | date:'medium' }} hrs.</td>
         <td>{{mapUserActivity(activity.action)}}</td>
         <td>{{mapActivityStatus(activity.successful)}}</td>
       </tr>

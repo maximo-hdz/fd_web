@@ -1,5 +1,5 @@
 <h1 class="title-account">
-	<span>{{"detail.DetalleCuenta" | translate}}</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
+	<span>{{"detail.DetalleCuenta" | translate}}</span> {{"title.account_name.PrestamoCredito" | translate}} {{selectedAccount.account_number}}
 </h1>
 <div class="row detalles">
 	<div class="col-md-3 content-logo">
@@ -66,11 +66,11 @@
 			<tbody>
 				<tr>
 					<td>{{"detail.DiaCorte" | translate}}:</td>
-					<td>{{detail.cut_date | date: 'dd/MM/yyyy'}}</td>
+					<td>{{detail.cut_date | date:'longDate'}}</td>
 				</tr>
 				<tr>
 					<td>{{"detail.FechaUltimoPago" | translate}}:</td>
-					<td>{{detail.last_payment_date | date: 'dd/MM/yyyy'}}</td>
+					<td>{{detail.last_payment_date | date:'longDate'}}</td>
 				</tr>
 				<tr>
 					<td>{{"loan.detail.PagosPendientes" | translate}}:</td>
@@ -86,7 +86,7 @@
 				</tr>
 				<tr>
 					<td>{{"loan.detail.FechaLimitePago" | translate}}:</td>
-					<td>{{detail.limit_payment_date &lt; today ? 'Inmediato' : detail.limit_payment_date | date: 'dd/MM/yyyy'}}</td>
+					<td>{{detail.limit_payment_date &lt; today ? 'Inmediato' : detail.limit_payment_date | date:'longDate'}}</td>
 				</tr>
 			</tbody>
 		</table>

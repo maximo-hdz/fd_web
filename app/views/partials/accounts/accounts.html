@@ -13,7 +13,10 @@
 			<li ng-repeat="account in accounts.saving" ng-class="selectedAccountId === account._account_id ? 'child active savings' : 'child savings'" style="cursor:pointer;">
 				<a ng-click="selectAccount(account)">
 					<span class="arrow"></span>
-					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<ng-switch on="account.account_name">
+						<span class="text" ng-switch-when="CUENTA BÁSICA PARA EL PÚBLICO EN GENERAL">{{"title.account_name.CuentaBasicaGeneral" | translate}} {{account.account_number}}</span>
+						<span class="text" ng-switch-when="Cuenta de ahorro">{{"title.account_name.CuentaAhorro" | translate}} {{account.account_number}}</span>
+					</ng-switch>
 					<span class="amount">{{account.available_balance | currency}}</span>
 				</a>
 			</li>
@@ -24,7 +27,7 @@
 			<li ng-repeat="account in accounts.investment" ng-class="selectedAccountId === account._account_id ? 'child active investment' : 'child investment'" style="cursor:pointer;">
 				<a ng-click="selectAccount(account)">
 					<span class="arrow"></span>
-					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="text">{{"title.account_name.CuentaInversion" | translate}} {{account.account_number}}</span>
 					<span class="amount">{{account.amount_invested | currency}}</span>
 				</a>
 			</li>
@@ -43,7 +46,7 @@
 			<li ng-repeat="account in accounts.loan" ng-class="selectedAccountId === account._account_id ? 'child active loan' : 'child loan'" style="cursor:pointer;">
 				<a ng-click="selectAccount(account)">
 					<span class="arrow"></span>
-					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="text">{{"title.account_name.PrestamoCredito" | translate}} {{account.account_number}}</span>
 					<span class="amount red">{{account.min_payment | currency}}</span>
 				</a>
 			</li>
@@ -54,7 +57,7 @@
 			<li ng-repeat="account in accounts.credit" ng-class="selectedAccountId === account._account_id ? 'child active credit' : 'child credit'" style="cursor:pointer;">
 				<a ng-click="selectAccount(account)">
 					<span class="arrow"></span>
-					<span class="text">{{account.account_name}} {{account.account_number}}</span>
+					<span class="text">{{"title.account_name.TarjetaCredito" | translate}} {{account.account_number}}</span>
 					<span class="amount red">{{account.min_payment | currency}}</span>
 				</a>
 			</li>
