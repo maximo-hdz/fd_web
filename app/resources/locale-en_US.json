@@ -1,4 +1,33 @@
 {
+  "menssages": {
+    "lorem1": "1 Lorem ipsum dolor sit amet",
+    "lorem2": "2 Lorem ipsum dolor sit amet",
+    "lorem3": "3 Lorem ipsum dolor sit amet",
+    "lorem1": "4 Lorem ipsum dolor sit amet",
+    "lorem2": "5 Lorem ipsum dolor sit amet",
+    "lorem3": "6 Lorem ipsum dolor sit amet",
+    "lorem1": "7 Lorem ipsum dolor sit amet",
+    "lorem2": "8 Lorem ipsum dolor sit amet",
+    "lorem3": "9 Lorem ipsum dolor sit amet",
+    "lorem1": "10 Lorem ipsum dolor sit amet",
+    "lorem1": "11 Lorem ipsum dolor sit amet",
+    "lorem2": "12 Lorem ipsum dolor sit amet",
+    "lorem3": "13 Lorem ipsum dolor sit amet",
+    "lorem1": "14 Lorem ipsum dolor sit amet",
+    "lorem2": "15 Lorem ipsum dolor sit amet",
+    "lorem3": "16 Lorem ipsum dolor sit amet",
+    "lorem1": "17 Lorem ipsum dolor sit amet",
+    "ProblemaDesconocido": "Unknown problem, please try later."
+  },
+  "title": {
+    "crumb.displayName": "Account",
+    "account_name.PrestamoCredito": "Credit Loan",
+    "account_name.TarjetaCredito": "Credit card",
+    "account_name.CuentaBasicaGeneral": "Basic account for general public",
+    "account_name.CuentaAhorro": "Saving account",
+    "account_name.CuentaInversion": "Investment account"
+  },
+
   "login.Regresar al portal": "Back Home",
   "login.Aclaraciones": "Clarifications",
   "login.Aviso de privacidad": "Privacy notice",
@@ -165,6 +194,7 @@
   "biometric-detail.Descargar": "Download",
   "biometric-detail.Imprimir": "Print",
   "biometric-detail.Enviar": "Send",
+  "biometric-detail.Amigo": "friend",
 
   "biometrics.CuentasBiometricasCuenta": "Biometric accounts - Account",
   "biometrics.Detalle": "Detail",

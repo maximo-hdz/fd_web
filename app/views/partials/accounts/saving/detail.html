@@ -1,6 +1,11 @@
-<h1 class="title-account">
-  <span>{{"detail.DetalleCuenta" | translate}}</span> {{selectedAccount.account_name}} {{selectedAccount.account_number}}
-</h1>
+<ng-switch on="selectedAccount.account_name">
+  <h1 class="title-account" ng-switch-when="CUENTA BÁSICA PARA EL PÚBLICO EN GENERAL">
+    <span>{{"detail.DetalleCuenta" | translate}}</span> {{"title.account_name.CuentaBasicaGeneral" | translate}} {{selectedAccount.account_number}}
+  </h1>
+  <h1 class="title-account" ng-switch-when="Cuenta de ahorro">
+    <span>{{"detail.DetalleCuenta" | translate}}</span> {{"title.account_name.CuentaAhorro" | translate}} {{selectedAccount.account_number}}
+  </h1>
+</ng-switch>
 <div class="row detalles">
   <div class="col-md-3 content-logo">
     <div class="logo logo-alcancia"></div>
@@ -30,7 +35,7 @@
         </tr>
         <tr>
           <td>{{"detail.DiaCorte" | translate}}:</td>
-          <td>{{detail.cut_date | date: 'dd/MM/yyyy'}}</td>
+          <td>{{detail.cut_date | date:'longDate'}}</td>
         </tr>
       </tbody>
     </table>
@@ -40,7 +45,7 @@
       <tbody>
         <tr>
           <td>{{"saving.detail.FechaUltimoMovimiento" | translate}}:</td>
-          <td>{{detail.last_mov_date | date: 'dd/MM/yyyy'}}</td>
+          <td>{{detail.last_mov_date | date:'longDate'}}</td>
         </tr>
         <tr>
           <td>{{"saving.detail.DepositosDia" | translate}}:</td>

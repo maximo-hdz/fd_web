@@ -1,11 +1,6 @@
 <div class="signup_content">
 	<div class="signup_header">
 		<div class="container">
-			<div class="row" style="margin-top: -10px;">
-				<div class="col-xs-12">
-					<div ng-translate-language-select></div>
-				</div>
-			</div>
 			<button class="btn btn-warning btn-salir pull-right" ng-click="logout()">{{"register.Salir" | translate}}</button>
 			<div class="logo"></div>
 		</div>
@@ -25,7 +20,7 @@
 							<input type="password" class="form-control" placeholder="{{'register.InContrasenia' | translate}}" ng-model="pass.old" ng-required="true" ng-focus="ant=true" ng-blur="ant=false">
 							<div class="tooltip-input" ng-show="ant">
 								<div class="arrow"></div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<p>{{"menssages.lorem1" | translate}}</p>
 							</div>
 						</div>
 					</div>
@@ -37,7 +32,7 @@
 							<input type="password" class="form-control" placeholder="{{'register.NuevaContrasenia' | translate}}" ng-model="pass.password" ng-required="true" maxlength="12" ng-focus="new=true" ng-blur="new=false">
 							<div class="tooltip-input" ng-show="new">
 								<div class="arrow"></div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<p>{{"menssages.lorem2" | translate}}</p>
 							</div>
 						</div>
 					</div>
@@ -49,7 +44,7 @@
 							<input type="password" class="form-control" placeholder="{{'register.ConfContrasenia' | translate}}" ng-model="pass.confirm" ng-required="true" maxlength="12" ng-focus="con=true" ng-blur="con=false">
 							<div class="tooltip-input" ng-show="con">
 								<div class="arrow"></div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<p>{{"menssages.lorem3" | translate}}</p>
 							</div>
 						</div>
 					</div>
@@ -77,7 +72,8 @@
 					<p class="col-md-6">&copy; 2015 Fundaci&oacute;n Dond&eacute; Banco</p>
 					<p class="col-md-6 text-right">
 						<a href="#/terms">{{"login.Terminos" | translate}}</a> |
-						<a href="#/security">{{"login.Seguridad" | translate}}</a>
+						<a href="#/security">{{"login.Seguridad" | translate}}</a> |
+						<span style="display: inline;" ng-translate-language-select></span>
 					</p>
 				</div>
 			</div>

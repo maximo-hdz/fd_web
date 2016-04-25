@@ -1,4 +1,33 @@
 {
+  "menssages": {
+    "lorem1": "1 Lorem ipsum dolor sit amet",
+    "lorem2": "2 Lorem ipsum dolor sit amet",
+    "lorem3": "3 Lorem ipsum dolor sit amet",
+    "lorem1": "4 Lorem ipsum dolor sit amet",
+    "lorem2": "5 Lorem ipsum dolor sit amet",
+    "lorem3": "6 Lorem ipsum dolor sit amet",
+    "lorem1": "7 Lorem ipsum dolor sit amet",
+    "lorem2": "8 Lorem ipsum dolor sit amet",
+    "lorem3": "9 Lorem ipsum dolor sit amet",
+    "lorem1": "10 Lorem ipsum dolor sit amet",
+    "lorem1": "11 Lorem ipsum dolor sit amet",
+    "lorem2": "12 Lorem ipsum dolor sit amet",
+    "lorem3": "13 Lorem ipsum dolor sit amet",
+    "lorem1": "14 Lorem ipsum dolor sit amet",
+    "lorem2": "15 Lorem ipsum dolor sit amet",
+    "lorem3": "16 Lorem ipsum dolor sit amet",
+    "lorem1": "17 Lorem ipsum dolor sit amet",
+    "ProblemaDesconocido": "Problema desconocido, Intente más tarde."
+  },
+  "title": {
+    "crumb.displayName": "Cuentas",
+    "account_name.PrestamoCredito": "Prestamo de crédito",
+    "account_name.TarjetaCredito": "Tarjeta de crédito",
+    "account_name.CuentaBasicaGeneral": "Cuenta básica para el público en general",
+    "account_name.CuentaAhorro": "Cuenta de ahorro",
+    "account_name.CuentaInversion": "Cuenta de inversión"
+  },
+
   "login.Regresar al portal": "Regresar al portal",
   "login.Aclaraciones": "Aclaraciones",
   "login.Aviso de privacidad": "Aviso de privacidad",
@@ -165,6 +194,7 @@
   "biometric-detail.Descargar": "Descargar",
   "biometric-detail.Imprimir": "Imprimir",
   "biometric-detail.Enviar": "Enviar",
+  "biometric-detail.Amigo": "amigo",
 
   "biometrics.CuentasBiometricasCuenta": "Cuentas biométricas - Cuenta",
   "biometrics.Detalle": "Detalle",

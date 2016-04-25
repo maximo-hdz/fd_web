@@ -37,7 +37,7 @@ angular.module('spaApp')
         message = 'Error interno del servidor: ' + status.data.message;
         break;
       case 503:
-        message = 'Error técnico, por favor intente más tarde';
+        message = 'Error técnico, ntente más tarde';
         break;
       case 504:
         message = 'Tiempo agotado, vuelva a ingresar';
@@ -49,7 +49,7 @@ angular.module('spaApp')
         message = 'Búsqueda no realizada: Fecha Inicial debe ser anterior a la Fecha Final';
         break;
       default:
-        message = 'Problema desconocido, por favor intente más tarde';
+        message = 'Problema desconocido, intente más tarde';
     };
 
     return message;
