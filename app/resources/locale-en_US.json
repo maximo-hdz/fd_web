@@ -1,4 +1,27 @@
 {
+  "001": "Please fill the required fields.",
+  "002": "The new password must be at least 8 characters.",
+  "003": "Passwords do not match.",
+  "004": "Select a picture.",
+  "005": "Select two different questions.",
+
+  "050": "Mobile application download from the <a href='https://itunes.apple.com' target='_blank'>App Store</a>",
+  "051": "Mobile application download from <a href='https://play.google.com/store' target='_blank'>Google Play</a>",
+
+  "default": "Service error, try again later.",
+  "401": "Invalid session or has not been able to generate a session for the user.",
+  "403": "Usuario, contraseña o imagen incorrecta.",
+  "405": "Incorrect user role.",
+  "406": "Incorrect data.",
+  "409": "Conflict of concurrent access, the user is already connected to another session.",
+  "417": "Invalid data.",
+  "423": "The user is locked.",
+  "500": "Internal Server Error.",
+  "503": "Technical error, try again later.",
+  "504": "Time is up, log in again.",
+  "601": "Unrealized search: Start Date and / or End Date can not be after the Current Date.",
+  "603": "Unrealized search: Start Date should be before End Date.",
+
   "menssages": {
     "lorem1": "1 Lorem ipsum dolor sit amet",
     "lorem2": "2 Lorem ipsum dolor sit amet",
@@ -49,7 +72,7 @@
   "register.Registro": "Register",
   "register.Cambiar contrasenia": "For your security, change your password and set the highest security measures.",
   "register.Paso": "Step",
-  "register.Cambio contrasenia": "Change of password",
+  "register.Cambio contrasenia": "Change password",
   "register.InContrasenia": "Enter your password",
   "register.Contrasenia actual": "Current password",
   "register.NuevaContrasenia": "New Password",

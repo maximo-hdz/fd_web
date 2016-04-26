@@ -1,4 +1,27 @@
 {
+  "001": "Favor de llenar los campos requeridos.",
+  "002": "La nueva contraseña debe tener al menos 8 caracteres.",
+  "003": "Las contraseñas no coinciden.",
+  "004": "Selecciona una imagen.",
+  "005": "Selecciona dos preguntas distintas.",
+
+  "050": "Descarga la aplicación Móvil desde la <a href='https://itunes.apple.com' target='_blank'>App Store</a>",
+  "051": "Descarga la aplicación Móvil desde <a href='https://play.google.com/store' target='_blank'>Google Play</a>",
+
+  "default": "Error en el servicio, intente más tarde.",
+  "401": "La sesión no es válida o no se ha podido generar una sesión para el usuario.",
+  "403": "Usuario, contraseña o imagen incorrecta.",
+  "405": "El rol de usuario es incorrecto.",
+  "406": "Datos incorrectos.",
+  "409": "Conflicto de acceso concurrente, el usuario ya está conectado con otra sesión.",
+  "417": "Datos no válidos.",
+  "423": "El usuario está bloqueado.",
+  "500": "Error interno del servidor.",
+  "503": "Error técnico, intente más tarde.",
+  "504": "Tiempo agotado, vuelva a ingresar.",
+  "601": "Búsqueda no realizada: Fecha Inicial y/o Fecha Final NO pueden ser posteriores a la Fecha Actual.",
+  "603": "Búsqueda no realizada: Fecha Inicial debe ser anterior a la Fecha Final.",
+
   "menssages": {
     "lorem1": "1 Lorem ipsum dolor sit amet",
     "lorem2": "2 Lorem ipsum dolor sit amet",

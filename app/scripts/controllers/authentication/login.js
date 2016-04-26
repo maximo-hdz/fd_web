@@ -14,10 +14,10 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 	// Mobile OS evaluation
 	if ( (/iPhone|iPod|iPad/).test(navigator.userAgent) ) {
 		$scope.invite.show = true;
-		$scope.invite.message = 'Descarga la aplicación Móvil desde la <a href="https://itunes.apple.com" target="_blank">App Store</a>';
+		$scope.invite.message = '050';
 	} else if ( (/Android/).test(navigator.userAgent) ) {
 		$scope.invite.show = true;
-		$scope.invite.message = 'Descarga la aplicación Móvil desde <a href="https://play.google.com/store" target="_blank">Google Play</a>';
+		$scope.invite.message = '051';
 	}
 
 	$scope.checkLogin = function(){
