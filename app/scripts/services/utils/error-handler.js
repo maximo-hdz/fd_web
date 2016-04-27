@@ -12,7 +12,12 @@ angular.module('spaApp')
    * @param status
    */
   this.setError = function(status) {
-    error.message = errorMessages.get(status);
+    //error.message = errorMessages.get(status);
+    if(status != 401 || status != 403 || status != 405 || status != 406 || status != 409 || status != 417 ||
+       status != 423 || status != 500 || status != 503 || status != 504 || status != 601 || status != 603)
+      error.message = 'default';
+    else
+      error.message = status;
     error.display = true;
     console.warn(error);
     $scope.$broadcast('displayError', error);

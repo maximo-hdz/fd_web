@@ -22,17 +22,17 @@ angular.module('spaApp')
 		if($scope.selection == 0){
 			if($scope.register1.$invalid){
 				$scope.warning.show = true;
-				$scope.warning.message = 'Favor de llenar los campos requeridos';
+				$scope.warning.message = '001';
 				return;
 			}
 			if($scope.dataRegister.new_password.length <= 7 ){
 				$scope.warning.show = true;
-				$scope.warning.message = 'La nueva contraseña debe tener al menos 8 caracteres';
+				$scope.warning.message = '002';
 				return;
 			}
 			if($scope.dataRegister.new_password !== $scope.dataRegister.confirm_password){
 				$scope.warning.show = true;
-				$scope.warning.message = 'Las contraseñas no coinciden';
+				$scope.warning.message = '003';
 				return;
 			}
 			$scope.warning.show = false;
@@ -43,12 +43,12 @@ angular.module('spaApp')
 		if($scope.selection == 1){
 			if($scope.register2.$invalid){
 				$scope.warning.show = true;
-				$scope.warning.message = 'Favor de llenar los campos requeridos';
+				$scope.warning.message = '001';
 				return;
 			}
 			if(typeof $scope.dataRegister.image_id == 'undefined'){
 				$scope.warning.show = true;
-				$scope.warning.message = 'Selecciona una imagen';
+				$scope.warning.message = '004';
 				return;
 			}
 			$scope.warning.show = false;
@@ -74,7 +74,7 @@ angular.module('spaApp')
 	$scope.signup = function(){
 		if($scope.dataRegister.question2 === $scope.dataRegister.question1 ){
 			$scope.warning.show = true;
-			$scope.warning.message = 'Selecciona dos preguntas distintas';
+			$scope.warning.message = '005';
 			return;
 		}
 		var new_condition_action = "N";

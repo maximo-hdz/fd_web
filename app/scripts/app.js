@@ -30,7 +30,7 @@ angular
       suffix: '.json'// suffix, currently- extension of the translations
     });
     $translateProvider.preferredLanguage('es_MX');// is applied on first load
-    $translateProvider.useLocalStorage();// saves selected language to localStorage
+    //$translateProvider.useLocalStorage();// saves selected language to localStorage
   })
   .config(function (tmhDynamicLocaleProvider) {
     tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');

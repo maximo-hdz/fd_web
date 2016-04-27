@@ -21,10 +21,10 @@
 					<div class="logo"></div>
 					<input type="text" class="form-control input_user" placeholder="{{'login.Ingresa usuario' | translate}}"  ng-model="auth.user_login" ng-required="true" autofocus ng-minlength="5" maxlength="12" onkeypress="return validate(event)">
 					<div>
-						<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
+						<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false" translate>
 							{{danger.message}}
 						</alert>
-						<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+						<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false" translate>
 							{{warning.message}}
 						</alert>
 					</div>
@@ -43,7 +43,7 @@
 			</div>
 		</div>
 
-		<alert type="success" ng-bind-html="invite.message" class="success ng-isolate-scope alert-warning alert-dismissible" ng-show="invite.show" close="invite.show = false"></alert>
+		<alert type="success" ng-bind-html="invite.message" class="success ng-isolate-scope alert-warning alert-dismissible" ng-show="invite.show" close="invite.show = false" translate></alert>
 
 		<div class="row" ng-hide="CheckLogin">
 
@@ -69,10 +69,10 @@
 										</label>
 									</div>
 									<div>
-										<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false">
+										<alert type="danger" class="alert ng-isolate-scope alert-danger alert-dismissible" ng-show="danger.show" close="danger.show = false" translate>
 											{{danger.message}}
 										</alert>
-										<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false">
+										<alert type="warning" class="alert ng-isolate-scope alert-warning alert-dismissible" ng-show="warning.show" close="warning.show = false" translate>
 											{{warning.message}}
 										</alert>
 									</div>

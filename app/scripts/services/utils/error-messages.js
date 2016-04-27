@@ -37,7 +37,7 @@ angular.module('spaApp')
         message = 'Error interno del servidor: ' + status.data.message;
         break;
       case 503:
-        message = 'Error técnico, ntente más tarde';
+        message = 'Error técnico, intente más tarde';
         break;
       case 504:
         message = 'Tiempo agotado, vuelva a ingresar';

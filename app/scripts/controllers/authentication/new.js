@@ -24,13 +24,13 @@ angular.module('spaApp')
 	$scope.change_password = function(){
 		if($scope.pass.confirm != $scope.pass.password ){
 			$scope.warning.show = true;
-			$scope.warning.message = 'Las contraseñas no coinciden';
+			$scope.warning.message = '003';
 			return;
 		}
 
 		if($scope.pass.password.length <= 7){
 			$scope.warning.show = true;
-			$scope.warning.message = 'La nueva contraseña debe tener al menos 8 caracteres';
+			$scope.warning.message = '002';
 			return;
 		}
 
