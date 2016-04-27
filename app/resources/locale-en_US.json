@@ -48,7 +48,8 @@
     "account_name.TarjetaCredito": "Credit card",
     "account_name.CuentaBasicaGeneral": "Basic account for general public",
     "account_name.CuentaAhorro": "Saving account",
-    "account_name.CuentaInversion": "Investment account"
+    "account_name.CuentaInversion": "Investment account",
+    "seleccionar": "Select"
   },
 
   "login.Regresar al portal": "Back Home",
