@@ -12,7 +12,8 @@ angular
     'uiGmapgoogle-maps',
     'angularUtils.directives.uiBreadcrumbs',
     'pascalprecht.translate',// angular-translate
-    'tmh.dynamicLocale'// angular-dynamic-locale
+    'tmh.dynamicLocale',// angular-dynamic-locale
+    'ngSanitize'
   ])
   .constant('LOCALES', {
     'locales': {
@@ -25,11 +26,29 @@ angular
     $translateProvider.useMissingTranslationHandlerLog();
   })
   .config(function ($translateProvider) {
+    //The language property returns the language version of the browser.
+    var languageOfBrowser = navigator.language.substr(0, 2);
+    switch (languageOfBrowser) {
+      case 'es':
+        $translateProvider.preferredLanguage('es_MX');
+        break;
+      case 'en':
+        $translateProvider.preferredLanguage('en_US');
+        break;
+      default:
+        $translateProvider.preferredLanguage('es_MX');
+    }
+  })
+  .config(function ($translateProvider) {
+    // Enable escaping of HTML
+    $translateProvider.useSanitizeValueStrategy('sanitize');
+  })
+  .config(function ($translateProvider) {
     $translateProvider.useStaticFilesLoader({
       prefix: 'resources/locale-',// path to translations files
       suffix: '.json'// suffix, currently- extension of the translations
     });
-    $translateProvider.preferredLanguage('es_MX');// is applied on first load
+    //$translateProvider.preferredLanguage('es_MX');// is applied on first load
     //$translateProvider.useLocalStorage();// saves selected language to localStorage
   })
   .config(function (tmhDynamicLocaleProvider) {
