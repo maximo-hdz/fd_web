@@ -11,7 +11,7 @@ angular.module('administration-route', ['ui.router'])
       url: 'administration',
       views: {
         'adminContent': {
-          templateUrl: 'views/partials/administration/administration.html',
+          templateUrl: 'views/partials/administration/user-activity.html',
           controller: 'AdministrationCtrl'
         }
       },
