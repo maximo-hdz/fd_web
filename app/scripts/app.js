@@ -39,10 +39,12 @@ angular
         $translateProvider.preferredLanguage('es_MX');
     }
   })
+  /*
   .config(function ($translateProvider) {
     // Enable escaping of HTML
     $translateProvider.useSanitizeValueStrategy('sanitize');
   })
+  */
   .config(function ($translateProvider) {
     $translateProvider.useStaticFilesLoader({
       prefix: 'resources/locale-',// path to translations files
