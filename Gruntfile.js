@@ -15,6 +15,10 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  //for tunneling purpose
+  grunt.loadNpmTasks('grunt-connect-proxy');
+
+  grunt.loadNpmTasks('grunt-sonar-runner');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -208,6 +212,35 @@ module.exports = function (grunt) {
         html: '<%= yeoman.app %>/index.html',
         ignorePath: '<%= yeoman.app %>/'
       }
+    },
+
+    sonarRunner: {
+        analysis: {
+            options: {
+                debug: true,
+                separator: '\n',
+                sonar: {
+                    host: {
+                        url: 'http://localhost:9000'
+                    },
+                    projectKey: 'sonar:grunt-sonar-runner:0.1.0',
+                    projectName: 'fd_front',
+                    projectVersion: '0.0.1',
+                    sources: ['app/scripts'].join(','),
+                    language: 'js',
+                    sourceEncoding: 'UTF-8',
+                    javascript: {
+                        lcov: {
+                            reportPath: 'reports/lcov.info'
+                        },
+                        jstestdriver:{
+                            reportsPath: 'reports'
+                        }
+                    },
+                    tests: 'test'
+                }
+            }
+        }
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
