@@ -223,8 +223,8 @@ module.exports = function (grunt) {
                     host: {
                         url: 'http://localhost:9000'
                     },
-                    projectKey: 'sonar:grunt-sonar-runner:0.1.0',
-                    projectName: 'fd_front',
+                    projectKey: 'sonar:grunt-sonar-runner:0.2.0',
+                    projectName: 'FundacionDonde_Front',
                     projectVersion: '0.0.1',
                     sources: ['app/scripts'].join(','),
                     language: 'js',
