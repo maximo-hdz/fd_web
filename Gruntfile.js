@@ -22,39 +22,15 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
-    tomcat_deploy: {
-      host: 'localhost',
-      login: 'tomcat',
-      password: 'tomcat',
-      path: '/mfm',
-      port: 8081,
-      dist: 'dist',
-      deploy: '/manager/text/deploy',
-      undeploy: '/manager/text/undeploy',
-    },
-    war: {
-      target: {
-        options: {
-          war_dist_folder: 'dist',
-          war_verbose: true,
-          war_name: 'mfm',
-          webxml_welcome: 'index.html',
-          webxml_display_name: 'MFM',
-          webxml_mime_mapping: [
-          { extension: 'js', mime_type: 'text/javascript' } ,
-          { extension: 'css', mime_type: 'text/css' } ,
-          { extension: 'html', mime_type: 'text/html' } ,
-          { extension: 'png', mime_type: 'image/png' }
-          ]
-        },
-        files: [
-        {
-          expand: true,
-          src: ['dist/**']
-        }
-        ]
+    shell:{
+      version:{
+        command:["laversion=$(git rev-parse --short HEAD)",
+                  "sed -i 's/HASHVERSION/'$laversion'/' ./app/scripts/services/api.js",
+                  "unset laversion"
+                ].join(';')
       }
     },
+
     // Project settings
     yeoman: {
       // configurable paths
@@ -100,7 +76,7 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       /* proxies: [
@@ -143,7 +119,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9001,
+          port: 9002,
           base: [
             '.tmp',
             'test',
@@ -311,7 +287,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          src: '{,*/}*.{png,jpg,jpeg,gif,svg}',
           dest: '<%= yeoman.dist %>/images'
         }]
       }
@@ -337,7 +313,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['views/**/*.html'],
+          src: ['*.html', 'views/**/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -460,9 +436,6 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-war');
-  //grunt.loadNpmTasks('grunt-tomcat-deploy');
-
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -492,6 +465,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'shell',
     'clean:dist',
     'bower-install',
     'useminPrepare',
@@ -509,8 +483,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
+    'shell',
     'build'
   ]);
 };
