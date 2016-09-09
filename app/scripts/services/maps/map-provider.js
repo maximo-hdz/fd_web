@@ -1,11 +1,9 @@
-'use strict';
-
 angular.module('spaApp').factory('mapProvider', ['$rootScope', 'mapService', '$q', function ($rootScope, mapService, $q) {
 
 	return {
 		getBranches: function(params){
 			var deferred = $q.defer();
-			mapService.getBranches(params).success(function(data, status, headers) {
+			mapService.getBranches(params).success(function(data) {
 				var branches = [];
 				data.geolocations.forEach(function(branch){
 					branches.push({'latitude':branch.coordinates.lat,'longitude':branch.coordinates.lng,'title':branch.name,'id':branch.id})

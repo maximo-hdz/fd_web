@@ -1,5 +1,3 @@
-'use strict';
-
 angular
   .module('spaApp', [
     'ui.router',
@@ -135,19 +133,6 @@ angular
 
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
-    /*$rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
-
-        if(!$rootScope.session_token && toState.name != 'login'){
-          $state.go('login');
-        }
-        else{
-          if(fromState.name != 'login'){
-            $rootScope.previousState_name = fromState.name;
-            $rootScope.previousState_params = fromParams;
-          }
-        }
-    });*/
-    //back button function called from back button's ng-click="back()"
     $rootScope.back = function() {
       $state.go($rootScope.previousState_name,$rootScope.previousState_params);
     };

@@ -1,7 +1,5 @@
-'use strict';
-
 angular.module('spaApp').factory('httpInterceptor', ['$q', '$location', '$rootScope', 'timerService',
-  function httpInterceptor ($q, $location, $rootScope, timerService) {
+  function($q, $location, $rootScope, timerService) {
 
     return {
       request: function( request) {

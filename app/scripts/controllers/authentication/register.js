@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('spaApp')
 
 .controller('RegisterCtrl',['$scope', '$rootScope', 'authorizeProviderFD', 'dataAuth', '$location', '$window', 'api', 'errorHandler',
@@ -15,11 +13,11 @@ angular.module('spaApp')
 	$scope.danger.show = false;
 
 	$scope.saltar = function(step){
-		if(step == $scope.selection){
+		if(step === $scope.selection){
 			return;
 		}
 
-		if($scope.selection == 0){
+		if($scope.selection === 0){
 			if($scope.register1.$invalid){
 				$scope.warning.show = true;
 				$scope.warning.message = '001';
@@ -40,13 +38,13 @@ angular.module('spaApp')
 			return;
 		}
 
-		if($scope.selection == 1){
+		if($scope.selection === 1){
 			if($scope.register2.$invalid){
 				$scope.warning.show = true;
 				$scope.warning.message = '001';
 				return;
 			}
-			if(typeof $scope.dataRegister.image_id == 'undefined'){
+			if(typeof $scope.dataRegister.image_id === 'undefined'){
 				$scope.warning.show = true;
 				$scope.warning.message = '004';
 				return;
@@ -56,7 +54,7 @@ angular.module('spaApp')
 			return;
 		}
 
-		if($scope.selection == 2){
+		if($scope.selection === 2){
 			$scope.selection = step;
 			return;
 		}
@@ -78,10 +76,8 @@ angular.module('spaApp')
 			return;
 		}
 		var new_condition_action = "N";
-		if(typeof $scope.dataRegister['new_condition_action'] !== 'undefined') {
-			if($scope.dataRegister['new_condition_action']){
-				new_condition_action = "Y";
-			}
+		if(typeof $scope.dataRegister['new_condition_action'] !== 'undefined' && $scope.dataRegister['new_condition_action']) {
+			new_condition_action = "Y";
 		}
 		$scope.sending = true;
 		authorizeProviderFD.register($scope.data.response.user_login, $scope.dataRegister.password, $scope.dataRegister.new_password, dataAuth.response.with_token, new_condition_action, $scope.dataRegister.image_id, $scope.dataRegister.question1.id, $scope.dataRegister.response1, $scope.dataRegister.question2.id, $scope.dataRegister.response2, $scope.dataRegister.saludo).then(
@@ -108,7 +104,7 @@ angular.module('spaApp')
 		$scope.danger.message = error.message;
 	});
 
-	$scope.$on('clearError', function(event) {
+	$scope.$on('clearError', function() {
 		$scope.danger.show = false;
 		$scope.danger.message = '';
 	});

@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('spaApp').directive('breadcrumbs', ['breadcrumbService', function(breadcrumbService) {
   return {
     restrict: 'E',
@@ -10,8 +8,6 @@ angular.module('spaApp').directive('breadcrumbs', ['breadcrumbService', function
 
       $scope.$on('$stateChangeSuccess', function(){
         // Add the current state and params to the scope
-        // $scope.current = $state.$current;
-        // $scope.params = $stateParams;
         breadcrumbService.generate();
         $scope.breadcrumbList = breadcrumbService.list();
       });

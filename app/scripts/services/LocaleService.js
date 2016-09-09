@@ -1,5 +1,5 @@
 angular.module('spaApp') .service('LocaleService', function ($translate, LOCALES, $rootScope, tmhDynamicLocale) {
-  'use strict';
+
   // PREPARING LOCALES INFO
   var localesObj = LOCALES.locales;
 

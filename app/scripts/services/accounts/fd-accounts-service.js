@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Accounts service.
  */
@@ -15,9 +13,8 @@ angular.module('spaApp')
 	};
 
 	this.getTransactions = function(accountId, params) {
-		var options = '';
+		var options;
 		var optionsParams = [];
-		var search = '';
 		var searchParams = [];
 		var startDate = validateDate(params.date_start);
 		var endDate = validateDate(params.date_end);
@@ -36,14 +33,11 @@ angular.module('spaApp')
 
 	function validateDate(date) {
 		var newDate = null;
-		try
-		{
+		try{
 			var parsedDate = $.datepicker.parseDate('dd/mm/yy', date);
 			newDate = $.datepicker.formatDate( "yy-mm-dd", parsedDate);
-		}
-		catch (e)
-		{
-
+		}catch (e){
+			return 'Error';
 		}
 		return newDate;
 	};

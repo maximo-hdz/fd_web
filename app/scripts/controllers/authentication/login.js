@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('spaApp')
 .controller('LoginCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'api', '$http', 'dataAuth', 'timerService', 'errorHandler',
 function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAuth, timerService, errorHandler) {
@@ -41,7 +39,7 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 					$location.path( '/new' );
 				}
 			},
-			function(error, status) {
+			function(error) {
 				$scope.logining = false;
 				errorHandler.setError(error);
 			}
@@ -50,10 +48,8 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 
 	$scope.login = function(){
 		var new_condition_action = "N";
-		if(typeof $scope.auth['new_condition_action'] !== 'undefined') {
-			if($scope.auth['new_condition_action']){
-				new_condition_action = "Y";
-			}
+		if(typeof $scope.auth['new_condition_action'] !== 'undefined' && $scope.auth['new_condition_action']) {
+			new_condition_action = "Y";
 		}
 		$scope.logining = true;
 		$http({
@@ -99,7 +95,7 @@ function($scope, $rootScope, $location, authorizeProviderFD, api, $http, dataAut
 		$scope.danger.message = error.message;
 	});
 
-	$scope.$on('clearError', function(event) {
+	$scope.$on('clearError', function() {
 		$scope.danger.show = false;
 		$scope.danger.message = '';
 	});

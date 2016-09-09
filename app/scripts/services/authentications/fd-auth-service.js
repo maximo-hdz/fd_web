@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('spaApp')
 	.service('AuthorizeServiceFD',['$http','$rootScope', function($http, $rootScope) {
 
