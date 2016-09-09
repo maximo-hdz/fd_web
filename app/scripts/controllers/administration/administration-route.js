@@ -1,4 +1,3 @@
-'use strict';
 /**
  * Router configuration for the administration section
  */

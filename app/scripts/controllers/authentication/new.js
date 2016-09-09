@@ -1,8 +1,6 @@
-'use strict';
-
 angular.module('spaApp')
-.controller('NewCtrl',['$scope', '$rootScope', '$location', 'dataAuth', '$window', 'api', 'errorHandler', '$http',
-	function($scope, $rootScope, $location, dataAuth, $window, api, errorHandler, $http) {
+.controller('NewCtrl',['$scope', '$rootScope', '$location', 'dataAuth', '$window', 'errorHandler', '$http',
+	function($scope, $rootScope, $location, dataAuth, $window, errorHandler, $http) {
 
 	$scope.data = dataAuth;
 	$scope.pass = {};
@@ -11,10 +9,8 @@ angular.module('spaApp')
 	$scope.danger = {};
 
 	var new_condition_action = "N";
-	if(typeof $scope.data.response['new_condition_action'] !== 'undefined') {
-		if($scope.data.response['new_condition_action']){
-			new_condition_action = "Y";
-		}
+	if(typeof $scope.data.response['new_condition_action'] !== 'undefined' && $scope.data.response['new_condition_action']) {
+		new_condition_action = "Y";
 	}
 
 	$scope.logout = function(){
@@ -22,7 +18,7 @@ angular.module('spaApp')
 	}
 
 	$scope.change_password = function(){
-		if($scope.pass.confirm != $scope.pass.password ){
+		if($scope.pass.confirm !== $scope.pass.password ){
 			$scope.warning.show = true;
 			$scope.warning.message = '003';
 			return;
@@ -50,7 +46,7 @@ angular.module('spaApp')
 				"new_password" : $scope.pass.password,
 				"confirmation_password" : $scope.pass.confirm
 			})
-		}).success(function(result){
+		}).success(function(){
 				$window.alert('Contraseñas cambiada exitosamente');
 				$location.path( '/login' );
 		})
@@ -66,7 +62,7 @@ angular.module('spaApp')
 		$scope.danger.message = error.message;
 	});
 
-	$scope.$on('clearError', function(event) {
+	$scope.$on('clearError', function() {
 		$scope.danger.show = false;
 		$scope.danger.message = '';
 	});

@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('spaApp')
 .factory('accountsProviderFD',  ['accountsServiceFD', '$q', function (accountsServiceFD, $q) {
 
@@ -8,7 +6,7 @@ angular.module('spaApp')
     getAccounts: function () {
       var deferred = $q.defer();
       
-      accountsServiceFD.getAccounts().success(function(data, status, headers) {
+      accountsServiceFD.getAccounts().success(function(data) {
         deferred.resolve( data.accounts );
       }).error(function(data, status) {
         var result = {'response' : data, 'status': status};
@@ -21,7 +19,7 @@ angular.module('spaApp')
     getAccountDetail: function(accountId) {
       var deferred = $q.defer();
 
-      accountsServiceFD.getAccountsDetail(accountId).success(function(data, status, headers) {
+      accountsServiceFD.getAccountsDetail(accountId).success(function(data) {
         deferred.resolve(data);
       }).error(function(data, status) {
         var result = {'response' : data, 'status': status};
@@ -34,7 +32,7 @@ angular.module('spaApp')
     getTransactions: function(accountId, params) {
       var deferred = $q.defer();
 
-      accountsServiceFD.getTransactions(accountId, params).success(function(data, status, headers) {
+      accountsServiceFD.getTransactions(accountId, params).success(function(data) {
         deferred.resolve( data.transactions );
       }).error(function(data, status) {
         var result = {'response' : data, 'status': status};

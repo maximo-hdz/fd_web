@@ -1,6 +1,4 @@
 angular.module('spaApp') .directive('ngTranslateLanguageSelect', function (LocaleService) {
-  'use strict';
-
   return {
     restrict: 'A',
     replace: true,

@@ -1,15 +1,5 @@
-'use strict';
-
 angular.module('spaApp').factory('breadcrumbService', function($state, $stateParams) {
   var list = [], title;
-
-  function getProperty(object, path) {
-    function index(obj, i) {
-      return obj[i];
-    }
-
-    return path.split('.').reduce(index, object);
-  }
 
   function addBreadcrumb(title, state) {
     list.push({
@@ -23,18 +13,14 @@ angular.module('spaApp').factory('breadcrumbService', function($state, $statePar
       generateBreadcrumbs(state.parent, params);
     }
 
-    if(angular.isDefined(state.breadcrumb)) {
-      if(angular.isDefined(state.breadcrumb.title)) {
-        // addBreadcrumb($interpolate(state.breadcrumb.title)(state.locals.globals), state.name);
+    if(angular.isDefined(state.breadcrumb) && angular.isDefined(state.breadcrumb.title)) {  
+      var displayName='';
+      // Loop through ownParams and replace any expressions with the matching value
+      angular.forEach(Object.keys(params), function(param){
+        displayName = state.breadcrumb.title.replace('{:' + param + '}', params[param]);
+      });
 
-        var displayName='';
-        // Loop through ownParams and replace any expressions with the matching value
-        angular.forEach(Object.keys(params), function(param, index){
-          displayName = state.breadcrumb.title.replace('{:' + param + '}', params[param]);
-        });
-
-        addBreadcrumb(displayName, state.name);
-      }
+      addBreadcrumb(displayName, state.name);
     }
   }
 

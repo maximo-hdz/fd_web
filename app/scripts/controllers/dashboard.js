@@ -1,4 +1,3 @@
-'use strict';
 /**
  *
  */
@@ -84,7 +83,7 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
 	 * eventListener to clear errors
 	 * @param event
 	 */
-	$scope.$on('clearError', function(event) {
+	$scope.$on('clearError', function() {
 		$scope.danger.show = false;
 		$scope.danger.message = '';
 	});

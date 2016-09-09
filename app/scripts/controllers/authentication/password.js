@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('spaApp')
 .controller('PasswordCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', '$window', 'errorHandler',
 	function($scope, $rootScope, $location, authorizeProviderFD, $window, errorHandler) {
@@ -32,7 +30,7 @@ angular.module('spaApp')
 		}
 		$scope.sending = true;
 		authorizeProviderFD.forgetPasswordConfirmation($scope.pass.user_login, $scope.pass.first_question_id.id, $scope.pass.first_response, $scope.pass.second_question_id.id, $scope.pass.second_response, 				$scope.pass.birth_date.split('/')[2]+'-'+$scope.pass.birth_date.split('/')[0]+'-'+$scope.pass.birth_date.split('/')[1]).then(
-			function(data) {
+			function() {
 				$scope.sending = false;
 				$scope.selection = 2;
 			},
@@ -52,7 +50,7 @@ angular.module('spaApp')
 		$scope.danger.message = error.message;
 	});
 
-	$scope.$on('clearError', function(event) {
+	$scope.$on('clearError', function() {
 		$scope.danger.show = false;
 		$scope.danger.message = '';
 	});

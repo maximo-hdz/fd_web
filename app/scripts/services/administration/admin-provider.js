@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('spaApp').factory('adminProvider',['adminService', '$q', function(adminService, $q){
 
   return {
@@ -9,7 +7,7 @@ angular.module('spaApp').factory('adminProvider',['adminService', '$q', function
 
       adminService.getUserActivity(page, size).success(function(data){
         deferred.resolve(data);
-      }).error(function(data, status) {
+      }).error(function() {
         return deferred.reject('Error getting user activity');
       });
 

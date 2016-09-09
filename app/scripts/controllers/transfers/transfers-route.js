@@ -1,4 +1,3 @@
-'use strict';
 /**
  * Router configuration for the transfers section
  */

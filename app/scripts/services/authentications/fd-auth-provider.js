@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('spaApp')
   .factory('authorizeProviderFD',  ['AuthorizeServiceFD', '$q', function (AuthorizeServiceFD, $q) {
 
@@ -7,7 +5,7 @@ angular.module('spaApp')
 
       checkLogin: function(user_login){
         var deferred = $q.defer();
-        AuthorizeServiceFD.checkLogin(user_login).success(function(data, status, headers){
+        AuthorizeServiceFD.checkLogin(user_login).success(function(data){
           deferred.resolve(data);
         }).error(function(data, status){
           var result = {"data" : data, "status" : status};
@@ -30,7 +28,7 @@ angular.module('spaApp')
 
       forgetPassword: function(user_login){
         var deferred = $q.defer();
-        AuthorizeServiceFD.forgetPassword(user_login).success(function(data, status, headers){
+        AuthorizeServiceFD.forgetPassword(user_login).success(function(data){
           deferred.resolve(data);
         }).error(function(data, status){
           var result = {"data" : data, "status" : status};
@@ -41,7 +39,7 @@ angular.module('spaApp')
 
       forgetPasswordConfirmation: function(user_login, first_question_id, first_response, second_question_id, second_response, birth_date){
         var deferred = $q.defer();
-        AuthorizeServiceFD.forgetPasswordConfirmation(user_login, first_question_id, first_response, second_question_id, second_response, birth_date).success(function(data, status, headers){
+        AuthorizeServiceFD.forgetPasswordConfirmation(user_login, first_question_id, first_response, second_question_id, second_response, birth_date).success(function(data){
           deferred.resolve(data);
         }).error(function(data, status){
           var result = {"data" : data, "status" : status};
@@ -52,7 +50,7 @@ angular.module('spaApp')
 
       logout: function(){
         var deferred = $q.defer();
-        AuthorizeServiceFD.logout().success(function(data, status, headers){
+        AuthorizeServiceFD.logout().success(function(data){
           deferred.resolve(data);
         }).error(function(data, status){
           var result = {"data" : data, "status" : status};

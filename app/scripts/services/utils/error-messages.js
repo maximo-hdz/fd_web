@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('spaApp')
 .service('errorMessages', function() {
 
@@ -9,8 +7,7 @@ angular.module('spaApp')
    * @return message
    */
   this.get = function( status ) {
-    var message = 'Error en el servicio, intente más tarde';
-
+    var message;
     switch (status.status) {
       case 401:
         message = 'La sesión no es válida o no se ha podido genera una sesión para el usuario';

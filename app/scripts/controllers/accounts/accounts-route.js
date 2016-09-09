@@ -1,4 +1,3 @@
-'use strict';
 /**
  * StateProvider for the accounts dashboard
  */
@@ -75,8 +74,8 @@ angular.module('accounts-route', ['ui.router'])
           controller: 'CreditDetailCtrl'
         }
       },
-       displayName: 'Creditos',
-        path: 'Cuenta'
+      displayName: 'Creditos',
+      path: 'Cuenta'
     })
 
 }]);

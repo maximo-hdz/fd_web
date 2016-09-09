@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * The accounts controller. Gets accounts passing auth parameters
  */
@@ -22,6 +20,29 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 	$scope.hideNotifications = false;
 	// Clear error
 	errorHandler.reset();
+
+	/**
+	 * Evaluate payment_date or cut_date to determine if the the account should be displayed in notifications
+	 * @param account
+	 */
+	var evaluateDate = function(account) {
+		switch (account.account_type) {
+			case 'LOAN_ACCOUNT':
+			case 'CREDIT_ACCOUNT':
+				if ( account.payment_date < $scope.today ) {
+					$scope.notifications.push( account );
+				}
+				break;
+			case 'SAVINGS_ACCOUNT':
+			case 'INVESTMENT_ACCOUNT':
+				if ( account.cut_date < $scope.today ) {
+					$scope.notifications.push( account );
+				}
+				break;
+			default:
+				break;
+		}
+	};
 
 	/**
 	 * Receive the accounts from the middleware
@@ -62,7 +83,6 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 						$scope.total.credit += +data[i].min_payment;
 						break;
 					default:
-						//console.log("account_type "+ data[i].account_type +" not supported");
 						break;
 				}
 			}
@@ -75,28 +95,20 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 	);
 
 	/**
-	 * Evaluate payment_date or cut_date to determine if the the account should be displayed in notifications
-	 * @param account
-	 */
-	var evaluateDate = function(account) {
-		//console.error(account);
-		switch (account.account_type) {
-			case 'LOAN_ACCOUNT':
-			case 'CREDIT_ACCOUNT':
-				if ( account.payment_date < $scope.today ) {
-					$scope.notifications.push( account );
-				}
-				break;
-			case 'SAVINGS_ACCOUNT':
-			case 'INVESTMENT_ACCOUNT':
-				if ( account.cut_date < $scope.today ) {
-					$scope.notifications.push( account );
-				}
-				break;
-			default:
-				//console.log("account_type "+ data[i].account_type +" not supported");
-				break;
-		}
+	* Request the account detail from the middleware
+	*/
+	var getAccountDetail = function() {
+		errorHandler.reset();
+		accountsProviderFD.getAccountDetail( $scope.selectedAccountId ).then(
+			function(detail) {
+				console.info( detail );
+				$scope.detail = detail;
+			},
+			function(error) {
+					 console.error( error );
+					 errorHandler.setError( error.status );
+			}
+		);
 	};
 
 	/**
@@ -137,23 +149,6 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 			default:
 					break;
 		}
-	};
-
-	/**
-	* Request the account detail from the middleware
-	*/
-	var getAccountDetail = function() {
-		errorHandler.reset();
-		accountsProviderFD.getAccountDetail( $scope.selectedAccountId ).then(
-			function(detail) {
-				console.info( detail );
-				$scope.detail = detail;
-			},
-			function(error) {
-					 console.error( error );
-					 errorHandler.setError( error.status );
-			}
-		);
 	};
 
 	/**

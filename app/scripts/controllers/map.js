@@ -1,6 +1,5 @@
-'use strict';
-
-angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProvider', 'uiGmapGoogleMapApi', '$location', function ($scope,  $rootScope, mapProvider, uiGmapGoogleMapApi, $location) {
+angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProvider',
+	function ($scope,  $rootScope, mapProvider) {
 
 	$scope.conSesion = $rootScope.session_token === null || $rootScope.session_token === undefined || $rootScope.session_token === '' ? false : true;
 	$scope.details = {};
@@ -44,24 +43,24 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 			if($scope.estado !== undefined){
 				$scope.showBranches = true;
 				mapProvider.getBranches({'lat':$scope.estado.lat,'lng':$scope.estado.lon}).then(
-					function(data) {
+					function() {
 						$scope.map.branches = $rootScope.branches;
 					},
 					function(errorObject) {
 						var status = errorObject.status;
-						var msg = status;
+						return status;
 					}
 				);
 			}
 		}else{
 			$scope.showBranches = true;
 			mapProvider.getBranches({'lat':$scope.details.geometry.location.k,'lng':$scope.details.geometry.location.D}).then(
-				function(data) {
+				function() {
 					$scope.map.branches = $rootScope.branches;
 				},
 				function(errorObject) {
 					var status = errorObject.status;
-					var msg = status;
+					return status;
 				}
 			);
 		}
@@ -72,13 +71,13 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function(position){
 				mapProvider.getBranches({'lat':position.coords.latitude,'lng':position.coords.longitude}).then(
-					function(data) {
+					function() {
 						$scope.map.branches = $rootScope.branches;
 						$scope.showBranches = true;
 					},
 					function(errorObject) {
 						var status = errorObject.status;
-						var msg = status;
+						return status;
 					}
 				);
 			}, function() {
@@ -100,7 +99,6 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 		options: { draggable: false }
 	};
 	$scope.map.branches = {};
-	var geocoder = new google.maps.Geocoder();
 
 	//Calculates the actual user location by geolocalization
 	if(navigator.geolocation) {
@@ -126,21 +124,23 @@ angular.module('spaApp').controller('MapCtrl', ['$scope', '$rootScope', 'mapProv
 	}
 
 	function handleNoGeolocation(errorFlag) {
+		var content;
 		if (errorFlag) {
-			var content = 'Error: The Geolocation service failed.';
+			content = 'Error: The Geolocation service failed.';
 		} else {
-			var content = 'Error: Your browser does not support geolocation.';
+			content = 'Error: Your browser does not support geolocation.';
 		}
+		return content;
 	}
 
 	//this function fetch all the bank's branches at the beginning
 	mapProvider.getBranches({}).then(
-		function(data) {
+		function() {
 			$scope.map.branches = $rootScope.branches;
 		},
 		function(errorObject) {
 			var status = errorObject.status;
-			var msg = status;
+			return status;
 		}
 	);
 
