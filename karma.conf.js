@@ -28,7 +28,7 @@ module.exports = function(config) {
       'app/bower_components/angular-google-maps/dist/angular-google-maps.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
-      'test/spec/controllers/accounts/test-account.js'
+      'test/spec/**/*.js'
       ],
 
     // list of files / patterns to exclude

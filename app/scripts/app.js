@@ -11,7 +11,8 @@ angular
     'angularUtils.directives.uiBreadcrumbs',
     'pascalprecht.translate',// angular-translate
     'tmh.dynamicLocale',// angular-dynamic-locale
-    'ngSanitize'
+    'ngSanitize',
+    'ngDialog'
   ])
   .constant('LOCALES', {
     'locales': {

@@ -1,7 +1,7 @@
 angular.module('spaApp')
 
-.controller('RegisterCtrl',['$scope', '$rootScope', 'authorizeProviderFD', 'dataAuth', '$location', '$window', 'api', 'errorHandler',
-	function($scope, $rootScope, authorizeProviderFD, dataAuth, $location, $window, api, errorHandler) {
+.controller('RegisterCtrl',['$scope', '$rootScope', 'authorizeProviderFD', 'dataAuth', '$location', 'api', 'errorHandler', 'ngDialog',
+	function($scope, $rootScope, authorizeProviderFD, dataAuth, $location, api, errorHandler, ngDialog) {
 
 	$scope.selection = 0;
 	$scope.data = dataAuth;
@@ -80,9 +80,11 @@ angular.module('spaApp')
 			new_condition_action = "Y";
 		}
 		$scope.sending = true;
+		//TODO Meterlo a un objeto
 		authorizeProviderFD.register($scope.data.response.user_login, $scope.dataRegister.password, $scope.dataRegister.new_password, dataAuth.response.with_token, new_condition_action, $scope.dataRegister.image_id, $scope.dataRegister.question1.id, $scope.dataRegister.response1, $scope.dataRegister.question2.id, $scope.dataRegister.response2, $scope.dataRegister.saludo).then(
 			function(result) {
-				$window.alert('Registro Exitoso');
+				var urlDoc = "<div class='contenido'><h4>AVISO</h4><p>Registro Exitoso</p></div><div class='contenido gris'><button ng-click='closeThisDialog();' class='w47'>Aceptar</button></div>";
+				ngDialog.open({ template: urlDoc, showClose: false, plain: true, closeByNavigation: true });
 				$scope.CheckLogin = true;
 				$rootScope.session_token = result.headers('X-AUTH-TOKEN');
 				var data = result.data;
