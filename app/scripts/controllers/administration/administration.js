@@ -13,7 +13,7 @@ angular.module('spaApp').controller('AdministrationCtrl', ['$scope', 'adminProvi
       return;
     }
     $scope.page = option === 'ant' ? $scope.page-1 : $scope.page+1 ;
-    adminProvider.getUserActivity($scope.page, $scope.size).then(
+    adminProvider.getUserActivity({page: $scope.page, size: $scope.size}).then(
       function(data) {
         $scope.userActivities = data.user_activities;
         $scope.totalPages = Math.ceil(data.total_items / $scope.size );

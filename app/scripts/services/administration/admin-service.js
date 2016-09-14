@@ -1,7 +1,7 @@
 angular.module('spaApp').service('adminService', ['$http','$rootScope', function($http, $rootScope){
 
-  this.getUserActivity = function(page, size){
-    return $http.get($rootScope.restAPIBaseUrl + '/useractivity?page='+page+'&size='+size);
+  this.getUserActivity = function(params){
+    return $http.get($rootScope.restAPIBaseUrl + '/useractivity?page='+params.page+'&size='+params.size);
   };
 
 }]);

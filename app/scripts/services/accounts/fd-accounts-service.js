@@ -4,11 +4,11 @@
 angular.module('spaApp')
 .service('accountsServiceFD',['$http', '$rootScope', function ($http, $rootScope) {
 
-	this.getAccounts = function () {
+	this.getAccounts = function() {
 		return $http.get( $rootScope.restAPIBaseUrl+'/accounts' );
 	};
 
-	this.getAccountsDetail = function (accountId) {
+	this.getAccountsDetail = function(accountId) {
 		return $http.get($rootScope.restAPIBaseUrl+'/accounts/'+accountId);
 	};
 
@@ -18,16 +18,12 @@ angular.module('spaApp')
 		var searchParams = [];
 		var startDate = validateDate(params.date_start);
 		var endDate = validateDate(params.date_end);
-
 		if(startDate && endDate) {
 			startDate ? searchParams.push('date_start=' + startDate) : '';
 			endDate ? searchParams.push('date_end=' + endDate) : '';
 		}
-
 		searchParams.length > 0 ? optionsParams.push('search=' + encodeURIComponent(searchParams.join('&'))) : '';
-
 		options = optionsParams.length > 0 ? '?' + optionsParams.join('&') : '';
-
 		return $http.get($rootScope.restAPIBaseUrl+'/accounts/'+accountId+'/transactions' + options);
 	};
 
