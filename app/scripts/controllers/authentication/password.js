@@ -1,6 +1,6 @@
 angular.module('spaApp')
-.controller('PasswordCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', '$window', 'errorHandler',
-	function($scope, $rootScope, $location, authorizeProviderFD, $window, errorHandler) {
+.controller('PasswordCtrl',['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'ngDialog', 'errorHandler',
+	function($scope, $rootScope, $location, authorizeProviderFD, ngDialog, errorHandler) {
 
 	$scope.pass = {};
 	$scope.selection = 0;
@@ -25,7 +25,8 @@ angular.module('spaApp')
 
 	$scope.forgetPasswordConfirmation = function(){
 		if($scope.pass.second_question_id === $scope.pass.first_question_id ){
-			$window.alert('Selecciona dos preguntas distintas');
+			var urlDoc = "<div class='contenido'><h4>AVISO</h4><p>Selecciona dos preguntas distintas</p></div><div class='contenido gris'><button ng-click='closeThisDialog();' class='w47'>Aceptar</button></div>";
+			ngDialog.open({ template: urlDoc, showClose: false, plain: true, closeByNavigation: true });
 			return;
 		}
 		$scope.sending = true;
