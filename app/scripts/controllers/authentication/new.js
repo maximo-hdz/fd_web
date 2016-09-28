@@ -1,6 +1,6 @@
 angular.module('spaApp')
-.controller('NewCtrl',['$scope', '$rootScope', '$location', 'dataAuth', '$window', 'errorHandler', '$http',
-	function($scope, $rootScope, $location, dataAuth, $window, errorHandler, $http) {
+.controller('NewCtrl',['$scope', '$rootScope', '$location', 'dataAuth', 'ngDialog', 'errorHandler', '$http',
+	function($scope, $rootScope, $location, dataAuth, ngDialog, errorHandler, $http) {
 
 	$scope.data = dataAuth;
 	$scope.pass = {};
@@ -47,8 +47,9 @@ angular.module('spaApp')
 				"confirmation_password" : $scope.pass.confirm
 			})
 		}).success(function(){
-				$window.alert('Contraseñas cambiada exitosamente');
-				$location.path( '/login' );
+			var urlDoc = "<div class='contenido'><h4>AVISO</h4><p>Contraseñas cambiadas exitosamente</p></div><div class='contenido gris'><button ng-click='closeThisDialog();' class='w47'>Aceptar</button></div>";
+			ngDialog.open({ template: urlDoc, showClose: false, plain: true, closeByNavigation: true });
+			$location.path( '/login' );
 		})
 		.error(function(error){
 				errorHandler.setError(error.status);

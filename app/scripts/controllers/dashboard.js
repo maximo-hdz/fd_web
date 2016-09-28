@@ -2,8 +2,8 @@
  *
  */
 angular.module('spaApp')
-.controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'accountsProviderFD', '$window', 'timerService',
-function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD, $window, timerService) {
+.controller('DashboardCtrl', ['$scope', '$rootScope', '$location', 'authorizeProviderFD', 'accountsProviderFD', 'timerService',
+function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD, timerService) {
 
 	// If there is no session, take the user to the login view
 	if ( !$rootScope.session_token ) {

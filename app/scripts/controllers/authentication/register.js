@@ -80,19 +80,32 @@ angular.module('spaApp')
 			new_condition_action = "Y";
 		}
 		$scope.sending = true;
-		//TODO Meterlo a un objeto
-		authorizeProviderFD.register($scope.data.response.user_login, $scope.dataRegister.password, $scope.dataRegister.new_password, dataAuth.response.with_token, new_condition_action, $scope.dataRegister.image_id, $scope.dataRegister.question1.id, $scope.dataRegister.response1, $scope.dataRegister.question2.id, $scope.dataRegister.response2, $scope.dataRegister.saludo).then(
+		var params = {};
+		params.user_login = $scope.data.response.user_login;
+		params.current_password = $scope.dataRegister.password;
+		params.new_password = $scope.dataRegister.new_password;
+		params.new_condition_action = new_condition_action;
+		params.with_token = dataAuth.response.with_token;
+		params.image = $scope.dataRegister.image_id;
+		params.question1 = $scope.dataRegister.question1.id;
+		params.response1 = $scope.dataRegister.response1;
+		params.question2 = $scope.dataRegister.question2.id;
+		params.response2 = $scope.dataRegister.response2;
+		params.anti_phishing_statement = $scope.dataRegister.saludo;
+
+		authorizeProviderFD.register(params).then(
 			function(result) {
 				var urlDoc = "<div class='contenido'><h4>AVISO</h4><p>Registro Exitoso</p></div><div class='contenido gris'><button ng-click='closeThisDialog();' class='w47'>Aceptar</button></div>";
-				ngDialog.open({ template: urlDoc, showClose: false, plain: true, closeByNavigation: true });
-				$scope.CheckLogin = true;
-				$rootScope.session_token = result.headers('X-AUTH-TOKEN');
-				var data = result.data;
-				$rootScope.last_access_date = data.last_access_date
-				$rootScope.last_access_media = data.last_client_application_id;
-				$rootScope.client_name = data.client_name;
-				api.init();
-				$location.path( '/accounts' );
+				ngDialog.openConfirm({ template: urlDoc, showClose: false, plain: true, closeByNavigation: true }).then(function(){}, function(){
+					$scope.CheckLogin = true;
+					$rootScope.session_token = result.headers('X-AUTH-TOKEN');
+					var data = result.data;
+					$rootScope.last_access_date = data.last_access_date;
+					$rootScope.last_access_media = data.last_client_application_id;
+					$rootScope.client_name = data.client_name;
+					api.init();
+					$location.path( '/accounts' );
+				});
 			},
 			function(error) {
 				$scope.sending = false;
