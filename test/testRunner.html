@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Unit Test Fundación Donde</title>
+	<link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+	<div id="mocha"></div>
+
+	<!--Modules Mocha-chai-->
+	<script src="../node_modules/chai/chai.js"></script>
+	<script src="../node_modules/mocha/mocha.js"></script>
+	<script>
+		if(!mocha){
+			console.log("Necesitas el framework de Mocha");
+		}
+		mocha.setup('bdd');
+	</script>
+
+	<!--Bower Components-->
+	<script src="../app/bower_components/jquery/jquery.js"></script>
+	<script src="../app/bower_components/angular/angular.js"></script>
+	<script src="../app/bower_components/angular-mocks/angular-mocks.js"></script>
+	<script src="../app/bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+	<script src="../app/bower_components/angular-resource/angular-resource.js"></script>
+	<script src="../app/bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="../app/bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="../app/bower_components/angular-route/angular-route.js"></script>
+	<script src="../app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="../app/bower_components/ng-grid/build/ng-grid.min.js"></script>
+	<script src="../app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="../app/bower_components/ng-idle/angular-idle.js"></script>
+	<script src="../app/bower_components/lodash/dist/lodash.compat.js"></script>
+	<script src="../app/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+	<script src="../app/bower_components/placeholders/dist/placeholders.js"></script>
+	<script src="../app/bower_components/jquery-ui/ui/jquery-ui.js"></script>
+	<script src="../app/bower_components/angular-translate/angular-translate.js"></script>
+	<script src="../app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+	<script src="../app/bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+	<script src="../app/bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+	<script src="../app/bower_components/angular-translate-handler-log/angular-translate-handler-log.js"></script>
+	<script src="../app/bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+	<script src="../app/bower_components/ng-dialog/js/ngDialog.js"></script>
+	<script src="../app/bower_components/ng-idle/angular-idle.min.js"></script>
+	<!-- endbower -->
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="../app/scripts/app.js"></script>
+	<script src="../app/scripts/services/api.js"></script>
+	<script src="../app/scripts/services/utils/timer.js"></script>
+	<script src="../app/scripts/filters/filters.js"></script>
+	<script src="../app/scripts/filters/uiBreadcrumbs.js"></script>
+	<script src="../app/scripts/services/utils/breadcrumbs.js"></script>
+	<script src="../app/scripts/infrastructure/httpinterceptor.js"></script>
+	<script src="../app/scripts/services/LocaleService.js"></script>
+	
+	<!--Controllers-->
+	<script src="../app/scripts/controllers/accounts/accounts.js"></script>
+	<script src="../app/scripts/controllers/accounts/accounts-route.js"></script>
+	<script src="../app/scripts/controllers/administration/administration-route.js"></script>
+	<script src="../app/scripts/controllers/authentication/authentication-route.js"></script>
+	<script src="../app/scripts/controllers/transfers/transfers-route.js"></script>
+
+	<!--Directives-->
+	<script src="../app/scripts/directives/LanguageSelectDirective.js"></script>
+	<script src="../app/scripts/directives/breadcrumbs.js"></script>
+	<script src="../app/scripts/directives/fddatepicker.js"></script>
+	<!--Filters-->
+	<!--Infrastructure-->
+	<!--Services-->
+	<script src="../app/scripts/services/accounts/fd-accounts-provider.js"></script>
+	<script src="../app/scripts/services/accounts/fd-accounts-service.js"></script>
+	<script src="../app/scripts/services/administration/admin-provider.js"></script>
+	<script src="../app/scripts/services/administration/admin-service.js"></script>
+	<script src="../app/scripts/services/authentications/fd-auth-provider.js"></script>
+	<script src="../app/scripts/services/authentications/fd-auth-service.js"></script>
+	<script src="../app/scripts/services/maps/map-provider.js"></script>
+	<script src="../app/scripts/services/maps/map-service.js"></script>
+	<script src="../app/scripts/services/utils/breadcrumbs.js"></script>
+	<script src="../app/scripts/services/utils/error-handler.js"></script>
+	<script src="../app/scripts/services/utils/error-messages.js"></script>
+	<script src="../app/scripts/services/utils/timer.js"></script>
+	<!--Unit Test-->
+	<script src="spec/controllers/accountsCtrlSpec.js"></script>
+
+	<script>mocha.run();</script>
+</body>
+</html>
