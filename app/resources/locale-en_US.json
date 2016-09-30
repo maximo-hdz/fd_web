@@ -361,6 +361,7 @@
   "user-activity.FechaHora": "Date and Time",
   "user-activity.Anterior": "Before",
   "user-activity.Siguiente": "Next",
+  "user-activity.title": "Account Activity",
 
   "users-admin.CuentasPermisos": "Accounts and permissions",
   "users-admin.ModificarUsuario": "Modify User",
