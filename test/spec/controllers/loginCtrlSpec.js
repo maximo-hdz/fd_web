@@ -22,7 +22,8 @@ describe('login test',function(){
 		var fakedMainResponse = [];
 		scope.auth = {'user_login': 'AAAAAAAA'};
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
-		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);		
+		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
+		http.when('GET', 'resources/locale-en_US.json').respond(fakedMainResponse);
 		http.when('POST', scope.restAPIBaseUrl + '/checkLogin')
 			.respond({
 					"state":"OK",
@@ -46,6 +47,7 @@ describe('login test',function(){
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'views/partials/authentication/register.html').respond(fakedMainResponse);
 		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
+		http.when('GET', 'resources/locale-en_US.json').respond(fakedMainResponse);
 		http.when('POST', scope.restAPIBaseUrl + '/checkLogin')
 			.respond({
 					"state":"OK",
@@ -68,6 +70,7 @@ describe('login test',function(){
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'views/partials/authentication/new.html').respond(fakedMainResponse);
 		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
+		http.when('GET', 'resources/locale-en_US.json').respond(fakedMainResponse);
 		http.when('POST', scope.restAPIBaseUrl + '/checkLogin')
 			.respond({
 					"state":"OK",
@@ -88,6 +91,7 @@ describe('login test',function(){
 		scope.auth = {'user_login': 'DDDDDDDD'};
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
+		http.when('GET', 'resources/locale-en_US.json').respond(fakedMainResponse);
 		http.when('POST', scope.restAPIBaseUrl + '/checkLogin')
 			.respond(function(){
 				return [400, ''];
@@ -104,6 +108,7 @@ describe('login test',function(){
 		http.when('GET', 'views/partials/accounts/accounts.html').respond(fakedMainResponse);
 		http.when('GET', 'views/dashboard.html').respond(fakedMainResponse);
 		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
+		http.when('GET', 'resources/locale-en_US.json').respond(fakedMainResponse);
 		http.when('POST', scope.restAPIBaseUrl + '/login')
 			.respond({
 					"last_access_date":1475248462283,
@@ -125,6 +130,7 @@ describe('login test',function(){
 		scope.auth = {'new_condition_action': 'N'};
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
+		http.when('GET', 'resources/locale-en_US.json').respond(fakedMainResponse);
 		http.when('POST', scope.restAPIBaseUrl + '/login')
 			.respond(function(){
 				return [400, ''];
