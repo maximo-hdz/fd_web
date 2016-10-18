@@ -1001,6 +1001,7 @@ body.showLoader::after{
 				}
 				li:hover{
 					background: url("../images/menu-selected.png") center bottom no-repeat;
+					cursor: pointer;
 				}
 				li.active{
 					background: url("../images/menu-selected.png") center bottom no-repeat;

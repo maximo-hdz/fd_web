@@ -3,6 +3,7 @@ var expect=chai.expect;
 describe('login test',function(){
 
 	var loginCtrl, scope, http, location;
+	var fakedMainResponse=[];
 
 	beforeEach(module('spaApp'));
 
@@ -19,7 +20,6 @@ describe('login test',function(){
 	});
 
 	it('should verify checkLogin normal', function(){
-		var fakedMainResponse = [];
 		scope.auth = {'user_login': 'AAAAAAAA'};
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
@@ -42,7 +42,6 @@ describe('login test',function(){
 	});
 
 	it('should verify checkLogin register', function(){
-		var fakedMainResponse = [];
 		scope.auth = {'user_login': 'BBBBBBBB'};
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'views/partials/authentication/register.html').respond(fakedMainResponse);
@@ -65,7 +64,6 @@ describe('login test',function(){
 	});
 
 	it('should verify checkLogin change password', function(){
-		var fakedMainResponse = [];
 		scope.auth = {'user_login': 'CCCCCCCC'};
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'views/partials/authentication/new.html').respond(fakedMainResponse);
@@ -87,7 +85,6 @@ describe('login test',function(){
 	});
 
 	it('should manage errors in checkLogin', function(){
-		var fakedMainResponse = [];
 		scope.auth = {'user_login': 'DDDDDDDD'};
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
@@ -103,7 +100,6 @@ describe('login test',function(){
 
 	it('should login', function(){
 		scope.auth = {'new_condition_action': 'Y'};
-		var fakedMainResponse = [];
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'views/partials/accounts/accounts.html').respond(fakedMainResponse);
 		http.when('GET', 'views/dashboard.html').respond(fakedMainResponse);
@@ -126,7 +122,6 @@ describe('login test',function(){
 	});
 
 	it('should manage errors in login', function(){
-		var fakedMainResponse = [];
 		scope.auth = {'new_condition_action': 'N'};
 		http.when('GET', 'views/partials/authentication/login.html').respond(fakedMainResponse);
 		http.when('GET', 'resources/locale-es_MX.json').respond(fakedMainResponse);
