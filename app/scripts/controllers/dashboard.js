@@ -17,23 +17,11 @@ function($scope, $rootScope, $location, authorizeProviderFD, accountsProviderFD,
 	$scope.danger = {};
 
 	/**
-	 * Change current section accordiing to the received value.
+	 * Change current section according to the received value.
 	 */
 	$scope.changeSection = function( section ) {
-		if ( $scope.currentSection === section ){
-			return;
-		} else if ( section === 'map' ){
-			$location.path('map');
-		}else{
-			//don't use jquery
-			$('.main-menu .navbar-nav li a').each( function() {
-				if ( $(this).attr('id') === section ) {
-					$scope.currentSection = section;
-					$location.path( section );
-				}
-				$(this).css('cursor', 'pointer');
-			});
-		}
+		$scope.currentSection = section;
+		$location.path( section );
 	};
 
 	/**
