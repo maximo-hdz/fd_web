@@ -3,22 +3,19 @@
 
 module.exports = function(config) {
   config.set({
-
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
     'plugins' : [
         'karma-mocha',
         'karma-chai',
+        'karma-sinon',
         'karma-phantomjs-launcher',
         'karma-coverage',
         'karma-junit-reporter'
     ],
-
     // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha','chai'],
-
+    frameworks: ['mocha','chai', 'sinon'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -43,6 +40,7 @@ module.exports = function(config) {
       //Scripts
       'app/scripts/*.js',
       'app/scripts/**/*.js',
+      'app/scripts/**/**/*.js',
 
       //Tests
       'test/spec/**/*.js'
