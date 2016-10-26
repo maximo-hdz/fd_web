@@ -7,7 +7,7 @@ describe('login test',function(){
 
 	beforeEach(module('spaApp'));
 
-	beforeEach(inject(function($rootScope, $controller, $httpBackend, $location) {		
+	beforeEach(inject(function($rootScope, $controller, $httpBackend, $location) {
 		scope = $rootScope.$new();
 		http = $httpBackend;
 		location = $location;
@@ -35,7 +35,7 @@ describe('login test',function(){
 					"role_id": 0
 			});
 		scope.checkLogin();
-		http.flush();		
+		http.flush();
 		expect(scope.logining).to.be.false;
 		expect(scope.auth.with_token).to.be.equal('N');
 		expect(scope.auth.response.client_name).to.contain('Juan Perez');
@@ -58,7 +58,7 @@ describe('login test',function(){
 					"role_id": 1
 			});
 		scope.checkLogin();
-		http.flush();		
+		http.flush();
 		expect(location.path()).to.equal('/register');
 		expect(scope.auth.with_token).to.be.equal('Y');
 	});
@@ -80,7 +80,7 @@ describe('login test',function(){
 					"role_id": 0
 			});
 		scope.checkLogin();
-		http.flush();		
+		http.flush();
 		expect(location.path()).to.equal('/new');
 	});
 
@@ -94,7 +94,7 @@ describe('login test',function(){
 				return [400, ''];
 			});
 		scope.checkLogin();
-		http.flush();		
+		http.flush();
 		expect(scope.logining).to.be.false;
 	})
 
@@ -113,7 +113,7 @@ describe('login test',function(){
 					"client_name":"Juan Perez"}
 				);
 		scope.login();
-		http.flush();		
+		http.flush();
 		expect(scope.CheckLogin).to.be.true;
 		expect(location.path()).to.equal('/accounts');
 		expect(scope.last_access_date).to.be.equal(1475248462283);
@@ -131,7 +131,7 @@ describe('login test',function(){
 				return [400, ''];
 			});
 		scope.login();
-		http.flush();		
+		http.flush();
 		expect(scope.logining).to.be.false;
 	})
 
