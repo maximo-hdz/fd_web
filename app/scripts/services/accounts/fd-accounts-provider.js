@@ -25,9 +25,9 @@ angular.module('spaApp')
       return deferred.promise;
     },
 
-    getTransactions: function(accountId, params) {
+    getTransactions: function(accountId, startDate, endDate) {
       var deferred = $q.defer();
-      accountsServiceFD.getTransactions(accountId, params).success(function(data) {
+      accountsServiceFD.getTransactions(accountId, startDate, endDate).success(function(data) {
         deferred.resolve( data.transactions );
       }).error(function(data, status) {
         var result = {'response' : data, 'status': status};
