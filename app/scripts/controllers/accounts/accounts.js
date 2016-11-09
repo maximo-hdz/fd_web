@@ -189,13 +189,8 @@ function($scope, $rootScope, $location, accountsProviderFD, errorHandler) {
 	* Request the transactions from the middleware
 	*/
 	$scope.getTransactions = function() {
-		// Complete params
-		params.date_start = $scope.searchParams.startDate;
-		params.date_end = $scope.searchParams.endDate;
-
 		$scope.transactions = null;
-
-		accountsProviderFD.getTransactions( $scope.selectedAccountId, params ).then(
+		accountsProviderFD.getTransactions( $scope.selectedAccountId, $scope.searchParams.startDate, $scope.searchParams.endDate ).then(
 			function(transactions) {
 				console.info( transactions );
 				$scope.transactions = transactions;

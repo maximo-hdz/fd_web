@@ -12,12 +12,12 @@ angular.module('spaApp')
 		return $http.get($rootScope.restAPIBaseUrl+'/accounts/'+accountId);
 	};
 
-	this.getTransactions = function(accountId, params) {
+	this.getTransactions = function(accountId, startD, endD) {
 		var options;
 		var optionsParams = [];
 		var searchParams = [];
-		var startDate = validateDate(params.date_start);
-		var endDate = validateDate(params.date_end);
+		var startDate = validateDate(startD);
+		var endDate = validateDate(endD);
 		if(startDate && endDate) {
 			startDate ? searchParams.push('date_start=' + startDate) : '';
 			endDate ? searchParams.push('date_end=' + endDate) : '';
