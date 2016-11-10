@@ -1,6 +1,6 @@
 var expect=chai.expect;
 
-describe('describe de pruebas',function(){
+describe('test for accounts controller',function(){
 
 	var accountCtrl, scope, location, http;
 	var fakedMainResponse=[];
